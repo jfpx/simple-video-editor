@@ -490,6 +490,7 @@ public class MainActivity extends AppCompatActivity {
                 // Check if we need to add intro first
                 String processingInput = videoFilePath;
                 boolean shouldContinue = true;
+                boolean success = false;  // Initialize success variable
                 
                 if (introFilePath != null) {
                     runOnUiThread(() -> tvProgress.setText("Adding intro video..."));
