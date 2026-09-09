@@ -1,0 +1,33 @@
+# Ignore Gradle files
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+
+# Android Studio files
+*.iml
+*.apk
+*.ap_
+*.aab
+
+# Generated files
+bin/
+gen/
+out/
+
+# Gradle
+build/
+
+# Local configuration
+gradle.properties
+local.properties
+
+# Log Files
+*.log
+
+# Android Profiling
+*.hprof
