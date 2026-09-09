@@ -33,9 +33,9 @@ public class MainActivity extends AppCompatActivity {
     private Uri selectedVideoUri;
     private String videoFilePath;
     
-    private TextView tvVideoPath;
+    private TextView tvSelectedVideo;
     private EditText etCustomAngle;
-    private Button btnRotateLeft, btnRotateRight, btnRotateCustom;
+    private Button btnRotateLeft, btnRotateRight;
     private Button btnProcess;
     private ProgressBar progressBar;
     private TextView tvProgress;
@@ -50,11 +50,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         
         // Initialize views
-        tvVideoPath = findViewById(R.id.tvVideoPath);
+        tvSelectedVideo = findViewById(R.id.tvSelectedVideo);
         etCustomAngle = findViewById(R.id.etCustomAngle);
         btnRotateLeft = findViewById(R.id.btnRotateLeft);
         btnRotateRight = findViewById(R.id.btnRotateRight);
-        btnRotateCustom = findViewById(R.id.btnRotateCustom);
         btnProcess = findViewById(R.id.btnProcess);
         progressBar = findViewById(R.id.progressBar);
         tvProgress = findViewById(R.id.tvProgress);
@@ -85,24 +84,6 @@ public class MainActivity extends AppCompatActivity {
         btnRotateRight.setOnClickListener(v -> {
             currentRotation = (currentRotation + 90) % 360;
             updateRotationDisplay();
-        });
-        
-        btnRotateCustom.setOnClickListener(v -> {
-            String angleStr = etCustomAngle.getText().toString();
-            if (!angleStr.isEmpty()) {
-                try {
-                    int angle = Integer.parseInt(angleStr);
-                    currentRotation = ((angle % 360) + 360) % 360;
-                    // Snap to nearest 90 degrees (MediaCodec limitation)
-                    currentRotation = (currentRotation / 90) * 90;
-                    updateRotationDisplay();
-                    Toast.makeText(this, 
-                        "Note: MediaCodec only supports 90° increments. Snapped to " + currentRotation + "°",
-                        Toast.LENGTH_LONG).show();
-                } catch (NumberFormatException e) {
-                    Toast.makeText(this, "Invalid angle", Toast.LENGTH_SHORT).show();
-                }
-            }
         });
         
         // Process button
@@ -146,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
             if (selectedVideoUri != null) {
                 // Get video name
                 String videoName = getFileName(selectedVideoUri);
-                tvVideoPath.setText("Selected: " + videoName);
+                tvSelectedVideo.setText("Selected: " + videoName);
                 
                 // Copy to cache for processing
                 copyVideoToCache();
@@ -232,7 +213,6 @@ public class MainActivity extends AppCompatActivity {
         btnProcess.setEnabled(false);
         btnRotateLeft.setEnabled(false);
         btnRotateRight.setEnabled(false);
-        btnRotateCustom.setEnabled(false);
         
         // Show progress
         progressBar.setVisibility(View.VISIBLE);
@@ -270,7 +250,6 @@ public class MainActivity extends AppCompatActivity {
                     btnProcess.setEnabled(true);
                     btnRotateLeft.setEnabled(true);
                     btnRotateRight.setEnabled(true);
-                    btnRotateCustom.setEnabled(true);
                     
                     if (success) {
                         Toast.makeText(MainActivity.this, 
