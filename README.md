@@ -4,19 +4,20 @@ A simple Android app for rotating and cropping videos before uploading to YouTub
 
 ## Features
 
-- **Rotate Video**: 90°, 180°, 270° rotation or custom angle adjustment (for tilted videos)
+- **Rotate Video**: 90°, 180°, 270° rotation (90-degree increments)
 - **Crop Edges**: Remove unwanted edges from top, bottom, left, right
-- **Fast Processing**: Uses FFmpeg for efficient video processing
+- **Fast Processing**: Uses Android native MediaCodec API (hardware-accelerated)
 - **Offline**: All processing done locally on your device
 - **Free & Open Source**: No ads, no subscriptions, no cloud upload
+- **No External Dependencies**: Pure Android SDK, small APK size
 
 ## Use Case
 
 Perfect for:
-- Correcting video orientation before YouTube upload
-- Adjusting tilted videos (slight angle corrections)
+- Correcting video orientation before YouTube upload (landscape ↔ portrait)
 - Removing black bars or unwanted edges
 - Quick pre-processing for 20-minute recordings
+- Simple rotation without complex video editors
 
 ## Requirements
 
@@ -28,16 +29,16 @@ Perfect for:
 1. **Select Video**: Tap "Select Video" to choose a video from your gallery
 2. **Rotate**: 
    - Use quick buttons for 90° left/right rotation
-   - Or enter custom angle (e.g., 3 degrees to correct tilt)
+   - Custom angle input available (snaps to nearest 90°)
 3. **Crop** (Optional): Enter pixels to remove from each edge
 4. **Process**: Tap "Process Video" to apply changes
 5. **Result**: Processed video saved to `Movies/SimpleVideoEditor/`
 
 ## Technical Details
 
-- Built with Java and FFmpeg-Kit 6.0-2
-- Video codec: H.264 (libx264) with ultrafast preset
-- Audio: Direct stream copy (no re-encoding)
+- Built with Java and Android MediaCodec API
+- Video codec: Device native codec (usually H.264)
+- Hardware-accelerated encoding/decoding
 - Output format: MP4
 
 ## Building from Source

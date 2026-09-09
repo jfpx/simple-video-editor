@@ -1,7 +1,6 @@
 package com.simple.videoeditor;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -10,7 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.provider.Settings;
+import android.provider.OpenableColumns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,255 +19,270 @@ import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.arthenica.ffmpegkit.FFmpegKit;
-import com.arthenica.ffmpegkit.FFmpegSession;
-import com.arthenica.ffmpegkit.ReturnCode;
-import com.arthenica.ffmpegkit.Statistics;
-
 import java.io.File;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Locale;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 
 public class MainActivity extends AppCompatActivity {
     
-    private static final int PERMISSION_REQUEST_CODE = 100;
-    
-    private Button btnSelectVideo, btnRotateLeft, btnRotateRight, btnProcess;
-    private EditText etCustomAngle, etCropTop, etCropBottom, etCropLeft, etCropRight;
-    private TextView tvSelectedVideo, tvProgress;
-    private ProgressBar progressBar;
+    private static final int VIDEO_PICK_CODE = 1000;
     
     private Uri selectedVideoUri;
-    private String selectedVideoPath;
-    private double rotationAngle = 0;
+    private String videoFilePath;
     
-    private ActivityResultLauncher<Intent> videoPickerLauncher;
-
+    private TextView tvVideoPath;
+    private EditText etCustomAngle;
+    private Button btnRotateLeft, btnRotateRight, btnRotateCustom;
+    private Button btnProcess;
+    private ProgressBar progressBar;
+    private TextView tvProgress;
+    
+    private int currentRotation = 0;
+    
+    private ActivityResultLauncher<String> requestPermissionLauncher;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
-        initViews();
-        setupVideoPickerLauncher();
-        setupClickListeners();
-        checkPermissions();
-    }
-    
-    private void initViews() {
-        btnSelectVideo = findViewById(R.id.btnSelectVideo);
+        // Initialize views
+        tvVideoPath = findViewById(R.id.tvVideoPath);
+        etCustomAngle = findViewById(R.id.etCustomAngle);
         btnRotateLeft = findViewById(R.id.btnRotateLeft);
         btnRotateRight = findViewById(R.id.btnRotateRight);
+        btnRotateCustom = findViewById(R.id.btnRotateCustom);
         btnProcess = findViewById(R.id.btnProcess);
-        
-        etCustomAngle = findViewById(R.id.etCustomAngle);
-        etCropTop = findViewById(R.id.etCropTop);
-        etCropBottom = findViewById(R.id.etCropBottom);
-        etCropLeft = findViewById(R.id.etCropLeft);
-        etCropRight = findViewById(R.id.etCropRight);
-        
-        tvSelectedVideo = findViewById(R.id.tvSelectedVideo);
-        tvProgress = findViewById(R.id.tvProgress);
         progressBar = findViewById(R.id.progressBar);
-    }
-    
-    private void setupVideoPickerLauncher() {
-        videoPickerLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            result -> {
-                if (result.getResultCode() == Activity.RESULT_OK && result.getData() != null) {
-                    selectedVideoUri = result.getData().getData();
-                    selectedVideoPath = getPathFromUri(selectedVideoUri);
-                    if (selectedVideoPath != null) {
-                        tvSelectedVideo.setText(new File(selectedVideoPath).getName());
-                    } else {
-                        tvSelectedVideo.setText("Error: Could not get video path");
-                    }
+        tvProgress = findViewById(R.id.tvProgress);
+        
+        Button btnSelectVideo = findViewById(R.id.btnSelectVideo);
+        
+        // Setup permission launcher
+        requestPermissionLauncher = registerForActivityResult(
+            new ActivityResultContracts.RequestPermission(),
+            isGranted -> {
+                if (isGranted) {
+                    openVideoPicker();
+                } else {
+                    Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show();
                 }
             }
         );
-    }
-    
-    private void setupClickListeners() {
-        btnSelectVideo.setOnClickListener(v -> selectVideo());
         
+        // Select video button
+        btnSelectVideo.setOnClickListener(v -> checkPermissionAndPickVideo());
+        
+        // Rotation buttons
         btnRotateLeft.setOnClickListener(v -> {
-            rotationAngle -= 90;
-            updateAngleDisplay();
+            currentRotation = (currentRotation - 90 + 360) % 360;
+            updateRotationDisplay();
         });
         
         btnRotateRight.setOnClickListener(v -> {
-            rotationAngle += 90;
-            updateAngleDisplay();
+            currentRotation = (currentRotation + 90) % 360;
+            updateRotationDisplay();
         });
         
+        btnRotateCustom.setOnClickListener(v -> {
+            String angleStr = etCustomAngle.getText().toString();
+            if (!angleStr.isEmpty()) {
+                try {
+                    int angle = Integer.parseInt(angleStr);
+                    currentRotation = ((angle % 360) + 360) % 360;
+                    // Snap to nearest 90 degrees (MediaCodec limitation)
+                    currentRotation = (currentRotation / 90) * 90;
+                    updateRotationDisplay();
+                    Toast.makeText(this, 
+                        "Note: MediaCodec only supports 90° increments. Snapped to " + currentRotation + "°",
+                        Toast.LENGTH_LONG).show();
+                } catch (NumberFormatException e) {
+                    Toast.makeText(this, "Invalid angle", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+        
+        // Process button
         btnProcess.setOnClickListener(v -> processVideo());
+        
+        updateRotationDisplay();
     }
     
-    private void updateAngleDisplay() {
-        etCustomAngle.setText(String.valueOf(rotationAngle));
+    private void checkPermissionAndPickVideo() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            // Android 13+: Use READ_MEDIA_VIDEO
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_MEDIA_VIDEO) 
+                    == PackageManager.PERMISSION_GRANTED) {
+                openVideoPicker();
+            } else {
+                requestPermissionLauncher.launch(Manifest.permission.READ_MEDIA_VIDEO);
+            }
+        } else {
+            // Android 6-12: Use READ_EXTERNAL_STORAGE
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) 
+                    == PackageManager.PERMISSION_GRANTED) {
+                openVideoPicker();
+            } else {
+                requestPermissionLauncher.launch(Manifest.permission.READ_EXTERNAL_STORAGE);
+            }
+        }
     }
     
-    private void selectVideo() {
-        Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Video.Media.EXTERNAL_CONTENT_URI);
-        videoPickerLauncher.launch(intent);
+    private void openVideoPicker() {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("video/*");
+        startActivityForResult(intent, VIDEO_PICK_CODE);
+    }
+    
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        
+        if (requestCode == VIDEO_PICK_CODE && resultCode == RESULT_OK && data != null) {
+            selectedVideoUri = data.getData();
+            if (selectedVideoUri != null) {
+                // Get video name
+                String videoName = getFileName(selectedVideoUri);
+                tvVideoPath.setText("Selected: " + videoName);
+                
+                // Copy to cache for processing
+                copyVideoToCache();
+            }
+        }
+    }
+    
+    private String getFileName(Uri uri) {
+        String result = null;
+        if (uri.getScheme().equals("content")) {
+            try (Cursor cursor = getContentResolver().query(uri, null, null, null, null)) {
+                if (cursor != null && cursor.moveToFirst()) {
+                    int nameIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
+                    if (nameIndex >= 0) {
+                        result = cursor.getString(nameIndex);
+                    }
+                }
+            }
+        }
+        if (result == null) {
+            result = uri.getPath();
+            int cut = result.lastIndexOf('/');
+            if (cut != -1) {
+                result = result.substring(cut + 1);
+            }
+        }
+        return result;
+    }
+    
+    private void copyVideoToCache() {
+        new Thread(() -> {
+            try {
+                File cacheFile = new File(getCacheDir(), "input_video.mp4");
+                
+                InputStream inputStream = getContentResolver().openInputStream(selectedVideoUri);
+                FileOutputStream outputStream = new FileOutputStream(cacheFile);
+                
+                byte[] buffer = new byte[8192];
+                int length;
+                while ((length = inputStream.read(buffer)) > 0) {
+                    outputStream.write(buffer, 0, length);
+                }
+                
+                inputStream.close();
+                outputStream.close();
+                
+                videoFilePath = cacheFile.getAbsolutePath();
+                
+                runOnUiThread(() -> {
+                    btnProcess.setEnabled(true);
+                    Toast.makeText(this, "Video ready for processing", Toast.LENGTH_SHORT).show();
+                });
+                
+            } catch (Exception e) {
+                e.printStackTrace();
+                runOnUiThread(() -> {
+                    Toast.makeText(this, "Error loading video: " + e.getMessage(), 
+                        Toast.LENGTH_LONG).show();
+                });
+            }
+        }).start();
+    }
+    
+    private void updateRotationDisplay() {
+        String rotationText = "Current rotation: " + currentRotation + "°";
+        if (currentRotation == 90) {
+            rotationText += " (Portrait → Landscape)";
+        } else if (currentRotation == 270) {
+            rotationText += " (Landscape → Portrait)";
+        } else if (currentRotation == 180) {
+            rotationText += " (Upside down)";
+        }
+        Toast.makeText(this, rotationText, Toast.LENGTH_SHORT).show();
     }
     
     private void processVideo() {
-        if (selectedVideoPath == null) {
-            Toast.makeText(this, R.string.no_video_selected, Toast.LENGTH_SHORT).show();
+        if (videoFilePath == null) {
+            Toast.makeText(this, "Please select a video first", Toast.LENGTH_SHORT).show();
             return;
         }
         
-        // Get rotation angle
-        String angleStr = etCustomAngle.getText().toString().trim();
-        if (!angleStr.isEmpty()) {
-            rotationAngle = Double.parseDouble(angleStr);
-        }
-        
-        // Get crop values
-        int cropTop = getIntValue(etCropTop);
-        int cropBottom = getIntValue(etCropBottom);
-        int cropLeft = getIntValue(etCropLeft);
-        int cropRight = getIntValue(etCropRight);
+        // Disable buttons during processing
+        btnProcess.setEnabled(false);
+        btnRotateLeft.setEnabled(false);
+        btnRotateRight.setEnabled(false);
+        btnRotateCustom.setEnabled(false);
         
         // Show progress
         progressBar.setVisibility(View.VISIBLE);
         tvProgress.setVisibility(View.VISIBLE);
-        tvProgress.setText(R.string.processing);
-        btnProcess.setEnabled(false);
+        tvProgress.setText("Processing: 0%");
         
-        // Build FFmpeg filter
-        String filter = buildFFmpegFilter(rotationAngle, cropTop, cropBottom, cropLeft, cropRight);
-        
-        // Generate output path
-        String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
-        File outputDir = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_MOVIES), "SimpleVideoEditor");
+        // Create output file
+        File outputDir = new File(Environment.getExternalStoragePublicDirectory(
+            Environment.DIRECTORY_MOVIES), "SimpleVideoEditor");
         if (!outputDir.exists()) {
             outputDir.mkdirs();
         }
-        String outputPath = new File(outputDir, "edited_" + timestamp + ".mp4").getAbsolutePath();
         
-        // Execute FFmpeg command
-        String command = String.format("-i \"%s\" -vf \"%s\" -c:v libx264 -preset ultrafast -c:a copy \"%s\"",
-                selectedVideoPath, filter, outputPath);
+        String outputFileName = "edited_" + System.currentTimeMillis() + ".mp4";
+        File outputFile = new File(outputDir, outputFileName);
         
-        FFmpegKit.executeAsync(command, session -> {
-            ReturnCode returnCode = session.getReturnCode();
-            runOnUiThread(() -> {
-                progressBar.setVisibility(View.GONE);
-                tvProgress.setVisibility(View.GONE);
-                btnProcess.setEnabled(true);
-                
-                if (ReturnCode.isSuccess(returnCode)) {
-                    Toast.makeText(MainActivity.this, R.string.success + "\n" + outputPath, Toast.LENGTH_LONG).show();
-                    scanMediaFile(outputPath);
-                } else {
-                    String error = session.getFailStackTrace();
-                    Toast.makeText(MainActivity.this, R.string.error + ": " + error, Toast.LENGTH_LONG).show();
-                }
-            });
-        }, log -> {
-            // Log callback
-        }, statistics -> {
-            // Update progress based on statistics
-            int progress = (int) (statistics.getTime() / 1000.0); // rough estimate
-            runOnUiThread(() -> {
-                tvProgress.setText(getString(R.string.processing) + " " + progress + "s");
-            });
+        // Process video
+        VideoProcessor processor = new VideoProcessor(videoFilePath, outputFile.getAbsolutePath());
+        processor.setRotation(currentRotation);
+        processor.setProgressCallback(new VideoProcessor.ProgressCallback() {
+            @Override
+            public void onProgress(int percent) {
+                runOnUiThread(() -> {
+                    progressBar.setProgress(percent);
+                    tvProgress.setText("Processing: " + percent + "%");
+                });
+            }
+            
+            @Override
+            public void onComplete(boolean success, String message) {
+                runOnUiThread(() -> {
+                    progressBar.setVisibility(View.GONE);
+                    tvProgress.setVisibility(View.GONE);
+                    
+                    btnProcess.setEnabled(true);
+                    btnRotateLeft.setEnabled(true);
+                    btnRotateRight.setEnabled(true);
+                    btnRotateCustom.setEnabled(true);
+                    
+                    if (success) {
+                        Toast.makeText(MainActivity.this, 
+                            "Video saved to: " + outputFile.getAbsolutePath(), 
+                            Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
+                    }
+                });
+            }
         });
-    }
-    
-    private String buildFFmpegFilter(double angle, int top, int bottom, int left, int right) {
-        StringBuilder filter = new StringBuilder();
         
-        // Add rotation if needed
-        if (angle != 0) {
-            double radians = angle * Math.PI / 180.0;
-            filter.append("rotate=").append(radians).append(":fillcolor=black");
-        }
-        
-        // Add crop if needed
-        if (top > 0 || bottom > 0 || left > 0 || right > 0) {
-            if (filter.length() > 0) {
-                filter.append(",");
-            }
-            filter.append("crop=iw-").append(left + right)
-                  .append(":ih-").append(top + bottom)
-                  .append(":").append(left)
-                  .append(":").append(top);
-        }
-        
-        return filter.toString();
-    }
-    
-    private int getIntValue(EditText editText) {
-        String text = editText.getText().toString().trim();
-        if (text.isEmpty()) {
-            return 0;
-        }
-        try {
-            return Integer.parseInt(text);
-        } catch (NumberFormatException e) {
-            return 0;
-        }
-    }
-    
-    private String getPathFromUri(Uri uri) {
-        String[] projection = {MediaStore.Video.Media.DATA};
-        try (Cursor cursor = getContentResolver().query(uri, projection, null, null, null)) {
-            if (cursor != null && cursor.moveToFirst()) {
-                int columnIndex = cursor.getColumnIndexOrThrow(MediaStore.Video.Media.DATA);
-                return cursor.getString(columnIndex);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-    
-    private void scanMediaFile(String path) {
-        Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
-        File file = new File(path);
-        Uri contentUri = Uri.fromFile(file);
-        mediaScanIntent.setData(contentUri);
-        sendBroadcast(mediaScanIntent);
-    }
-    
-    private void checkPermissions() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            // Android 13+ uses READ_MEDIA_VIDEO
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_MEDIA_VIDEO) 
-                    != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, 
-                    new String[]{Manifest.permission.READ_MEDIA_VIDEO}, 
-                    PERMISSION_REQUEST_CODE);
-            }
-        } else {
-            // Older versions use READ_EXTERNAL_STORAGE
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) 
-                    != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, 
-                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, 
-                                Manifest.permission.WRITE_EXTERNAL_STORAGE}, 
-                    PERMISSION_REQUEST_CODE);
-            }
-        }
-    }
-    
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == PERMISSION_REQUEST_CODE) {
-            if (grantResults.length > 0 && grantResults[0] != PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, R.string.permission_required, Toast.LENGTH_LONG).show();
-            }
-        }
+        processor.process();
     }
 }
