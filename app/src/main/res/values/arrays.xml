@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="speed_options">
+        <item>@string/speed_0_5x</item>
+        <item>@string/speed_0_75x</item>
+        <item>@string/speed_1_0x</item>
+        <item>@string/speed_1_25x</item>
+        <item>@string/speed_1_5x</item>
+        <item>@string/speed_2_0x</item>
+    </string-array>
+</resources>

@@ -34,4 +34,18 @@
     <string name="fast_mode_disabled_options">Resolution and text overlay are disabled in fast mode</string>
     <string name="estimated_time">Estimated time: %s</string>
     <string name="current_operation">%s - %d%%</string>
+    
+    <!-- Intro Video -->
+    <string name="select_intro">Select Intro Video (Optional)</string>
+    <string name="no_intro_selected">No intro selected</string>
+    <string name="intro_video">Intro Video</string>
+    
+    <!-- Playback Speed -->
+    <string name="playback_speed">Playback Speed</string>
+    <string name="speed_0_5x">0.5x (Slow)</string>
+    <string name="speed_0_75x">0.75x</string>
+    <string name="speed_1_0x">1.0x (Normal)</string>
+    <string name="speed_1_25x">1.25x</string>
+    <string name="speed_1_5x">1.5x</string>
+    <string name="speed_2_0x">2.0x (Fast)</string>
 </resources>

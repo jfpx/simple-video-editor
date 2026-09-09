@@ -179,6 +179,7 @@ public class VideoProcessorOptimized {
             int targetWidth,
             int targetHeight,
             String overlayText,
+            float speed,
             ProgressCallback callback
     ) {
         MediaExtractor extractor = null;
@@ -230,7 +231,13 @@ public class VideoProcessorOptimized {
             MediaFormat outputFormat = MediaFormat.createVideoFormat(MediaFormat.MIMETYPE_VIDEO_AVC, targetWidth, targetHeight);
             outputFormat.setInteger(MediaFormat.KEY_COLOR_FORMAT, MediaCodecInfo.CodecCapabilities.COLOR_FormatSurface);
             outputFormat.setInteger(MediaFormat.KEY_BIT_RATE, Math.min(targetWidth * targetHeight * 3, 8000000)); // 自适应码率
-            outputFormat.setInteger(MediaFormat.KEY_FRAME_RATE, frameRate);
+            
+            // Apply playback speed to frame rate
+            int outputFrameRate = frameRate;
+            if (speed != 1.0f) {
+                outputFrameRate = Math.round(frameRate * speed);
+            }
+            outputFormat.setInteger(MediaFormat.KEY_FRAME_RATE, outputFrameRate);
             outputFormat.setInteger(MediaFormat.KEY_I_FRAME_INTERVAL, 1);
             
             encoder = MediaCodec.createEncoderByType(MediaFormat.MIMETYPE_VIDEO_AVC);

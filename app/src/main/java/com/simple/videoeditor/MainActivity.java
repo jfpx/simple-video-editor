@@ -33,18 +33,26 @@ import java.io.InputStream;
 public class MainActivity extends AppCompatActivity {
     
     private static final int VIDEO_PICK_CODE = 1000;
+    private static final int REQUEST_CODE_INTRO = 1001;
     
     private Uri selectedVideoUri;
     private String videoFilePath;
+    
+    private Uri selectedIntroUri;
+    private String introFilePath;
     
     private TextView tvSelectedVideo;
     private CheckBox cbFastMode;
     private TextView tvModeHint;
     private EditText etCustomAngle;
     private Spinner spinnerResolution;
+    private Spinner spinnerSpeed;
     private EditText etOverlayText;
     private TextView tvResolutionLabel;
+    private TextView tvSpeedLabel;
     private TextView tvOverlayLabel;
+    private Button btnSelectIntro;
+    private TextView tvSelectedIntro;
     private Button btnRotateLeft, btnRotateRight;
     private Button btnProcess;
     private ProgressBar progressBar;
@@ -67,9 +75,13 @@ public class MainActivity extends AppCompatActivity {
         tvModeHint = findViewById(R.id.tvModeHint);
         etCustomAngle = findViewById(R.id.etCustomAngle);
         spinnerResolution = findViewById(R.id.spinnerResolution);
+        spinnerSpeed = findViewById(R.id.spinnerSpeed);
         etOverlayText = findViewById(R.id.etOverlayText);
         tvResolutionLabel = findViewById(R.id.tvResolutionLabel);
+        tvSpeedLabel = findViewById(R.id.tvSpeedLabel);
         tvOverlayLabel = findViewById(R.id.tvOverlayLabel);
+        btnSelectIntro = findViewById(R.id.btnSelectIntro);
+        tvSelectedIntro = findViewById(R.id.tvSelectedIntro);
         btnRotateLeft = findViewById(R.id.btnRotateLeft);
         btnRotateRight = findViewById(R.id.btnRotateRight);
         btnProcess = findViewById(R.id.btnProcess);
@@ -89,6 +101,13 @@ public class MainActivity extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerResolution.setAdapter(adapter);
         
+        // Setup speed spinner
+        ArrayAdapter<CharSequence> speedAdapter = ArrayAdapter.createFromResource(this,
+                R.array.speed_options, android.R.layout.simple_spinner_item);
+        speedAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerSpeed.setAdapter(speedAdapter);
+        spinnerSpeed.setSelection(2); // Default to 1.0x (Normal)
+        
         // Setup permission launcher
         requestPermissionLauncher = registerForActivityResult(
             new ActivityResultContracts.RequestPermission(),
@@ -104,21 +123,30 @@ public class MainActivity extends AppCompatActivity {
         // Select video button
         btnSelectVideo.setOnClickListener(v -> checkPermissionAndPickVideo());
         
+        // Select intro video button
+        btnSelectIntro.setOnClickListener(v -> openIntroPicker());
+        
         // Fast mode checkbox listener
         cbFastMode.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
-                // Fast mode: disable resolution and overlay
+                // Fast mode: disable resolution, speed, overlay, and intro
                 spinnerResolution.setEnabled(false);
+                spinnerSpeed.setEnabled(false);
                 etOverlayText.setEnabled(false);
+                btnSelectIntro.setEnabled(false);
                 tvResolutionLabel.setEnabled(false);
+                tvSpeedLabel.setEnabled(false);
                 tvOverlayLabel.setEnabled(false);
                 tvModeHint.setText(R.string.fast_mode_hint);
                 tvModeHint.setBackgroundColor(0xFFFFF3E0); // Light orange
             } else {
                 // Full mode: enable all options
                 spinnerResolution.setEnabled(true);
+                spinnerSpeed.setEnabled(true);
                 etOverlayText.setEnabled(true);
+                btnSelectIntro.setEnabled(true);
                 tvResolutionLabel.setEnabled(true);
+                tvSpeedLabel.setEnabled(true);
                 tvOverlayLabel.setEnabled(true);
                 tvModeHint.setText(R.string.full_mode_hint);
                 tvModeHint.setBackgroundColor(0xFFE3F2FD); // Light blue
@@ -171,6 +199,12 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, VIDEO_PICK_CODE);
     }
     
+    private void openIntroPicker() {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("video/*");
+        startActivityForResult(intent, REQUEST_CODE_INTRO);
+    }
+    
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -184,6 +218,16 @@ public class MainActivity extends AppCompatActivity {
                 
                 // Copy to cache for processing
                 copyVideoToCache();
+            }
+        } else if (requestCode == REQUEST_CODE_INTRO && resultCode == RESULT_OK && data != null) {
+            selectedIntroUri = data.getData();
+            if (selectedIntroUri != null) {
+                // Get intro video name
+                String introName = getFileName(selectedIntroUri);
+                tvSelectedIntro.setText("Selected: " + introName);
+                
+                // Copy to cache for processing
+                copyIntroToCache();
             }
         }
     }
@@ -247,6 +291,39 @@ public class MainActivity extends AppCompatActivity {
         }).start();
     }
     
+    private void copyIntroToCache() {
+        new Thread(() -> {
+            try {
+                File cacheFile = new File(getCacheDir(), "intro_video.mp4");
+                
+                InputStream inputStream = getContentResolver().openInputStream(selectedIntroUri);
+                FileOutputStream outputStream = new FileOutputStream(cacheFile);
+                
+                byte[] buffer = new byte[8192];
+                int length;
+                while ((length = inputStream.read(buffer)) > 0) {
+                    outputStream.write(buffer, 0, length);
+                }
+                
+                inputStream.close();
+                outputStream.close();
+                
+                introFilePath = cacheFile.getAbsolutePath();
+                
+                runOnUiThread(() -> {
+                    Toast.makeText(this, "Intro video ready", Toast.LENGTH_SHORT).show();
+                });
+                
+            } catch (Exception e) {
+                e.printStackTrace();
+                runOnUiThread(() -> {
+                    Toast.makeText(this, "Error loading intro: " + e.getMessage(), 
+                        Toast.LENGTH_LONG).show();
+                });
+            }
+        }).start();
+    }
+    
     private void extractVideoMetadata() {
         try {
             MediaMetadataRetriever retriever = new MediaMetadataRetriever();
@@ -281,6 +358,19 @@ public class MainActivity extends AppCompatActivity {
             rotationText += " (Upside down)";
         }
         Toast.makeText(this, rotationText, Toast.LENGTH_SHORT).show();
+    }
+    
+    private float getSelectedSpeed() {
+        int position = spinnerSpeed.getSelectedItemPosition();
+        switch (position) {
+            case 0: return 0.5f;
+            case 1: return 0.75f;
+            case 2: return 1.0f;
+            case 3: return 1.25f;
+            case 4: return 1.5f;
+            case 5: return 2.0f;
+            default: return 1.0f;
+        }
     }
     
     private void processVideo() {
@@ -347,7 +437,7 @@ public class MainActivity extends AppCompatActivity {
                     })
                 );
             } else {
-                // Full mode: rotation + scaling + overlay
+                // Full mode: rotation + scaling + overlay + speed + intro
                 int selectedResIndex = spinnerResolution.getSelectedItemPosition();
                 int targetWidth = originalWidth;
                 int targetHeight = originalHeight;
@@ -390,28 +480,74 @@ public class MainActivity extends AppCompatActivity {
                     overlayText = null;
                 }
                 
+                // Get playback speed
+                float speed = getSelectedSpeed();
+                
                 final int finalWidth = targetWidth;
                 final int finalHeight = targetHeight;
-                runOnUiThread(() -> tvProgress.setText(
-                    String.format("Full Mode: %dx%d → %dx%d", originalWidth, originalHeight, finalWidth, finalHeight)
-                ));
+                final float finalSpeed = speed;
                 
-                success = VideoProcessorOptimized.processVideoOptimized(
-                    videoFilePath,
-                    outputPath,
-                    currentRotation,
-                    targetWidth,
-                    targetHeight,
-                    overlayText,
-                    (progress, message) -> runOnUiThread(() -> {
-                        if (progress >= 0) {
-                            progressBar.setProgress(progress);
-                            tvProgress.setText(message);
-                        } else {
-                            Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
-                        }
-                    })
-                );
+                // Check if we need to add intro first
+                String processingInput = videoFilePath;
+                boolean shouldContinue = true;
+                
+                if (introFilePath != null) {
+                    runOnUiThread(() -> tvProgress.setText("Adding intro video..."));
+                    
+                    // Create temp file for merged video
+                    File tempMerged = new File(getCacheDir(), "temp_merged.mp4");
+                    String tempMergedPath = tempMerged.getAbsolutePath();
+                    
+                    // Merge intro + main video
+                    boolean mergeSuccess = VideoMerger.addIntro(
+                        introFilePath,
+                        videoFilePath,
+                        tempMergedPath,
+                        (progress, message) -> runOnUiThread(() -> {
+                            if (progress >= 0) {
+                                progressBar.setProgress(progress / 2); // First 50% for merging
+                                tvProgress.setText("Merging intro: " + message);
+                            }
+                        })
+                    );
+                    
+                    if (!mergeSuccess) {
+                        success = false;
+                        shouldContinue = false;
+                        runOnUiThread(() -> {
+                            Toast.makeText(MainActivity.this, "Failed to add intro", Toast.LENGTH_LONG).show();
+                        });
+                    } else {
+                        processingInput = tempMergedPath;
+                    }
+                }
+                
+                if (shouldContinue) {
+                    runOnUiThread(() -> tvProgress.setText(
+                        String.format("Full Mode: %dx%d → %dx%d (%.1fx speed)", 
+                            originalWidth, originalHeight, finalWidth, finalHeight, finalSpeed)
+                    ));
+                    
+                    success = VideoProcessorOptimized.processVideoOptimized(
+                        processingInput,
+                        outputPath,
+                        currentRotation,
+                        targetWidth,
+                        targetHeight,
+                        overlayText,
+                        speed,
+                        (progress, message) -> runOnUiThread(() -> {
+                            if (progress >= 0) {
+                                // If intro was added, offset progress to 50-100%
+                                int displayProgress = (introFilePath != null) ? (50 + progress / 2) : progress;
+                                progressBar.setProgress(displayProgress);
+                                tvProgress.setText(message);
+                            } else {
+                                Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
+                            }
+                        })
+                    );
+                }
             }
             
             long elapsedTime = System.currentTimeMillis() - startTime;
