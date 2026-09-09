@@ -23,7 +23,8 @@ out/
 build/
 
 # Local configuration
-gradle.properties
+# Note: gradle.properties with global settings (AndroidX, etc.) should be committed
+# Only local.properties with sensitive data should be ignored
 local.properties
 
 # Log Files
