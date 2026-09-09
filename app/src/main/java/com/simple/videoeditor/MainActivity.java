@@ -416,7 +416,7 @@ public class MainActivity extends AppCompatActivity {
         boolean isFastMode = cbFastMode.isChecked();
         
         new Thread(() -> {
-            boolean success;
+            boolean success = false;  // Initialize to avoid compilation error
             long startTime = System.currentTimeMillis();
             
             if (isFastMode) {
@@ -490,7 +490,6 @@ public class MainActivity extends AppCompatActivity {
                 // Check if we need to add intro first
                 String processingInput = videoFilePath;
                 boolean shouldContinue = true;
-                boolean success = false;  // Initialize success variable
                 
                 if (introFilePath != null) {
                     runOnUiThread(() -> tvProgress.setText("Adding intro video..."));
