@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.media.MediaMetadataRetriever;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,8 +13,11 @@ import android.provider.MediaStore;
 import android.provider.OpenableColumns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,13 +38,21 @@ public class MainActivity extends AppCompatActivity {
     private String videoFilePath;
     
     private TextView tvSelectedVideo;
+    private CheckBox cbFastMode;
+    private TextView tvModeHint;
     private EditText etCustomAngle;
+    private Spinner spinnerResolution;
+    private EditText etOverlayText;
+    private TextView tvResolutionLabel;
+    private TextView tvOverlayLabel;
     private Button btnRotateLeft, btnRotateRight;
     private Button btnProcess;
     private ProgressBar progressBar;
     private TextView tvProgress;
     
     private int currentRotation = 0;
+    private int originalWidth = 0;
+    private int originalHeight = 0;
     
     private ActivityResultLauncher<String> requestPermissionLauncher;
     
@@ -51,7 +63,13 @@ public class MainActivity extends AppCompatActivity {
         
         // Initialize views
         tvSelectedVideo = findViewById(R.id.tvSelectedVideo);
+        cbFastMode = findViewById(R.id.cbFastMode);
+        tvModeHint = findViewById(R.id.tvModeHint);
         etCustomAngle = findViewById(R.id.etCustomAngle);
+        spinnerResolution = findViewById(R.id.spinnerResolution);
+        etOverlayText = findViewById(R.id.etOverlayText);
+        tvResolutionLabel = findViewById(R.id.tvResolutionLabel);
+        tvOverlayLabel = findViewById(R.id.tvOverlayLabel);
         btnRotateLeft = findViewById(R.id.btnRotateLeft);
         btnRotateRight = findViewById(R.id.btnRotateRight);
         btnProcess = findViewById(R.id.btnProcess);
@@ -59,6 +77,17 @@ public class MainActivity extends AppCompatActivity {
         tvProgress = findViewById(R.id.tvProgress);
         
         Button btnSelectVideo = findViewById(R.id.btnSelectVideo);
+        
+        // Setup resolution spinner
+        String[] resolutions = {
+            getString(R.string.resolution_original),
+            getString(R.string.resolution_1080p),
+            getString(R.string.resolution_720p),
+            getString(R.string.resolution_480p)
+        };
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, resolutions);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerResolution.setAdapter(adapter);
         
         // Setup permission launcher
         requestPermissionLauncher = registerForActivityResult(
@@ -74,6 +103,30 @@ public class MainActivity extends AppCompatActivity {
         
         // Select video button
         btnSelectVideo.setOnClickListener(v -> checkPermissionAndPickVideo());
+        
+        // Fast mode checkbox listener
+        cbFastMode.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            if (isChecked) {
+                // Fast mode: disable resolution and overlay
+                spinnerResolution.setEnabled(false);
+                etOverlayText.setEnabled(false);
+                tvResolutionLabel.setEnabled(false);
+                tvOverlayLabel.setEnabled(false);
+                tvModeHint.setText(R.string.fast_mode_hint);
+                tvModeHint.setBackgroundColor(0xFFFFF3E0); // Light orange
+            } else {
+                // Full mode: enable all options
+                spinnerResolution.setEnabled(true);
+                etOverlayText.setEnabled(true);
+                tvResolutionLabel.setEnabled(true);
+                tvOverlayLabel.setEnabled(true);
+                tvModeHint.setText(R.string.full_mode_hint);
+                tvModeHint.setBackgroundColor(0xFFE3F2FD); // Light blue
+            }
+        });
+        
+        // Trigger initial state
+        cbFastMode.setChecked(true);
         
         // Rotation buttons
         btnRotateLeft.setOnClickListener(v -> {
@@ -176,6 +229,9 @@ public class MainActivity extends AppCompatActivity {
                 
                 videoFilePath = cacheFile.getAbsolutePath();
                 
+                // Extract video metadata
+                extractVideoMetadata();
+                
                 runOnUiThread(() -> {
                     btnProcess.setEnabled(true);
                     Toast.makeText(this, "Video ready for processing", Toast.LENGTH_SHORT).show();
@@ -189,6 +245,30 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
         }).start();
+    }
+    
+    private void extractVideoMetadata() {
+        try {
+            MediaMetadataRetriever retriever = new MediaMetadataRetriever();
+            retriever.setDataSource(videoFilePath);
+            
+            String widthStr = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH);
+            String heightStr = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT);
+            
+            if (widthStr != null && heightStr != null) {
+                originalWidth = Integer.parseInt(widthStr);
+                originalHeight = Integer.parseInt(heightStr);
+                
+                runOnUiThread(() -> {
+                    String info = String.format(" (Original: %dx%d)", originalWidth, originalHeight);
+                    tvSelectedVideo.setText(tvSelectedVideo.getText() + info);
+                });
+            }
+            
+            retriever.release();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     
     private void updateRotationDisplay() {
@@ -209,15 +289,28 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         
+        // Get custom angle if specified
+        String angleStr = etCustomAngle.getText().toString().trim();
+        if (!angleStr.isEmpty()) {
+            try {
+                currentRotation = Integer.parseInt(angleStr);
+            } catch (NumberFormatException e) {
+                Toast.makeText(this, "Invalid angle", Toast.LENGTH_SHORT).show();
+                return;
+            }
+        }
+        
         // Disable buttons during processing
         btnProcess.setEnabled(false);
         btnRotateLeft.setEnabled(false);
         btnRotateRight.setEnabled(false);
+        cbFastMode.setEnabled(false);
         
         // Show progress
         progressBar.setVisibility(View.VISIBLE);
         tvProgress.setVisibility(View.VISIBLE);
-        tvProgress.setText("Processing: 0%");
+        progressBar.setMax(100);
+        progressBar.setProgress(0);
         
         // Create output file
         File outputDir = new File(Environment.getExternalStoragePublicDirectory(
@@ -228,40 +321,120 @@ public class MainActivity extends AppCompatActivity {
         
         String outputFileName = "edited_" + System.currentTimeMillis() + ".mp4";
         File outputFile = new File(outputDir, outputFileName);
+        String outputPath = outputFile.getAbsolutePath();
         
-        // Process video
-        VideoProcessor processor = new VideoProcessor(videoFilePath, outputFile.getAbsolutePath());
-        processor.setRotation(currentRotation);
-        processor.setProgressCallback(new VideoProcessor.ProgressCallback() {
-            @Override
-            public void onProgress(int percent) {
-                runOnUiThread(() -> {
-                    progressBar.setProgress(percent);
-                    tvProgress.setText("Processing: " + percent + "%");
-                });
+        boolean isFastMode = cbFastMode.isChecked();
+        
+        new Thread(() -> {
+            boolean success;
+            long startTime = System.currentTimeMillis();
+            
+            if (isFastMode) {
+                // Fast mode: only rotation
+                runOnUiThread(() -> tvProgress.setText("Fast Mode: Starting..."));
+                
+                success = VideoProcessorOptimized.fastRotate(
+                    videoFilePath,
+                    outputPath,
+                    currentRotation,
+                    (progress, message) -> runOnUiThread(() -> {
+                        if (progress >= 0) {
+                            progressBar.setProgress(progress);
+                            tvProgress.setText(message);
+                        } else {
+                            Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
+                        }
+                    })
+                );
+            } else {
+                // Full mode: rotation + scaling + overlay
+                int selectedResIndex = spinnerResolution.getSelectedItemPosition();
+                int targetWidth = originalWidth;
+                int targetHeight = originalHeight;
+                
+                // Calculate target resolution
+                switch (selectedResIndex) {
+                    case 1: // 1080p
+                        if (originalWidth > originalHeight) {
+                            targetWidth = 1920;
+                            targetHeight = 1080;
+                        } else {
+                            targetWidth = 1080;
+                            targetHeight = 1920;
+                        }
+                        break;
+                    case 2: // 720p
+                        if (originalWidth > originalHeight) {
+                            targetWidth = 1280;
+                            targetHeight = 720;
+                        } else {
+                            targetWidth = 720;
+                            targetHeight = 1280;
+                        }
+                        break;
+                    case 3: // 480p
+                        if (originalWidth > originalHeight) {
+                            targetWidth = 854;
+                            targetHeight = 480;
+                        } else {
+                            targetWidth = 480;
+                            targetHeight = 854;
+                        }
+                        break;
+                    default: // Original
+                        break;
+                }
+                
+                String overlayText = etOverlayText.getText().toString().trim();
+                if (overlayText.isEmpty()) {
+                    overlayText = null;
+                }
+                
+                final int finalWidth = targetWidth;
+                final int finalHeight = targetHeight;
+                runOnUiThread(() -> tvProgress.setText(
+                    String.format("Full Mode: %dx%d → %dx%d", originalWidth, originalHeight, finalWidth, finalHeight)
+                ));
+                
+                success = VideoProcessorOptimized.processVideoOptimized(
+                    videoFilePath,
+                    outputPath,
+                    currentRotation,
+                    targetWidth,
+                    targetHeight,
+                    overlayText,
+                    (progress, message) -> runOnUiThread(() -> {
+                        if (progress >= 0) {
+                            progressBar.setProgress(progress);
+                            tvProgress.setText(message);
+                        } else {
+                            Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
+                        }
+                    })
+                );
             }
             
-            @Override
-            public void onComplete(boolean success, String message) {
-                runOnUiThread(() -> {
-                    progressBar.setVisibility(View.GONE);
-                    tvProgress.setVisibility(View.GONE);
-                    
-                    btnProcess.setEnabled(true);
-                    btnRotateLeft.setEnabled(true);
-                    btnRotateRight.setEnabled(true);
-                    
-                    if (success) {
-                        Toast.makeText(MainActivity.this, 
-                            "Video saved to: " + outputFile.getAbsolutePath(), 
-                            Toast.LENGTH_LONG).show();
-                    } else {
-                        Toast.makeText(MainActivity.this, message, Toast.LENGTH_LONG).show();
-                    }
-                });
-            }
-        });
-        
-        processor.process();
+            long elapsedTime = System.currentTimeMillis() - startTime;
+            String timeStr = String.format("%.1f seconds", elapsedTime / 1000.0);
+            
+            boolean finalSuccess = success;
+            runOnUiThread(() -> {
+                progressBar.setVisibility(View.GONE);
+                tvProgress.setVisibility(View.GONE);
+                
+                btnProcess.setEnabled(true);
+                btnRotateLeft.setEnabled(true);
+                btnRotateRight.setEnabled(true);
+                cbFastMode.setEnabled(true);
+                
+                if (finalSuccess) {
+                    Toast.makeText(MainActivity.this, 
+                        "✓ Video saved in " + timeStr + "\n" + outputFile.getAbsolutePath(), 
+                        Toast.LENGTH_LONG).show();
+                } else {
+                    Toast.makeText(MainActivity.this, "Processing failed", Toast.LENGTH_LONG).show();
+                }
+            });
+        }).start();
     }
 }

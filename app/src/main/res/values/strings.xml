@@ -18,4 +18,20 @@
     <string name="bottom">Bottom</string>
     <string name="left">Left</string>
     <string name="right">Right</string>
+    
+    <!-- New strings for optimization features -->
+    <string name="processing_mode">Processing Mode</string>
+    <string name="fast_mode">⚡ Fast Mode (Rotation Only)</string>
+    <string name="fast_mode_hint">✓ Fast Mode: Instant rotation by modifying metadata (no re-encoding)\n⚠ Full Mode: Slower but supports resolution + text overlay</string>
+    <string name="full_mode_hint">⚙ Full Mode: Optimized processing with rotation + scaling + text overlay</string>
+    <string name="output_resolution">Output Resolution</string>
+    <string name="overlay_text">Text Overlay (Optional)</string>
+    <string name="overlay_text_hint">Enter text to overlay on video</string>
+    <string name="resolution_original">Original Size</string>
+    <string name="resolution_1080p">1080p (1920x1080)</string>
+    <string name="resolution_720p">720p (1280x720)</string>
+    <string name="resolution_480p">480p (854x480)</string>
+    <string name="fast_mode_disabled_options">Resolution and text overlay are disabled in fast mode</string>
+    <string name="estimated_time">Estimated time: %s</string>
+    <string name="current_operation">%s - %d%%</string>
 </resources>
