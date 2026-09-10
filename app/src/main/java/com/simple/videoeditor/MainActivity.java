@@ -309,12 +309,6 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, REQUEST_CODE_INTRO);
     }
     
-    private void openIntroPicker() {
-        Intent intent = new Intent(Intent.ACTION_PICK);
-        intent.setType("video/*");
-        startActivityForResult(intent, REQUEST_CODE_INTRO);
-    }
-    
     private void openMusicPicker() {
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType("audio/*");
