@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvSuccessTime;
     private TextView tvOutputPath;
     private Button btnOpenOutputFolder;
+    private ScrollView svDebugContainer;  // For debug configuration display
+    private TextView tvDebugInfo;
     private CheckBox cbFastMode;
     private TextView tvModeHint;
     private EditText etCustomAngle;
@@ -124,6 +126,8 @@ public class MainActivity extends AppCompatActivity {
         tvSuccessTime = findViewById(R.id.tvSuccessTime);
         tvOutputPath = findViewById(R.id.tvOutputPath);
         btnOpenOutputFolder = findViewById(R.id.btnOpenOutputFolder);
+        svDebugContainer = findViewById(R.id.svDebugContainer);
+        tvDebugInfo = findViewById(R.id.tvDebugInfo);
         cbFastMode = findViewById(R.id.cbFastMode);
         tvModeHint = findViewById(R.id.tvModeHint);
         etCustomAngle = findViewById(R.id.etCustomAngle);

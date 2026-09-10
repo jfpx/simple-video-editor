@@ -60,6 +60,27 @@
                 android:fontFamily="monospace"
                 android:textIsSelectable="true" />
         </ScrollView>
+        
+        <!-- Debug Configuration Display -->
+        <ScrollView
+            android:id="@+id/svDebugContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="200dp"
+            android:visibility="gone"
+            android:background="#E3F2FD"
+            android:padding="8dp"
+            android:layout_marginBottom="8dp">
+            
+            <TextView
+                android:id="@+id/tvDebugInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="11sp"
+                android:textColor="#01579B"
+                android:fontFamily="monospace"
+                android:textIsSelectable="true" />
+        </ScrollView>
 
         <!-- Success Display Area -->
         <LinearLayout
