@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.provider.OpenableColumns;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -54,6 +55,10 @@ public class MainActivity extends AppCompatActivity {
     private ImageView ivVideoThumbnail;
     private TextView tvErrorDetails;
     private ScrollView svErrorContainer;  // For scrolling error details
+    private View layoutSuccessContainer;
+    private TextView tvSuccessTime;
+    private TextView tvOutputPath;
+    private Button btnOpenOutputFolder;
     private CheckBox cbFastMode;
     private TextView tvModeHint;
     private EditText etCustomAngle;
@@ -115,6 +120,10 @@ public class MainActivity extends AppCompatActivity {
         ivVideoThumbnail = findViewById(R.id.ivVideoThumbnail);
         svErrorContainer = findViewById(R.id.svErrorContainer);
         tvErrorDetails = findViewById(R.id.tvErrorDetails);
+        layoutSuccessContainer = findViewById(R.id.layoutSuccessContainer);
+        tvSuccessTime = findViewById(R.id.tvSuccessTime);
+        tvOutputPath = findViewById(R.id.tvOutputPath);
+        btnOpenOutputFolder = findViewById(R.id.btnOpenOutputFolder);
         cbFastMode = findViewById(R.id.cbFastMode);
         tvModeHint = findViewById(R.id.tvModeHint);
         etCustomAngle = findViewById(R.id.etCustomAngle);
@@ -310,6 +319,27 @@ public class MainActivity extends AppCompatActivity {
         
         // Process button
         btnProcess.setOnClickListener(v -> processVideo());
+        
+        // Open output folder button
+        btnOpenOutputFolder.setOnClickListener(v -> {
+            if (tvOutputPath.getText().length() > 0) {
+                String path = tvOutputPath.getText().toString();
+                File file = new File(path);
+                File folder = file.getParentFile();
+                if (folder != null && folder.exists()) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setDataAndType(android.net.Uri.fromFile(folder), "resource/folder");
+                    if (intent.resolveActivityInfo(getPackageManager(), 0) != null) {
+                        startActivity(intent);
+                    } else {
+                        // Fallback: try to open file manager
+                        Intent fileIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                        fileIntent.setType("*/*");
+                        startActivity(Intent.createChooser(fileIntent, "Open folder with:"));
+                    }
+                }
+            }
+        });
         
         updateRotationDisplay();
     }
@@ -676,8 +706,9 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         
-        // Clear previous errors
+        // Clear previous messages
         clearError();
+        clearSuccess();
         
         // Validate trim times if trimming is enabled
         if (cbEnableTrim.isChecked()) {
@@ -745,6 +776,28 @@ public class MainActivity extends AppCompatActivity {
         String outputPath = outputFile.getAbsolutePath();
         
         boolean isFastMode = cbFastMode.isChecked();
+        
+        // Log configuration for debugging
+        Log.d("VideoProcess", "=== Processing Configuration ===");
+        Log.d("VideoProcess", "Rotation: " + currentRotation + "°");
+        Log.d("VideoProcess", "Trim enabled: " + cbEnableTrim.isChecked());
+        if (cbEnableTrim.isChecked()) {
+            Log.d("VideoProcess", "Trim start: " + trimStart + "s");
+            Log.d("VideoProcess", "Trim end: " + trimEnd + "s");
+        }
+        Log.d("VideoProcess", "Color adjust enabled: " + cbColorAdjust.isChecked());
+        if (cbColorAdjust.isChecked()) {
+            Log.d("VideoProcess", "Brightness: " + brightness);
+            Log.d("VideoProcess", "Contrast: " + contrast);
+            Log.d("VideoProcess", "Saturation: " + saturation);
+        }
+        Log.d("VideoProcess", "Volume adjustment enabled: " + cbAdjustVolume.isChecked());
+        if (cbAdjustVolume.isChecked()) {
+            Log.d("VideoProcess", "Volume multiplier: " + volumeMultiplier);
+        }
+        Log.d("VideoProcess", "Fast mode: " + isFastMode);
+        Log.d("VideoProcess", "Output path: " + outputFile.getAbsolutePath());
+        Log.d("VideoProcess", "==============================");
         
         new Thread(() -> {
             boolean success = false;  // Initialize to avoid compilation error
@@ -1086,9 +1139,7 @@ public class MainActivity extends AppCompatActivity {
                 cbFastMode.setEnabled(true);
                 
                 if (finalSuccess) {
-                    Toast.makeText(MainActivity.this, 
-                        "✓ Video saved in " + timeStr + "\n" + outputFile.getAbsolutePath(), 
-                        Toast.LENGTH_LONG).show();
+                    showSuccess(timeStr, outputPath);
                 } else {
                     if (finalError != null) {
                         showError("Processing failed", finalError);
@@ -1289,5 +1340,35 @@ public class MainActivity extends AppCompatActivity {
     private void clearError() {
         tvErrorDetails.setText("");
         svErrorContainer.setVisibility(View.GONE);
+    }
+    
+    /**
+     * Display success message with output file path
+     */
+    private void showSuccess(String timeStr, String outputPath) {
+        runOnUiThread(() -> {
+            // Hide error if shown
+            clearError();
+            
+            // Show success message
+            tvSuccessTime.setText("Completed in " + timeStr);
+            tvOutputPath.setText(outputPath);
+            layoutSuccessContainer.setVisibility(View.VISIBLE);
+            
+            // Also show brief toast
+            Toast.makeText(this, "✓ Video saved successfully", Toast.LENGTH_SHORT).show();
+            
+            // Scroll to success message
+            layoutSuccessContainer.post(() -> {
+                layoutSuccessContainer.requestFocus();
+            });
+        });
+    }
+    
+    /**
+     * Clear success display
+     */
+    private void clearSuccess() {
+        layoutSuccessContainer.setVisibility(View.GONE);
     }
 }
