@@ -83,6 +83,33 @@
             android:padding="8dp"
             android:background="#F0F0F0" />
 
+        <!-- Background Music Section -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/background_music"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnSelectMusic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_music"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvSelectedMusic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no_music_selected"
+            android:textSize="12sp"
+            android:layout_marginBottom="16dp"
+            android:padding="8dp"
+            android:background="#F0F0F0" />
+
         <!-- Rotation Section -->
         <TextView
             android:layout_width="match_parent"

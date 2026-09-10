@@ -48,4 +48,10 @@
     <string name="speed_1_25x">1.25x</string>
     <string name="speed_1_5x">1.5x</string>
     <string name="speed_2_0x">2.0x (Fast)</string>
+    
+    <!-- Background Music -->
+    <string name="background_music">Background Music</string>
+    <string name="select_music">Select Background Music (Optional)</string>
+    <string name="no_music_selected">No music (keep original audio)</string>
+    <string name="music_selected">Music: %s</string>
 </resources>

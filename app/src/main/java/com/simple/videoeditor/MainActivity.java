@@ -34,12 +34,16 @@ public class MainActivity extends AppCompatActivity {
     
     private static final int VIDEO_PICK_CODE = 1000;
     private static final int REQUEST_CODE_INTRO = 1001;
+    private static final int REQUEST_CODE_MUSIC = 1002;
     
     private Uri selectedVideoUri;
     private String videoFilePath;
     
     private Uri selectedIntroUri;
     private String introFilePath;
+    
+    private Uri selectedMusicUri;
+    private String musicFilePath;
     
     private TextView tvSelectedVideo;
     private CheckBox cbFastMode;
@@ -53,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvOverlayLabel;
     private Button btnSelectIntro;
     private TextView tvSelectedIntro;
+    private Button btnSelectMusic;
+    private TextView tvSelectedMusic;
     private Button btnRotateLeft, btnRotateRight;
     private Button btnProcess;
     private ProgressBar progressBar;
@@ -82,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
         tvOverlayLabel = findViewById(R.id.tvOverlayLabel);
         btnSelectIntro = findViewById(R.id.btnSelectIntro);
         tvSelectedIntro = findViewById(R.id.tvSelectedIntro);
+        btnSelectMusic = findViewById(R.id.btnSelectMusic);
+        tvSelectedMusic = findViewById(R.id.tvSelectedMusic);
         btnRotateLeft = findViewById(R.id.btnRotateLeft);
         btnRotateRight = findViewById(R.id.btnRotateRight);
         btnProcess = findViewById(R.id.btnProcess);
@@ -126,14 +134,18 @@ public class MainActivity extends AppCompatActivity {
         // Select intro video button
         btnSelectIntro.setOnClickListener(v -> openIntroPicker());
         
+        // Select background music button
+        btnSelectMusic.setOnClickListener(v -> openMusicPicker());
+        
         // Fast mode checkbox listener
         cbFastMode.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if (isChecked) {
-                // Fast mode: disable resolution, speed, overlay, and intro
+                // Fast mode: disable resolution, speed, overlay, intro, and music
                 spinnerResolution.setEnabled(false);
                 spinnerSpeed.setEnabled(false);
                 etOverlayText.setEnabled(false);
                 btnSelectIntro.setEnabled(false);
+                btnSelectMusic.setEnabled(false);
                 tvResolutionLabel.setEnabled(false);
                 tvSpeedLabel.setEnabled(false);
                 tvOverlayLabel.setEnabled(false);
@@ -145,6 +157,7 @@ public class MainActivity extends AppCompatActivity {
                 spinnerSpeed.setEnabled(true);
                 etOverlayText.setEnabled(true);
                 btnSelectIntro.setEnabled(true);
+                btnSelectMusic.setEnabled(true);
                 tvResolutionLabel.setEnabled(true);
                 tvSpeedLabel.setEnabled(true);
                 tvOverlayLabel.setEnabled(true);
@@ -205,6 +218,12 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, REQUEST_CODE_INTRO);
     }
     
+    private void openMusicPicker() {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("audio/*");
+        startActivityForResult(intent, REQUEST_CODE_MUSIC);
+    }
+    
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -228,6 +247,16 @@ public class MainActivity extends AppCompatActivity {
                 
                 // Copy to cache for processing
                 copyIntroToCache();
+            }
+        } else if (requestCode == REQUEST_CODE_MUSIC && resultCode == RESULT_OK && data != null) {
+            selectedMusicUri = data.getData();
+            if (selectedMusicUri != null) {
+                // Get music file name
+                String musicName = getFileName(selectedMusicUri);
+                tvSelectedMusic.setText(getString(R.string.music_selected, musicName));
+                
+                // Copy to cache for processing
+                copyMusicToCache();
             }
         }
     }
@@ -319,6 +348,49 @@ public class MainActivity extends AppCompatActivity {
                 runOnUiThread(() -> {
                     Toast.makeText(this, "Error loading intro: " + e.getMessage(), 
                         Toast.LENGTH_LONG).show();
+                });
+            }
+        }).start();
+    }
+    
+    private void copyMusicToCache() {
+        new Thread(() -> {
+            try {
+                // Determine file extension from URI
+                String fileName = getFileName(selectedMusicUri);
+                String extension = ".mp3";
+                if (fileName != null && fileName.contains(".")) {
+                    extension = fileName.substring(fileName.lastIndexOf("."));
+                }
+                
+                File cacheFile = new File(getCacheDir(), "background_music" + extension);
+                
+                InputStream inputStream = getContentResolver().openInputStream(selectedMusicUri);
+                FileOutputStream outputStream = new FileOutputStream(cacheFile);
+                
+                byte[] buffer = new byte[8192];
+                int length;
+                while ((length = inputStream.read(buffer)) > 0) {
+                    outputStream.write(buffer, 0, length);
+                }
+                
+                inputStream.close();
+                outputStream.close();
+                
+                musicFilePath = cacheFile.getAbsolutePath();
+                
+                runOnUiThread(() -> {
+                    Toast.makeText(this, "Background music ready", Toast.LENGTH_SHORT).show();
+                });
+                
+            } catch (Exception e) {
+                e.printStackTrace();
+                runOnUiThread(() -> {
+                    Toast.makeText(this, "Error loading music: " + e.getMessage(), 
+                        Toast.LENGTH_LONG).show();
+                    // Reset music selection on error
+                    musicFilePath = null;
+                    tvSelectedMusic.setText(R.string.no_music_selected);
                 });
             }
         }).start();
@@ -523,14 +595,26 @@ public class MainActivity extends AppCompatActivity {
                 }
                 
                 if (shouldContinue) {
+                    // Determine final output path
+                    String videoProcessOutput = outputPath;
+                    
+                    // If we have background music, we need a temporary processed video
+                    if (musicFilePath != null) {
+                        File tempProcessed = new File(getCacheDir(), "temp_processed_" + System.currentTimeMillis() + ".mp4");
+                        videoProcessOutput = tempProcessed.getAbsolutePath();
+                    }
+                    
+                    final String finalVideoOutput = videoProcessOutput;
+                    
                     runOnUiThread(() -> tvProgress.setText(
                         String.format("Full Mode: %dx%d → %dx%d (%.1fx speed)", 
                             originalWidth, originalHeight, finalWidth, finalHeight, finalSpeed)
                     ));
                     
+                    // Step 1: Process video (rotation/scaling/overlay/speed)
                     success = VideoProcessorOptimized.processVideoOptimized(
                         processingInput,
-                        outputPath,
+                        finalVideoOutput,
                         currentRotation,
                         targetWidth,
                         targetHeight,
@@ -538,8 +622,16 @@ public class MainActivity extends AppCompatActivity {
                         speed,
                         (progress, message) -> runOnUiThread(() -> {
                             if (progress >= 0) {
-                                // If intro was added, offset progress to 50-100%
-                                int displayProgress = (introFilePath != null) ? (50 + progress / 2) : progress;
+                                // Calculate progress based on whether we have music
+                                int displayProgress;
+                                if (musicFilePath != null) {
+                                    // 0-70% for video processing, 70-100% for audio replacement
+                                    int baseProgress = (introFilePath != null) ? 50 : 0;
+                                    displayProgress = baseProgress + (progress * 7 / 10 * (100 - baseProgress) / 100);
+                                } else {
+                                    // Normal progress calculation
+                                    displayProgress = (introFilePath != null) ? (50 + progress / 2) : progress;
+                                }
                                 progressBar.setProgress(displayProgress);
                                 tvProgress.setText(message);
                             } else {
@@ -547,6 +639,54 @@ public class MainActivity extends AppCompatActivity {
                             }
                         })
                     );
+                    
+                    // Step 2: Replace audio if background music is selected
+                    if (success && musicFilePath != null) {
+                        runOnUiThread(() -> tvProgress.setText("Replacing audio with background music..."));
+                        
+                        success = AudioReplacer.replaceAudio(
+                            finalVideoOutput,
+                            musicFilePath,
+                            outputPath,
+                            (progress, message) -> runOnUiThread(() -> {
+                                if (progress >= 0) {
+                                    // Map audio progress to 70-100%
+                                    int baseProgress = (introFilePath != null) ? 50 : 0;
+                                    int videoProgress = 70 * (100 - baseProgress) / 100;
+                                    int audioProgress = progress * 30 / 100 * (100 - baseProgress) / 100;
+                                    int displayProgress = baseProgress + videoProgress + audioProgress;
+                                    progressBar.setProgress(displayProgress);
+                                    tvProgress.setText(message);
+                                } else {
+                                    // Audio replacement failed, but video is processed
+                                    // Keep the video without audio replacement
+                                    Toast.makeText(MainActivity.this, 
+                                        "Audio replacement failed, keeping original audio", 
+                                        Toast.LENGTH_LONG).show();
+                                }
+                            })
+                        );
+                        
+                        // Clean up temporary processed video
+                        if (!success) {
+                            // If audio replacement failed, copy temp video to output
+                            File tempFile = new File(finalVideoOutput);
+                            File outputFileObj = new File(outputPath);
+                            try {
+                                java.nio.file.Files.copy(
+                                    tempFile.toPath(), 
+                                    outputFileObj.toPath(), 
+                                    java.nio.file.StandardCopyOption.REPLACE_EXISTING
+                                );
+                                success = true; // Still consider it success since video is processed
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        }
+                        
+                        // Delete temp file
+                        new File(finalVideoOutput).delete();
+                    }
                 }
             }
             
