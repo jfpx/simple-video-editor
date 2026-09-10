@@ -95,6 +95,8 @@ public class MainActivity extends AppCompatActivity {
     private int currentRotation = 0;
     private int originalWidth = 0;
     private int originalHeight = 0;
+    private long videoDurationMs = 0;  // Video duration in milliseconds
+    private Bitmap currentThumbnail = null;  // Current thumbnail for rotation
     
     private ActivityResultLauncher<String> requestPermissionLauncher;
     
@@ -182,6 +184,28 @@ public class MainActivity extends AppCompatActivity {
         // Setup trimming checkbox listener
         cbEnableTrim.setOnCheckedChangeListener((buttonView, isChecked) -> {
             layoutTrimControls.setVisibility(isChecked ? View.VISIBLE : View.GONE);
+        });
+        
+        // Setup trim start listener - update thumbnail when changed
+        etTrimStart.addTextChangedListener(new android.text.TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Update thumbnail to show trim start time
+                if (videoFilePath != null && s.length() > 0) {
+                    try {
+                        float trimStart = Float.parseFloat(s.toString().trim());
+                        extractVideoThumbnail(trimStart);
+                    } catch (NumberFormatException e) {
+                        // Invalid input, ignore
+                    }
+                }
+            }
+            
+            @Override
+            public void afterTextChanged(android.text.Editable s) {}
         });
         
         // Setup volume checkbox listener
@@ -272,11 +296,13 @@ public class MainActivity extends AppCompatActivity {
         btnRotateLeft.setOnClickListener(v -> {
             currentRotation = (currentRotation - 90 + 360) % 360;
             updateRotationDisplay();
+            updateThumbnailRotation();  // Update thumbnail rotation
         });
         
         btnRotateRight.setOnClickListener(v -> {
             currentRotation = (currentRotation + 90) % 360;
             updateRotationDisplay();
+            updateThumbnailRotation();  // Update thumbnail rotation
         });
         
         // Process button
@@ -505,6 +531,7 @@ public class MainActivity extends AppCompatActivity {
             
             String widthStr = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH);
             String heightStr = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT);
+            String durationStr = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
             
             if (widthStr != null && heightStr != null) {
                 originalWidth = Integer.parseInt(widthStr);
@@ -516,6 +543,23 @@ public class MainActivity extends AppCompatActivity {
                 });
             }
             
+            if (durationStr != null) {
+                videoDurationMs = Long.parseLong(durationStr);
+                float durationSec = videoDurationMs / 1000.0f;
+                
+                runOnUiThread(() -> {
+                    // Set trim end to video duration
+                    etTrimEnd.setText(String.format("%.1f", durationSec));
+                    
+                    // Update video info to include duration
+                    String currentText = tvSelectedVideo.getText().toString();
+                    int minutes = (int) (durationSec / 60);
+                    int seconds = (int) (durationSec % 60);
+                    String durationInfo = String.format(" [%d:%02d]", minutes, seconds);
+                    tvSelectedVideo.setText(currentText + durationInfo);
+                });
+            }
+            
             retriever.release();
         } catch (Exception e) {
             e.printStackTrace();
@@ -524,27 +568,63 @@ public class MainActivity extends AppCompatActivity {
     
     /**
      * Extract video thumbnail for preview
+     * @param timeSeconds Time in seconds to extract (default 0)
+     */
+    private void extractVideoThumbnail(float timeSeconds) {
+        new Thread(() -> {
+            try {
+                MediaMetadataRetriever retriever = new MediaMetadataRetriever();
+                retriever.setDataSource(videoFilePath);
+                
+                // Get frame at specified time (in microseconds)
+                long timeMicros = (long) (timeSeconds * 1000000);
+                Bitmap thumbnail = retriever.getFrameAtTime(timeMicros);
+                
+                if (thumbnail != null) {
+                    currentThumbnail = thumbnail;
+                    runOnUiThread(() -> {
+                        updateThumbnailRotation();
+                        ivVideoThumbnail.setVisibility(View.VISIBLE);
+                    });
+                }
+                
+                retriever.release();
+            } catch (Exception e) {
+                e.printStackTrace();
+                // Thumbnail extraction failed, but don't block processing
+            }
+        }).start();
+    }
+    
+    /**
+     * Extract video thumbnail at default position (0 seconds)
      */
     private void extractVideoThumbnail() {
-        try {
-            MediaMetadataRetriever retriever = new MediaMetadataRetriever();
-            retriever.setDataSource(videoFilePath);
-            
-            // Get frame at 1 second (or first frame if video < 1s)
-            Bitmap thumbnail = retriever.getFrameAtTime(1000000); // 1 second in microseconds
-            
-            if (thumbnail != null) {
-                runOnUiThread(() -> {
-                    ivVideoThumbnail.setImageBitmap(thumbnail);
-                    ivVideoThumbnail.setVisibility(View.VISIBLE);
-                });
-            }
-            
-            retriever.release();
-        } catch (Exception e) {
-            e.printStackTrace();
-            // Thumbnail extraction failed, but don't block processing
+        extractVideoThumbnail(0.0f);
+    }
+    
+    /**
+     * Update thumbnail rotation based on currentRotation
+     */
+    private void updateThumbnailRotation() {
+        if (currentThumbnail == null) return;
+        
+        Bitmap rotatedBitmap = currentThumbnail;
+        if (currentRotation != 0) {
+            android.graphics.Matrix matrix = new android.graphics.Matrix();
+            matrix.postRotate(currentRotation);
+            rotatedBitmap = Bitmap.createBitmap(
+                currentThumbnail, 0, 0,
+                currentThumbnail.getWidth(),
+                currentThumbnail.getHeight(),
+                matrix, true
+            );
         }
+        
+        final Bitmap finalBitmap = rotatedBitmap;
+        runOnUiThread(() -> {
+            ivVideoThumbnail.setImageBitmap(finalBitmap);
+        });
     }
     
     private void updateRotationDisplay() {
@@ -1155,8 +1235,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private void showError(String title, Throwable error) {
         runOnUiThread(() -> {
-            // Show brief toast
-            Toast.makeText(this, title, Toast.LENGTH_LONG).show();
+            // Show brief toast with only title (no long error message)
+            Toast.makeText(this, title + " - See details below", Toast.LENGTH_SHORT).show();
             
             // Show detailed error in scrollable text view
             StringWriter sw = new StringWriter();
@@ -1164,9 +1244,23 @@ public class MainActivity extends AppCompatActivity {
             error.printStackTrace(pw);
             String stackTrace = sw.toString();
             
-            String fullError = title + "\n\n" + error.getMessage() + "\n\n" + stackTrace;
+            // Format error message
+            String errorMsg = error.getMessage();
+            if (errorMsg == null || errorMsg.isEmpty()) {
+                errorMsg = error.getClass().getSimpleName();
+            }
+            
+            String fullError = "❌ " + title + "\n\n" +
+                              "Error: " + errorMsg + "\n\n" +
+                              "Stack Trace:\n" + stackTrace;
+            
             tvErrorDetails.setText(fullError);
             tvErrorDetails.setVisibility(View.VISIBLE);
+            
+            // Scroll to error details
+            tvErrorDetails.post(() -> {
+                tvErrorDetails.requestFocus();
+            });
         });
     }
     
