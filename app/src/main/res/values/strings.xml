@@ -22,7 +22,7 @@
     <!-- New strings for optimization features -->
     <string name="processing_mode">Processing Mode</string>
     <string name="fast_mode">⚡ Fast Mode (Rotation Only)</string>
-    <string name="fast_mode_hint">✓ Fast Mode: Instant rotation by modifying metadata (no re-encoding)\n⚠ Full Mode: Slower but supports resolution + text overlay</string>
+    <string name="fast_mode_hint">⚠️ Fast Mode: Only rotation applied (trim/volume/color ignored)\n✓ Full Mode: All effects applied (rotation/trim/volume/color adjust)</string>
     <string name="full_mode_hint">⚙ Full Mode: Optimized processing with rotation + scaling + text overlay</string>
     <string name="output_resolution">Output Resolution</string>
     <string name="overlay_text">Text Overlay (Optional)</string>
