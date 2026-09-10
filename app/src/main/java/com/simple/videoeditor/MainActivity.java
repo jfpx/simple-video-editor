@@ -782,6 +782,36 @@ public class MainActivity extends AppCompatActivity {
         
         boolean isFastMode = cbFastMode.isChecked();
         
+        // Read all configuration values for debug display
+        float trimStart = 0.0f;
+        float trimEnd = 0.0f;
+        if (cbEnableTrim.isChecked()) {
+            try {
+                trimStart = Float.parseFloat(etTrimStart.getText().toString().trim());
+                trimEnd = Float.parseFloat(etTrimEnd.getText().toString().trim());
+            } catch (NumberFormatException e) {
+                // Will be caught later in validation
+            }
+        }
+        
+        float volumeMultiplier = 1.0f;
+        if (cbAdjustVolume.isChecked()) {
+            volumeMultiplier = getSelectedVolume();
+        }
+        
+        float brightness = 0.0f;
+        float contrast = 1.0f;
+        float saturation = 1.0f;
+        if (cbColorAdjust.isChecked()) {
+            try {
+                brightness = Float.parseFloat(etBrightness.getText().toString().trim());
+                contrast = Float.parseFloat(etContrast.getText().toString().trim());
+                saturation = Float.parseFloat(etSaturation.getText().toString().trim());
+            } catch (NumberFormatException e) {
+                // Use default values
+            }
+        }
+        
         // Build debug info display
         StringBuilder debugInfo = new StringBuilder();
         debugInfo.append("📋 Processing Configuration:\n");
