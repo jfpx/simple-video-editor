@@ -61,6 +61,63 @@
                 android:textIsSelectable="true" />
         </ScrollView>
 
+        <!-- Success Display Area -->
+        <LinearLayout
+            android:id="@+id/layoutSuccessContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#E8F5E9"
+            android:padding="12dp"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp">
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="✓ Video Processing Complete"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32"
+                android:layout_marginBottom="8dp" />
+            
+            <TextView
+                android:id="@+id/tvSuccessTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="14sp"
+                android:textColor="#2E7D32"
+                android:layout_marginBottom="8dp" />
+            
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Output file:"
+                android:textSize="12sp"
+                android:textColor="#1B5E20"
+                android:textStyle="bold"
+                android:layout_marginBottom="4dp" />
+            
+            <TextView
+                android:id="@+id/tvOutputPath"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="11sp"
+                android:textColor="#1B5E20"
+                android:fontFamily="monospace"
+                android:textIsSelectable="true"
+                android:layout_marginBottom="8dp" />
+            
+            <Button
+                android:id="@+id/btnOpenOutputFolder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Open Folder"
+                android:textSize="12sp" />
+        </LinearLayout>
+
         <!-- Processing Mode Section -->
         <TextView
             android:layout_width="match_parent"
