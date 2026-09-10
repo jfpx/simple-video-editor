@@ -24,9 +24,35 @@
             android:layout_height="wrap_content"
             android:text="No video selected"
             android:textSize="14sp"
-            android:layout_marginBottom="24dp"
+            android:layout_marginBottom="8dp"
             android:padding="8dp"
             android:background="#F0F0F0" />
+
+        <!-- Video Thumbnail Preview -->
+        <ImageView
+            android:id="@+id/ivVideoThumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:background="#000000"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="Video thumbnail" />
+
+        <!-- Error Display Area -->
+        <TextView
+            android:id="@+id/tvErrorDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="11sp"
+            android:textColor="#D32F2F"
+            android:padding="8dp"
+            android:background="#FFEBEE"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="monospace"
+            android:textIsSelectable="true" />
 
         <!-- Processing Mode Section -->
         <TextView

@@ -81,6 +81,7 @@
     <string name="volume_adjustment">Volume Adjustment</string>
     <string name="enable_volume_adjustment">🔊 Adjust Volume</string>
     <string name="volume_level">Volume Level:</string>
+    <string name="volume_0x">0% (Mute)</string>
     <string name="volume_0_5x">50% (Half volume)</string>
     <string name="volume_0_75x">75%</string>
     <string name="volume_1_0x">100% (Original)</string>

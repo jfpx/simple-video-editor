@@ -10,6 +10,7 @@
     </string-array>
     
     <string-array name="volume_options">
+        <item>@string/volume_0x</item>
         <item>@string/volume_0_5x</item>
         <item>@string/volume_0_75x</item>
         <item>@string/volume_1_0x</item>

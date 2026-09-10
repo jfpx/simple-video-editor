@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.media.MediaMetadataRetriever;
 import android.net.Uri;
 import android.os.Build;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
@@ -29,6 +31,8 @@ import androidx.core.content.ContextCompat;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
 public class MainActivity extends AppCompatActivity {
     
@@ -46,6 +50,8 @@ public class MainActivity extends AppCompatActivity {
     private String musicFilePath;
     
     private TextView tvSelectedVideo;
+    private ImageView ivVideoThumbnail;
+    private TextView tvErrorDetails;
     private CheckBox cbFastMode;
     private TextView tvModeHint;
     private EditText etCustomAngle;
@@ -102,6 +108,8 @@ public class MainActivity extends AppCompatActivity {
         
         // Initialize views
         tvSelectedVideo = findViewById(R.id.tvSelectedVideo);
+        ivVideoThumbnail = findViewById(R.id.ivVideoThumbnail);
+        tvErrorDetails = findViewById(R.id.tvErrorDetails);
         cbFastMode = findViewById(R.id.cbFastMode);
         tvModeHint = findViewById(R.id.tvModeHint);
         etCustomAngle = findViewById(R.id.etCustomAngle);
@@ -166,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
                 R.array.volume_options, android.R.layout.simple_spinner_item);
         volumeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerVolume.setAdapter(volumeAdapter);
-        spinnerVolume.setSelection(2); // Default to 100% (Original)
+        spinnerVolume.setSelection(0); // Default to 0% (Mute)
         
         // Setup intro template spinner
         setupIntroTemplateSpinner();
@@ -396,6 +404,9 @@ public class MainActivity extends AppCompatActivity {
                 // Extract video metadata
                 extractVideoMetadata();
                 
+                // Extract and display thumbnail
+                extractVideoThumbnail();
+                
                 runOnUiThread(() -> {
                     btnProcess.setEnabled(true);
                     Toast.makeText(this, "Video ready for processing", Toast.LENGTH_SHORT).show();
@@ -511,6 +522,31 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     
+    /**
+     * Extract video thumbnail for preview
+     */
+    private void extractVideoThumbnail() {
+        try {
+            MediaMetadataRetriever retriever = new MediaMetadataRetriever();
+            retriever.setDataSource(videoFilePath);
+            
+            // Get frame at 1 second (or first frame if video < 1s)
+            Bitmap thumbnail = retriever.getFrameAtTime(1000000); // 1 second in microseconds
+            
+            if (thumbnail != null) {
+                runOnUiThread(() -> {
+                    ivVideoThumbnail.setImageBitmap(thumbnail);
+                    ivVideoThumbnail.setVisibility(View.VISIBLE);
+                });
+            }
+            
+            retriever.release();
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Thumbnail extraction failed, but don't block processing
+        }
+    }
+    
     private void updateRotationDisplay() {
         String rotationText = "Current rotation: " + currentRotation + "°";
         if (currentRotation == 90) {
@@ -539,13 +575,14 @@ public class MainActivity extends AppCompatActivity {
     private float getSelectedVolume() {
         int position = spinnerVolume.getSelectedItemPosition();
         switch (position) {
-            case 0: return 0.5f;   // 50%
-            case 1: return 0.75f;  // 75%
-            case 2: return 1.0f;   // 100%
-            case 3: return 1.25f;  // 125%
-            case 4: return 1.5f;   // 150%
-            case 5: return 2.0f;   // 200%
-            case 6: return 3.0f;   // 300%
+            case 0: return 0.0f;   // 0% (Mute)
+            case 1: return 0.5f;   // 50%
+            case 2: return 0.75f;  // 75%
+            case 3: return 1.0f;   // 100%
+            case 4: return 1.25f;  // 125%
+            case 5: return 1.5f;   // 150%
+            case 6: return 2.0f;   // 200%
+            case 7: return 3.0f;   // 300%
             default: return 1.0f;
         }
     }
@@ -555,6 +592,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Please select a video first", Toast.LENGTH_SHORT).show();
             return;
         }
+        
+        // Clear previous errors
+        clearError();
         
         // Validate trim times if trimming is enabled
         if (cbEnableTrim.isChecked()) {
@@ -610,6 +650,9 @@ public class MainActivity extends AppCompatActivity {
         new Thread(() -> {
             boolean success = false;  // Initialize to avoid compilation error
             long startTime = System.currentTimeMillis();
+            Exception processingError = null;  // Track any exception
+            
+            try {
             
             if (isFastMode) {
                 // Fast mode: only rotation
@@ -923,10 +966,17 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
             
+            } catch (Exception e) {
+                success = false;
+                processingError = e;
+                e.printStackTrace();
+            }
+            
             long elapsedTime = System.currentTimeMillis() - startTime;
             String timeStr = String.format("%.1f seconds", elapsedTime / 1000.0);
             
             boolean finalSuccess = success;
+            Exception finalError = processingError;
             runOnUiThread(() -> {
                 progressBar.setVisibility(View.GONE);
                 tvProgress.setVisibility(View.GONE);
@@ -941,7 +991,11 @@ public class MainActivity extends AppCompatActivity {
                         "✓ Video saved in " + timeStr + "\n" + outputFile.getAbsolutePath(), 
                         Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(MainActivity.this, "Processing failed", Toast.LENGTH_LONG).show();
+                    if (finalError != null) {
+                        showError("Processing failed", finalError);
+                    } else {
+                        Toast.makeText(MainActivity.this, "Processing failed", Toast.LENGTH_LONG).show();
+                    }
                 }
             });
         }).start();
@@ -1094,5 +1148,33 @@ public class MainActivity extends AppCompatActivity {
         });
         builder.setNegativeButton("Close", null);
         builder.show();
+    }
+    
+    /**
+     * Display detailed error message with stack trace
+     */
+    private void showError(String title, Throwable error) {
+        runOnUiThread(() -> {
+            // Show brief toast
+            Toast.makeText(this, title, Toast.LENGTH_LONG).show();
+            
+            // Show detailed error in scrollable text view
+            StringWriter sw = new StringWriter();
+            PrintWriter pw = new PrintWriter(sw);
+            error.printStackTrace(pw);
+            String stackTrace = sw.toString();
+            
+            String fullError = title + "\n\n" + error.getMessage() + "\n\n" + stackTrace;
+            tvErrorDetails.setText(fullError);
+            tvErrorDetails.setVisibility(View.VISIBLE);
+        });
+    }
+    
+    /**
+     * Clear error display
+     */
+    private void clearError() {
+        tvErrorDetails.setText("");
+        tvErrorDetails.setVisibility(View.GONE);
     }
 }
