@@ -74,6 +74,18 @@ public class MainActivity extends AppCompatActivity {
     private View layoutVolumeControls;
     private Spinner spinnerVolume;
     
+    // Intro template controls
+    private CheckBox cbEnableIntro;
+    private View layoutIntroControls;
+    private Spinner spinnerIntroTemplate;
+    private EditText etIntroText;
+    private Button btnSaveTemplate;
+    private Button btnManageTemplates;
+    private TextView tvTemplatePreview;
+    
+    private IntroTemplateManager templateManager;
+    private IntroTemplate currentTemplate;
+    
     private int currentRotation = 0;
     private int originalWidth = 0;
     private int originalHeight = 0;
@@ -84,6 +96,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        // Initialize template manager
+        templateManager = new IntroTemplateManager(this);
         
         // Initialize views
         tvSelectedVideo = findViewById(R.id.tvSelectedVideo);
@@ -117,6 +132,15 @@ public class MainActivity extends AppCompatActivity {
         layoutVolumeControls = findViewById(R.id.layoutVolumeControls);
         spinnerVolume = findViewById(R.id.spinnerVolume);
         
+        // Intro template controls
+        cbEnableIntro = findViewById(R.id.cbEnableIntro);
+        layoutIntroControls = findViewById(R.id.layoutIntroControls);
+        spinnerIntroTemplate = findViewById(R.id.spinnerIntroTemplate);
+        etIntroText = findViewById(R.id.etIntroText);
+        btnSaveTemplate = findViewById(R.id.btnSaveTemplate);
+        btnManageTemplates = findViewById(R.id.btnManageTemplates);
+        tvTemplatePreview = findViewById(R.id.tvTemplatePreview);
+        
         Button btnSelectVideo = findViewById(R.id.btnSelectVideo);
         
         // Setup resolution spinner
@@ -144,6 +168,9 @@ public class MainActivity extends AppCompatActivity {
         spinnerVolume.setAdapter(volumeAdapter);
         spinnerVolume.setSelection(2); // Default to 100% (Original)
         
+        // Setup intro template spinner
+        setupIntroTemplateSpinner();
+        
         // Setup trimming checkbox listener
         cbEnableTrim.setOnCheckedChangeListener((buttonView, isChecked) -> {
             layoutTrimControls.setVisibility(isChecked ? View.VISIBLE : View.GONE);
@@ -152,6 +179,14 @@ public class MainActivity extends AppCompatActivity {
         // Setup volume checkbox listener
         cbEnableVolume.setOnCheckedChangeListener((buttonView, isChecked) -> {
             layoutVolumeControls.setVisibility(isChecked ? View.VISIBLE : View.GONE);
+        });
+        
+        // Setup intro template checkbox listener
+        cbEnableIntro.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            layoutIntroControls.setVisibility(isChecked ? View.VISIBLE : View.GONE);
+            if (isChecked && currentTemplate != null) {
+                updateTemplatePreview();
+            }
         });
         
         // Setup permission launcher
@@ -174,6 +209,22 @@ public class MainActivity extends AppCompatActivity {
         
         // Select background music button
         btnSelectMusic.setOnClickListener(v -> openMusicPicker());
+        
+        // Intro text change listener (update preview)
+        etIntroText.addTextChangedListener(new android.text.TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (cbEnableIntro.isChecked()) {
+                    updateTemplatePreview();
+                }
+            }
+            
+            @Override
+            public void afterTextChanged(android.text.Editable s) {}
+        });
         
         // Fast mode checkbox listener
         cbFastMode.setOnCheckedChangeListener((buttonView, isChecked) -> {
@@ -892,5 +943,154 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }).start();
+    }
+    
+    /**
+     * 设置片头模板 Spinner
+     */
+    private void setupIntroTemplateSpinner() {
+        String[] templateNames = templateManager.getTemplateNames();
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, 
+            android.R.layout.simple_spinner_item, templateNames);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerIntroTemplate.setAdapter(adapter);
+        
+        // 加载最后使用的模板
+        currentTemplate = templateManager.getLastUsedTemplate();
+        if (currentTemplate != null) {
+            etIntroText.setText(currentTemplate.getText());
+            updateTemplatePreview();
+            
+            // 选中对应的模板
+            for (int i = 0; i < templateNames.length; i++) {
+                if (templateNames[i].equals(currentTemplate.getName())) {
+                    spinnerIntroTemplate.setSelection(i);
+                    break;
+                }
+            }
+        }
+        
+        // 模板选择监听
+        spinnerIntroTemplate.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(android.widget.AdapterView<?> parent, android.view.View view, int position, long id) {
+                String templateName = (String) parent.getItemAtPosition(position);
+                currentTemplate = templateManager.getTemplate(templateName);
+                if (currentTemplate != null) {
+                    etIntroText.setText(currentTemplate.getText());
+                    templateManager.setLastUsedTemplate(templateName);
+                    updateTemplatePreview();
+                }
+            }
+            
+            @Override
+            public void onNothingSelected(android.widget.AdapterView<?> parent) {
+            }
+        });
+        
+        // 保存模板按钮
+        btnSaveTemplate.setOnClickListener(v -> showSaveTemplateDialog());
+        
+        // 管理模板按钮
+        btnManageTemplates.setOnClickListener(v -> showManageTemplatesDialog());
+    }
+    
+    /**
+     * 更新模板预览
+     */
+    private void updateTemplatePreview() {
+        if (currentTemplate == null) return;
+        
+        // 应用模板样式到预览
+        tvTemplatePreview.setBackgroundColor(currentTemplate.getBackgroundColor());
+        tvTemplatePreview.setTextColor(currentTemplate.getTextColor());
+        tvTemplatePreview.setTextSize(currentTemplate.getTextSize() / 2f); // 缩放显示
+        
+        // 设置字体风格
+        switch (currentTemplate.getFontStyle()) {
+            case "bold":
+                tvTemplatePreview.setTypeface(android.graphics.Typeface.DEFAULT_BOLD);
+                break;
+            case "italic":
+                tvTemplatePreview.setTypeface(android.graphics.Typeface.create(android.graphics.Typeface.DEFAULT, android.graphics.Typeface.ITALIC));
+                break;
+            case "bold_italic":
+                tvTemplatePreview.setTypeface(android.graphics.Typeface.create(android.graphics.Typeface.DEFAULT, android.graphics.Typeface.BOLD_ITALIC));
+                break;
+            default:
+                tvTemplatePreview.setTypeface(android.graphics.Typeface.DEFAULT);
+        }
+        
+        String text = etIntroText.getText().toString().trim();
+        if (text.isEmpty()) {
+            text = "Preview";
+        }
+        tvTemplatePreview.setText(text);
+    }
+    
+    /**
+     * 显示保存模板对话框
+     */
+    private void showSaveTemplateDialog() {
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
+        builder.setTitle(R.string.save_as_template);
+        
+        final android.widget.EditText input = new android.widget.EditText(this);
+        input.setHint(R.string.enter_template_name);
+        if (currentTemplate != null) {
+            input.setText(currentTemplate.getName());
+        }
+        builder.setView(input);
+        
+        builder.setPositiveButton("Save", (dialog, which) -> {
+            String name = input.getText().toString().trim();
+            if (name.isEmpty()) {
+                Toast.makeText(this, "Template name required", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            
+            // 创建新模板或更新现有模板
+            IntroTemplate newTemplate = currentTemplate != null ? currentTemplate.copy() : new IntroTemplate();
+            newTemplate.setName(name);
+            newTemplate.setText(etIntroText.getText().toString().trim());
+            
+            if (templateManager.saveTemplate(newTemplate)) {
+                Toast.makeText(this, R.string.template_saved, Toast.LENGTH_SHORT).show();
+                setupIntroTemplateSpinner(); // 刷新列表
+            } else {
+                Toast.makeText(this, "Failed to save template", Toast.LENGTH_SHORT).show();
+            }
+        });
+        
+        builder.setNegativeButton("Cancel", null);
+        builder.show();
+    }
+    
+    /**
+     * 显示管理模板对话框
+     */
+    private void showManageTemplatesDialog() {
+        String[] templateNames = templateManager.getTemplateNames();
+        
+        android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(this);
+        builder.setTitle(R.string.manage_templates);
+        builder.setItems(templateNames, (dialog, which) -> {
+            String selectedName = templateNames[which];
+            
+            // 显示删除确认
+            new android.app.AlertDialog.Builder(this)
+                .setTitle("Delete Template")
+                .setMessage(getString(R.string.confirm_delete_template, selectedName))
+                .setPositiveButton("Delete", (d, w) -> {
+                    if (templateManager.deleteTemplate(selectedName)) {
+                        Toast.makeText(this, R.string.template_deleted, Toast.LENGTH_SHORT).show();
+                        setupIntroTemplateSpinner(); // 刷新列表
+                    }
+                })
+                .setNegativeButton("Cancel", null)
+                .show();
+        });
+        builder.setNegativeButton("Close", null);
+        builder.show();
     }
 }

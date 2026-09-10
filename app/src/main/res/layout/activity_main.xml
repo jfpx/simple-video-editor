@@ -56,32 +56,96 @@
             android:background="#FFF3E0"
             android:layout_marginBottom="16dp" />
 
-        <!-- Intro Video Section -->
+        <!-- Intro Template Section -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/intro_video"
+            android:text="@string/intro_template"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_marginBottom="8dp" />
 
-        <Button
-            android:id="@+id/btnSelectIntro"
+        <CheckBox
+            android:id="@+id/cbEnableIntro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/select_intro"
-            android:textSize="14sp"
+            android:text="@string/enable_intro_template"
             android:layout_marginBottom="8dp" />
 
-        <TextView
-            android:id="@+id/tvSelectedIntro"
+        <LinearLayout
+            android:id="@+id/layoutIntroControls"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/no_intro_selected"
-            android:textSize="12sp"
-            android:layout_marginBottom="16dp"
-            android:padding="8dp"
-            android:background="#F0F0F0" />
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/select_template"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp" />
+
+            <Spinner
+                android:id="@+id/spinnerIntroTemplate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/intro_text"
+                android:textSize="14sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/etIntroText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/intro_text_hint"
+                android:inputType="text"
+                android:maxLines="2"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginBottom="8dp">
+
+                <Button
+                    android:id="@+id/btnSaveTemplate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/save_as_template"
+                    android:textSize="12sp"
+                    android:layout_marginEnd="4dp" />
+
+                <Button
+                    android:id="@+id/btnManageTemplates"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/manage_templates"
+                    android:textSize="12sp"
+                    android:layout_marginStart="4dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvTemplatePreview"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:text="@string/template_preview"
+                android:textSize="12sp"
+                android:padding="8dp"
+                android:gravity="center"
+                android:background="#F0F0F0"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
 
         <!-- Background Music Section -->
         <TextView

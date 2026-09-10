@@ -35,10 +35,19 @@
     <string name="estimated_time">Estimated time: %s</string>
     <string name="current_operation">%s - %d%%</string>
     
-    <!-- Intro Video -->
-    <string name="select_intro">Select Intro Video (Optional)</string>
-    <string name="no_intro_selected">No intro selected</string>
-    <string name="intro_video">Intro Video</string>
+    <!-- Intro Template -->
+    <string name="intro_template">Intro Template (Optional)</string>
+    <string name="enable_intro_template">📝 Enable Intro Template</string>
+    <string name="select_template">Template:</string>
+    <string name="intro_text">Intro Text:</string>
+    <string name="intro_text_hint">Enter intro text</string>
+    <string name="save_as_template">💾 Save as Template</string>
+    <string name="manage_templates">⚙️ Manage</string>
+    <string name="template_preview">Template Preview</string>
+    <string name="enter_template_name">Enter template name</string>
+    <string name="template_saved">Template saved</string>
+    <string name="template_deleted">Template deleted</string>
+    <string name="confirm_delete_template">Delete template "%s"?</string>
     
     <!-- Playback Speed -->
     <string name="playback_speed">Playback Speed</string>
