@@ -483,6 +483,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     
+    private float getSelectedVolume() {
+        int position = spinnerVolume.getSelectedItemPosition();
+        switch (position) {
+            case 0: return 0.5f;   // 50%
+            case 1: return 0.75f;  // 75%
+            case 2: return 1.0f;   // 100%
+            case 3: return 1.25f;  // 125%
+            case 4: return 1.5f;   // 150%
+            case 5: return 2.0f;   // 200%
+            case 6: return 3.0f;   // 300%
+            default: return 1.0f;
+        }
+    }
+    
     private void processVideo() {
         if (videoFilePath == null) {
             Toast.makeText(this, "Please select a video first", Toast.LENGTH_SHORT).show();
