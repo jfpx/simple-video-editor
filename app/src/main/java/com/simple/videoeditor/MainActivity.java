@@ -783,33 +783,24 @@ public class MainActivity extends AppCompatActivity {
         boolean isFastMode = cbFastMode.isChecked();
         
         // Read all configuration values for debug display
-        float trimStart = 0.0f;
-        float trimEnd = 0.0f;
+        final float debugTrimStart;
+        final float debugTrimEnd;
         if (cbEnableTrim.isChecked()) {
             try {
-                trimStart = Float.parseFloat(etTrimStart.getText().toString().trim());
-                trimEnd = Float.parseFloat(etTrimEnd.getText().toString().trim());
+                debugTrimStart = Float.parseFloat(etTrimStart.getText().toString().trim());
+                debugTrimEnd = Float.parseFloat(etTrimEnd.getText().toString().trim());
             } catch (NumberFormatException e) {
-                // Will be caught later in validation
+                debugTrimStart = 0.0f;
+                debugTrimEnd = 0.0f;
             }
+        } else {
+            debugTrimStart = 0.0f;
+            debugTrimEnd = 0.0f;
         }
         
         float volumeMultiplier = 1.0f;
-        if (cbAdjustVolume.isChecked()) {
+        if (cbEnableVolume.isChecked()) {
             volumeMultiplier = getSelectedVolume();
-        }
-        
-        float brightness = 0.0f;
-        float contrast = 1.0f;
-        float saturation = 1.0f;
-        if (cbColorAdjust.isChecked()) {
-            try {
-                brightness = Float.parseFloat(etBrightness.getText().toString().trim());
-                contrast = Float.parseFloat(etContrast.getText().toString().trim());
-                saturation = Float.parseFloat(etSaturation.getText().toString().trim());
-            } catch (NumberFormatException e) {
-                // Use default values
-            }
         }
         
         // Build debug info display
@@ -820,20 +811,14 @@ public class MainActivity extends AppCompatActivity {
         debugInfo.append("🔄 Rotation: ").append(currentRotation).append("°\n");
         debugInfo.append("\n✂️ Trim: ").append(cbEnableTrim.isChecked() ? "✅ Enabled" : "❌ Disabled").append("\n");
         if (cbEnableTrim.isChecked()) {
-            debugInfo.append("  ├─ Start: ").append(trimStart).append("s\n");
-            debugInfo.append("  └─ End: ").append(trimEnd).append("s\n");
+            debugInfo.append("  ├─ Start: ").append(debugTrimStart).append("s\n");
+            debugInfo.append("  └─ End: ").append(debugTrimEnd).append("s\n");
         }
-        debugInfo.append("\n🔊 Volume: ").append(cbAdjustVolume.isChecked() ? "✅ Enabled" : "❌ Disabled").append("\n");
-        if (cbAdjustVolume.isChecked()) {
+        debugInfo.append("\n🔊 Volume: ").append(cbEnableVolume.isChecked() ? "✅ Enabled" : "❌ Disabled").append("\n");
+        if (cbEnableVolume.isChecked()) {
             debugInfo.append("  └─ Multiplier: ").append(volumeMultiplier).append("x");
             if (volumeMultiplier == 0.0f) debugInfo.append(" (MUTED)");
             debugInfo.append("\n");
-        }
-        debugInfo.append("\n🎨 Color: ").append(cbColorAdjust.isChecked() ? "✅ Enabled" : "❌ Disabled").append("\n");
-        if (cbColorAdjust.isChecked()) {
-            debugInfo.append("  ├─ Brightness: ").append(brightness).append("\n");
-            debugInfo.append("  ├─ Contrast: ").append(contrast).append("\n");
-            debugInfo.append("  └─ Saturation: ").append(saturation).append("\n");
         }
         debugInfo.append("\n📁 Output:\n");
         debugInfo.append("  └─ ").append(outputFile.getAbsolutePath()).append("\n");
