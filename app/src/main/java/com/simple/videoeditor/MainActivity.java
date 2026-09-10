@@ -55,10 +55,10 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvResolutionLabel;
     private TextView tvSpeedLabel;
     private TextView tvOverlayLabel;
-    private Button btnSelectIntro;
-    private TextView tvSelectedIntro;
     private Button btnSelectMusic;
     private TextView tvSelectedMusic;
+    private Button btnSelectIntro;  // Keep old intro video feature
+    private TextView tvSelectedIntro;  // Keep old intro video feature
     private Button btnRotateLeft, btnRotateRight;
     private Button btnProcess;
     private ProgressBar progressBar;
@@ -111,8 +111,8 @@ public class MainActivity extends AppCompatActivity {
         tvResolutionLabel = findViewById(R.id.tvResolutionLabel);
         tvSpeedLabel = findViewById(R.id.tvSpeedLabel);
         tvOverlayLabel = findViewById(R.id.tvOverlayLabel);
-        btnSelectIntro = findViewById(R.id.btnSelectIntro);
-        tvSelectedIntro = findViewById(R.id.tvSelectedIntro);
+        btnSelectIntro = findViewById(R.id.btnSelectIntro);  // Old intro video button
+        tvSelectedIntro = findViewById(R.id.tvSelectedIntro);  // Old intro video text
         btnSelectMusic = findViewById(R.id.btnSelectMusic);
         tvSelectedMusic = findViewById(R.id.tvSelectedMusic);
         btnRotateLeft = findViewById(R.id.btnRotateLeft);
@@ -204,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
         // Select video button
         btnSelectVideo.setOnClickListener(v -> checkPermissionAndPickVideo());
         
-        // Select intro video button
+        // Select intro video button (old feature)
         btnSelectIntro.setOnClickListener(v -> openIntroPicker());
         
         // Select background music button
@@ -233,6 +233,7 @@ public class MainActivity extends AppCompatActivity {
                 spinnerResolution.setEnabled(false);
                 spinnerSpeed.setEnabled(false);
                 etOverlayText.setEnabled(false);
+                cbEnableIntro.setEnabled(false);
                 btnSelectIntro.setEnabled(false);
                 btnSelectMusic.setEnabled(false);
                 tvResolutionLabel.setEnabled(false);
@@ -245,6 +246,7 @@ public class MainActivity extends AppCompatActivity {
                 spinnerResolution.setEnabled(true);
                 spinnerSpeed.setEnabled(true);
                 etOverlayText.setEnabled(true);
+                cbEnableIntro.setEnabled(true);
                 btnSelectIntro.setEnabled(true);
                 btnSelectMusic.setEnabled(true);
                 tvResolutionLabel.setEnabled(true);
@@ -299,6 +301,12 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType("video/*");
         startActivityForResult(intent, VIDEO_PICK_CODE);
+    }
+    
+    private void openIntroPicker() {
+        Intent intent = new Intent(Intent.ACTION_PICK);
+        intent.setType("video/*");
+        startActivityForResult(intent, REQUEST_CODE_INTRO);
     }
     
     private void openIntroPicker() {

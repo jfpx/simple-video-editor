@@ -35,7 +35,12 @@
     <string name="estimated_time">Estimated time: %s</string>
     <string name="current_operation">%s - %d%%</string>
     
-    <!-- Intro Template -->
+    <!-- Intro Video (Old Feature) -->
+    <string name="select_intro">Select Intro Video (Optional)</string>
+    <string name="no_intro_selected">No intro selected</string>
+    <string name="intro_video">Intro Video</string>
+    
+    <!-- Intro Template (New Feature) -->
     <string name="intro_template">Intro Template (Optional)</string>
     <string name="enable_intro_template">📝 Enable Intro Template</string>
     <string name="select_template">Template:</string>

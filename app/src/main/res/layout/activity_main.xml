@@ -56,7 +56,34 @@
             android:background="#FFF3E0"
             android:layout_marginBottom="16dp" />
 
-        <!-- Intro Template Section -->
+        <!-- Intro Video Section (Old Feature - VideoMerger) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/intro_video"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnSelectIntro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/select_intro"
+            android:textSize="14sp"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/tvSelectedIntro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/no_intro_selected"
+            android:textSize="12sp"
+            android:layout_marginBottom="16dp"
+            android:padding="8dp"
+            android:background="#F0F0F0" />
+
+        <!-- Intro Template Section (New Feature) -->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
