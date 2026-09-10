@@ -40,19 +40,26 @@
             android:contentDescription="Video thumbnail" />
 
         <!-- Error Display Area -->
-        <TextView
-            android:id="@+id/tvErrorDetails"
+        <ScrollView
+            android:id="@+id/svErrorContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
-            android:textSize="11sp"
-            android:textColor="#D32F2F"
-            android:padding="8dp"
+            android:maxHeight="200dp"
             android:background="#FFEBEE"
             android:visibility="gone"
-            android:layout_marginBottom="16dp"
-            android:fontFamily="monospace"
-            android:textIsSelectable="true" />
+            android:layout_marginBottom="16dp">
+            
+            <TextView
+                android:id="@+id/tvErrorDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="11sp"
+                android:textColor="#D32F2F"
+                android:padding="8dp"
+                android:fontFamily="monospace"
+                android:textIsSelectable="true" />
+        </ScrollView>
 
         <!-- Processing Mode Section -->
         <TextView

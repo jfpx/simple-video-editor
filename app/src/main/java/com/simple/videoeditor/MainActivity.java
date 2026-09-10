@@ -18,6 +18,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvSelectedVideo;
     private ImageView ivVideoThumbnail;
     private TextView tvErrorDetails;
+    private ScrollView svErrorContainer;  // For scrolling error details
     private CheckBox cbFastMode;
     private TextView tvModeHint;
     private EditText etCustomAngle;
@@ -111,6 +113,7 @@ public class MainActivity extends AppCompatActivity {
         // Initialize views
         tvSelectedVideo = findViewById(R.id.tvSelectedVideo);
         ivVideoThumbnail = findViewById(R.id.ivVideoThumbnail);
+        svErrorContainer = findViewById(R.id.svErrorContainer);
         tvErrorDetails = findViewById(R.id.tvErrorDetails);
         cbFastMode = findViewById(R.id.cbFastMode);
         tvModeHint = findViewById(R.id.tvModeHint);
@@ -1255,11 +1258,11 @@ public class MainActivity extends AppCompatActivity {
                               "Stack Trace:\n" + stackTrace;
             
             tvErrorDetails.setText(fullError);
-            tvErrorDetails.setVisibility(View.VISIBLE);
+            svErrorContainer.setVisibility(View.VISIBLE);
             
             // Scroll to error details
-            tvErrorDetails.post(() -> {
-                tvErrorDetails.requestFocus();
+            svErrorContainer.post(() -> {
+                svErrorContainer.requestFocus();
             });
         });
     }
@@ -1269,6 +1272,6 @@ public class MainActivity extends AppCompatActivity {
      */
     private void clearError() {
         tvErrorDetails.setText("");
-        tvErrorDetails.setVisibility(View.GONE);
+        svErrorContainer.setVisibility(View.GONE);
     }
 }
