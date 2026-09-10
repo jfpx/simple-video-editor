@@ -92,7 +92,7 @@ public class AudioVolumeAdjuster {
                              audioFormat.getInteger(MediaFormat.KEY_BIT_RATE) : 128000;
                 
                 MediaFormat encoderFormat = MediaFormat.createAudioFormat("audio/mp4a-latm", sampleRate, channelCount);
-                encoderFormat.setInteger(MediaFormat.KEY_AAC_PROFILE, MediaCodec.AACObjectLC);
+                encoderFormat.setInteger(MediaFormat.KEY_AAC_PROFILE, 2); // AAC-LC = 2
                 encoderFormat.setInteger(MediaFormat.KEY_BIT_RATE, bitrate);
                 
                 audioEncoder = MediaCodec.createEncoderByType("audio/mp4a-latm");

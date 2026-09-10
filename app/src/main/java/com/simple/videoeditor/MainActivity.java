@@ -64,6 +64,16 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private TextView tvProgress;
     
+    // Trimming controls
+    private CheckBox cbEnableTrim;
+    private View layoutTrimControls;
+    private EditText etTrimStart, etTrimEnd;
+    
+    // Volume controls
+    private CheckBox cbEnableVolume;
+    private View layoutVolumeControls;
+    private Spinner spinnerVolume;
+    
     private int currentRotation = 0;
     private int originalWidth = 0;
     private int originalHeight = 0;
@@ -96,6 +106,17 @@ public class MainActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         tvProgress = findViewById(R.id.tvProgress);
         
+        // Trimming controls
+        cbEnableTrim = findViewById(R.id.cbEnableTrim);
+        layoutTrimControls = findViewById(R.id.layoutTrimControls);
+        etTrimStart = findViewById(R.id.etTrimStart);
+        etTrimEnd = findViewById(R.id.etTrimEnd);
+        
+        // Volume controls
+        cbEnableVolume = findViewById(R.id.cbEnableVolume);
+        layoutVolumeControls = findViewById(R.id.layoutVolumeControls);
+        spinnerVolume = findViewById(R.id.spinnerVolume);
+        
         Button btnSelectVideo = findViewById(R.id.btnSelectVideo);
         
         // Setup resolution spinner
@@ -115,6 +136,23 @@ public class MainActivity extends AppCompatActivity {
         speedAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerSpeed.setAdapter(speedAdapter);
         spinnerSpeed.setSelection(2); // Default to 1.0x (Normal)
+        
+        // Setup volume spinner
+        ArrayAdapter<CharSequence> volumeAdapter = ArrayAdapter.createFromResource(this,
+                R.array.volume_options, android.R.layout.simple_spinner_item);
+        volumeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerVolume.setAdapter(volumeAdapter);
+        spinnerVolume.setSelection(2); // Default to 100% (Original)
+        
+        // Setup trimming checkbox listener
+        cbEnableTrim.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            layoutTrimControls.setVisibility(isChecked ? View.VISIBLE : View.GONE);
+        });
+        
+        // Setup volume checkbox listener
+        cbEnableVolume.setOnCheckedChangeListener((buttonView, isChecked) -> {
+            layoutVolumeControls.setVisibility(isChecked ? View.VISIBLE : View.GONE);
+        });
         
         // Setup permission launcher
         requestPermissionLauncher = registerForActivityResult(
