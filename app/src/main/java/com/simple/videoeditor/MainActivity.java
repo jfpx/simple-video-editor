@@ -709,6 +709,7 @@ public class MainActivity extends AppCompatActivity {
         // Clear previous messages
         clearError();
         clearSuccess();
+        clearDebug();
         
         // Validate trim times if trimming is enabled
         if (cbEnableTrim.isChecked()) {
@@ -777,27 +778,51 @@ public class MainActivity extends AppCompatActivity {
         
         boolean isFastMode = cbFastMode.isChecked();
         
-        // Log configuration for debugging
-        Log.d("VideoProcess", "=== Processing Configuration ===");
-        Log.d("VideoProcess", "Rotation: " + currentRotation + "°");
-        Log.d("VideoProcess", "Trim enabled: " + cbEnableTrim.isChecked());
+        // Build debug info display
+        StringBuilder debugInfo = new StringBuilder();
+        debugInfo.append("📋 Processing Configuration:\n");
+        debugInfo.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
+        debugInfo.append("⚙️ Mode: ").append(isFastMode ? "⚡ Fast (rotation only)" : "🔄 Full (all effects)").append("\n");
+        debugInfo.append("🔄 Rotation: ").append(currentRotation).append("°\n");
+        debugInfo.append("\n✂️ Trim: ").append(cbEnableTrim.isChecked() ? "✅ Enabled" : "❌ Disabled").append("\n");
         if (cbEnableTrim.isChecked()) {
-            Log.d("VideoProcess", "Trim start: " + trimStart + "s");
-            Log.d("VideoProcess", "Trim end: " + trimEnd + "s");
+            debugInfo.append("  ├─ Start: ").append(trimStart).append("s\n");
+            debugInfo.append("  └─ End: ").append(trimEnd).append("s\n");
         }
-        Log.d("VideoProcess", "Color adjust enabled: " + cbColorAdjust.isChecked());
-        if (cbColorAdjust.isChecked()) {
-            Log.d("VideoProcess", "Brightness: " + brightness);
-            Log.d("VideoProcess", "Contrast: " + contrast);
-            Log.d("VideoProcess", "Saturation: " + saturation);
-        }
-        Log.d("VideoProcess", "Volume adjustment enabled: " + cbAdjustVolume.isChecked());
+        debugInfo.append("\n🔊 Volume: ").append(cbAdjustVolume.isChecked() ? "✅ Enabled" : "❌ Disabled").append("\n");
         if (cbAdjustVolume.isChecked()) {
-            Log.d("VideoProcess", "Volume multiplier: " + volumeMultiplier);
+            debugInfo.append("  └─ Multiplier: ").append(volumeMultiplier).append("x");
+            if (volumeMultiplier == 0.0f) debugInfo.append(" (MUTED)");
+            debugInfo.append("\n");
         }
-        Log.d("VideoProcess", "Fast mode: " + isFastMode);
-        Log.d("VideoProcess", "Output path: " + outputFile.getAbsolutePath());
-        Log.d("VideoProcess", "==============================");
+        debugInfo.append("\n🎨 Color: ").append(cbColorAdjust.isChecked() ? "✅ Enabled" : "❌ Disabled").append("\n");
+        if (cbColorAdjust.isChecked()) {
+            debugInfo.append("  ├─ Brightness: ").append(brightness).append("\n");
+            debugInfo.append("  ├─ Contrast: ").append(contrast).append("\n");
+            debugInfo.append("  └─ Saturation: ").append(saturation).append("\n");
+        }
+        debugInfo.append("\n📁 Output:\n");
+        debugInfo.append("  └─ ").append(outputFile.getAbsolutePath()).append("\n");
+        debugInfo.append("━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n");
+        
+        if (isFastMode) {
+            debugInfo.append("⚠️ WARNING: Fast Mode ignores trim/volume/color!\n");
+            debugInfo.append("   Uncheck Fast Mode to apply all effects.\n");
+        }
+        
+        final String debugText = debugInfo.toString();
+        
+        // Display debug info in UI
+        runOnUiThread(() -> {
+            tvDebugInfo.setText(debugText);
+            svDebugContainer.setVisibility(View.VISIBLE);
+            
+            // Auto-scroll to debug info
+            svDebugContainer.post(() -> svDebugContainer.requestFocus());
+        });
+        
+        // Also log to logcat
+        Log.d("VideoProcess", debugText);
         
         new Thread(() -> {
             boolean success = false;  // Initialize to avoid compilation error
@@ -1370,5 +1395,12 @@ public class MainActivity extends AppCompatActivity {
      */
     private void clearSuccess() {
         layoutSuccessContainer.setVisibility(View.GONE);
+    }
+    
+    /**
+     * Clear debug display
+     */
+    private void clearDebug() {
+        svDebugContainer.setVisibility(View.GONE);
     }
 }
