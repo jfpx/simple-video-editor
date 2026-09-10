@@ -783,19 +783,15 @@ public class MainActivity extends AppCompatActivity {
         boolean isFastMode = cbFastMode.isChecked();
         
         // Read all configuration values for debug display
-        final float debugTrimStart;
-        final float debugTrimEnd;
+        float debugTrimStart = 0.0f;
+        float debugTrimEnd = 0.0f;
         if (cbEnableTrim.isChecked()) {
             try {
                 debugTrimStart = Float.parseFloat(etTrimStart.getText().toString().trim());
                 debugTrimEnd = Float.parseFloat(etTrimEnd.getText().toString().trim());
             } catch (NumberFormatException e) {
-                debugTrimStart = 0.0f;
-                debugTrimEnd = 0.0f;
+                // Keep default 0.0f values
             }
-        } else {
-            debugTrimStart = 0.0f;
-            debugTrimEnd = 0.0f;
         }
         
         float volumeMultiplier = 1.0f;
