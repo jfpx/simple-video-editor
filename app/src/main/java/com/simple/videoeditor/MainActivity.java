@@ -718,10 +718,26 @@ public class MainActivity extends AppCompatActivity {
         progressBar.setProgress(0);
         
         // Create output file
-        File outputDir = new File(Environment.getExternalStoragePublicDirectory(
-            Environment.DIRECTORY_MOVIES), "SimpleVideoEditor");
+        // Use app-specific external directory (no permission needed on Android 10+)
+        File outputDir;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            // Android 10+ (API 29+): Use app-specific directory (no permission needed)
+            outputDir = new File(getExternalFilesDir(Environment.DIRECTORY_MOVIES), "SimpleVideoEditor");
+        } else {
+            // Android 9 and below: Use public directory with legacy storage
+            outputDir = new File(Environment.getExternalStoragePublicDirectory(
+                Environment.DIRECTORY_MOVIES), "SimpleVideoEditor");
+        }
+        
         if (!outputDir.exists()) {
-            outputDir.mkdirs();
+            boolean created = outputDir.mkdirs();
+            if (!created) {
+                runOnUiThread(() -> {
+                    showError("Failed to create output directory", 
+                        new Exception("Could not create: " + outputDir.getAbsolutePath()));
+                });
+                return;
+            }
         }
         
         String outputFileName = "edited_" + System.currentTimeMillis() + ".mp4";
