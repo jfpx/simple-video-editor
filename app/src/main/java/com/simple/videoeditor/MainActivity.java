@@ -451,6 +451,21 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
         
+        // Validate trim times if trimming is enabled
+        if (cbEnableTrim.isChecked()) {
+            try {
+                float startTime = Float.parseFloat(etTrimStart.getText().toString().trim());
+                float endTime = Float.parseFloat(etTrimEnd.getText().toString().trim());
+                if (startTime < 0 || endTime <= startTime) {
+                    Toast.makeText(this, "Invalid trim times (end must be > start)", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+            } catch (NumberFormatException e) {
+                Toast.makeText(this, "Invalid trim time format", Toast.LENGTH_SHORT).show();
+                return;
+            }
+        }
+        
         // Get custom angle if specified
         String angleStr = etCustomAngle.getText().toString().trim();
         if (!angleStr.isEmpty()) {
@@ -595,11 +610,72 @@ public class MainActivity extends AppCompatActivity {
                 }
                 
                 if (shouldContinue) {
+                    // Step: Trim video if enabled (do this before main processing to reduce data)
+                    if (cbEnableTrim.isChecked()) {
+                        runOnUiThread(() -> tvProgress.setText("Trimming video..."));
+                        
+                        float trimStart = Float.parseFloat(etTrimStart.getText().toString().trim());
+                        float trimEnd = Float.parseFloat(etTrimEnd.getText().toString().trim());
+                        
+                        File tempTrimmed = new File(getCacheDir(), "temp_trimmed.mp4");
+                        String tempTrimmedPath = tempTrimmed.getAbsolutePath();
+                        
+                        boolean[] trimSuccess = {false};
+                        VideoTrimmer.trimVideo(
+                            processingInput,
+                            tempTrimmedPath,
+                            (long)(trimStart * 1000),
+                            (long)(trimEnd * 1000),
+                            new VideoTrimmer.ProgressCallback() {
+                                @Override
+                                public void onProgress(int progress) {
+                                    runOnUiThread(() -> {
+                                        int baseProgress = (introFilePath != null) ? 50 : 0;
+                                        int trimProgress = baseProgress + (progress * 15 / 100); // 15% for trimming
+                                        progressBar.setProgress(trimProgress);
+                                        tvProgress.setText("Trimming: " + progress + "%");
+                                    });
+                                }
+                                
+                                @Override
+                                public void onComplete(String output) {
+                                    trimSuccess[0] = true;
+                                }
+                                
+                                @Override
+                                public void onError(String error) {
+                                    runOnUiThread(() -> {
+                                        Toast.makeText(MainActivity.this, "Trim failed: " + error, Toast.LENGTH_LONG).show();
+                                    });
+                                }
+                            }
+                        );
+                        
+                        // Wait for trim to complete (synchronous)
+                        try {
+                            Thread.sleep(100);
+                            while (!trimSuccess[0]) {
+                                Thread.sleep(100);
+                            }
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        
+                        if (trimSuccess[0]) {
+                            processingInput = tempTrimmedPath;
+                        } else {
+                            success = false;
+                            shouldContinue = false;
+                        }
+                    }
+                }
+                
+                if (shouldContinue) {
                     // Determine final output path
                     String videoProcessOutput = outputPath;
                     
-                    // If we have background music, we need a temporary processed video
-                    if (musicFilePath != null) {
+                    // If we have background music OR volume adjustment, we need a temporary processed video
+                    if (musicFilePath != null || cbEnableVolume.isChecked()) {
                         File tempProcessed = new File(getCacheDir(), "temp_processed_" + System.currentTimeMillis() + ".mp4");
                         videoProcessOutput = tempProcessed.getAbsolutePath();
                     }
@@ -640,7 +716,7 @@ public class MainActivity extends AppCompatActivity {
                         })
                     );
                     
-                    // Step 2: Replace audio if background music is selected
+                    // Step 2: Replace audio if background music OR adjust volume
                     if (success && musicFilePath != null) {
                         runOnUiThread(() -> tvProgress.setText("Replacing audio with background music..."));
                         
@@ -685,6 +761,58 @@ public class MainActivity extends AppCompatActivity {
                         }
                         
                         // Delete temp file
+                        new File(finalVideoOutput).delete();
+                    } else if (success && cbEnableVolume.isChecked()) {
+                        // Volume adjustment (without music replacement)
+                        runOnUiThread(() -> tvProgress.setText("Adjusting volume..."));
+                        
+                        float volumeGain = getSelectedVolume();
+                        
+                        boolean[] volumeSuccess = {false};
+                        AudioVolumeAdjuster.adjustVolume(
+                            finalVideoOutput,
+                            outputPath,
+                            volumeGain,
+                            new AudioVolumeAdjuster.ProgressCallback() {
+                                @Override
+                                public void onProgress(int progress) {
+                                    runOnUiThread(() -> {
+                                        int baseProgress = (introFilePath != null) ? 50 : 0;
+                                        int videoProgress = 70 * (100 - baseProgress) / 100;
+                                        int audioProgress = progress * 30 / 100 * (100 - baseProgress) / 100;
+                                        int displayProgress = baseProgress + videoProgress + audioProgress;
+                                        progressBar.setProgress(displayProgress);
+                                        tvProgress.setText("Volume: " + progress + "%");
+                                    });
+                                }
+                                
+                                @Override
+                                public void onComplete(String output) {
+                                    volumeSuccess[0] = true;
+                                }
+                                
+                                @Override
+                                public void onError(String error) {
+                                    runOnUiThread(() -> {
+                                        Toast.makeText(MainActivity.this, 
+                                            "Volume adjustment failed: " + error, 
+                                            Toast.LENGTH_LONG).show();
+                                    });
+                                }
+                            }
+                        );
+                        
+                        // Wait for volume adjustment to complete
+                        try {
+                            Thread.sleep(100);
+                            while (!volumeSuccess[0]) {
+                                Thread.sleep(100);
+                            }
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                        
+                        // Clean up temporary processed video
                         new File(finalVideoOutput).delete();
                     }
                 }

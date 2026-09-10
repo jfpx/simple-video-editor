@@ -54,4 +54,24 @@
     <string name="select_music">Select Background Music (Optional)</string>
     <string name="no_music_selected">No music (keep original audio)</string>
     <string name="music_selected">Music: %s</string>
+    
+    <!-- Video Trimming -->
+    <string name="video_trimming">Video Trimming</string>
+    <string name="enable_trimming">✂️ Enable Trimming</string>
+    <string name="start_time">Start:</string>
+    <string name="end_time">End:</string>
+    <string name="start_time_hint">0</string>
+    <string name="end_time_hint">10</string>
+    
+    <!-- Volume Adjustment -->
+    <string name="volume_adjustment">Volume Adjustment</string>
+    <string name="enable_volume_adjustment">🔊 Adjust Volume</string>
+    <string name="volume_level">Volume Level:</string>
+    <string name="volume_0_5x">50% (Half volume)</string>
+    <string name="volume_0_75x">75%</string>
+    <string name="volume_1_0x">100% (Original)</string>
+    <string name="volume_1_25x">125%</string>
+    <string name="volume_1_5x">150%</string>
+    <string name="volume_2_0x">200% (Double)</string>
+    <string name="volume_3_0x">300% (Triple)</string>
 </resources>

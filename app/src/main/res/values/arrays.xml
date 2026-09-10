@@ -8,4 +8,14 @@
         <item>@string/speed_1_5x</item>
         <item>@string/speed_2_0x</item>
     </string-array>
+    
+    <string-array name="volume_options">
+        <item>@string/volume_0_5x</item>
+        <item>@string/volume_0_75x</item>
+        <item>@string/volume_1_0x</item>
+        <item>@string/volume_1_25x</item>
+        <item>@string/volume_1_5x</item>
+        <item>@string/volume_2_0x</item>
+        <item>@string/volume_3_0x</item>
+    </string-array>
 </resources>
