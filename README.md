@@ -1,5 +1,32 @@
 # Simple Video Editor
 
+## Build the current public source / 构建当前公开源码
+
+Run from the checkout root containing `settings.gradle` and `gradlew`, not its
+parent or an older checkout. Use JDK 17, the checked-in Gradle 8.7 wrapper, Android
+platform 35 and build-tools 34.0.0 (AGP 8.6.1). Set `ANDROID_HOME` to your installed
+SDK. CI pins command-line tools 12266719 and installs these packages explicitly:
+the SDK action's default obsolete `tools` package is no longer available.
+
+Windows PowerShell:
+```powershell
+$env:VIDEO_EDITOR_REVISION = git rev-parse HEAD
+.\gradlew.bat testDebugUnitTest assembleDebug
+```
+
+Linux/macOS:
+```sh
+export VIDEO_EDITOR_REVISION="$(git rev-parse HEAD)"
+./gradlew testDebugUnitTest assembleDebug
+```
+
+Use a clean checkout when stamping a commit. The APK is
+`app/build/outputs/apk/debug/app-debug.apk`; a successful command alone is not
+delivery evidence. CI runs the source/equivalence, complete rebuilt-APK and
+outgoing-history privacy gates before uploading the `app-debug` Actions artifact.
+Actions downloads may require GitHub login; this workflow does not create a
+release or tag. Legacy build instructions below are not the current toolchain.
+
 ## Processing status, copies and output size / 处理提示、复制及文件大小
 
 The localized editor still advertised 180-second export and 60-second import
@@ -119,8 +146,9 @@ Existing pinned title oracle assets and assertions are unchanged.
 
 ## Privacy release gate / 发布防泄露门槛
 
-The app repository remains **private**. A locally rebuilt candidate is not a
-publication authorization. Version 1 of `oracle_tools/privacy_export.py` derives
+This is the fresh-history **public** source repository; original evidence and old
+private history are not part of it. A locally rebuilt candidate alone does not
+authorize artifact publication. Version 1 of `oracle_tools/privacy_export.py` derives
 public metadata from the immutable source revision recorded in that tool. It
 replaces exactly 44 host/tool/session metadata leaves with relative paths and
 stable executable aliases, plus six internal music-authoring command paths,
@@ -147,8 +175,12 @@ Run `privacy_gate.py --mode current --source-only --scratch <owned-directory>
 --report <private-source.json>` before building, and run `--mode current
 --artifact <rebuilt.apk> --scratch <owned-directory> --report <private-apk.json>`
 afterward. Source includes tracked and nonignored files. Every archive entry is
-streamed, hashed and scanned, including nested ZIPs disguised as binary files;
-encrypted, malformed, unsupported, excessively nested/large archives fail closed.
+streamed, hashed and scanned, including nested ZIPs disguised as binary files.
+Qt/LMMS `.mmpz` payloads are bounded and decoded even when renamed. Recognized
+Android binary XML is scanned as binary content, not misread as a Qt size word
+and zlib header; malformed Qt declarations still fail closed. Binary XML parsing
+also limits chunk/offset counts to 20,000 and individual reads to 8 MiB.
+Encrypted, malformed, unsupported, excessively nested/large archives fail closed.
 Bounds are 512 MiB per entry, 2 GiB cumulative expanded input, 20,000 entries,
 three archive levels and an 8 MiB central directory. No third-party scanning
 service receives private content. This is a finite pattern gate, not a guarantee

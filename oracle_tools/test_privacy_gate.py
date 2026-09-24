@@ -6,6 +6,7 @@ import json
 import lzma
 import os
 from pathlib import Path
+import struct
 import subprocess
 import sys
 import tempfile
@@ -30,7 +31,161 @@ def qcompress(content):
     return len(content).to_bytes(4, "big") + zlib.compress(content)
 
 
+def _u16(length):
+    if length < 0x8000:
+        return struct.pack("<H", length)
+    return struct.pack("<HH", 0x8000 | (length >> 16), length & 0xFFFF)
+
+
+def _u8(length):
+    if length < 0x80:
+        return bytes([length])
+    return bytes([0x80 | (length >> 8), length & 0xFF])
+
+
+def _android_modified_utf8(value):
+    payload = bytearray()
+    for codepoint in map(ord, value):
+        units = [codepoint]
+        if codepoint == 0:
+            units = [0]
+        elif codepoint > 0xFFFF:
+            codepoint -= 0x10000
+            units = [0xD800 | (codepoint >> 10), 0xDC00 | (codepoint & 0x3FF)]
+        for unit in units:
+            if unit == 0:
+                payload.extend(b"\xC0\x80")
+            elif unit < 0x80:
+                payload.append(unit)
+            elif unit < 0x800:
+                payload.extend((0xC0 | (unit >> 6), 0x80 | (unit & 0x3F)))
+            else:
+                payload.extend((0xE0 | (unit >> 12), 0x80 | ((unit >> 6) & 0x3F),
+                                0x80 | (unit & 0x3F)))
+    return bytes(payload)
+
+
+def _string_pool_chunk(strings, *, utf8=False, chunk_size=None):
+    offsets = []
+    payload = bytearray()
+    for value in strings:
+        offsets.append(len(payload))
+        if utf8:
+            encoded = _android_modified_utf8(value)
+            payload.extend(_u8(len(value.encode("utf-16le")) // 2))
+            payload.extend(_u8(len(encoded)))
+            payload.extend(encoded)
+            payload.append(0)
+        else:
+            encoded = value.encode("utf-16le")
+            payload.extend(_u16(len(value)))
+            payload.extend(encoded)
+            payload.extend(b"\x00\x00")
+    while len(payload) % 4:
+        payload.append(0)
+    header_size = 0x001C
+    minimum = 8 + header_size - 8 + 4 * len(strings) + len(payload)
+    if chunk_size is not None:
+        if chunk_size < minimum or chunk_size % 4:
+            raise ValueError("Invalid Android string pool size")
+        payload.extend(b"\x00" * (chunk_size - minimum))
+    strings_start = header_size + 4 * len(strings)
+    body = struct.pack("<5I", len(strings), 0, 0x0100 if utf8 else 0, strings_start, 0)
+    body += b"".join(struct.pack("<I", offset) for offset in offsets)
+    body += payload
+    return struct.pack("<HHI", gate.ANDROID_STRING_POOL, header_size, 8 + len(body)) + body
+
+
+def _resource_map_chunk(*ids):
+    body = b"".join(struct.pack("<I", resource_id) for resource_id in ids)
+    return struct.pack("<HHI", gate.ANDROID_RESOURCE_MAP, 8, 8 + len(body)) + body
+
+
+def _namespace_chunk(chunk_type, prefix, uri):
+    return (struct.pack("<HHI", chunk_type, 0x0010, 0x0018) +
+            struct.pack("<II", 1, gate.ANDROID_MISSING_REF) +
+            struct.pack("<II", prefix, uri))
+
+
+def _start_element_chunk(name, attributes, namespace=gate.ANDROID_MISSING_REF):
+    attr_bytes = bytearray()
+    for attr_ns, attr_name, raw_value, value_type, value_data in attributes:
+        attr_bytes.extend(struct.pack(
+            "<3IHBBI", attr_ns, attr_name, raw_value, 8, 0, value_type, value_data))
+    return (struct.pack("<HHI", gate.ANDROID_START_ELEMENT, 0x0010, 0x0024 + len(attr_bytes)) +
+            struct.pack("<II", 2, gate.ANDROID_MISSING_REF) +
+            struct.pack("<IIHHHHHH", namespace, name, 0x0014, 0x0014, len(attributes), 0, 0, 0) +
+            attr_bytes)
+
+
+def _end_element_chunk(name, namespace=gate.ANDROID_MISSING_REF):
+    return (struct.pack("<HHI", gate.ANDROID_END_ELEMENT, 0x0010, 0x0018) +
+            struct.pack("<II", 3, gate.ANDROID_MISSING_REF) +
+            struct.pack("<II", namespace, name))
+
+
+def _cdata_chunk(data, *, value_size=0, value_type=0, value_data=0):
+    return (struct.pack("<HHI", gate.ANDROID_CDATA, 0x0010, 0x001C) +
+            struct.pack("<II", 4, gate.ANDROID_MISSING_REF) +
+            struct.pack("<IHBBI", data, value_size, 0, value_type, value_data))
+
+
+def android_binary_xml(value="safe", *, utf8=True, total_size=None, default_namespace=False, text=None):
+    if default_namespace:
+        strings = ["urn:example", "root"] + ([text] if text is not None else [])
+        other_chunks = [
+            _namespace_chunk(gate.ANDROID_START_NAMESPACE, gate.ANDROID_MISSING_REF, 0),
+            _start_element_chunk(1, []),
+            *([_cdata_chunk(2)] if text is not None else []),
+            _end_element_chunk(1),
+            _namespace_chunk(gate.ANDROID_END_NAMESPACE, gate.ANDROID_MISSING_REF, 0),
+        ]
+    else:
+        strings = ["android", "http://schemas.android.com/apk/res/android",
+                   "LinearLayout", "contentDescription", value]
+        other_chunks = [
+            _resource_map_chunk(0x01010000),
+            _namespace_chunk(gate.ANDROID_START_NAMESPACE, 0, 1),
+            _start_element_chunk(2, [(1, 3, 4, 0x03, 4)]),
+            _end_element_chunk(2),
+            _namespace_chunk(gate.ANDROID_END_NAMESPACE, 0, 1),
+        ]
+    if total_size is None:
+        total_size = 8 + sum(len(chunk) for chunk in other_chunks)
+        total_size += len(_string_pool_chunk(strings, utf8=utf8))
+        if total_size % 4:
+            total_size += 4 - (total_size % 4)
+    string_pool_size = total_size - 8 - sum(len(chunk) for chunk in other_chunks)
+    chunks = [_string_pool_chunk(strings, utf8=utf8, chunk_size=string_pool_size), *other_chunks]
+    payload = b"".join(chunks)
+    return struct.pack("<HHI", 0x0003, 0x0008, 8 + len(payload)) + payload
+
+
 class GateTests(unittest.TestCase):
+    def test_android_string_pool_count_bound_precedes_allocation(self):
+        validator = gate.AndroidBinaryXmlValidator(Path("unused"), 0)
+        stream = io.BytesIO(struct.pack("<5I", 3, 0, 0, 40, 0))
+        with patch.object(gate, "MAX_XML_ITEMS", 2):
+            with self.assertRaisesRegex(gate.GateError, "parser bound"):
+                validator._validate_string_pool(stream, 8, 28, 40)
+        self.assertEqual(20, stream.tell())
+
+    def test_android_read_bound_precedes_stream_read(self):
+        validator = gate.AndroidBinaryXmlValidator(Path("unused"), 0)
+        stream = Mock()
+        with patch.object(gate, "MAX_XML_READ", 16):
+            with self.assertRaisesRegex(gate.GateError, "parser bound"):
+                validator._read_exact(stream, 17)
+        stream.read.assert_not_called()
+
+    def test_android_chunk_count_bound(self):
+        payload = android_binary_xml()
+        path = Path(self.directory.name) / "bounded.xml"
+        path.write_bytes(payload)
+        with patch.object(gate, "MAX_XML_ITEMS", 1):
+            with self.assertRaisesRegex(gate.GateError, "parser bound"):
+                gate.AndroidBinaryXmlValidator(path, len(payload)).validate()
+
     def setUp(self):
         root = Path(os.environ.get("PRIVACY_TEST_ROOT", ".privacy-work")).resolve()
         root.mkdir(exist_ok=True)
@@ -197,6 +352,110 @@ class GateTests(unittest.TestCase):
                      "bytes": len(content)}], self.scanner.entries)
                 self.assertEqual(2, self.scanner.count)
                 self.assertEqual(len(data) + len(content), self.scanner.total)
+                self.assertFalse(self.scanner.findings)
+                self.assertEqual([], list(Path(self.directory.name).iterdir()))
+
+    def test_android_binary_xml_in_apk_is_scanned_as_plain_file(self):
+        payload = android_binary_xml(total_size=376)
+        with patch.object(self.scanner, "qcompress") as qcompress:
+            self.scan(archive([("res/layout/main.xml", payload)]), "candidate.apk")
+        qcompress.assert_not_called()
+        self.assertEqual({"path": "candidate.apk!res/layout/main.xml",
+                          "sha256": export.digest(payload), "bytes": len(payload)},
+                         self.scanner.entries[-1])
+        self.assertEqual(2, self.scanner.count)
+        self.assertFalse(self.scanner.findings)
+        self.assertEqual([], list(Path(self.directory.name).iterdir()))
+
+    def test_android_binary_xml_string_pool_values_are_scanned(self):
+        payload = android_binary_xml("C:" + "\\" + "Users" + "\\" + "fake-person" + "\\" + "secret.txt")
+        self.scan(archive([("res/layout/private.xml", payload)]), "candidate.apk")
+        self.assertIn("user-path", [finding["rule"] for finding in self.scanner.findings])
+        self.assertEqual([], list(Path(self.directory.name).iterdir()))
+
+    def test_android_binary_xml_default_namespace_is_accepted(self):
+        payload = android_binary_xml(default_namespace=True)
+        self.scan(archive([("AndroidManifest.xml", payload)]), "candidate.apk")
+        self.assertEqual("candidate.apk!AndroidManifest.xml", self.scanner.entries[-1]["path"])
+        self.assertFalse(self.scanner.findings)
+        self.assertEqual([], list(Path(self.directory.name).iterdir()))
+
+    def test_android_binary_xml_aapt2_cdata_zero_typed_value_is_accepted(self):
+        payload = android_binary_xml(default_namespace=True, text="hello")
+        self.scan(archive([("res/xml/text.xml", payload)]), "candidate.apk")
+        self.assertEqual("candidate.apk!res/xml/text.xml", self.scanner.entries[-1]["path"])
+        self.assertFalse(self.scanner.findings)
+        self.assertEqual([], list(Path(self.directory.name).iterdir()))
+
+    def test_android_binary_xml_modified_utf8_supplementary_strings_are_accepted(self):
+        payload = android_binary_xml(default_namespace=True, text="😀")
+        self.scan(archive([("res/xml/emoji.xml", payload)]), "candidate.apk")
+        self.assertEqual("candidate.apk!res/xml/emoji.xml", self.scanner.entries[-1]["path"])
+        self.assertFalse(self.scanner.findings)
+        self.assertEqual([], list(Path(self.directory.name).iterdir()))
+
+    def test_android_binary_xml_at_archive_depth_limit_is_still_scanned(self):
+        payload = android_binary_xml(total_size=376)
+        nested = archive([("inner.zip", archive([("res/layout/main.xml", payload)]))])
+        with patch.object(gate, "MAX_DEPTH", 2):
+            self.scan(nested, "candidate.apk")
+        self.assertEqual("candidate.apk!inner.zip!res/layout/main.xml", self.scanner.entries[-1]["path"])
+        self.assertFalse(self.scanner.findings)
+        self.assertEqual([], list(Path(self.directory.name).iterdir()))
+
+    def test_collision_header_routes_renamed_xml_to_qt_decoder(self):
+        payload = bytearray(android_binary_xml(total_size=376))
+        payload[-4:] = b"oops"
+        with patch.object(self.scanner, "qcompress") as qcompress:
+            self.scan(bytes(payload), "renamed.xml")
+        qcompress.assert_called_once()
+        self.assertEqual("renamed.xml", self.scanner.entries[0]["path"])
+        self.assertEqual([], list(Path(self.directory.name).iterdir()))
+
+    def test_mmpz_collision_always_uses_qt_decoder(self):
+        with patch.object(self.scanner, "qcompress") as qcompress:
+            self.scan(android_binary_xml(total_size=376), "song.mmpz")
+        qcompress.assert_called_once()
+        self.assertEqual([], list(Path(self.directory.name).iterdir()))
+
+    def test_malformed_utf8_length_collision_routes_to_qt_decoder(self):
+        payload = bytearray(android_binary_xml(total_size=376))
+        offset = payload.index(b"android\x00") - 2
+        payload[offset] = 0x7F
+        with patch.object(self.scanner, "qcompress") as qcompress:
+            self.scan(bytes(payload), "broken.xml")
+        qcompress.assert_called_once()
+        self.assertEqual([], list(Path(self.directory.name).iterdir()))
+
+    def test_invalid_android_binary_xml_candidates_fail_closed(self):
+        valid = android_binary_xml(total_size=372)
+        start = valid.index(struct.pack("<HHI", gate.ANDROID_START_ELEMENT, 0x0010, 0x0038))
+        malformed = bytearray(valid)
+        malformed[start + 20:start + 22] = struct.pack("<H", 0x0010)
+        cases = {
+            "truncated": valid[:-4],
+            "trailing": valid + b"\x00" * 4,
+            "bogus-first-chunk": valid[:8] + struct.pack("<HHI", gate.ANDROID_START_ELEMENT, 0x0010, 0x0018) + valid[16:],
+            "malformed-attribute-header": bytes(malformed),
+        }
+        for label, data in cases.items():
+            with self.subTest(case=label):
+                self.scanner = gate.Scanner(self.directory.name)
+                with self.assertRaisesRegex(gate.GateError, "Invalid Android binary XML"):
+                    self.scan(data, "broken.xml")
+        self.assertEqual([], list(Path(self.directory.name).iterdir()))
+
+    def test_real_music_evidence_qcompress_payloads_decode(self):
+        root = Path(__file__).resolve().parents[1]
+        cases = [("happy_end_lmms.zip", 262976), ("the_journey_begins_lmms.zip", 250563)]
+        for name, decoded_bytes in cases:
+            with self.subTest(name=name):
+                self.scanner = gate.Scanner(self.directory.name)
+                path = root / "app" / "src" / "main" / "assets" / "music" / "evidence" / name
+                self.scanner.file(path, name)
+                self.assertEqual(decoded_bytes, self.scanner.entries[-1]["bytes"])
+                self.assertTrue(self.scanner.entries[-1]["path"].endswith(".mmp"))
+                self.assertEqual(3, self.scanner.count)
                 self.assertFalse(self.scanner.findings)
                 self.assertEqual([], list(Path(self.directory.name).iterdir()))
 

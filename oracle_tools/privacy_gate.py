@@ -29,6 +29,8 @@ MAX_ENTRIES = 20000
 MAX_DEPTH = 3
 MAX_CENTRAL = 8 * 1024 * 1024
 MAX_RATIO = 2000
+MAX_XML_ITEMS = 20000
+MAX_XML_READ = 8 * 1024 * 1024
 RULES = {
     "user-path": re.compile(r"(?i:[a-z]:[/\\]+Users[/\\]+[^/\\\s\"']+)|"
                             r"(?<![A-Za-z0-9:/])/(?:Users|home)/[^/\s\"']+"),
@@ -45,6 +47,26 @@ FORBIDDEN = re.compile(
     r"(?:logcat|bugreport|tombstone|userlogs|phone-logs|publication-drafts)(?:[./_-]|$)|"
     r"(?:local\.properties|capi\.local\.token|id_rsa|id_ed25519))")
 UNSUPPORTED = {".gz", ".tgz", ".bz2", ".xz", ".7z", ".rar", ".tar", ".zst"}
+QT_COMPRESSED_EXTENSIONS = {".mmpz"}
+ANDROID_BINARY_XML = b"\x03\x00\x08\x00"
+ANDROID_STRING_POOL = 0x0001
+ANDROID_RESOURCE_MAP = 0x0180
+ANDROID_START_NAMESPACE = 0x0100
+ANDROID_END_NAMESPACE = 0x0101
+ANDROID_START_ELEMENT = 0x0102
+ANDROID_END_ELEMENT = 0x0103
+ANDROID_CDATA = 0x0104
+ANDROID_BINARY_XML_CHUNKS = {
+    ANDROID_STRING_POOL,
+    ANDROID_RESOURCE_MAP,
+    ANDROID_START_NAMESPACE,
+    ANDROID_END_NAMESPACE,
+    ANDROID_START_ELEMENT,
+    ANDROID_END_ELEMENT,
+    ANDROID_CDATA,
+}
+ANDROID_STRING_POOL_UTF8 = 1 << 8
+ANDROID_MISSING_REF = 0xFFFFFFFF
 
 
 class GateError(ValueError):
@@ -97,6 +119,274 @@ def zlib_header(data):
             and int.from_bytes(data, "big") % 31 == 0)
 
 
+def android_binary_xml(data, suffix):
+    return suffix == ".xml" and data.startswith(ANDROID_BINARY_XML)
+
+
+def qt_compressed_file(data, suffix):
+    return suffix in QT_COMPRESSED_EXTENSIONS or zlib_header(data[4:6])
+
+
+class AndroidBinaryXmlValidator:
+    def __init__(self, path, size, on_string=None):
+        self.path = path
+        self.size = size
+        self.on_string = on_string
+
+    def validate(self):
+        with self.path.open("rb") as stream:
+            chunk_type, header_size, total_size = self._read_chunk_header(stream)
+            if chunk_type != 0x0003 or header_size != 8 or total_size != self.size or total_size % 4:
+                raise GateError("Invalid Android binary XML")
+            offset = 8
+            saw_string_pool = False
+            saw_resource_map = False
+            namespace_depth = 0
+            element_depth = 0
+            saw_root = False
+            string_count = 0
+            namespaces = []
+            elements = []
+            chunk_count = 0
+            while offset < self.size:
+                chunk_count += 1
+                if chunk_count > MAX_XML_ITEMS:
+                    raise GateError("Android binary XML parser bound exceeded")
+                chunk_start = offset
+                chunk_type, chunk_header, chunk_size = self._read_chunk_header(stream)
+                if (chunk_type not in ANDROID_BINARY_XML_CHUNKS or chunk_header < 8 or
+                        chunk_size < chunk_header or chunk_size % 4 or
+                        chunk_start + chunk_size > self.size):
+                    raise GateError("Invalid Android binary XML")
+                if chunk_type == ANDROID_STRING_POOL:
+                    if saw_string_pool or chunk_start != 8:
+                        raise GateError("Invalid Android binary XML")
+                    string_count = self._validate_string_pool(
+                        stream, chunk_start, chunk_header, chunk_size)
+                    saw_string_pool = True
+                elif not saw_string_pool:
+                    raise GateError("Invalid Android binary XML")
+                elif chunk_type == ANDROID_RESOURCE_MAP:
+                    if saw_resource_map or saw_root or namespace_depth:
+                        raise GateError("Invalid Android binary XML")
+                    self._validate_resource_map(stream, chunk_header, chunk_size)
+                    saw_resource_map = True
+                elif chunk_type == ANDROID_START_NAMESPACE:
+                    namespaces.append(
+                        self._validate_namespace(stream, chunk_header, chunk_size, string_count))
+                    namespace_depth += 1
+                elif chunk_type == ANDROID_END_NAMESPACE:
+                    if namespace_depth <= 0:
+                        raise GateError("Invalid Android binary XML")
+                    if self._validate_namespace(stream, chunk_header, chunk_size, string_count) != namespaces.pop():
+                        raise GateError("Invalid Android binary XML")
+                    namespace_depth -= 1
+                elif chunk_type == ANDROID_START_ELEMENT:
+                    element = self._validate_start_element(stream, chunk_header, chunk_size, string_count)
+                    if element_depth == 0 and saw_root:
+                        raise GateError("Invalid Android binary XML")
+                    elements.append(element)
+                    element_depth += 1
+                    saw_root = True
+                elif chunk_type == ANDROID_END_ELEMENT:
+                    if element_depth <= 0:
+                        raise GateError("Invalid Android binary XML")
+                    if self._validate_end_element(stream, chunk_header, chunk_size, string_count) != elements.pop():
+                        raise GateError("Invalid Android binary XML")
+                    element_depth -= 1
+                else:
+                    if element_depth <= 0:
+                        raise GateError("Invalid Android binary XML")
+                    self._validate_cdata(stream, chunk_header, chunk_size, string_count)
+                offset += chunk_size
+            if (offset != self.size or not saw_string_pool or not saw_root or
+                    namespace_depth or element_depth or namespaces or elements):
+                raise GateError("Invalid Android binary XML")
+
+    def _validate_string_pool(self, stream, chunk_start, header_size, chunk_size):
+        if header_size != 0x001C:
+            raise GateError("Invalid Android binary XML")
+        body = self._read_exact(stream, 20)
+        string_count, style_count, flags, strings_start, styles_start = struct.unpack("<5I", body)
+        if string_count + style_count > MAX_XML_ITEMS:
+            raise GateError("Android binary XML parser bound exceeded")
+        table_offset = header_size + 4 * (string_count + style_count)
+        if strings_start < table_offset or strings_start > chunk_size:
+            raise GateError("Invalid Android binary XML")
+        if style_count and not styles_start:
+            raise GateError("Invalid Android binary XML")
+        if not style_count and styles_start:
+            raise GateError("Invalid Android binary XML")
+        if styles_start and (styles_start < strings_start or styles_start > chunk_size):
+            raise GateError("Invalid Android binary XML")
+        offsets = [struct.unpack("<I", self._read_exact(stream, 4))[0] for _ in range(string_count)]
+        for _ in range(style_count):
+            style_offset = struct.unpack("<I", self._read_exact(stream, 4))[0]
+            if style_offset >= chunk_size - styles_start:
+                raise GateError("Invalid Android binary XML")
+        strings_base = chunk_start + strings_start
+        strings_limit = chunk_start + (styles_start or chunk_size)
+        if stream.tell() > strings_base or strings_limit < strings_base:
+            raise GateError("Invalid Android binary XML")
+        seen_offsets = set()
+        decoded_bytes = 0
+        for value in offsets:
+            if value in seen_offsets:
+                continue
+            seen_offsets.add(value)
+            if value >= strings_limit - strings_base:
+                raise GateError("Invalid Android binary XML")
+            text, consumed = self._decode_string(stream, strings_base + value, strings_limit, flags)
+            decoded_bytes += consumed
+            if decoded_bytes > strings_limit - strings_base:
+                raise GateError("Invalid Android binary XML")
+            self._emit_string(text)
+        stream.seek(chunk_start + chunk_size)
+        return string_count
+
+    def _validate_resource_map(self, stream, header_size, chunk_size):
+        if header_size != 8 or (chunk_size - 8) % 4:
+            raise GateError("Invalid Android binary XML")
+        stream.seek(chunk_size - 8, io.SEEK_CUR)
+
+    def _validate_namespace(self, stream, header_size, chunk_size, string_count):
+        if header_size != 0x0010 or chunk_size != 0x0018:
+            raise GateError("Invalid Android binary XML")
+        _, comment = struct.unpack("<2I", self._read_exact(stream, 8))
+        prefix, uri = struct.unpack("<2I", self._read_exact(stream, 8))
+        self._require_string_ref(comment, string_count, missing=True)
+        self._require_string_ref(prefix, string_count, missing=True)
+        self._require_string_ref(uri, string_count)
+        return prefix, uri
+
+    def _validate_start_element(self, stream, header_size, chunk_size, string_count):
+        if header_size != 0x0010:
+            raise GateError("Invalid Android binary XML")
+        _, comment = struct.unpack("<2I", self._read_exact(stream, 8))
+        element_namespace, element_name, attribute_start, attribute_size, attribute_count, id_index, class_index, style_index = (
+            struct.unpack("<2I6H", self._read_exact(stream, 20)))
+        if (attribute_start != 0x0014 or attribute_size != 0x0014 or
+                chunk_size != 0x0024 + attribute_count * attribute_size):
+            raise GateError("Invalid Android binary XML")
+        self._require_string_ref(comment, string_count, missing=True)
+        self._require_string_ref(element_namespace, string_count, missing=True)
+        self._require_string_ref(element_name, string_count)
+        self._require_attribute_index(id_index, attribute_count)
+        self._require_attribute_index(class_index, attribute_count)
+        self._require_attribute_index(style_index, attribute_count)
+        for _ in range(attribute_count):
+            namespace, name, raw_value, value_size, value_zero, value_type, value_data = struct.unpack(
+                "<3IHBBI", self._read_exact(stream, attribute_size))
+            if value_size != 8 or value_zero != 0:
+                raise GateError("Invalid Android binary XML")
+            self._require_string_ref(namespace, string_count, missing=True)
+            self._require_string_ref(name, string_count)
+            self._require_string_ref(raw_value, string_count, missing=True)
+            if value_type == 0x03:
+                self._require_string_ref(value_data, string_count)
+        return element_namespace, element_name
+
+    def _validate_end_element(self, stream, header_size, chunk_size, string_count):
+        if header_size != 0x0010 or chunk_size != 0x0018:
+            raise GateError("Invalid Android binary XML")
+        _, comment = struct.unpack("<2I", self._read_exact(stream, 8))
+        namespace, name = struct.unpack("<2I", self._read_exact(stream, 8))
+        self._require_string_ref(comment, string_count, missing=True)
+        self._require_string_ref(namespace, string_count, missing=True)
+        self._require_string_ref(name, string_count)
+        return namespace, name
+
+    def _validate_cdata(self, stream, header_size, chunk_size, string_count):
+        if header_size != 0x0010 or chunk_size != 0x001C:
+            raise GateError("Invalid Android binary XML")
+        _, comment = struct.unpack("<2I", self._read_exact(stream, 8))
+        data, value_size, value_zero, value_type, value_data = struct.unpack(
+            "<IHBBI", self._read_exact(stream, 12))
+        self._require_string_ref(comment, string_count, missing=True)
+        self._require_string_ref(data, string_count)
+        if value_zero != 0:
+            raise GateError("Invalid Android binary XML")
+        if value_size == 0:
+            if value_type or value_data:
+                raise GateError("Invalid Android binary XML")
+            return
+        if value_size != 8:
+            raise GateError("Invalid Android binary XML")
+        if value_type == 0x03:
+            self._require_string_ref(value_data, string_count)
+
+    def _decode_string(self, stream, offset, limit, flags):
+        stream.seek(offset)
+        start = offset
+        if flags & ANDROID_STRING_POOL_UTF8:
+            utf16_length = self._read_length8(stream, limit)
+            encoded_length = self._read_length8(stream, limit)
+            data = self._read_exact_limited(stream, encoded_length, limit)
+            if self._read_exact_limited(stream, 1, limit) != b"\x00":
+                raise GateError("Invalid Android binary XML")
+            try:
+                text = data.decode("utf-8", "surrogatepass")
+            except UnicodeDecodeError:
+                raise GateError("Invalid Android binary XML") from None
+            if len(text.encode("utf-16le", "surrogatepass")) // 2 != utf16_length:
+                raise GateError("Invalid Android binary XML")
+            return text, stream.tell() - start
+        encoded_length = self._read_length16(stream, limit)
+        data = self._read_exact_limited(stream, encoded_length * 2, limit)
+        if self._read_exact_limited(stream, 2, limit) != b"\x00\x00":
+            raise GateError("Invalid Android binary XML")
+        try:
+            text = data.decode("utf-16le")
+        except UnicodeDecodeError:
+            raise GateError("Invalid Android binary XML") from None
+        if len(data) // 2 != encoded_length:
+            raise GateError("Invalid Android binary XML")
+        return text, stream.tell() - start
+
+    def _read_length8(self, stream, limit):
+        first = self._read_exact_limited(stream, 1, limit)[0]
+        if first & 0x80:
+            return ((first & 0x7F) << 8) | self._read_exact_limited(stream, 1, limit)[0]
+        return first
+
+    def _read_length16(self, stream, limit):
+        first = struct.unpack("<H", self._read_exact_limited(stream, 2, limit))[0]
+        if first & 0x8000:
+            return ((first & 0x7FFF) << 16) | struct.unpack(
+                "<H", self._read_exact_limited(stream, 2, limit))[0]
+        return first
+
+    def _emit_string(self, text):
+        if self.on_string is not None:
+            self.on_string(text)
+
+    def _require_attribute_index(self, index, count):
+        if index > count:
+            raise GateError("Invalid Android binary XML")
+
+    def _require_string_ref(self, value, string_count, missing=False):
+        if missing and value == ANDROID_MISSING_REF:
+            return
+        if value >= string_count:
+            raise GateError("Invalid Android binary XML")
+
+    def _read_chunk_header(self, stream):
+        return struct.unpack("<HHI", self._read_exact(stream, 8))
+
+    def _read_exact_limited(self, stream, size, limit):
+        if stream.tell() + size > limit:
+            raise GateError("Invalid Android binary XML")
+        return self._read_exact(stream, size)
+
+    def _read_exact(self, stream, size):
+        if size > MAX_XML_READ:
+            raise GateError("Android binary XML parser bound exceeded")
+        data = stream.read(size)
+        if len(data) != size:
+            raise GateError("Invalid Android binary XML")
+        return data
+
+
 class Scanner:
     def __init__(self, scratch, exceptions=()):
         self.scratch = Path(scratch).resolve()
@@ -129,7 +419,8 @@ class Scanner:
         archived = first.startswith((b"PK\x03\x04", b"PK\x05\x06", b"PK\x07\x08"))
         # Qt has no fixed magic: recognize its zlib header after the size word,
         # including renamed files and another Qt wrapper in the decoded payload.
-        qt_compressed = suffix == ".mmpz" or zlib_header(first[4:6])
+        android_xml = android_binary_xml(first, suffix)
+        qt_compressed = qt_compressed_file(first, suffix)
         if qt_compressed and archived:
             raise GateError("Invalid Qt compressed signature")
         if suffix in {".apk", ".zip", ".jar"} and not archived:
@@ -140,9 +431,7 @@ class Scanner:
             raise GateError("Unsupported compressed content")
         spool = None
         spool_path = None
-        if archived or qt_compressed:
-            if depth >= MAX_DEPTH:
-                raise GateError("Nested archive depth exceeded")
+        if archived or qt_compressed or android_xml:
             spool_path = self.scratch / ("privacy-entry-" + uuid.uuid4().hex)
             spool = spool_path.open("xb")
         sha = hashlib.sha256()
@@ -174,6 +463,22 @@ class Scanner:
                 raise GateError("Truncated entry")
             digest = sha.hexdigest()
             self.entries.append({"path": safe_label(name), "sha256": digest, "bytes": size})
+            if spool:
+                spool.close()
+                spool = None
+            if android_xml:
+                def inspect_string(text):
+                    decoded = normalize(text)
+                    for rule, pattern in RULES.items():
+                        if pattern.search(decoded):
+                            seen.add(rule)
+                try:
+                    AndroidBinaryXmlValidator(spool_path, size, inspect_string).validate()
+                except GateError:
+                    if not qt_compressed:
+                        raise
+                else:
+                    qt_compressed = False
             for rule in sorted(seen):
                 self.finding(name, rule, digest)
             if metadata is not None:
@@ -192,10 +497,15 @@ class Scanner:
                 self.finding(name, "forbidden-filename", digest)
             if spool:
                 spool.close()
-                if qt_compressed:
-                    self.qcompress(spool_path, name, filename, depth + 1)
-                else:
+            if spool_path:
+                if archived:
+                    if depth >= MAX_DEPTH:
+                        raise GateError("Nested archive depth exceeded")
                     self.archive(spool_path, name, depth + 1)
+                elif qt_compressed:
+                    if depth >= MAX_DEPTH:
+                        raise GateError("Nested archive depth exceeded")
+                    self.qcompress(spool_path, name, filename, depth + 1)
             return digest
         finally:
             if spool and not spool.closed:
