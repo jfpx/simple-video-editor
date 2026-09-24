@@ -1,0 +1,1748 @@
+package com.simple.videoeditor.oracle;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.List;
+
+public final class OracleGeneratedContract {
+    private OracleGeneratedContract() {
+    }
+
+    public static OracleContract create() {
+        List<OracleContract.OracleCase> cases = new ArrayList<OracleContract.OracleCase>();
+        {
+            List<OracleContract.BarcodeRegion> barcodeRegions = OracleCoreVerifier.barcodeRegions(
+                    new OracleContract.Operation(0, 4, 0, 0, 320, 240, 0, 0, 1.0d, 1.0d));
+            List<OracleContract.Probe> probes = new ArrayList<OracleContract.Probe>();
+            probes.add(new OracleContract.Probe(0, 0.0d, new OracleContract.Asset("frames\\identity\\source_000.png", 1402L, "8a2814f5624b5fb70ecf96162138a0ced04aa3f2bbe07fb02c7b41a7683fcb92")));
+            probes.add(new OracleContract.Probe(12, 0.5d, new OracleContract.Asset("frames\\identity\\source_012.png", 1449L, "41654db8f89acd43c214376100c640cced8a39a675b945d1dcce3e5edda05821")));
+            probes.add(new OracleContract.Probe(24, 1.0d, new OracleContract.Asset("frames\\identity\\source_024.png", 1468L, "d248c718107745e767de42cb7b0a645ae0fcf76a0e5a34233e7d81926333ed46")));
+            probes.add(new OracleContract.Probe(36, 1.5d, new OracleContract.Asset("frames\\identity\\source_036.png", 1461L, "d423a4c7a47ca24b847898a93bee73c37433d21f84003b7686d5d872743ef515")));
+            probes.add(new OracleContract.Probe(48, 2.0d, new OracleContract.Asset("frames\\identity\\source_048.png", 1440L, "bc0e55ac31a478296ffefdf780fbb5899d9108659a198addee7138122836a7e4")));
+            probes.add(new OracleContract.Probe(59, 2.4583333333333335d, new OracleContract.Asset("frames\\identity\\source_059.png", 1495L, "1befb44fd0d05717fde612328f48c1266ffc22df97425a3a86ea5366e3781ba7")));
+            probes.add(new OracleContract.Probe(71, 2.9583333333333335d, new OracleContract.Asset("frames\\identity\\source_071.png", 1477L, "7cdc95f5d661d5dcd017725138383c4d87972f426cd1e73ef78f4fb09dc97658")));
+            probes.add(new OracleContract.Probe(83, 3.4583333333333335d, new OracleContract.Asset("frames\\identity\\source_083.png", 1491L, "b983748e308bb0bc546ee3da897ed88e800f773ee69a79897822e0298d179308")));
+            probes.add(new OracleContract.Probe(95, 3.9583333333333335d, new OracleContract.Asset("frames\\identity\\source_095.png", 1465L, "1d8a4b9e918353c1ab0a90e608314039a0b0bbb4fc85ae380d24c0f470481f50")));
+            LinkedHashMap<Integer, OracleContract.Asset> frameAssets = new LinkedHashMap<Integer, OracleContract.Asset>();
+            frameAssets.put(Integer.valueOf(0), new OracleContract.Asset("android-full-frames\\identity\\source_000.png", 1402L, "8a2814f5624b5fb70ecf96162138a0ced04aa3f2bbe07fb02c7b41a7683fcb92"));
+            frameAssets.put(Integer.valueOf(1), new OracleContract.Asset("android-full-frames\\identity\\source_001.png", 1434L, "942147d210012300bb1a8fec147ff1fcb52bf8d5bba4ffd19a22046aad17c4cb"));
+            frameAssets.put(Integer.valueOf(2), new OracleContract.Asset("android-full-frames\\identity\\source_002.png", 1441L, "bdcc47dfcf89f6b334417e4fbf8744dc6ed7079ec2942988c8cdea7a3edd9c50"));
+            frameAssets.put(Integer.valueOf(3), new OracleContract.Asset("android-full-frames\\identity\\source_003.png", 1446L, "5a019b61136cebb58d44b20789c510cef4241faf99f16b4d2f3dff62f3192bc4"));
+            frameAssets.put(Integer.valueOf(4), new OracleContract.Asset("android-full-frames\\identity\\source_004.png", 1426L, "f94c5ca9eacc00031ecfa46a0e82de58cebcf928b6a0c606c273e27cfe9d6722"));
+            frameAssets.put(Integer.valueOf(5), new OracleContract.Asset("android-full-frames\\identity\\source_005.png", 1453L, "dacc5f3806ae3d8891200b005f1b4f55a26cb99a194ab875dee58f894b3ef8fc"));
+            frameAssets.put(Integer.valueOf(6), new OracleContract.Asset("android-full-frames\\identity\\source_006.png", 1460L, "3c3d8daefaca43db009895cdee159c97997b43cf6755d2a1a9e10dba926f3253"));
+            frameAssets.put(Integer.valueOf(7), new OracleContract.Asset("android-full-frames\\identity\\source_007.png", 1456L, "548a1c531fa60cc7768fffdf3f2469465e4d1c50975ee91017aa69786cc9ff55"));
+            frameAssets.put(Integer.valueOf(8), new OracleContract.Asset("android-full-frames\\identity\\source_008.png", 1461L, "680a48a281ecd118fe00f5c4f6f2b07672b3faabb8880b630a1dcbe7eac9f146"));
+            frameAssets.put(Integer.valueOf(9), new OracleContract.Asset("android-full-frames\\identity\\source_009.png", 1474L, "1f3aaed164b3169c11817051c1baeaa0832d44c5243e8bd608459737bdf7f148"));
+            frameAssets.put(Integer.valueOf(10), new OracleContract.Asset("android-full-frames\\identity\\source_010.png", 1461L, "1156e679b1bf09a40c987efb479fb52ab809916ba8444f2e783354c058049181"));
+            frameAssets.put(Integer.valueOf(11), new OracleContract.Asset("android-full-frames\\identity\\source_011.png", 1472L, "50e6a06c2a87cefea352c591915c39dbdfd7157919d61a80f9fe70a979f2a237"));
+            frameAssets.put(Integer.valueOf(12), new OracleContract.Asset("android-full-frames\\identity\\source_012.png", 1449L, "41654db8f89acd43c214376100c640cced8a39a675b945d1dcce3e5edda05821"));
+            frameAssets.put(Integer.valueOf(13), new OracleContract.Asset("android-full-frames\\identity\\source_013.png", 1463L, "a2ea2a880449f14ffc7c03302cb971ff43733bdc0ece95de86695a6e95848121"));
+            frameAssets.put(Integer.valueOf(14), new OracleContract.Asset("android-full-frames\\identity\\source_014.png", 1447L, "deee007f35e503f9146a05346ea940fb3bcde9a86171fb94707c255fd782bf41"));
+            frameAssets.put(Integer.valueOf(15), new OracleContract.Asset("android-full-frames\\identity\\source_015.png", 1425L, "cee7bef6e9b4f2f2c26c5826dd10be54fd0fbb158345a58d51716d0a004625fc"));
+            frameAssets.put(Integer.valueOf(16), new OracleContract.Asset("android-full-frames\\identity\\source_016.png", 1431L, "47cd13c0bee8b6750cec76d65681dd294f252114e2c774352e2b0ab9acb1077b"));
+            frameAssets.put(Integer.valueOf(17), new OracleContract.Asset("android-full-frames\\identity\\source_017.png", 1491L, "baee5064fe72a609ad9e1aa862ee5f7fc5b555e5e542c711dca0b7f9467f5435"));
+            frameAssets.put(Integer.valueOf(18), new OracleContract.Asset("android-full-frames\\identity\\source_018.png", 1505L, "63771662f583c9d5b3b46bd8d2dac5294926e67cfae8f6e21c8ed101b5c5b07d"));
+            frameAssets.put(Integer.valueOf(19), new OracleContract.Asset("android-full-frames\\identity\\source_019.png", 1496L, "b818a6fe3e32642bbf3bc8b005c08c6481399e22611835d78137b8d87bc21bd1"));
+            frameAssets.put(Integer.valueOf(20), new OracleContract.Asset("android-full-frames\\identity\\source_020.png", 1488L, "54a0e9a092414916ac9e7b5f82718b2b23ae6f7373e4deeb3ccfefea3ba09877"));
+            frameAssets.put(Integer.valueOf(21), new OracleContract.Asset("android-full-frames\\identity\\source_021.png", 1489L, "70b73b83b5e3a92220e87850b2c18ebab2354527a5024e1ad6055ff2c87e522d"));
+            frameAssets.put(Integer.valueOf(22), new OracleContract.Asset("android-full-frames\\identity\\source_022.png", 1495L, "9b35e6e03cd96614935d1f2535ddaa3033fef1b65304b72e430f678d25f9572f"));
+            frameAssets.put(Integer.valueOf(23), new OracleContract.Asset("android-full-frames\\identity\\source_023.png", 1492L, "cc74770563353ac882b4e43c79b9b4c76121f1cb40a651dd8800c58c4e48eceb"));
+            frameAssets.put(Integer.valueOf(24), new OracleContract.Asset("android-full-frames\\identity\\source_024.png", 1468L, "d248c718107745e767de42cb7b0a645ae0fcf76a0e5a34233e7d81926333ed46"));
+            frameAssets.put(Integer.valueOf(25), new OracleContract.Asset("android-full-frames\\identity\\source_025.png", 1492L, "3ee149668e49ac86a7b395bd6822b72ab903131a003630c2518225671a919cf9"));
+            frameAssets.put(Integer.valueOf(26), new OracleContract.Asset("android-full-frames\\identity\\source_026.png", 1465L, "375539b074cff3b993a634fd536ac146da68a3fac252693638eb65fa41e864cc"));
+            frameAssets.put(Integer.valueOf(27), new OracleContract.Asset("android-full-frames\\identity\\source_027.png", 1469L, "b79cb69e390f824b13dbdd63d04ad7c408b60ee31562cab39d96a9b83788433b"));
+            frameAssets.put(Integer.valueOf(28), new OracleContract.Asset("android-full-frames\\identity\\source_028.png", 1456L, "cd7471a7d7821f144199383eaefd686ec12679990d892f15fe63ee4a36c4a4b3"));
+            frameAssets.put(Integer.valueOf(29), new OracleContract.Asset("android-full-frames\\identity\\source_029.png", 1492L, "f6d9bd48425d565ffd4bc67bd95d5a2a0a5b715d2c0daa21b780e05f5481820f"));
+            frameAssets.put(Integer.valueOf(30), new OracleContract.Asset("android-full-frames\\identity\\source_030.png", 1495L, "19a43489ab3e9d7feb799f09fb4a7d2abeaa39328451703be46af8057bee75fe"));
+            frameAssets.put(Integer.valueOf(31), new OracleContract.Asset("android-full-frames\\identity\\source_031.png", 1474L, "4ee33e5a842b3a85cd82f89453dd8ce6fbdf0bfe63e987ee59dcc1ca0846c6dc"));
+            frameAssets.put(Integer.valueOf(32), new OracleContract.Asset("android-full-frames\\identity\\source_032.png", 1455L, "5e0480930347ed3d39eabf24eb66dbb07b17f5d6a83a6fd4fef7f67833ecc1a1"));
+            frameAssets.put(Integer.valueOf(33), new OracleContract.Asset("android-full-frames\\identity\\source_033.png", 1481L, "6bdb87b12beb05c973114ab940e87d3810a6fe7885d87c589c0e5840f1680901"));
+            frameAssets.put(Integer.valueOf(34), new OracleContract.Asset("android-full-frames\\identity\\source_034.png", 1484L, "19c89cb535a00dded4c837eedd7eed5f0218d319947e6d303e8084f62aae55b7"));
+            frameAssets.put(Integer.valueOf(35), new OracleContract.Asset("android-full-frames\\identity\\source_035.png", 1485L, "f44294faa57c7ffd0c9dc44ff3590c6b32cc94402be223a1e4a5f40d8fa4dee3"));
+            frameAssets.put(Integer.valueOf(36), new OracleContract.Asset("android-full-frames\\identity\\source_036.png", 1461L, "d423a4c7a47ca24b847898a93bee73c37433d21f84003b7686d5d872743ef515"));
+            frameAssets.put(Integer.valueOf(37), new OracleContract.Asset("android-full-frames\\identity\\source_037.png", 1468L, "31bef3fe22159f725d265a0552af59f876caea8089c5e9e3a180b7ce57419f4f"));
+            frameAssets.put(Integer.valueOf(38), new OracleContract.Asset("android-full-frames\\identity\\source_038.png", 1472L, "9fe0ea19b4b2103290d7c2a40c86236146e9f521eb21456c67008a1b623225f6"));
+            frameAssets.put(Integer.valueOf(39), new OracleContract.Asset("android-full-frames\\identity\\source_039.png", 1463L, "0bf08c6bf71afe3549c220a5ce842e787cc5f12cb457faf565dacb2cd3236a31"));
+            frameAssets.put(Integer.valueOf(40), new OracleContract.Asset("android-full-frames\\identity\\source_040.png", 1440L, "37de11cb03e156253f027723b2393931e0804e0f07465ee0d3d5a8cc6c435391"));
+            frameAssets.put(Integer.valueOf(41), new OracleContract.Asset("android-full-frames\\identity\\source_041.png", 1486L, "bcc73f783d8005cecc91576491cfebaf6ddc1627f6b1da9cf74676aa3a5e3f1f"));
+            frameAssets.put(Integer.valueOf(42), new OracleContract.Asset("android-full-frames\\identity\\source_042.png", 1469L, "affbb3ca9dec013175767a65c05da0160da24efec95cb542ffe491c404b5aa08"));
+            frameAssets.put(Integer.valueOf(43), new OracleContract.Asset("android-full-frames\\identity\\source_043.png", 1475L, "55a5492e7c910c154d1897c65344316c3e71ab7c5203d2ede3a79b6a3baaadad"));
+            frameAssets.put(Integer.valueOf(44), new OracleContract.Asset("android-full-frames\\identity\\source_044.png", 1481L, "b77566f31d1c0d329fdc5312c0d5eecb5f79fe09d64ac8bbd2dacb353fa3ca09"));
+            frameAssets.put(Integer.valueOf(45), new OracleContract.Asset("android-full-frames\\identity\\source_045.png", 1489L, "b0b342bf3d983da8b1016c8bd935aa9b9415121ec41f4b666edf4a5a452b562c"));
+            frameAssets.put(Integer.valueOf(46), new OracleContract.Asset("android-full-frames\\identity\\source_046.png", 1479L, "d3fef3becaf7ecccf4b9ced5c7d0a8b0550787825ef493ea388db44215710c10"));
+            frameAssets.put(Integer.valueOf(47), new OracleContract.Asset("android-full-frames\\identity\\source_047.png", 1455L, "50963fd3af0ab9e5d63216c954617dd0e0f4d20311dadd2c4e2270f1ba949071"));
+            frameAssets.put(Integer.valueOf(48), new OracleContract.Asset("android-full-frames\\identity\\source_048.png", 1440L, "bc0e55ac31a478296ffefdf780fbb5899d9108659a198addee7138122836a7e4"));
+            frameAssets.put(Integer.valueOf(49), new OracleContract.Asset("android-full-frames\\identity\\source_049.png", 1476L, "df99cee9f4e2aa04d7649a0affc71e76316bf5df2d983787421063a2143f1062"));
+            frameAssets.put(Integer.valueOf(50), new OracleContract.Asset("android-full-frames\\identity\\source_050.png", 1476L, "4f79f3763f8f3d149cb13e80fb2ee42500bca6f99fac0374d8e0b2cc6ecb835c"));
+            frameAssets.put(Integer.valueOf(51), new OracleContract.Asset("android-full-frames\\identity\\source_051.png", 1473L, "f82967b67b3d826fcfbb5cdb9516ea7e32589e9daf40f15f1caed1cfc54bd05a"));
+            frameAssets.put(Integer.valueOf(52), new OracleContract.Asset("android-full-frames\\identity\\source_052.png", 1457L, "8cc8130b7aa6196b604fee1db35877ea99b1662dab3960099d4373496af47925"));
+            frameAssets.put(Integer.valueOf(53), new OracleContract.Asset("android-full-frames\\identity\\source_053.png", 1493L, "11022a965f4d895dd29330671e09078cbbf970164f4c3c61bd1ac8eacd7d8966"));
+            frameAssets.put(Integer.valueOf(54), new OracleContract.Asset("android-full-frames\\identity\\source_054.png", 1503L, "6704f5791d03a2233e489e6903b7aacca40f45ad7e7b11c0be04eaf939d2900a"));
+            frameAssets.put(Integer.valueOf(55), new OracleContract.Asset("android-full-frames\\identity\\source_055.png", 1484L, "81e4ab40d4f1eaacfc6e2f6199bd80bed476268f5380bde962233d7e64ad61e0"));
+            frameAssets.put(Integer.valueOf(56), new OracleContract.Asset("android-full-frames\\identity\\source_056.png", 1479L, "0bad77d71f3a85fb8f4a16049c599fa20d2308e067a8cd594c0fee5f690f6e6f"));
+            frameAssets.put(Integer.valueOf(57), new OracleContract.Asset("android-full-frames\\identity\\source_057.png", 1500L, "3d9895fb95d4ba9eb7df0de2f5d6d3d97f46903755c5cd3cc75f7310726760e6"));
+            frameAssets.put(Integer.valueOf(58), new OracleContract.Asset("android-full-frames\\identity\\source_058.png", 1477L, "c70a8f42e5753d9390a076880f8422113cbd2d423662351f21bb7a8186a23281"));
+            frameAssets.put(Integer.valueOf(59), new OracleContract.Asset("android-full-frames\\identity\\source_059.png", 1495L, "1befb44fd0d05717fde612328f48c1266ffc22df97425a3a86ea5366e3781ba7"));
+            frameAssets.put(Integer.valueOf(60), new OracleContract.Asset("android-full-frames\\identity\\source_060.png", 1476L, "7398e01b54e9269ee16452d243fb29479f3bdca6390dd8fa284d05c0b4109209"));
+            frameAssets.put(Integer.valueOf(61), new OracleContract.Asset("android-full-frames\\identity\\source_061.png", 1489L, "007c8d69a073a37214e4ba16f1cf8e34244fd3b7605a3f4fb89f88315fdd2812"));
+            frameAssets.put(Integer.valueOf(62), new OracleContract.Asset("android-full-frames\\identity\\source_062.png", 1462L, "6b2897ae983cbaf3c6cdcaaee0690c0fcccf6e580d2badfb0b622518ad19433a"));
+            frameAssets.put(Integer.valueOf(63), new OracleContract.Asset("android-full-frames\\identity\\source_063.png", 1446L, "a501770f0d65b399cd8f8ff60eef5cdd6bd278e4dd76273c459ea09ce0374000"));
+            frameAssets.put(Integer.valueOf(64), new OracleContract.Asset("android-full-frames\\identity\\source_064.png", 1420L, "c2a9d27e4beb67d23cebe9ed1e8bec83036162bb6fb07c8105c6386046f946eb"));
+            frameAssets.put(Integer.valueOf(65), new OracleContract.Asset("android-full-frames\\identity\\source_065.png", 1472L, "f9da02529590d65ade57126a4ee249ae0090f7b982a21755ad1652ea931ac682"));
+            frameAssets.put(Integer.valueOf(66), new OracleContract.Asset("android-full-frames\\identity\\source_066.png", 1496L, "6558d06ecfdb9034bcf5c2a6f966ff4e62dda9172c697fd871fbb14af022f2bb"));
+            frameAssets.put(Integer.valueOf(67), new OracleContract.Asset("android-full-frames\\identity\\source_067.png", 1498L, "1aa864455084b94d67fcfdc1e4757fae7855af933451ea92721284b17e9a234e"));
+            frameAssets.put(Integer.valueOf(68), new OracleContract.Asset("android-full-frames\\identity\\source_068.png", 1482L, "dbb3ffe463572b7322da791073a9955c277c85885374f9d61a38650fc9ab5f66"));
+            frameAssets.put(Integer.valueOf(69), new OracleContract.Asset("android-full-frames\\identity\\source_069.png", 1487L, "231e816909ccd029e9f1e306281d29d4cb7c03497e757cee1d4421db880396a3"));
+            frameAssets.put(Integer.valueOf(70), new OracleContract.Asset("android-full-frames\\identity\\source_070.png", 1492L, "425205320006d357f2e4318bc880b144375550a9b7aeb3a90e403fa9866eee47"));
+            frameAssets.put(Integer.valueOf(71), new OracleContract.Asset("android-full-frames\\identity\\source_071.png", 1477L, "7cdc95f5d661d5dcd017725138383c4d87972f426cd1e73ef78f4fb09dc97658"));
+            frameAssets.put(Integer.valueOf(72), new OracleContract.Asset("android-full-frames\\identity\\source_072.png", 1460L, "1fa60cd3e0110c2d9a67d0d187af60ef10b80678d15953cb97243d8fb7a9fb60"));
+            frameAssets.put(Integer.valueOf(73), new OracleContract.Asset("android-full-frames\\identity\\source_073.png", 1479L, "4e674bb014d87a94e74ca1e5585e89fc454fc591707ceba0988b9603e2aba2e5"));
+            frameAssets.put(Integer.valueOf(74), new OracleContract.Asset("android-full-frames\\identity\\source_074.png", 1461L, "0032db6771e5a1a6cc710cd05962fdc4c274fa13ecf3e1b162333365f16ff43d"));
+            frameAssets.put(Integer.valueOf(75), new OracleContract.Asset("android-full-frames\\identity\\source_075.png", 1474L, "7b2a45650cf8cbf439bbde657eb0f34e8b9c577c438bed51e780896763667ae8"));
+            frameAssets.put(Integer.valueOf(76), new OracleContract.Asset("android-full-frames\\identity\\source_076.png", 1459L, "5acf823b54ab6bf9a366c0946684518cca197a5f1314bdb6e34f6f46f8cf4c4c"));
+            frameAssets.put(Integer.valueOf(77), new OracleContract.Asset("android-full-frames\\identity\\source_077.png", 1495L, "966fb680691c899536fc7286f7d31d9a8821cac3d9181ca2c20894b9134d68de"));
+            frameAssets.put(Integer.valueOf(78), new OracleContract.Asset("android-full-frames\\identity\\source_078.png", 1485L, "f140cfbc319cfd25003a812893cb6f8150f72290aa341f0a83bc022a091707b9"));
+            frameAssets.put(Integer.valueOf(79), new OracleContract.Asset("android-full-frames\\identity\\source_079.png", 1466L, "ae3c9412c46be8c3255688e8fd21cd2d0d2155d0b09686c91dd71c2bcb221677"));
+            frameAssets.put(Integer.valueOf(80), new OracleContract.Asset("android-full-frames\\identity\\source_080.png", 1457L, "0538ff2aed6e218e8f7b9492fc0b688847abb01530b875b40685d3fb4fa5da54"));
+            frameAssets.put(Integer.valueOf(81), new OracleContract.Asset("android-full-frames\\identity\\source_081.png", 1485L, "b466f0a9e04249d1dd98077242260593769a51e7f9f4544fedf8759a6dcc0aa7"));
+            frameAssets.put(Integer.valueOf(82), new OracleContract.Asset("android-full-frames\\identity\\source_082.png", 1490L, "54b5c9235bdd4e98d962eb6bbd6ebf706ab5db6b63d25fc775af071f877bd91f"));
+            frameAssets.put(Integer.valueOf(83), new OracleContract.Asset("android-full-frames\\identity\\source_083.png", 1491L, "b983748e308bb0bc546ee3da897ed88e800f773ee69a79897822e0298d179308"));
+            frameAssets.put(Integer.valueOf(84), new OracleContract.Asset("android-full-frames\\identity\\source_084.png", 1460L, "423dd7825c2eda1da0c648cf9449b11b7bb57cefb57171a04abaca4efe51b583"));
+            frameAssets.put(Integer.valueOf(85), new OracleContract.Asset("android-full-frames\\identity\\source_085.png", 1463L, "e5b95857ee4d7a8ee05d55041c1e025e1d9b48beb709048fa466e9995ba25da5"));
+            frameAssets.put(Integer.valueOf(86), new OracleContract.Asset("android-full-frames\\identity\\source_086.png", 1470L, "e5b952ff629533dc2adc39548301389e5c942b28db157f5b13d3352ff7864312"));
+            frameAssets.put(Integer.valueOf(87), new OracleContract.Asset("android-full-frames\\identity\\source_087.png", 1455L, "70da31bacf2c510a51cb700bc876d9ef56dbea20c0ce362680a45636c31fd7e3"));
+            frameAssets.put(Integer.valueOf(88), new OracleContract.Asset("android-full-frames\\identity\\source_088.png", 1445L, "1b3e2e91a474408a48ee315e7569f627a158d48de3b28d9b3c17453bf8e7d238"));
+            frameAssets.put(Integer.valueOf(89), new OracleContract.Asset("android-full-frames\\identity\\source_089.png", 1497L, "faf4cc0f2851a12786f855b117f914653118ae79f24668619357f089ca6d471b"));
+            frameAssets.put(Integer.valueOf(90), new OracleContract.Asset("android-full-frames\\identity\\source_090.png", 1487L, "759c41f7d9c4154d20af921e4d253a72ab7a16519e424cf7dd25d61d82042de7"));
+            frameAssets.put(Integer.valueOf(91), new OracleContract.Asset("android-full-frames\\identity\\source_091.png", 1481L, "9d18b33e6c6bfeb7ebfdd1ba2b053c58598797beb8d45bbc50a4742fa2af2205"));
+            frameAssets.put(Integer.valueOf(92), new OracleContract.Asset("android-full-frames\\identity\\source_092.png", 1482L, "af1e4b1c28a0693c303b0c4553d4a2572a7b19af871d26dcc8d071ff4f40c8e2"));
+            frameAssets.put(Integer.valueOf(93), new OracleContract.Asset("android-full-frames\\identity\\source_093.png", 1493L, "59d254da30c0c0965461087ab6dfcfa70fb7b697fa0e05b56ecee4389b1e91a6"));
+            frameAssets.put(Integer.valueOf(94), new OracleContract.Asset("android-full-frames\\identity\\source_094.png", 1474L, "7df36ca67aeda15cff362ed397b9cb1b4e8c50f909f885ca8cb2f2de0ee980ee"));
+            frameAssets.put(Integer.valueOf(95), new OracleContract.Asset("android-full-frames\\identity\\source_095.png", 1465L, "1d8a4b9e918353c1ab0a90e608314039a0b0bbb4fc85ae380d24c0f470481f50"));
+            List<OracleContract.AudioProbe> audioProbes = new ArrayList<OracleContract.AudioProbe>();
+            audioProbes.add(new OracleContract.AudioProbe(0.25d, 0.12d, 0.25d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(0.5d, 0.12d, 0.5d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(0.75d, 0.12d, 0.75d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.25d, 0.12d, 1.25d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.5d, 0.12d, 1.5d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.75d, 0.12d, 1.75d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(2.25d, 0.12d, 2.25d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(2.5d, 0.12d, 2.5d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(2.75d, 0.12d, 2.75d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.25d, 0.12d, 3.25d, 1100, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.5d, 0.12d, 3.5d, 1100, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.75d, 0.12d, 3.75d, 1100, 0.22627416997969518d));
+            cases.add(new OracleContract.OracleCase(
+                    "identity",
+                    new OracleContract.Operation(0, 4, 0, 0, 320, 240, 0, 0, 1.0d, 1.0d),
+                    new LinkedHashMap<String, Object>() {{
+                        put("sourceDurationMs", Integer.valueOf(4000));
+                        put("startMs", Integer.valueOf(0));
+                        put("endMs", Integer.valueOf(4000));
+                        put("cropLeft", Double.valueOf(0.0d));
+                        put("cropTop", Double.valueOf(0.0d));
+                        put("cropRight", Double.valueOf(1.0d));
+                        put("cropBottom", Double.valueOf(1.0d));
+                        put("rotationDegrees", Integer.valueOf(0));
+                        put("outputHeight", Integer.valueOf(0));
+                        put("speed", Double.valueOf(1.0d));
+                        put("volume", Double.valueOf(1.0d));
+                        put("overlayText", "");
+                    }},
+                    320, 240, 4.0d, 24.0d,
+                    Arrays.asList(Double.valueOf(24.0d)),
+                    96, 1, 1,
+                    true, 48000,
+                    1, 192000,
+                    barcodeRegions,
+                    probes,
+                    frameAssets,
+                    audioProbes,
+                    new OracleContract.Asset("reference\\identity.mp4", 93752L, "68a946ced2b7969af6a54652f1b308157713b5457130de28a520dafcff22d647")));
+        }
+        {
+            List<OracleContract.BarcodeRegion> barcodeRegions = OracleCoreVerifier.barcodeRegions(
+                    new OracleContract.Operation(0, 4, 40, 40, 280, 200, 0, 0, 1.0d, 1.0d));
+            List<OracleContract.Probe> probes = new ArrayList<OracleContract.Probe>();
+            probes.add(new OracleContract.Probe(0, 0.0d, new OracleContract.Asset("frames\\crop\\source_000.png", 911L, "4b28cade9f6b7cdf2a456310b563724454eb837937ff1d4a0fd04962d93d4cad")));
+            probes.add(new OracleContract.Probe(12, 0.5d, new OracleContract.Asset("frames\\crop\\source_012.png", 955L, "02d624404cf34ad34dc4024c8592165c2adf55aa191d632c7f37ca274808de12")));
+            probes.add(new OracleContract.Probe(24, 1.0d, new OracleContract.Asset("frames\\crop\\source_024.png", 971L, "26935605d40e179e68888816d941d331a50bc76d560f813fe6cfd0274c769491")));
+            probes.add(new OracleContract.Probe(36, 1.5d, new OracleContract.Asset("frames\\crop\\source_036.png", 962L, "e761bcd2926ffca720ef96856b0047df04f89c6506764d35c95dfa70040c9a3a")));
+            probes.add(new OracleContract.Probe(48, 2.0d, new OracleContract.Asset("frames\\crop\\source_048.png", 945L, "9f64e51970b5a672b5f57e9239607083f13c7aa714228867302e4db8b00f1bfa")));
+            probes.add(new OracleContract.Probe(59, 2.4583333333333335d, new OracleContract.Asset("frames\\crop\\source_059.png", 993L, "9bb34c22e0360907363acdbbc023733fe6091a809f97c6e4f316abf0f8bd3f0d")));
+            probes.add(new OracleContract.Probe(71, 2.9583333333333335d, new OracleContract.Asset("frames\\crop\\source_071.png", 976L, "e66819172c7b40843662bc078a0c7fc4a56701da55c0cacf2f7d01a38eeaf78a")));
+            probes.add(new OracleContract.Probe(83, 3.4583333333333335d, new OracleContract.Asset("frames\\crop\\source_083.png", 997L, "b9bad6aa7469578529b1542d6f0ace07e134a69195d8ba03e64c8034ab34d7d9")));
+            probes.add(new OracleContract.Probe(95, 3.9583333333333335d, new OracleContract.Asset("frames\\crop\\source_095.png", 972L, "346cb9c9ac5d82afdb3b1317fe6b1a5208b12a35c8abea2455d650bc87d4f485")));
+            LinkedHashMap<Integer, OracleContract.Asset> frameAssets = new LinkedHashMap<Integer, OracleContract.Asset>();
+            frameAssets.put(Integer.valueOf(0), new OracleContract.Asset("android-full-frames\\crop\\source_000.png", 911L, "4b28cade9f6b7cdf2a456310b563724454eb837937ff1d4a0fd04962d93d4cad"));
+            frameAssets.put(Integer.valueOf(1), new OracleContract.Asset("android-full-frames\\crop\\source_001.png", 940L, "72e0e66fc5d05c43aa5de3cc5ff938b43c9ad6fc611f3fd0ee437158ec9a4ef8"));
+            frameAssets.put(Integer.valueOf(2), new OracleContract.Asset("android-full-frames\\crop\\source_002.png", 945L, "f1b0c16e20f897430f874650f04630f10452f070b7bd13d665b7a254d0484136"));
+            frameAssets.put(Integer.valueOf(3), new OracleContract.Asset("android-full-frames\\crop\\source_003.png", 951L, "45a7f2da45739899d6d8a517d2f5ece77a6b735ef6a5266c7e0d6f1638d7b7fb"));
+            frameAssets.put(Integer.valueOf(4), new OracleContract.Asset("android-full-frames\\crop\\source_004.png", 937L, "9b090449054157d258614604398907500c109263173970bed49034a798f7cd81"));
+            frameAssets.put(Integer.valueOf(5), new OracleContract.Asset("android-full-frames\\crop\\source_005.png", 961L, "21ee0fd7089c5148486c946e2e4b80109aa5487a30292ca7a79efc5dfe467a5c"));
+            frameAssets.put(Integer.valueOf(6), new OracleContract.Asset("android-full-frames\\crop\\source_006.png", 959L, "e44d66844e7824f95d662263c2d3c900da12dbab98612bea3ffa43e830a96cc6"));
+            frameAssets.put(Integer.valueOf(7), new OracleContract.Asset("android-full-frames\\crop\\source_007.png", 957L, "73331364a575174d7f2e29b3a5d0af93b195424aae5caf625e3c498d344bd34a"));
+            frameAssets.put(Integer.valueOf(8), new OracleContract.Asset("android-full-frames\\crop\\source_008.png", 964L, "b34aab2f6ea0dbf7f8a115d803146311156ddf1101272d1581f528b9895413a2"));
+            frameAssets.put(Integer.valueOf(9), new OracleContract.Asset("android-full-frames\\crop\\source_009.png", 974L, "8de9bc97214a18b58ded59e0c73b3ac3355be63695f4e9ba9a3ca951cca134d2"));
+            frameAssets.put(Integer.valueOf(10), new OracleContract.Asset("android-full-frames\\crop\\source_010.png", 974L, "3fb0691f705fe98eb59dce46adae5bf696b8a0c07f792169fa98730df7ac529a"));
+            frameAssets.put(Integer.valueOf(11), new OracleContract.Asset("android-full-frames\\crop\\source_011.png", 977L, "4af1666e327022cdb6836678cf964c5f1f0cb0645fb5a1fda78e85df987540c1"));
+            frameAssets.put(Integer.valueOf(12), new OracleContract.Asset("android-full-frames\\crop\\source_012.png", 955L, "02d624404cf34ad34dc4024c8592165c2adf55aa191d632c7f37ca274808de12"));
+            frameAssets.put(Integer.valueOf(13), new OracleContract.Asset("android-full-frames\\crop\\source_013.png", 959L, "966c0a202777e2ebf00111903d3257f5cbe9dedc30d7c6cae7a5ca9eec535d44"));
+            frameAssets.put(Integer.valueOf(14), new OracleContract.Asset("android-full-frames\\crop\\source_014.png", 946L, "f4c6be4029ae4ba180089a158a9da3dfa31d702f5146d4320d0e04d7a43a754f"));
+            frameAssets.put(Integer.valueOf(15), new OracleContract.Asset("android-full-frames\\crop\\source_015.png", 939L, "c3291459a4c3935bbf3dda6c09b865cc4168df0d44957657b8ae7fbf553e4b05"));
+            frameAssets.put(Integer.valueOf(16), new OracleContract.Asset("android-full-frames\\crop\\source_016.png", 940L, "71193dc739ecab692d8b7289b04525ef04f853d4564569050d3caf38b4405bdb"));
+            frameAssets.put(Integer.valueOf(17), new OracleContract.Asset("android-full-frames\\crop\\source_017.png", 993L, "ddd0d8a7fb8cd1b0e19ee1570487379223bff2d83d85068d7646889538b27afe"));
+            frameAssets.put(Integer.valueOf(18), new OracleContract.Asset("android-full-frames\\crop\\source_018.png", 1006L, "824498565e5f21f3121bb4fb6fea5b3759fdefd91911550345485da87c7db5bd"));
+            frameAssets.put(Integer.valueOf(19), new OracleContract.Asset("android-full-frames\\crop\\source_019.png", 993L, "f038320392ed314bafda60c6467c82064d655ed87a6e757be058771478b674e6"));
+            frameAssets.put(Integer.valueOf(20), new OracleContract.Asset("android-full-frames\\crop\\source_020.png", 993L, "d506ca82ea0e8d2a8e9abbd97f82d11c22478eea8f6702d041f1e6ea906b1823"));
+            frameAssets.put(Integer.valueOf(21), new OracleContract.Asset("android-full-frames\\crop\\source_021.png", 996L, "871394fced94c7ac9db2f3347a17a00866c7ef47b760cc939d5733af0efde418"));
+            frameAssets.put(Integer.valueOf(22), new OracleContract.Asset("android-full-frames\\crop\\source_022.png", 992L, "d2f9ec4e171ceef35d50cebae622015cbac5a345203a9b432fa4017eefea1806"));
+            frameAssets.put(Integer.valueOf(23), new OracleContract.Asset("android-full-frames\\crop\\source_023.png", 993L, "150afcba238edcc536988e21a6914ee69a5078dc16c5366004b372e74d0edd8f"));
+            frameAssets.put(Integer.valueOf(24), new OracleContract.Asset("android-full-frames\\crop\\source_024.png", 971L, "26935605d40e179e68888816d941d331a50bc76d560f813fe6cfd0274c769491"));
+            frameAssets.put(Integer.valueOf(25), new OracleContract.Asset("android-full-frames\\crop\\source_025.png", 988L, "cf3c314324cd5f3d4e960edfcfb5635708b91a6009e266a799c1ed53ee364701"));
+            frameAssets.put(Integer.valueOf(26), new OracleContract.Asset("android-full-frames\\crop\\source_026.png", 966L, "576c4a33bd04781d99405024a192d86662fdb7849d7944cab9d4019d7cdb0136"));
+            frameAssets.put(Integer.valueOf(27), new OracleContract.Asset("android-full-frames\\crop\\source_027.png", 974L, "74eee9873de123d2338f848d6a71eeb364857f9f98c9ad1aca4d554e8b1f99aa"));
+            frameAssets.put(Integer.valueOf(28), new OracleContract.Asset("android-full-frames\\crop\\source_028.png", 959L, "b490912206b1eb1cec09d2f643c1df20549dfeae7bd45859485400e41ae40f46"));
+            frameAssets.put(Integer.valueOf(29), new OracleContract.Asset("android-full-frames\\crop\\source_029.png", 991L, "a342da06b40e1840763fdb7e5c3219d440bd39d93bff9b0be6e8bff1f4146077"));
+            frameAssets.put(Integer.valueOf(30), new OracleContract.Asset("android-full-frames\\crop\\source_030.png", 994L, "63bd6ef92f04b12fae01b381d67b9c0d04bb5433699502c1acb335a074d4be7c"));
+            frameAssets.put(Integer.valueOf(31), new OracleContract.Asset("android-full-frames\\crop\\source_031.png", 975L, "217f1659076bbf4e95460ac8bf5d17483ee087ccec7312fda167d5ecf158f08d"));
+            frameAssets.put(Integer.valueOf(32), new OracleContract.Asset("android-full-frames\\crop\\source_032.png", 962L, "77b96f617e6b6786ae59639bf34ec8b1e582be14a5d153d9b772e5a735dc6479"));
+            frameAssets.put(Integer.valueOf(33), new OracleContract.Asset("android-full-frames\\crop\\source_033.png", 984L, "579e987066d152e1c36dbc56a38421853128e683dd3123b100f97831ee22a115"));
+            frameAssets.put(Integer.valueOf(34), new OracleContract.Asset("android-full-frames\\crop\\source_034.png", 988L, "7ee8705f3442f7ad7e9365a107fad7b12557ea447a4ad6f6c1710e4bf4e95ae6"));
+            frameAssets.put(Integer.valueOf(35), new OracleContract.Asset("android-full-frames\\crop\\source_035.png", 984L, "b692cc5fa067bcf6c64e40cec7ec0c23e50c887e0e01ee9e8f34a87b5fa0b626"));
+            frameAssets.put(Integer.valueOf(36), new OracleContract.Asset("android-full-frames\\crop\\source_036.png", 962L, "e761bcd2926ffca720ef96856b0047df04f89c6506764d35c95dfa70040c9a3a"));
+            frameAssets.put(Integer.valueOf(37), new OracleContract.Asset("android-full-frames\\crop\\source_037.png", 967L, "a84088c36d5dfdf0b4b6be378b14eb18600a09201f662e8e4dd51b088492764d"));
+            frameAssets.put(Integer.valueOf(38), new OracleContract.Asset("android-full-frames\\crop\\source_038.png", 964L, "e935094dd9f88e8c65201e89aece23062390f4fc13c7ca6f0d4a3970063e9cac"));
+            frameAssets.put(Integer.valueOf(39), new OracleContract.Asset("android-full-frames\\crop\\source_039.png", 969L, "f80bb5f4f97eff3ff28682c5c78b60c7cb42fad389a7d307b4d7be5adbcde417"));
+            frameAssets.put(Integer.valueOf(40), new OracleContract.Asset("android-full-frames\\crop\\source_040.png", 948L, "32d105ebe3c5498c725d01188571c3e5c1498766d1d109d0f568f770244a3400"));
+            frameAssets.put(Integer.valueOf(41), new OracleContract.Asset("android-full-frames\\crop\\source_041.png", 983L, "ad046fc33cedb14eb334b4b49898bd8780f49963708990938ffc2f952eadebb2"));
+            frameAssets.put(Integer.valueOf(42), new OracleContract.Asset("android-full-frames\\crop\\source_042.png", 973L, "496a02696ebd39af37aafccb8536fc432c23800b177ef7a4c3874756411c1d07"));
+            frameAssets.put(Integer.valueOf(43), new OracleContract.Asset("android-full-frames\\crop\\source_043.png", 982L, "0a6543f0453039a3e332b3305121c15a48a0e30d0c4bbd7dbb4fdee1441a6430"));
+            frameAssets.put(Integer.valueOf(44), new OracleContract.Asset("android-full-frames\\crop\\source_044.png", 981L, "a5d516194530253aab8d68fcfa37ae06bfb138b1de39b5cd5e35e06f30d02bb6"));
+            frameAssets.put(Integer.valueOf(45), new OracleContract.Asset("android-full-frames\\crop\\source_045.png", 992L, "30c013b00d7444b93318c80d9252efc93dcf5295d0ed19569096e7091ef10ef9"));
+            frameAssets.put(Integer.valueOf(46), new OracleContract.Asset("android-full-frames\\crop\\source_046.png", 986L, "65a61400b4632b05f4d91de85562ac411fc5c39e7743931c9f7ff638575dd42f"));
+            frameAssets.put(Integer.valueOf(47), new OracleContract.Asset("android-full-frames\\crop\\source_047.png", 994L, "c8cab9322683f0a9146e3e40963894fc35b44324e84b669b00c1f47019151500"));
+            frameAssets.put(Integer.valueOf(48), new OracleContract.Asset("android-full-frames\\crop\\source_048.png", 945L, "9f64e51970b5a672b5f57e9239607083f13c7aa714228867302e4db8b00f1bfa"));
+            frameAssets.put(Integer.valueOf(49), new OracleContract.Asset("android-full-frames\\crop\\source_049.png", 965L, "6425af06d99df308e3d261967023a6f0b14f6622b47eb0b36bc4591959f781d3"));
+            frameAssets.put(Integer.valueOf(50), new OracleContract.Asset("android-full-frames\\crop\\source_050.png", 970L, "e4392387c7a20e1de2f2dee7064986cc73d586aa0e60b15570959bf2d2b30f2d"));
+            frameAssets.put(Integer.valueOf(51), new OracleContract.Asset("android-full-frames\\crop\\source_051.png", 973L, "75bc77e9cdacb61a28dfad03e1040af1b26bb6fdd08f5d12380557bf2580794d"));
+            frameAssets.put(Integer.valueOf(52), new OracleContract.Asset("android-full-frames\\crop\\source_052.png", 956L, "8f6919d0045b2a1aa3cc9af9d3e21207b7b72bd1f258fb70fdaa0eb88b07c7c8"));
+            frameAssets.put(Integer.valueOf(53), new OracleContract.Asset("android-full-frames\\crop\\source_053.png", 997L, "e4844af3d0bec2369b54cade7a1a00b0df28fed5666af7a11e73ef8a333cc85b"));
+            frameAssets.put(Integer.valueOf(54), new OracleContract.Asset("android-full-frames\\crop\\source_054.png", 1003L, "9bb8db61505344203222ceb90a453d90fb3a6c76d013fe24204d66dc71283d84"));
+            frameAssets.put(Integer.valueOf(55), new OracleContract.Asset("android-full-frames\\crop\\source_055.png", 983L, "57f820fc7e64ee295f49b683c99147db78903a3dcfbafd4d30952389e68713d1"));
+            frameAssets.put(Integer.valueOf(56), new OracleContract.Asset("android-full-frames\\crop\\source_056.png", 973L, "d825580ba7e6fcf53c12aecef70b6f837e009590a2530a7b9020629371921c34"));
+            frameAssets.put(Integer.valueOf(57), new OracleContract.Asset("android-full-frames\\crop\\source_057.png", 1001L, "29a8461928e917cf3872ec39ea30c3b948e179505692844649334103066e28e0"));
+            frameAssets.put(Integer.valueOf(58), new OracleContract.Asset("android-full-frames\\crop\\source_058.png", 982L, "ffece2120ec7f29b865ef1b7e64c6a56407a41ca2bc64f1b68c1061ef18dcd31"));
+            frameAssets.put(Integer.valueOf(59), new OracleContract.Asset("android-full-frames\\crop\\source_059.png", 993L, "9bb34c22e0360907363acdbbc023733fe6091a809f97c6e4f316abf0f8bd3f0d"));
+            frameAssets.put(Integer.valueOf(60), new OracleContract.Asset("android-full-frames\\crop\\source_060.png", 973L, "408d4fc913c29aa8004880ee6d78900471a8c505b240513ed5a6bd53b8791c5f"));
+            frameAssets.put(Integer.valueOf(61), new OracleContract.Asset("android-full-frames\\crop\\source_061.png", 986L, "9ef4577f1845c651c9bdc4264b61b1278bffabc44216f6f8d771a34949cc6fed"));
+            frameAssets.put(Integer.valueOf(62), new OracleContract.Asset("android-full-frames\\crop\\source_062.png", 960L, "489365b15b4982ede54c4e8093eeb151f4f8d9d72a5cf2e6a3b271dc5155d065"));
+            frameAssets.put(Integer.valueOf(63), new OracleContract.Asset("android-full-frames\\crop\\source_063.png", 951L, "24bde254ed04c8bce6ee31eb1cd7e439cb4bfb8d5be7227151fe96eebd7a805c"));
+            frameAssets.put(Integer.valueOf(64), new OracleContract.Asset("android-full-frames\\crop\\source_064.png", 924L, "b9bd2afb7d34c6c93813f61aa3c7860b1c08d584f9d9c8cb40b0b1de90286537"));
+            frameAssets.put(Integer.valueOf(65), new OracleContract.Asset("android-full-frames\\crop\\source_065.png", 968L, "fabe0c2dd72ee2b25dbb59c115b41d802a3e0995360bb54bb31e5e8d8e2151fe"));
+            frameAssets.put(Integer.valueOf(66), new OracleContract.Asset("android-full-frames\\crop\\source_066.png", 989L, "13b9d575f0fbdaf00ba290acf81cc815e5be25bd6a1886c75a1f99053145ba37"));
+            frameAssets.put(Integer.valueOf(67), new OracleContract.Asset("android-full-frames\\crop\\source_067.png", 989L, "634ceeb418c464ea24ac9cfcaa603d5d77d1476cd5fb889cd807f6d3d1ccee4b"));
+            frameAssets.put(Integer.valueOf(68), new OracleContract.Asset("android-full-frames\\crop\\source_068.png", 983L, "318ac37adff39fdb19fd6cca253f9580ea05099ca3e77ba1a4e2355829faa327"));
+            frameAssets.put(Integer.valueOf(69), new OracleContract.Asset("android-full-frames\\crop\\source_069.png", 985L, "f56f4d5e76f31fa4f1840beeb7f2e1a3ba1f5d15dc844a14bfddfef69e77d24d"));
+            frameAssets.put(Integer.valueOf(70), new OracleContract.Asset("android-full-frames\\crop\\source_070.png", 982L, "16d10f7c08e15ca33815ef335b38f14f65612830bef02d92cee06aa24648216a"));
+            frameAssets.put(Integer.valueOf(71), new OracleContract.Asset("android-full-frames\\crop\\source_071.png", 976L, "e66819172c7b40843662bc078a0c7fc4a56701da55c0cacf2f7d01a38eeaf78a"));
+            frameAssets.put(Integer.valueOf(72), new OracleContract.Asset("android-full-frames\\crop\\source_072.png", 954L, "d7850b58804e904f3a6ff969da3786a5ffa579225e04892932782a2874921021"));
+            frameAssets.put(Integer.valueOf(73), new OracleContract.Asset("android-full-frames\\crop\\source_073.png", 970L, "d0910366d68910419278403996c6151f62f51fea1230b9040654c84b88b3ff2c"));
+            frameAssets.put(Integer.valueOf(74), new OracleContract.Asset("android-full-frames\\crop\\source_074.png", 961L, "f1b425e44731718ba8d7ee079d030787dd47ff5de01f29371693eb545a16abd2"));
+            frameAssets.put(Integer.valueOf(75), new OracleContract.Asset("android-full-frames\\crop\\source_075.png", 978L, "46f0d75ee51f738a8840bd1f55a0b147cbedfda10e9a519204cd58336414a3f7"));
+            frameAssets.put(Integer.valueOf(76), new OracleContract.Asset("android-full-frames\\crop\\source_076.png", 965L, "46ad195442485436a6c1e3a4613181dde067801eb18ec33529f6904103c40619"));
+            frameAssets.put(Integer.valueOf(77), new OracleContract.Asset("android-full-frames\\crop\\source_077.png", 998L, "6bc35de748696b3a7894c41dbcef3fecaf282bc49ca595ea1c1ec2097e92d534"));
+            frameAssets.put(Integer.valueOf(78), new OracleContract.Asset("android-full-frames\\crop\\source_078.png", 985L, "42b17bc4f6227f79280a2dfef8cde8136138d57ccebbcad1adb9b33cdf25063f"));
+            frameAssets.put(Integer.valueOf(79), new OracleContract.Asset("android-full-frames\\crop\\source_079.png", 972L, "8900dcbf07575c6aecf194669e3b8a7e59c74e05436f938bbfb43a33745a2efe"));
+            frameAssets.put(Integer.valueOf(80), new OracleContract.Asset("android-full-frames\\crop\\source_080.png", 962L, "0ebab98d033762ab9e3a3c58ae07f8127ef60b89e4b747c6bb53c599e935a5b6"));
+            frameAssets.put(Integer.valueOf(81), new OracleContract.Asset("android-full-frames\\crop\\source_081.png", 982L, "4e62345a4cc4980bedbd442f64e5eba46fad618c3918b468f6cdeb43fec91954"));
+            frameAssets.put(Integer.valueOf(82), new OracleContract.Asset("android-full-frames\\crop\\source_082.png", 993L, "3aa04aac34f4afbec3ba7fb44a25c734b467b3355c4e473d9e843133bfbfb7ff"));
+            frameAssets.put(Integer.valueOf(83), new OracleContract.Asset("android-full-frames\\crop\\source_083.png", 997L, "b9bad6aa7469578529b1542d6f0ace07e134a69195d8ba03e64c8034ab34d7d9"));
+            frameAssets.put(Integer.valueOf(84), new OracleContract.Asset("android-full-frames\\crop\\source_084.png", 968L, "d1cc30531c616963fcf54371b806193053a668b9f5889ece4713090558f3e9d2"));
+            frameAssets.put(Integer.valueOf(85), new OracleContract.Asset("android-full-frames\\crop\\source_085.png", 965L, "2345efd7d9a02cb5368fa4f74a6ba031eca14a439ba321644ea7d8f4e133143f"));
+            frameAssets.put(Integer.valueOf(86), new OracleContract.Asset("android-full-frames\\crop\\source_086.png", 970L, "b03c96d4b01e6bbede1423d8e6da2af47864a67b07fc4cec8f081b2e4666e4b5"));
+            frameAssets.put(Integer.valueOf(87), new OracleContract.Asset("android-full-frames\\crop\\source_087.png", 957L, "641c65d843ff239866bc9209a491b3d3ec2d8c52c0d58f5a515970718eb3f747"));
+            frameAssets.put(Integer.valueOf(88), new OracleContract.Asset("android-full-frames\\crop\\source_088.png", 950L, "317e2040e7652bf6581d56a5019dceb02b13b46a52f8eb4ef4dd9e2855b21f4b"));
+            frameAssets.put(Integer.valueOf(89), new OracleContract.Asset("android-full-frames\\crop\\source_089.png", 1005L, "7ceb8ebf57b6c4902204fead34cc74207497c73b4a42ce7142ea3b05e4f1c418"));
+            frameAssets.put(Integer.valueOf(90), new OracleContract.Asset("android-full-frames\\crop\\source_090.png", 994L, "ecea4a2829a9818cfd0328bd8fdc0b9b599b94c1521a687135d0fadd54ec0ec6"));
+            frameAssets.put(Integer.valueOf(91), new OracleContract.Asset("android-full-frames\\crop\\source_091.png", 987L, "eb37d42d8048be6b64826a5647f7e64576e20b8768e6efb1a60fec26b7cc01da"));
+            frameAssets.put(Integer.valueOf(92), new OracleContract.Asset("android-full-frames\\crop\\source_092.png", 988L, "3c3efb3f21edcecbffb63b6d731477de72f993c6c6c091a515b6ed525e12519c"));
+            frameAssets.put(Integer.valueOf(93), new OracleContract.Asset("android-full-frames\\crop\\source_093.png", 999L, "ebd59a9e781b9d3631e5166c2ff470f5f4d837fe90532443281a58ae8dbeed01"));
+            frameAssets.put(Integer.valueOf(94), new OracleContract.Asset("android-full-frames\\crop\\source_094.png", 980L, "32a4d7f9860f86c60fcf0146005d012bb03b08f1c6ad6166e9653ca1449ca298"));
+            frameAssets.put(Integer.valueOf(95), new OracleContract.Asset("android-full-frames\\crop\\source_095.png", 972L, "346cb9c9ac5d82afdb3b1317fe6b1a5208b12a35c8abea2455d650bc87d4f485"));
+            List<OracleContract.AudioProbe> audioProbes = new ArrayList<OracleContract.AudioProbe>();
+            audioProbes.add(new OracleContract.AudioProbe(0.25d, 0.12d, 0.25d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(0.5d, 0.12d, 0.5d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(0.75d, 0.12d, 0.75d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.25d, 0.12d, 1.25d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.5d, 0.12d, 1.5d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.75d, 0.12d, 1.75d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(2.25d, 0.12d, 2.25d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(2.5d, 0.12d, 2.5d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(2.75d, 0.12d, 2.75d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.25d, 0.12d, 3.25d, 1100, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.5d, 0.12d, 3.5d, 1100, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.75d, 0.12d, 3.75d, 1100, 0.22627416997969518d));
+            cases.add(new OracleContract.OracleCase(
+                    "crop",
+                    new OracleContract.Operation(0, 4, 40, 40, 280, 200, 0, 0, 1.0d, 1.0d),
+                    new LinkedHashMap<String, Object>() {{
+                        put("sourceDurationMs", Integer.valueOf(4000));
+                        put("startMs", Integer.valueOf(0));
+                        put("endMs", Integer.valueOf(4000));
+                        put("cropLeft", Double.valueOf(0.125d));
+                        put("cropTop", Double.valueOf(0.16666666666666666d));
+                        put("cropRight", Double.valueOf(0.875d));
+                        put("cropBottom", Double.valueOf(0.8333333333333334d));
+                        put("rotationDegrees", Integer.valueOf(0));
+                        put("outputHeight", Integer.valueOf(0));
+                        put("speed", Double.valueOf(1.0d));
+                        put("volume", Double.valueOf(1.0d));
+                        put("overlayText", "");
+                    }},
+                    240, 160, 4.0d, 24.0d,
+                    Arrays.asList(Double.valueOf(24.0d)),
+                    96, 1, 1,
+                    true, 48000,
+                    1, 192000,
+                    barcodeRegions,
+                    probes,
+                    frameAssets,
+                    audioProbes,
+                    new OracleContract.Asset("reference\\crop.mp4", 87319L, "ef908758a3a70030f10107f1caeb14a3b44318553a0ad493c28b3d18a915b120")));
+        }
+        {
+            List<OracleContract.BarcodeRegion> barcodeRegions = OracleCoreVerifier.barcodeRegions(
+                    new OracleContract.Operation(0, 4, 0, 0, 320, 240, 90, 0, 1.0d, 1.0d));
+            List<OracleContract.Probe> probes = new ArrayList<OracleContract.Probe>();
+            probes.add(new OracleContract.Probe(0, 0.0d, new OracleContract.Asset("frames\\rotate90\\source_000.png", 1507L, "1e4dd1db81cfcf5c123a6e4af0fb795cad9f9bfe4ec394731a7317eb804b0aca")));
+            probes.add(new OracleContract.Probe(12, 0.5d, new OracleContract.Asset("frames\\rotate90\\source_012.png", 1591L, "2a1916103e410f7757a7e2b51165caa6779e1adc5dc80cb5c9f2d1dd9629e30e")));
+            probes.add(new OracleContract.Probe(24, 1.0d, new OracleContract.Asset("frames\\rotate90\\source_024.png", 1609L, "bde0fb3225f3c787aa9f18565836c0aee1461631c530662a7594d092dbbcd48a")));
+            probes.add(new OracleContract.Probe(36, 1.5d, new OracleContract.Asset("frames\\rotate90\\source_036.png", 1571L, "10f0eb8f7c53b1bc2a1861c064cd0b368d4f08514586672b64cba66ce744383c")));
+            probes.add(new OracleContract.Probe(48, 2.0d, new OracleContract.Asset("frames\\rotate90\\source_048.png", 1570L, "094c3f4139e4ab658060cf26bec6c0ff44fde7022c4646819058b61eb10e9d96")));
+            probes.add(new OracleContract.Probe(59, 2.4583333333333335d, new OracleContract.Asset("frames\\rotate90\\source_059.png", 1591L, "905202fae3dbd99d86279c9e1ebea25f82e0e41edffcad0d64e5a7bda9ecaed0")));
+            probes.add(new OracleContract.Probe(71, 2.9583333333333335d, new OracleContract.Asset("frames\\rotate90\\source_071.png", 1584L, "03442e6788f5524de4aaee112db101834185905eee72f51969fe08b18fcda6d5")));
+            probes.add(new OracleContract.Probe(83, 3.4583333333333335d, new OracleContract.Asset("frames\\rotate90\\source_083.png", 1609L, "5cf33578cf5da03d893e7b56b986b2c4ba2088c2ce59ab22282cfa4b86cccca9")));
+            probes.add(new OracleContract.Probe(95, 3.9583333333333335d, new OracleContract.Asset("frames\\rotate90\\source_095.png", 1577L, "d94ac7aa0bcaba400ca3f687535eee332172d745e90dbc8b84c0e3c2297b7cd1")));
+            LinkedHashMap<Integer, OracleContract.Asset> frameAssets = new LinkedHashMap<Integer, OracleContract.Asset>();
+            frameAssets.put(Integer.valueOf(0), new OracleContract.Asset("android-full-frames\\rotate90\\source_000.png", 1507L, "1e4dd1db81cfcf5c123a6e4af0fb795cad9f9bfe4ec394731a7317eb804b0aca"));
+            frameAssets.put(Integer.valueOf(1), new OracleContract.Asset("android-full-frames\\rotate90\\source_001.png", 1531L, "5f48c79b84a258dc37c5607d8ebcffcd9dbabcd32105e8fbaadb7c98147b1bac"));
+            frameAssets.put(Integer.valueOf(2), new OracleContract.Asset("android-full-frames\\rotate90\\source_002.png", 1552L, "1ff8c99bd9a22319f9436f5e90999a45c3bacce5069d379a7bb253a7a6520d5d"));
+            frameAssets.put(Integer.valueOf(3), new OracleContract.Asset("android-full-frames\\rotate90\\source_003.png", 1574L, "ce057740dfeb384e01252659fa667c97735d044bbf21519bb60aa733604fdbcc"));
+            frameAssets.put(Integer.valueOf(4), new OracleContract.Asset("android-full-frames\\rotate90\\source_004.png", 1553L, "d803fce9baecaca36ed70ecd20e8f7a5f5a45038ce85d1576feea0832040054d"));
+            frameAssets.put(Integer.valueOf(5), new OracleContract.Asset("android-full-frames\\rotate90\\source_005.png", 1559L, "d1199af5b09ce2ac891ea219c35b1f2e71244b6cb35c994b90717ccffdc0d794"));
+            frameAssets.put(Integer.valueOf(6), new OracleContract.Asset("android-full-frames\\rotate90\\source_006.png", 1579L, "881c2769ad680a54d4ea7ab840aaf2bbd348490f0c31d92fd4f82d04b7bed31e"));
+            frameAssets.put(Integer.valueOf(7), new OracleContract.Asset("android-full-frames\\rotate90\\source_007.png", 1554L, "16f95c19af13712343e7261d32ba4abfd47c90d4c00b8d95b030eac340b07c86"));
+            frameAssets.put(Integer.valueOf(8), new OracleContract.Asset("android-full-frames\\rotate90\\source_008.png", 1579L, "0ff0b93f040d84051945f017e35bd7954492561cb9e5d54c22e5f346455dc904"));
+            frameAssets.put(Integer.valueOf(9), new OracleContract.Asset("android-full-frames\\rotate90\\source_009.png", 1610L, "c45a9e2b287013f7fe1b9998552d287c1fa4a83d3221e73b2aa6e6610eea07f8"));
+            frameAssets.put(Integer.valueOf(10), new OracleContract.Asset("android-full-frames\\rotate90\\source_010.png", 1598L, "a2a79f659b508d36fc50bde45b802c919c236463413c19682fcd28e81c440dc6"));
+            frameAssets.put(Integer.valueOf(11), new OracleContract.Asset("android-full-frames\\rotate90\\source_011.png", 1592L, "1c0e5219b02e2589e341b2f15d225ade47da35565eeab7047cdf9baa0062da2a"));
+            frameAssets.put(Integer.valueOf(12), new OracleContract.Asset("android-full-frames\\rotate90\\source_012.png", 1591L, "2a1916103e410f7757a7e2b51165caa6779e1adc5dc80cb5c9f2d1dd9629e30e"));
+            frameAssets.put(Integer.valueOf(13), new OracleContract.Asset("android-full-frames\\rotate90\\source_013.png", 1581L, "ede1c64b660ea228e6df103282a687aa6d480b177814b3a1844f3721659f26f7"));
+            frameAssets.put(Integer.valueOf(14), new OracleContract.Asset("android-full-frames\\rotate90\\source_014.png", 1568L, "93131b901b0c10809ad2011d25c3f0b9221e979bcc27dc7d44fc0691499e8c80"));
+            frameAssets.put(Integer.valueOf(15), new OracleContract.Asset("android-full-frames\\rotate90\\source_015.png", 1543L, "2f99542bd1e56aef40d2a0ffdf10e545b2d23d1a63988370bcc61b7f81ae1eac"));
+            frameAssets.put(Integer.valueOf(16), new OracleContract.Asset("android-full-frames\\rotate90\\source_016.png", 1533L, "7912ebdd2230a8d28223f800bbadd8574fd58a720bbb97c0f7f1d75696447d96"));
+            frameAssets.put(Integer.valueOf(17), new OracleContract.Asset("android-full-frames\\rotate90\\source_017.png", 1599L, "163cbdfa03db61b7615bbfeab79d46cfbaca540f4e15ce5f52dcc92f9e0cca70"));
+            frameAssets.put(Integer.valueOf(18), new OracleContract.Asset("android-full-frames\\rotate90\\source_018.png", 1630L, "a78827947b5d5c76b34346ff7dd658f3cc93066eb527566018dabec2eb9586af"));
+            frameAssets.put(Integer.valueOf(19), new OracleContract.Asset("android-full-frames\\rotate90\\source_019.png", 1599L, "0544ba661724800af9b2333c2adf12397540f3922242f087a05df71c2fb5b78e"));
+            frameAssets.put(Integer.valueOf(20), new OracleContract.Asset("android-full-frames\\rotate90\\source_020.png", 1576L, "2f5a67cc338fa0b870f250567ae1a7391b61af834662916972eaa12271c06cfd"));
+            frameAssets.put(Integer.valueOf(21), new OracleContract.Asset("android-full-frames\\rotate90\\source_021.png", 1583L, "1db52e79bf7fc1c4fa0e60e4b381a1e3aac688ca2363b8770a1de149957e4fcd"));
+            frameAssets.put(Integer.valueOf(22), new OracleContract.Asset("android-full-frames\\rotate90\\source_022.png", 1618L, "85261235103ee1f2c9bfe8ad2b072670452e7624f60362bcf10a00dcffa6eff9"));
+            frameAssets.put(Integer.valueOf(23), new OracleContract.Asset("android-full-frames\\rotate90\\source_023.png", 1605L, "ef05cd95c89fd16b89331d066854aa844c8d0f32762bfb6c7cb41e0ae5f3177d"));
+            frameAssets.put(Integer.valueOf(24), new OracleContract.Asset("android-full-frames\\rotate90\\source_024.png", 1609L, "bde0fb3225f3c787aa9f18565836c0aee1461631c530662a7594d092dbbcd48a"));
+            frameAssets.put(Integer.valueOf(25), new OracleContract.Asset("android-full-frames\\rotate90\\source_025.png", 1631L, "fb4e3efde0d16f0e639d107d1f73defc0b0ef57d065c65be8a33a8b7ab8a714c"));
+            frameAssets.put(Integer.valueOf(26), new OracleContract.Asset("android-full-frames\\rotate90\\source_026.png", 1589L, "213f3534655956329c447d3b58961fb3965beb7c1e15147f4a38bbfcb3ca89eb"));
+            frameAssets.put(Integer.valueOf(27), new OracleContract.Asset("android-full-frames\\rotate90\\source_027.png", 1599L, "9752189bd1012117e81cc1eaaae6767e860e6b4b2984141672dccd35439cbe14"));
+            frameAssets.put(Integer.valueOf(28), new OracleContract.Asset("android-full-frames\\rotate90\\source_028.png", 1603L, "fda6b61feda84a4f0c0c4fda7cfdcea65fd790651c812fce59cc1d94372482da"));
+            frameAssets.put(Integer.valueOf(29), new OracleContract.Asset("android-full-frames\\rotate90\\source_029.png", 1609L, "d64583492b242d0a9963499538bd77be6ca7295290b273d8348b7808463acb59"));
+            frameAssets.put(Integer.valueOf(30), new OracleContract.Asset("android-full-frames\\rotate90\\source_030.png", 1626L, "cf33b7f1f0c7c490b21ad32ef5d9fa3736d68dff4004d8bb2e82f05a9064e142"));
+            frameAssets.put(Integer.valueOf(31), new OracleContract.Asset("android-full-frames\\rotate90\\source_031.png", 1602L, "200afca8118a1b75f94532632b24d06bdb03a11f5d518f7ab72f595249772593"));
+            frameAssets.put(Integer.valueOf(32), new OracleContract.Asset("android-full-frames\\rotate90\\source_032.png", 1569L, "c0e4993a32876d188ee1731ec99c6c8750b91aeb89d0a85a7bf18abcb9a08432"));
+            frameAssets.put(Integer.valueOf(33), new OracleContract.Asset("android-full-frames\\rotate90\\source_033.png", 1584L, "abbadebe202c584a646595aa6ee02efd1cee376040b06a3331151234adfc5116"));
+            frameAssets.put(Integer.valueOf(34), new OracleContract.Asset("android-full-frames\\rotate90\\source_034.png", 1603L, "de77e524d48f7f6394d9b4dd604e35e7401299f83fe203473bbe36d3a89aa7b5"));
+            frameAssets.put(Integer.valueOf(35), new OracleContract.Asset("android-full-frames\\rotate90\\source_035.png", 1596L, "799bc2bf6bb73e0a669ab94a59cfd7b6327461e1ac861cb2c8488950e84e7ec9"));
+            frameAssets.put(Integer.valueOf(36), new OracleContract.Asset("android-full-frames\\rotate90\\source_036.png", 1571L, "10f0eb8f7c53b1bc2a1861c064cd0b368d4f08514586672b64cba66ce744383c"));
+            frameAssets.put(Integer.valueOf(37), new OracleContract.Asset("android-full-frames\\rotate90\\source_037.png", 1568L, "44919c9a12042f8e2ca34b0967e467d3e288c4125ca44bae094ae9029c4f5b9d"));
+            frameAssets.put(Integer.valueOf(38), new OracleContract.Asset("android-full-frames\\rotate90\\source_038.png", 1605L, "2d380c8b8e963fe0ab239fcc1b6c6498af7de87b38bf6629581eabb20c3ff195"));
+            frameAssets.put(Integer.valueOf(39), new OracleContract.Asset("android-full-frames\\rotate90\\source_039.png", 1608L, "28413f31405b0fc46e28fac01518e2cb7c419c409097d7b6c29a0c73407232b6"));
+            frameAssets.put(Integer.valueOf(40), new OracleContract.Asset("android-full-frames\\rotate90\\source_040.png", 1591L, "8a3a5b6e49a9e38499a3926acb580d5f4f3e36dd234df9513fdf6db2ac54c4bf"));
+            frameAssets.put(Integer.valueOf(41), new OracleContract.Asset("android-full-frames\\rotate90\\source_041.png", 1625L, "e6a367b3ec1353323fc0dc2b3f84d603185a9db966be679abe4883e08fef8028"));
+            frameAssets.put(Integer.valueOf(42), new OracleContract.Asset("android-full-frames\\rotate90\\source_042.png", 1590L, "1d2340b618b995918b04ecc27872df1709f5343afdda344f0252ab42974ef788"));
+            frameAssets.put(Integer.valueOf(43), new OracleContract.Asset("android-full-frames\\rotate90\\source_043.png", 1581L, "467ea3d011a1b33f6c238493eea4efce5c2aff57f1f2676f20fef7da616cf549"));
+            frameAssets.put(Integer.valueOf(44), new OracleContract.Asset("android-full-frames\\rotate90\\source_044.png", 1586L, "c4fd20d77809fb352a955024e90c4e795f717d9322070899c8bc618ea09fbb6b"));
+            frameAssets.put(Integer.valueOf(45), new OracleContract.Asset("android-full-frames\\rotate90\\source_045.png", 1593L, "4bec6475e992715c9688751d29a71f6322177688c1c99a24e7e282b9f4abb38f"));
+            frameAssets.put(Integer.valueOf(46), new OracleContract.Asset("android-full-frames\\rotate90\\source_046.png", 1607L, "b0acd249f9c73e55857658232f4c1db6d94c638a9e35879f156379ace22808c0"));
+            frameAssets.put(Integer.valueOf(47), new OracleContract.Asset("android-full-frames\\rotate90\\source_047.png", 1573L, "4960a8e4d30efae714a1b6c5bd5b1e177745f6097f74e75017830b205e0687fb"));
+            frameAssets.put(Integer.valueOf(48), new OracleContract.Asset("android-full-frames\\rotate90\\source_048.png", 1570L, "094c3f4139e4ab658060cf26bec6c0ff44fde7022c4646819058b61eb10e9d96"));
+            frameAssets.put(Integer.valueOf(49), new OracleContract.Asset("android-full-frames\\rotate90\\source_049.png", 1588L, "c02a38d67baacb65db475f896ef750dacaf4a10767fa88c972105bd8a21251d5"));
+            frameAssets.put(Integer.valueOf(50), new OracleContract.Asset("android-full-frames\\rotate90\\source_050.png", 1602L, "2f6d0209891250e37b8b775055d249876b11918b8712a3501acfb58f4cb14a0a"));
+            frameAssets.put(Integer.valueOf(51), new OracleContract.Asset("android-full-frames\\rotate90\\source_051.png", 1602L, "19617d8e367db1177cc81acbdac57e45a5072a3ceeb2a70da835de8e3b22d967"));
+            frameAssets.put(Integer.valueOf(52), new OracleContract.Asset("android-full-frames\\rotate90\\source_052.png", 1569L, "b6ee6a65c8edd2aabb57ffcd8ee24d47295343204fb87f54efe3233e02f3a78c"));
+            frameAssets.put(Integer.valueOf(53), new OracleContract.Asset("android-full-frames\\rotate90\\source_053.png", 1613L, "214b3e48ff4f6b4831daad9850d25a71eeef04a86445ccab30d813d2501412c8"));
+            frameAssets.put(Integer.valueOf(54), new OracleContract.Asset("android-full-frames\\rotate90\\source_054.png", 1657L, "51b60f36035bee34d7ce2b16b19b6062bb0b75285559c4971248edf1723d6bf2"));
+            frameAssets.put(Integer.valueOf(55), new OracleContract.Asset("android-full-frames\\rotate90\\source_055.png", 1607L, "3d74d85e3c84f80322c9f0ce416f93ad8d49f6063df900a5741d8da54b3f66f8"));
+            frameAssets.put(Integer.valueOf(56), new OracleContract.Asset("android-full-frames\\rotate90\\source_056.png", 1581L, "7dbf207dd6ed84c891df74bb556b2389c1ec7661c9fe9fa82282b558e1e23701"));
+            frameAssets.put(Integer.valueOf(57), new OracleContract.Asset("android-full-frames\\rotate90\\source_057.png", 1609L, "e1b91eb7863d427d35e96d8318ef4e2e02c96b49e78c02d0764de6ed3a5a4238"));
+            frameAssets.put(Integer.valueOf(58), new OracleContract.Asset("android-full-frames\\rotate90\\source_058.png", 1586L, "29f5418d83a698ddad7715c04801303c44093600127164ba0547a06bac816cd9"));
+            frameAssets.put(Integer.valueOf(59), new OracleContract.Asset("android-full-frames\\rotate90\\source_059.png", 1591L, "905202fae3dbd99d86279c9e1ebea25f82e0e41edffcad0d64e5a7bda9ecaed0"));
+            frameAssets.put(Integer.valueOf(60), new OracleContract.Asset("android-full-frames\\rotate90\\source_060.png", 1602L, "26865555c84be2678b5a9e45f7f02911d6e3b366c9dd2dd31d853af1ba9b804c"));
+            frameAssets.put(Integer.valueOf(61), new OracleContract.Asset("android-full-frames\\rotate90\\source_061.png", 1603L, "813adbc1c3c9fd88594950ef4dd0ce8f7fba14d731409e5c6d3f25fb3f2627f9"));
+            frameAssets.put(Integer.valueOf(62), new OracleContract.Asset("android-full-frames\\rotate90\\source_062.png", 1574L, "9f836f710fef6ef96160deb06c489e3e7261b47eb71012a6d6d9aa5a729598a5"));
+            frameAssets.put(Integer.valueOf(63), new OracleContract.Asset("android-full-frames\\rotate90\\source_063.png", 1556L, "85dca4cf6d03965acd3887e88ed325de94cdd904f8597d17220a9a94606d6470"));
+            frameAssets.put(Integer.valueOf(64), new OracleContract.Asset("android-full-frames\\rotate90\\source_064.png", 1545L, "1db60b5286b7c43728e125bcadd5368d901d18cd70cfd69fbca0c91e898e96d7"));
+            frameAssets.put(Integer.valueOf(65), new OracleContract.Asset("android-full-frames\\rotate90\\source_065.png", 1582L, "1aba6e5fb908b70e243f9cfce30236004dc59dc98867e9e7b68f4d524f81fb83"));
+            frameAssets.put(Integer.valueOf(66), new OracleContract.Asset("android-full-frames\\rotate90\\source_066.png", 1624L, "7fe48cf4e77bbcd9316967c85f9f21a2835dda1ce496c2cf48cafa5e0a8c9992"));
+            frameAssets.put(Integer.valueOf(67), new OracleContract.Asset("android-full-frames\\rotate90\\source_067.png", 1624L, "619b85fa90750feeb15f17029d4e85673205202b044e6ca836f1a65bf74d259b"));
+            frameAssets.put(Integer.valueOf(68), new OracleContract.Asset("android-full-frames\\rotate90\\source_068.png", 1590L, "1cb3a40cd50562f7a2302dc284979c5008e8cd569e32198e044adf86bc9b6258"));
+            frameAssets.put(Integer.valueOf(69), new OracleContract.Asset("android-full-frames\\rotate90\\source_069.png", 1577L, "8197737e40779c06984473ef1e3a1747cd8a4846544f8963b60f8098e64d2784"));
+            frameAssets.put(Integer.valueOf(70), new OracleContract.Asset("android-full-frames\\rotate90\\source_070.png", 1611L, "c16c2888ce928e112fad1e5929b7c2d02777ca46288df1846773f39bf3c12794"));
+            frameAssets.put(Integer.valueOf(71), new OracleContract.Asset("android-full-frames\\rotate90\\source_071.png", 1584L, "03442e6788f5524de4aaee112db101834185905eee72f51969fe08b18fcda6d5"));
+            frameAssets.put(Integer.valueOf(72), new OracleContract.Asset("android-full-frames\\rotate90\\source_072.png", 1595L, "9ff0ea4f9878652651ad3311759c027f2dfda7ec76fbae269c35554dfd812aa7"));
+            frameAssets.put(Integer.valueOf(73), new OracleContract.Asset("android-full-frames\\rotate90\\source_073.png", 1616L, "138f1e918724c03db4b82363f73560e29e2d689e4e885fcf31304829526aa8b0"));
+            frameAssets.put(Integer.valueOf(74), new OracleContract.Asset("android-full-frames\\rotate90\\source_074.png", 1598L, "70286c2e64fd6abeee7485ad9e43c2513582fd92a7309f83c49e26f39f06e02c"));
+            frameAssets.put(Integer.valueOf(75), new OracleContract.Asset("android-full-frames\\rotate90\\source_075.png", 1620L, "d45f2c6b94000d281107b2e59445ad53699fec189c7af8288350c1409c2de495"));
+            frameAssets.put(Integer.valueOf(76), new OracleContract.Asset("android-full-frames\\rotate90\\source_076.png", 1620L, "52221b7e70623a0e2c01c94ff97752d44b6fdbb348a0792d49943e0d091d7fd9"));
+            frameAssets.put(Integer.valueOf(77), new OracleContract.Asset("android-full-frames\\rotate90\\source_077.png", 1628L, "1a48c5d6c748f2c18b333e7b24870f7ab0242332c88e0657b7a067ff45722950"));
+            frameAssets.put(Integer.valueOf(78), new OracleContract.Asset("android-full-frames\\rotate90\\source_078.png", 1611L, "00333381bc2bf040a7db35c640a66e925ffdb55dfe61bb5448475b3a0874533b"));
+            frameAssets.put(Integer.valueOf(79), new OracleContract.Asset("android-full-frames\\rotate90\\source_079.png", 1584L, "a9808d22a546878b37a858baa6e2e0fa912dc50deaadb0bf6fa043f1b0ab2669"));
+            frameAssets.put(Integer.valueOf(80), new OracleContract.Asset("android-full-frames\\rotate90\\source_080.png", 1546L, "4b18efb72daf7628ff4fa891a4af6330c90755219a3a20271583cc2112852c30"));
+            frameAssets.put(Integer.valueOf(81), new OracleContract.Asset("android-full-frames\\rotate90\\source_081.png", 1574L, "2a6256a5ced9115141a3688740d4002e96f300e3bd531d85e901f4e0328aa7ad"));
+            frameAssets.put(Integer.valueOf(82), new OracleContract.Asset("android-full-frames\\rotate90\\source_082.png", 1614L, "818b578c8ec2690ed762502316cee306ca3ba09cd43e5766726d9dfef80b3c8a"));
+            frameAssets.put(Integer.valueOf(83), new OracleContract.Asset("android-full-frames\\rotate90\\source_083.png", 1609L, "5cf33578cf5da03d893e7b56b986b2c4ba2088c2ce59ab22282cfa4b86cccca9"));
+            frameAssets.put(Integer.valueOf(84), new OracleContract.Asset("android-full-frames\\rotate90\\source_084.png", 1568L, "d49ce79521969401045dc68f412315034f28e9c9da1d9b026e485dcf71b5b33d"));
+            frameAssets.put(Integer.valueOf(85), new OracleContract.Asset("android-full-frames\\rotate90\\source_085.png", 1562L, "e063f29c4101e6d639b38f6a7bba571b89e8bcd6fefa788f7216db246cc3cc51"));
+            frameAssets.put(Integer.valueOf(86), new OracleContract.Asset("android-full-frames\\rotate90\\source_086.png", 1598L, "b4409dcea1e3bf3b6769fa945e407e4d3a6ffa324f37c70e01ffdc6d8633cb2f"));
+            frameAssets.put(Integer.valueOf(87), new OracleContract.Asset("android-full-frames\\rotate90\\source_087.png", 1573L, "9a3408e5ce56203b3e0494152246c6264f1dacb7c0db53812f9473dcb0627caf"));
+            frameAssets.put(Integer.valueOf(88), new OracleContract.Asset("android-full-frames\\rotate90\\source_088.png", 1565L, "1e97c2eaec579d422ffe2ab039a41fd98cfe10bbf7c78840e60571d4c917411c"));
+            frameAssets.put(Integer.valueOf(89), new OracleContract.Asset("android-full-frames\\rotate90\\source_089.png", 1630L, "e013741718d7bbcf4de9aa7dbbe6f9106343827c2b4dfe15883e2384b25cf573"));
+            frameAssets.put(Integer.valueOf(90), new OracleContract.Asset("android-full-frames\\rotate90\\source_090.png", 1625L, "d4d4036e16847b7da271e971ab2430718ef1a691d2115b51f097c685eccbdba2"));
+            frameAssets.put(Integer.valueOf(91), new OracleContract.Asset("android-full-frames\\rotate90\\source_091.png", 1596L, "e9a9e5f22e73663e5b7734bf733fa48feca21d34ac204ce113197432b19a4222"));
+            frameAssets.put(Integer.valueOf(92), new OracleContract.Asset("android-full-frames\\rotate90\\source_092.png", 1591L, "564a2a7f642a7cd81cf305e5d9d42faba3bf701fd60cb0a18cf8a4d1732c12e1"));
+            frameAssets.put(Integer.valueOf(93), new OracleContract.Asset("android-full-frames\\rotate90\\source_093.png", 1599L, "0b87927de12aea2d509c1e1fa2b8698c01db6f7562bbd2972db8fbf2e8b2d05f"));
+            frameAssets.put(Integer.valueOf(94), new OracleContract.Asset("android-full-frames\\rotate90\\source_094.png", 1594L, "2d8967f7a8ef0757ba188310c9ede0220e09465d82ec13b38fce81e2531da908"));
+            frameAssets.put(Integer.valueOf(95), new OracleContract.Asset("android-full-frames\\rotate90\\source_095.png", 1577L, "d94ac7aa0bcaba400ca3f687535eee332172d745e90dbc8b84c0e3c2297b7cd1"));
+            List<OracleContract.AudioProbe> audioProbes = new ArrayList<OracleContract.AudioProbe>();
+            audioProbes.add(new OracleContract.AudioProbe(0.25d, 0.12d, 0.25d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(0.5d, 0.12d, 0.5d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(0.75d, 0.12d, 0.75d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.25d, 0.12d, 1.25d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.5d, 0.12d, 1.5d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.75d, 0.12d, 1.75d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(2.25d, 0.12d, 2.25d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(2.5d, 0.12d, 2.5d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(2.75d, 0.12d, 2.75d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.25d, 0.12d, 3.25d, 1100, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.5d, 0.12d, 3.5d, 1100, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.75d, 0.12d, 3.75d, 1100, 0.22627416997969518d));
+            cases.add(new OracleContract.OracleCase(
+                    "rotate90",
+                    new OracleContract.Operation(0, 4, 0, 0, 320, 240, 90, 0, 1.0d, 1.0d),
+                    new LinkedHashMap<String, Object>() {{
+                        put("sourceDurationMs", Integer.valueOf(4000));
+                        put("startMs", Integer.valueOf(0));
+                        put("endMs", Integer.valueOf(4000));
+                        put("cropLeft", Double.valueOf(0.0d));
+                        put("cropTop", Double.valueOf(0.0d));
+                        put("cropRight", Double.valueOf(1.0d));
+                        put("cropBottom", Double.valueOf(1.0d));
+                        put("rotationDegrees", Integer.valueOf(90));
+                        put("outputHeight", Integer.valueOf(0));
+                        put("speed", Double.valueOf(1.0d));
+                        put("volume", Double.valueOf(1.0d));
+                        put("overlayText", "");
+                    }},
+                    240, 320, 4.0d, 24.0d,
+                    Arrays.asList(Double.valueOf(24.0d)),
+                    96, 1, 1,
+                    true, 48000,
+                    1, 192000,
+                    barcodeRegions,
+                    probes,
+                    frameAssets,
+                    audioProbes,
+                    new OracleContract.Asset("reference\\rotate90.mp4", 93771L, "ea4d2b0efaf9baea98e0d30d87d41f9c94575b29bf7b36e0aac776697d510cd0")));
+        }
+        {
+            List<OracleContract.BarcodeRegion> barcodeRegions = OracleCoreVerifier.barcodeRegions(
+                    new OracleContract.Operation(0, 4, 0, 0, 320, 240, 180, 0, 1.0d, 1.0d));
+            List<OracleContract.Probe> probes = new ArrayList<OracleContract.Probe>();
+            probes.add(new OracleContract.Probe(0, 0.0d, new OracleContract.Asset("frames\\rotate180\\source_000.png", 1377L, "783cd429bc01110255df5c07375b20d9ff6481eef9a60f7573d4f10b46e13bd4")));
+            probes.add(new OracleContract.Probe(12, 0.5d, new OracleContract.Asset("frames\\rotate180\\source_012.png", 1447L, "d3dce176e46c61962dcdedfbbdd8a5f415c7ff3e844921a8d8f4e2e38b98cd7c")));
+            probes.add(new OracleContract.Probe(24, 1.0d, new OracleContract.Asset("frames\\rotate180\\source_024.png", 1439L, "08bd8cd0bbb2fc0ae3f14c2f728079b8a58daa30059b5f3f0ce79e904e4a5928")));
+            probes.add(new OracleContract.Probe(36, 1.5d, new OracleContract.Asset("frames\\rotate180\\source_036.png", 1456L, "0cfb3c5518009a349112ed4d1bc3c0b5e46a3f8c605288b2f72570f6d1dd2459")));
+            probes.add(new OracleContract.Probe(48, 2.0d, new OracleContract.Asset("frames\\rotate180\\source_048.png", 1439L, "62b8c8fd3fef3cfd940d1678f3d759439f4a37b4273ed8fee45a949013eee8ad")));
+            probes.add(new OracleContract.Probe(59, 2.4583333333333335d, new OracleContract.Asset("frames\\rotate180\\source_059.png", 1478L, "2cce690600cc628a9bf595378cf240eec4659f15a5e781589d8b5856b5093c05")));
+            probes.add(new OracleContract.Probe(71, 2.9583333333333335d, new OracleContract.Asset("frames\\rotate180\\source_071.png", 1459L, "61e9d1bdbe0f743a2a56f7ba17c48e6b7ea77e1e4fdaf6aba4edc463a010ca0a")));
+            probes.add(new OracleContract.Probe(83, 3.4583333333333335d, new OracleContract.Asset("frames\\rotate180\\source_083.png", 1470L, "7b16ea6e2b074cd50a617a4a98163fd82c7f9cce0c0e9f3d1fe42bb73a000dc0")));
+            probes.add(new OracleContract.Probe(95, 3.9583333333333335d, new OracleContract.Asset("frames\\rotate180\\source_095.png", 1442L, "0f28eda107836decfb4b6f0ae64ab48929fd56d4b5a86ae9ba5c32286cdf63f7")));
+            LinkedHashMap<Integer, OracleContract.Asset> frameAssets = new LinkedHashMap<Integer, OracleContract.Asset>();
+            frameAssets.put(Integer.valueOf(0), new OracleContract.Asset("android-full-frames\\rotate180\\source_000.png", 1377L, "783cd429bc01110255df5c07375b20d9ff6481eef9a60f7573d4f10b46e13bd4"));
+            frameAssets.put(Integer.valueOf(1), new OracleContract.Asset("android-full-frames\\rotate180\\source_001.png", 1420L, "9837c6a98d2ed555c7f4cd708c14bd6e648ea4155bfc9462b6ccad83e09ba8d3"));
+            frameAssets.put(Integer.valueOf(2), new OracleContract.Asset("android-full-frames\\rotate180\\source_002.png", 1417L, "fe3776f918654c9d951ba967ab4c79c560f1b91a621d2f7a4333b0427db5198f"));
+            frameAssets.put(Integer.valueOf(3), new OracleContract.Asset("android-full-frames\\rotate180\\source_003.png", 1426L, "c6a412a49030664337ea24e97efe8d9bb8c1f5057d8e4daa313401514c60a9ab"));
+            frameAssets.put(Integer.valueOf(4), new OracleContract.Asset("android-full-frames\\rotate180\\source_004.png", 1432L, "0ace39868f3ee6512735d8f1f4c24ed066187d2830bf7079e5773f29eabe866a"));
+            frameAssets.put(Integer.valueOf(5), new OracleContract.Asset("android-full-frames\\rotate180\\source_005.png", 1425L, "f38679d94c9a3144116db4b56a5ea6e8a7bd47be56369f8c7b990ca9e4d4e8b3"));
+            frameAssets.put(Integer.valueOf(6), new OracleContract.Asset("android-full-frames\\rotate180\\source_006.png", 1446L, "c0398df76c6983c7c72f8b1098a7deeb19a4ebc21d325d1fc0d467b3ae4b912a"));
+            frameAssets.put(Integer.valueOf(7), new OracleContract.Asset("android-full-frames\\rotate180\\source_007.png", 1431L, "60095db21b6d6bca303dbcc0a8005b239ed4481f8d6ddc309e9066344871c30c"));
+            frameAssets.put(Integer.valueOf(8), new OracleContract.Asset("android-full-frames\\rotate180\\source_008.png", 1437L, "8a163f58543ad870220e7d6906bf0094d8bd07757b8f712be4fde0a1d35f91f8"));
+            frameAssets.put(Integer.valueOf(9), new OracleContract.Asset("android-full-frames\\rotate180\\source_009.png", 1450L, "54056c975c6761ad1692e4593747e16eb5a80046e37902c90a0420c4a9adb586"));
+            frameAssets.put(Integer.valueOf(10), new OracleContract.Asset("android-full-frames\\rotate180\\source_010.png", 1453L, "548a879b83adc47e89f79cd5a9be891c1f1b61b9ac16b0b745e473b420a53645"));
+            frameAssets.put(Integer.valueOf(11), new OracleContract.Asset("android-full-frames\\rotate180\\source_011.png", 1462L, "dae498ae4314755de27e9a23720c15f94cfbfe3d839e3b7386d758cccb2c44b0"));
+            frameAssets.put(Integer.valueOf(12), new OracleContract.Asset("android-full-frames\\rotate180\\source_012.png", 1447L, "d3dce176e46c61962dcdedfbbdd8a5f415c7ff3e844921a8d8f4e2e38b98cd7c"));
+            frameAssets.put(Integer.valueOf(13), new OracleContract.Asset("android-full-frames\\rotate180\\source_013.png", 1435L, "ecbc1e4d0db25835890227b958a6bc0c4fb6688ef2cfdedfe5c04259975e9e11"));
+            frameAssets.put(Integer.valueOf(14), new OracleContract.Asset("android-full-frames\\rotate180\\source_014.png", 1434L, "cf3dba5f1b7dd05383b80c13ed2b16f2717fa32a8f1c2cc9caa79f44c2233f82"));
+            frameAssets.put(Integer.valueOf(15), new OracleContract.Asset("android-full-frames\\rotate180\\source_015.png", 1406L, "6c87304d808df02ea0cb74bdc27bf62c2696aed14b71c4569d34a8d82e603d49"));
+            frameAssets.put(Integer.valueOf(16), new OracleContract.Asset("android-full-frames\\rotate180\\source_016.png", 1414L, "8ecd6f9e1bbd1ccb8b2b59c782bac8b4444a3892030415d58563bcd653252410"));
+            frameAssets.put(Integer.valueOf(17), new OracleContract.Asset("android-full-frames\\rotate180\\source_017.png", 1459L, "275383ea962b8b3759fd644872d6409d6b9859563e09386df8cc87fd23a9a951"));
+            frameAssets.put(Integer.valueOf(18), new OracleContract.Asset("android-full-frames\\rotate180\\source_018.png", 1467L, "3d3889eeb1f8d96b093812b51e89cef4df36335e675d00fef6865cb3f9401c9f"));
+            frameAssets.put(Integer.valueOf(19), new OracleContract.Asset("android-full-frames\\rotate180\\source_019.png", 1467L, "e39c01540e560f6e626998719d6e88df5edf8a229fd87bdfeb55f63db733b280"));
+            frameAssets.put(Integer.valueOf(20), new OracleContract.Asset("android-full-frames\\rotate180\\source_020.png", 1465L, "19322cb8989128f357eefeab5f90bbe21e35158de5a6d65994274f6b4e338c32"));
+            frameAssets.put(Integer.valueOf(21), new OracleContract.Asset("android-full-frames\\rotate180\\source_021.png", 1454L, "4245a43f7a1677d1b84039b74916245ec4848af2e7ec2dcce1e2be11b8156a0c"));
+            frameAssets.put(Integer.valueOf(22), new OracleContract.Asset("android-full-frames\\rotate180\\source_022.png", 1468L, "58ec62ceac7bdb73a7e3a680fe700fac2945b75dac805307726a0723e5ab74cd"));
+            frameAssets.put(Integer.valueOf(23), new OracleContract.Asset("android-full-frames\\rotate180\\source_023.png", 1455L, "222139087f83769fa47ee6e9b45fe6621cf5356d1c88d000192da2be403449fe"));
+            frameAssets.put(Integer.valueOf(24), new OracleContract.Asset("android-full-frames\\rotate180\\source_024.png", 1439L, "08bd8cd0bbb2fc0ae3f14c2f728079b8a58daa30059b5f3f0ce79e904e4a5928"));
+            frameAssets.put(Integer.valueOf(25), new OracleContract.Asset("android-full-frames\\rotate180\\source_025.png", 1453L, "df421260aaa421f74f72b41d70e9f95647099d869f97df1cad706e61af88e0cf"));
+            frameAssets.put(Integer.valueOf(26), new OracleContract.Asset("android-full-frames\\rotate180\\source_026.png", 1446L, "074c419d2045748525e4731bf02c0230160db80c3c0bfbf7ea3f3bf180914598"));
+            frameAssets.put(Integer.valueOf(27), new OracleContract.Asset("android-full-frames\\rotate180\\source_027.png", 1451L, "f37a8682cd069106d40cd889e9d76325edf5fd4e52f0c66472103f6025596651"));
+            frameAssets.put(Integer.valueOf(28), new OracleContract.Asset("android-full-frames\\rotate180\\source_028.png", 1454L, "8be664483122a60c3c53ac2783692d33e07e15ec62d26b583a77357ce82b2fff"));
+            frameAssets.put(Integer.valueOf(29), new OracleContract.Asset("android-full-frames\\rotate180\\source_029.png", 1459L, "f4052ba511a30b37c2590b53b7ef071b5f7682be8413be34f452857553e690a5"));
+            frameAssets.put(Integer.valueOf(30), new OracleContract.Asset("android-full-frames\\rotate180\\source_030.png", 1477L, "371536a2210fc739cb6d235fe65270fe076774afb4eb8cdb01dc7012e372981c"));
+            frameAssets.put(Integer.valueOf(31), new OracleContract.Asset("android-full-frames\\rotate180\\source_031.png", 1448L, "6adaae383449f468c92cd7b27a3a25e27348e7e4fc30ce9cd7ac5f74101e50f6"));
+            frameAssets.put(Integer.valueOf(32), new OracleContract.Asset("android-full-frames\\rotate180\\source_032.png", 1444L, "d6362d8984817dedeb9b8ee6442b35c5121dcfe5544c999049b8061f3db7e005"));
+            frameAssets.put(Integer.valueOf(33), new OracleContract.Asset("android-full-frames\\rotate180\\source_033.png", 1473L, "8eae5852d3367044c0bee10374a23c42b73a158bfca6a43768ce546a516d6ef3"));
+            frameAssets.put(Integer.valueOf(34), new OracleContract.Asset("android-full-frames\\rotate180\\source_034.png", 1475L, "1e9d7b468aa4b08f2ffdb49b986a4e4a976cd45255d47d97ed5f1344d9ef2ab2"));
+            frameAssets.put(Integer.valueOf(35), new OracleContract.Asset("android-full-frames\\rotate180\\source_035.png", 1483L, "85b031017fe53ccd78f944822280ae252a5e173836a801bc80915e77086d9570"));
+            frameAssets.put(Integer.valueOf(36), new OracleContract.Asset("android-full-frames\\rotate180\\source_036.png", 1456L, "0cfb3c5518009a349112ed4d1bc3c0b5e46a3f8c605288b2f72570f6d1dd2459"));
+            frameAssets.put(Integer.valueOf(37), new OracleContract.Asset("android-full-frames\\rotate180\\source_037.png", 1446L, "53a59f13a427550094ff646e233c4f13273f952a49c252d934f8bee8c2176cc1"));
+            frameAssets.put(Integer.valueOf(38), new OracleContract.Asset("android-full-frames\\rotate180\\source_038.png", 1456L, "4793cf0c5f0eaeca9d0d7910c436b299daed73a12d5e13b0d96f0ecedab9019b"));
+            frameAssets.put(Integer.valueOf(39), new OracleContract.Asset("android-full-frames\\rotate180\\source_039.png", 1445L, "a621d91572f546d2f4b3b2fb21bc5759df4d786b3cc8b6a516660351bf9d2aba"));
+            frameAssets.put(Integer.valueOf(40), new OracleContract.Asset("android-full-frames\\rotate180\\source_040.png", 1442L, "e90817599d73d2886beb615dd58ba6485c6b7ebbc516beecd8ea6decee567091"));
+            frameAssets.put(Integer.valueOf(41), new OracleContract.Asset("android-full-frames\\rotate180\\source_041.png", 1464L, "a7ff57dfd2484bcd633ebe2699af2348514cf47353fb738e7422388bcd070c24"));
+            frameAssets.put(Integer.valueOf(42), new OracleContract.Asset("android-full-frames\\rotate180\\source_042.png", 1463L, "d8630360871eeb309c0d791b0a06d3335054327896b17a4b8f561b5301f0bc9f"));
+            frameAssets.put(Integer.valueOf(43), new OracleContract.Asset("android-full-frames\\rotate180\\source_043.png", 1474L, "f86456d590f1292ebe3f8c746498417434fe731001be0590f2e567de28e6256a"));
+            frameAssets.put(Integer.valueOf(44), new OracleContract.Asset("android-full-frames\\rotate180\\source_044.png", 1477L, "8ac3104c99e38e59d912bca6018a51643d5243053b62ca01adea7a9df7d58062"));
+            frameAssets.put(Integer.valueOf(45), new OracleContract.Asset("android-full-frames\\rotate180\\source_045.png", 1469L, "8999b51d8f3987759af9f4185754c293a8c001f323809ed468da7e7e37d8968b"));
+            frameAssets.put(Integer.valueOf(46), new OracleContract.Asset("android-full-frames\\rotate180\\source_046.png", 1479L, "e252e0f948e46d5dc7a9e6793d9fe1bd7ea5bcc86624ba6e55c76756b7db2fce"));
+            frameAssets.put(Integer.valueOf(47), new OracleContract.Asset("android-full-frames\\rotate180\\source_047.png", 1452L, "9e2ee752a3818b5fa9c1e49ebfaeb5d3fe43cb38a5690fa55708be6d7abd2dad"));
+            frameAssets.put(Integer.valueOf(48), new OracleContract.Asset("android-full-frames\\rotate180\\source_048.png", 1439L, "62b8c8fd3fef3cfd940d1678f3d759439f4a37b4273ed8fee45a949013eee8ad"));
+            frameAssets.put(Integer.valueOf(49), new OracleContract.Asset("android-full-frames\\rotate180\\source_049.png", 1462L, "504c87e32b5aa839fc77a8631f3965407e3ae7b981419544a1bd02e7cac6e05d"));
+            frameAssets.put(Integer.valueOf(50), new OracleContract.Asset("android-full-frames\\rotate180\\source_050.png", 1458L, "917ee381e66d25dc49312cf0b6990e5d2768c0407974f2b878aa7739804bea23"));
+            frameAssets.put(Integer.valueOf(51), new OracleContract.Asset("android-full-frames\\rotate180\\source_051.png", 1461L, "6c1d7bf3c6b04cd58bf0e0f8bd3ecd88d892ae904a69d607a124c312689122d8"));
+            frameAssets.put(Integer.valueOf(52), new OracleContract.Asset("android-full-frames\\rotate180\\source_052.png", 1468L, "6a40b0509236a386fcbff97597a21556537d55cc183bea8c9826c3782fd7b0f1"));
+            frameAssets.put(Integer.valueOf(53), new OracleContract.Asset("android-full-frames\\rotate180\\source_053.png", 1470L, "1fb21dc1224062b23d87cef539d64cb15d80be1f5c91553f5a2bc2e55ab07ceb"));
+            frameAssets.put(Integer.valueOf(54), new OracleContract.Asset("android-full-frames\\rotate180\\source_054.png", 1490L, "c627daf2bc2da581dd5d7db5bf7a34cd76020c83326fc57755294ac7a811f062"));
+            frameAssets.put(Integer.valueOf(55), new OracleContract.Asset("android-full-frames\\rotate180\\source_055.png", 1472L, "e3d59a0d362e06c07258b511ec216a0610c4805351438da68672ef762175101c"));
+            frameAssets.put(Integer.valueOf(56), new OracleContract.Asset("android-full-frames\\rotate180\\source_056.png", 1461L, "54ad048db970f4a73e72e1863a5d35b37e4009026400d84f8a9f03945e29ded6"));
+            frameAssets.put(Integer.valueOf(57), new OracleContract.Asset("android-full-frames\\rotate180\\source_057.png", 1476L, "3c828de01ac93aeeed96f6c6d6ccf8d86af8f1efd28b6e83329cbf4dafe94ad4"));
+            frameAssets.put(Integer.valueOf(58), new OracleContract.Asset("android-full-frames\\rotate180\\source_058.png", 1470L, "28d2a431406442632fdb6111a40c6b637378ab59691ada72530f7986d45c5cd9"));
+            frameAssets.put(Integer.valueOf(59), new OracleContract.Asset("android-full-frames\\rotate180\\source_059.png", 1478L, "2cce690600cc628a9bf595378cf240eec4659f15a5e781589d8b5856b5093c05"));
+            frameAssets.put(Integer.valueOf(60), new OracleContract.Asset("android-full-frames\\rotate180\\source_060.png", 1466L, "070ea360c87c0c62d2fc510bc2ed29e81cd59cddd565c4081bfd696d859de5ab"));
+            frameAssets.put(Integer.valueOf(61), new OracleContract.Asset("android-full-frames\\rotate180\\source_061.png", 1460L, "cc844bb4c511f0b7f2da4d35d227c8425b0b50fb53bc7a288ff363772eee185e"));
+            frameAssets.put(Integer.valueOf(62), new OracleContract.Asset("android-full-frames\\rotate180\\source_062.png", 1458L, "9f59ac812efcd4d4230388029376f9ac04a2d95e2fb9451594bb51d2f38b1c15"));
+            frameAssets.put(Integer.valueOf(63), new OracleContract.Asset("android-full-frames\\rotate180\\source_063.png", 1433L, "4a7d588a10d9d47e2c4cf2ecb017fb0139e770417c48f3dfd7806bd5acebc57c"));
+            frameAssets.put(Integer.valueOf(64), new OracleContract.Asset("android-full-frames\\rotate180\\source_064.png", 1414L, "cd8966be80de442c5d613985f6070b99eacd1b2e97f32bda219df7d723f141e4"));
+            frameAssets.put(Integer.valueOf(65), new OracleContract.Asset("android-full-frames\\rotate180\\source_065.png", 1453L, "127c75939c3f1c2e0fc911bf9d8d0275e4f50c41db3d490c1226ed47e16ab70b"));
+            frameAssets.put(Integer.valueOf(66), new OracleContract.Asset("android-full-frames\\rotate180\\source_066.png", 1467L, "896783b74048a11ecc78245cf023f09191bd605a7f5bc30064ec171dee28a464"));
+            frameAssets.put(Integer.valueOf(67), new OracleContract.Asset("android-full-frames\\rotate180\\source_067.png", 1476L, "dac224e1d2acf99d1ea5060102cc332af370f5711a77b26b9ab6acde3ae6d63a"));
+            frameAssets.put(Integer.valueOf(68), new OracleContract.Asset("android-full-frames\\rotate180\\source_068.png", 1472L, "472bcf4a15629ef5a39183767c25ecce8bcb2dc810e4ca1e434f8c18635a07cc"));
+            frameAssets.put(Integer.valueOf(69), new OracleContract.Asset("android-full-frames\\rotate180\\source_069.png", 1457L, "73e0d24b48d383f2e9c42ccf4a34c4cdd38341f4b875aa250544877d3a6ff56f"));
+            frameAssets.put(Integer.valueOf(70), new OracleContract.Asset("android-full-frames\\rotate180\\source_070.png", 1471L, "bcb461fb91a988547681495ba97bf487bd078fd745d1232e0c91bae49bf42e3a"));
+            frameAssets.put(Integer.valueOf(71), new OracleContract.Asset("android-full-frames\\rotate180\\source_071.png", 1459L, "61e9d1bdbe0f743a2a56f7ba17c48e6b7ea77e1e4fdaf6aba4edc463a010ca0a"));
+            frameAssets.put(Integer.valueOf(72), new OracleContract.Asset("android-full-frames\\rotate180\\source_072.png", 1440L, "7ef050174253fe16d6a1dee9b93822c3599f7efc7544188b6fe2b62fca1ce9b2"));
+            frameAssets.put(Integer.valueOf(73), new OracleContract.Asset("android-full-frames\\rotate180\\source_073.png", 1451L, "536c04da7f3a682d245c993cb9a3c15e3a875f1815373b48a6975d32221d5d67"));
+            frameAssets.put(Integer.valueOf(74), new OracleContract.Asset("android-full-frames\\rotate180\\source_074.png", 1446L, "e18328a545c70fcc6779d9758071ab80b6f06676ad63bf42e9529e49766446ab"));
+            frameAssets.put(Integer.valueOf(75), new OracleContract.Asset("android-full-frames\\rotate180\\source_075.png", 1460L, "5847637c9015ac63bd6a9a525f12ddd6591a9cbb39f51abd811034bebb0d61f7"));
+            frameAssets.put(Integer.valueOf(76), new OracleContract.Asset("android-full-frames\\rotate180\\source_076.png", 1462L, "1e56ba6fd678d1e46d99d32f410a24d39212701651822957b97144711cf5ed01"));
+            frameAssets.put(Integer.valueOf(77), new OracleContract.Asset("android-full-frames\\rotate180\\source_077.png", 1469L, "83ceccd49f5ed735091d0bfa54369e291e456067e23b346fa831e0e22c37e3a3"));
+            frameAssets.put(Integer.valueOf(78), new OracleContract.Asset("android-full-frames\\rotate180\\source_078.png", 1473L, "4683fb541e789548d1f18ebbcd67bc3c01f276323825314f75ffda943969b92f"));
+            frameAssets.put(Integer.valueOf(79), new OracleContract.Asset("android-full-frames\\rotate180\\source_079.png", 1449L, "99e8a91dc149199d3dc52c9f2d5a760d049e0ad738937e5ff0619a67812f4b85"));
+            frameAssets.put(Integer.valueOf(80), new OracleContract.Asset("android-full-frames\\rotate180\\source_080.png", 1429L, "6be6d332a5b51c5fe26ea3559df66f4b57ccc07dab591098ddcf385d1abde683"));
+            frameAssets.put(Integer.valueOf(81), new OracleContract.Asset("android-full-frames\\rotate180\\source_081.png", 1459L, "d393fa4608c6f5a3375157d903730fe7715158ef05f9cc703e14438a1d357ec1"));
+            frameAssets.put(Integer.valueOf(82), new OracleContract.Asset("android-full-frames\\rotate180\\source_082.png", 1464L, "6e9bcc0e786f80b337a7f8bfd919aeea1072ac1a7c9289eefd0d2b111a1859cf"));
+            frameAssets.put(Integer.valueOf(83), new OracleContract.Asset("android-full-frames\\rotate180\\source_083.png", 1470L, "7b16ea6e2b074cd50a617a4a98163fd82c7f9cce0c0e9f3d1fe42bb73a000dc0"));
+            frameAssets.put(Integer.valueOf(84), new OracleContract.Asset("android-full-frames\\rotate180\\source_084.png", 1452L, "f6ac1f10da7245afafaaa6f3692616d264eff8ad29399e3e3a33e7c8e70bf61c"));
+            frameAssets.put(Integer.valueOf(85), new OracleContract.Asset("android-full-frames\\rotate180\\source_085.png", 1435L, "6802007a1487e0d1b4feae3fc71cc20901737b65ca7893d76f63075ebe210d53"));
+            frameAssets.put(Integer.valueOf(86), new OracleContract.Asset("android-full-frames\\rotate180\\source_086.png", 1442L, "732636c46496a55b5a766f85cbad8ddca36dada6bb6fea32b84a761969085276"));
+            frameAssets.put(Integer.valueOf(87), new OracleContract.Asset("android-full-frames\\rotate180\\source_087.png", 1428L, "8bef13e6461829b4ebe5ff43a2259f6047925a48c9e0b367ce9734e94737abca"));
+            frameAssets.put(Integer.valueOf(88), new OracleContract.Asset("android-full-frames\\rotate180\\source_088.png", 1434L, "d1738674e2d189b7b97fa6db5685ccc07268bd50dc0fe81b6c60089669d6b42f"));
+            frameAssets.put(Integer.valueOf(89), new OracleContract.Asset("android-full-frames\\rotate180\\source_089.png", 1465L, "975bd4e0d13170dbf1a8023c7c71565445379bb2cb95887831ff18eeba989d6c"));
+            frameAssets.put(Integer.valueOf(90), new OracleContract.Asset("android-full-frames\\rotate180\\source_090.png", 1470L, "9fe811a0003d3fd17514ead8d3008c70f951aec28ffc38099f874a6ca0aa6c56"));
+            frameAssets.put(Integer.valueOf(91), new OracleContract.Asset("android-full-frames\\rotate180\\source_091.png", 1471L, "8f287356007d077857a7d8caacc39570deb5254836a656f0438898d138346c47"));
+            frameAssets.put(Integer.valueOf(92), new OracleContract.Asset("android-full-frames\\rotate180\\source_092.png", 1474L, "4df5cbc1e8259f9d33ed8bc34aeceafe217f527e5ef448cd9fef1da31ab6b1c5"));
+            frameAssets.put(Integer.valueOf(93), new OracleContract.Asset("android-full-frames\\rotate180\\source_093.png", 1468L, "06b8d183981d9057825d4e9e90bc331a4cccd0df163a4a23af44de633ab81721"));
+            frameAssets.put(Integer.valueOf(94), new OracleContract.Asset("android-full-frames\\rotate180\\source_094.png", 1469L, "920a6cbdc89ee6b23e8d0601533b155af1b1dfb18d252017acda7503b05e91a6"));
+            frameAssets.put(Integer.valueOf(95), new OracleContract.Asset("android-full-frames\\rotate180\\source_095.png", 1442L, "0f28eda107836decfb4b6f0ae64ab48929fd56d4b5a86ae9ba5c32286cdf63f7"));
+            List<OracleContract.AudioProbe> audioProbes = new ArrayList<OracleContract.AudioProbe>();
+            audioProbes.add(new OracleContract.AudioProbe(0.25d, 0.12d, 0.25d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(0.5d, 0.12d, 0.5d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(0.75d, 0.12d, 0.75d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.25d, 0.12d, 1.25d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.5d, 0.12d, 1.5d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.75d, 0.12d, 1.75d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(2.25d, 0.12d, 2.25d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(2.5d, 0.12d, 2.5d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(2.75d, 0.12d, 2.75d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.25d, 0.12d, 3.25d, 1100, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.5d, 0.12d, 3.5d, 1100, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.75d, 0.12d, 3.75d, 1100, 0.22627416997969518d));
+            cases.add(new OracleContract.OracleCase(
+                    "rotate180",
+                    new OracleContract.Operation(0, 4, 0, 0, 320, 240, 180, 0, 1.0d, 1.0d),
+                    new LinkedHashMap<String, Object>() {{
+                        put("sourceDurationMs", Integer.valueOf(4000));
+                        put("startMs", Integer.valueOf(0));
+                        put("endMs", Integer.valueOf(4000));
+                        put("cropLeft", Double.valueOf(0.0d));
+                        put("cropTop", Double.valueOf(0.0d));
+                        put("cropRight", Double.valueOf(1.0d));
+                        put("cropBottom", Double.valueOf(1.0d));
+                        put("rotationDegrees", Integer.valueOf(180));
+                        put("outputHeight", Integer.valueOf(0));
+                        put("speed", Double.valueOf(1.0d));
+                        put("volume", Double.valueOf(1.0d));
+                        put("overlayText", "");
+                    }},
+                    320, 240, 4.0d, 24.0d,
+                    Arrays.asList(Double.valueOf(24.0d)),
+                    96, 1, 1,
+                    true, 48000,
+                    1, 192000,
+                    barcodeRegions,
+                    probes,
+                    frameAssets,
+                    audioProbes,
+                    new OracleContract.Asset("reference\\rotate180.mp4", 97119L, "1873300d1464268ccf079533817b561d8ded9b2bbc8bb635f1fc2fa0ecac953a")));
+        }
+        {
+            List<OracleContract.BarcodeRegion> barcodeRegions = OracleCoreVerifier.barcodeRegions(
+                    new OracleContract.Operation(0, 4, 0, 0, 320, 240, 270, 0, 1.0d, 1.0d));
+            List<OracleContract.Probe> probes = new ArrayList<OracleContract.Probe>();
+            probes.add(new OracleContract.Probe(0, 0.0d, new OracleContract.Asset("frames\\rotate270\\source_000.png", 1526L, "94af5c9e3e25722136abd78c94f4c8700410d4956daffb41722002d9072140c3")));
+            probes.add(new OracleContract.Probe(12, 0.5d, new OracleContract.Asset("frames\\rotate270\\source_012.png", 1610L, "700cca9b838e3450e2d057d44adf661a08aab63544403dce884b34ed80ef913e")));
+            probes.add(new OracleContract.Probe(24, 1.0d, new OracleContract.Asset("frames\\rotate270\\source_024.png", 1605L, "9daf4322da9a7d09df8c7e4a6d27fbc351f3b784df0ba38a7f6777299e9b232f")));
+            probes.add(new OracleContract.Probe(36, 1.5d, new OracleContract.Asset("frames\\rotate270\\source_036.png", 1572L, "d2b209be67caf0908d7f5d14e574a041d375105021a557f78ae80114f2acc79b")));
+            probes.add(new OracleContract.Probe(48, 2.0d, new OracleContract.Asset("frames\\rotate270\\source_048.png", 1602L, "1123e1043fefed12fae7d88be513f5b38498a915f3d52c8e8413f7e382d3e59a")));
+            probes.add(new OracleContract.Probe(59, 2.4583333333333335d, new OracleContract.Asset("frames\\rotate270\\source_059.png", 1585L, "e4cd70fc0f467c9b640d7f55f28f910356e3c62dce0f785f724d71f9b0807ea7")));
+            probes.add(new OracleContract.Probe(71, 2.9583333333333335d, new OracleContract.Asset("frames\\rotate270\\source_071.png", 1589L, "06be485c0922ac95def9adcd1a14017c26f2e51654551d987e55b0588378c79f")));
+            probes.add(new OracleContract.Probe(83, 3.4583333333333335d, new OracleContract.Asset("frames\\rotate270\\source_083.png", 1617L, "8e06dd5f661b640197493c68c03defb2f623c237da42ccdab92fa4f05b2c149e")));
+            probes.add(new OracleContract.Probe(95, 3.9583333333333335d, new OracleContract.Asset("frames\\rotate270\\source_095.png", 1566L, "a4d36ee6465818d2134b4b03b65872b82b0a2e82b6c85b87e8d197a762717866")));
+            LinkedHashMap<Integer, OracleContract.Asset> frameAssets = new LinkedHashMap<Integer, OracleContract.Asset>();
+            frameAssets.put(Integer.valueOf(0), new OracleContract.Asset("android-full-frames\\rotate270\\source_000.png", 1526L, "94af5c9e3e25722136abd78c94f4c8700410d4956daffb41722002d9072140c3"));
+            frameAssets.put(Integer.valueOf(1), new OracleContract.Asset("android-full-frames\\rotate270\\source_001.png", 1567L, "bcedfba252e89d0562f4be03ed367bc5d2532f4c8bcdadb11e8b76d7f7b9cd72"));
+            frameAssets.put(Integer.valueOf(2), new OracleContract.Asset("android-full-frames\\rotate270\\source_002.png", 1574L, "a45216fe65ef82eca363dd5c31dd89db395988abf58f9c49071b12c8d1a15c42"));
+            frameAssets.put(Integer.valueOf(3), new OracleContract.Asset("android-full-frames\\rotate270\\source_003.png", 1580L, "cb3a1c2591b8500f97c65ca05bb9bfd9d5e808764e00307bcb9f2f474a0bc662"));
+            frameAssets.put(Integer.valueOf(4), new OracleContract.Asset("android-full-frames\\rotate270\\source_004.png", 1577L, "16e9ba3aa4aa8e5198f6bcfd8e5cf205806f9acd011ff5fd27fc679aa09b9cff"));
+            frameAssets.put(Integer.valueOf(5), new OracleContract.Asset("android-full-frames\\rotate270\\source_005.png", 1579L, "2f444ce020b3ef3ace42bc7fef2d8d1f52e7afa011d5a400456c380b27802d67"));
+            frameAssets.put(Integer.valueOf(6), new OracleContract.Asset("android-full-frames\\rotate270\\source_006.png", 1577L, "a883e08345f8ddc828dbd5460d4735a1387d2635d74f488e6c4b1acf33ebb9f9"));
+            frameAssets.put(Integer.valueOf(7), new OracleContract.Asset("android-full-frames\\rotate270\\source_007.png", 1555L, "3327fa52b86bda5fc317b284615000214b2eaa8b698b6042841f35ecb49b7c53"));
+            frameAssets.put(Integer.valueOf(8), new OracleContract.Asset("android-full-frames\\rotate270\\source_008.png", 1584L, "1f9f2ee8f22fd04caaed1011c1780d3ed6dace95f60c847d85e8deb22dd78373"));
+            frameAssets.put(Integer.valueOf(9), new OracleContract.Asset("android-full-frames\\rotate270\\source_009.png", 1610L, "6575345d1868db6a9f20a4b972bfe431404515baf9fb185ea38d275c1668ce27"));
+            frameAssets.put(Integer.valueOf(10), new OracleContract.Asset("android-full-frames\\rotate270\\source_010.png", 1603L, "7af989ef1b8918ff2e9b79b02e792b2eec6448de59856759c1d72c2ce7ace009"));
+            frameAssets.put(Integer.valueOf(11), new OracleContract.Asset("android-full-frames\\rotate270\\source_011.png", 1609L, "a4f7f587c16618cc577f0483400c6aa6fbe88fae18a27445e58042ce5c0db817"));
+            frameAssets.put(Integer.valueOf(12), new OracleContract.Asset("android-full-frames\\rotate270\\source_012.png", 1610L, "700cca9b838e3450e2d057d44adf661a08aab63544403dce884b34ed80ef913e"));
+            frameAssets.put(Integer.valueOf(13), new OracleContract.Asset("android-full-frames\\rotate270\\source_013.png", 1592L, "3b9aabc67f18a52563cce6303baa878ea4e6694785d8af4be713ad97248623f4"));
+            frameAssets.put(Integer.valueOf(14), new OracleContract.Asset("android-full-frames\\rotate270\\source_014.png", 1577L, "e05f60cdd6a39a8884e3f3d90b62867b5d8ccbfe467c713e24c0ec7b7f3518d5"));
+            frameAssets.put(Integer.valueOf(15), new OracleContract.Asset("android-full-frames\\rotate270\\source_015.png", 1553L, "2b4877b2197e125aed49a68aa0a73e868e6a402956fa57223b9fd2be2600da39"));
+            frameAssets.put(Integer.valueOf(16), new OracleContract.Asset("android-full-frames\\rotate270\\source_016.png", 1573L, "3f8c6ff717b3e2f6dc4d2d25ed28be979c190e2c0b570a00aa6b9f9715220fcc"));
+            frameAssets.put(Integer.valueOf(17), new OracleContract.Asset("android-full-frames\\rotate270\\source_017.png", 1616L, "51852d7c0f4cc1a2e565ec84797ddc7ebdc883fafeefb5d38900ad1fae3b6e7a"));
+            frameAssets.put(Integer.valueOf(18), new OracleContract.Asset("android-full-frames\\rotate270\\source_018.png", 1622L, "3396eccede6b8377f792359d5bb8e0b4375863143650140e7a158e03a94b4b9e"));
+            frameAssets.put(Integer.valueOf(19), new OracleContract.Asset("android-full-frames\\rotate270\\source_019.png", 1607L, "babc5099bd6bcf0cfe7cc9200e6f534be867e5ba8afac53b70aa469c76176201"));
+            frameAssets.put(Integer.valueOf(20), new OracleContract.Asset("android-full-frames\\rotate270\\source_020.png", 1595L, "ebf7742b8486d7bf3a1bc98e38c929f46ff75921831a8720f8f1a921e03c3a6e"));
+            frameAssets.put(Integer.valueOf(21), new OracleContract.Asset("android-full-frames\\rotate270\\source_021.png", 1594L, "5efdde7a109ab9e4c48a53436a4856230f8ef4a5a33a6c3a7406234527384500"));
+            frameAssets.put(Integer.valueOf(22), new OracleContract.Asset("android-full-frames\\rotate270\\source_022.png", 1615L, "53d23bb27b64fe4e16d247bdf39099f77b0968222d4fe5e0abc38422797d8657"));
+            frameAssets.put(Integer.valueOf(23), new OracleContract.Asset("android-full-frames\\rotate270\\source_023.png", 1608L, "63a86c2a67a48d1993d84c9c166462f523dd054be6b13d24e7d47d418d6f2c16"));
+            frameAssets.put(Integer.valueOf(24), new OracleContract.Asset("android-full-frames\\rotate270\\source_024.png", 1605L, "9daf4322da9a7d09df8c7e4a6d27fbc351f3b784df0ba38a7f6777299e9b232f"));
+            frameAssets.put(Integer.valueOf(25), new OracleContract.Asset("android-full-frames\\rotate270\\source_025.png", 1634L, "a46ec4ffd4646ed52275e4886091357470341b6c3e6232ed63f06a870a77105a"));
+            frameAssets.put(Integer.valueOf(26), new OracleContract.Asset("android-full-frames\\rotate270\\source_026.png", 1584L, "accf87fa770e018df1a57e5e69ad36f5a2e82c62f18382f59ce5b3fe9e48dc05"));
+            frameAssets.put(Integer.valueOf(27), new OracleContract.Asset("android-full-frames\\rotate270\\source_027.png", 1585L, "11961ed130f9f61a8aad464d9a435800ea104b1fcca127676e7983a2277adf8a"));
+            frameAssets.put(Integer.valueOf(28), new OracleContract.Asset("android-full-frames\\rotate270\\source_028.png", 1608L, "1398612144c76ae4afe0d273dfa48f8f01c9f3a929a5cecb4ab015c746cc79b1"));
+            frameAssets.put(Integer.valueOf(29), new OracleContract.Asset("android-full-frames\\rotate270\\source_029.png", 1613L, "e2c0fb3e5ffdadf7dda707038be1aeff2345249316e6cc54584afa4c43591bc4"));
+            frameAssets.put(Integer.valueOf(30), new OracleContract.Asset("android-full-frames\\rotate270\\source_030.png", 1624L, "f78ecaca41ed6473652181d7b7650fe54857d98e41e9ad1760ef45ee3f268d24"));
+            frameAssets.put(Integer.valueOf(31), new OracleContract.Asset("android-full-frames\\rotate270\\source_031.png", 1601L, "ce8ba63eef374b99a6ebbdb2a695b218ab175836cca885a737eead5b0bd9746d"));
+            frameAssets.put(Integer.valueOf(32), new OracleContract.Asset("android-full-frames\\rotate270\\source_032.png", 1571L, "a4b2325a212e2a1fec86d8818a094af3084c0a7daf6c3e96b31f019563e1aaa7"));
+            frameAssets.put(Integer.valueOf(33), new OracleContract.Asset("android-full-frames\\rotate270\\source_033.png", 1586L, "86aa258b3eff0ecadbfd5cdb6e2c8309afc2ca3df790c8fd1773687e46e50100"));
+            frameAssets.put(Integer.valueOf(34), new OracleContract.Asset("android-full-frames\\rotate270\\source_034.png", 1592L, "e85a58d9c5da57d350aa0211c0317eb7af5b87ac0c480a638565a529b82d8dfa"));
+            frameAssets.put(Integer.valueOf(35), new OracleContract.Asset("android-full-frames\\rotate270\\source_035.png", 1589L, "8c01c2ff5241b6f3fc2566b5a861c7ca31d5521c09947ac3ad81b4b346497032"));
+            frameAssets.put(Integer.valueOf(36), new OracleContract.Asset("android-full-frames\\rotate270\\source_036.png", 1572L, "d2b209be67caf0908d7f5d14e574a041d375105021a557f78ae80114f2acc79b"));
+            frameAssets.put(Integer.valueOf(37), new OracleContract.Asset("android-full-frames\\rotate270\\source_037.png", 1580L, "77cc603fd6f5d0cef622f2e4ef575a92319323dc85bc06ce9d692b426cbe08fd"));
+            frameAssets.put(Integer.valueOf(38), new OracleContract.Asset("android-full-frames\\rotate270\\source_038.png", 1596L, "4d81ebbe5a74aba619443ad72ded06556d322fd45c92d416880c674826058e35"));
+            frameAssets.put(Integer.valueOf(39), new OracleContract.Asset("android-full-frames\\rotate270\\source_039.png", 1581L, "e11a5c976a17648087307ad64d6c1d750bf57391a35ab68aec92bd717916cb63"));
+            frameAssets.put(Integer.valueOf(40), new OracleContract.Asset("android-full-frames\\rotate270\\source_040.png", 1597L, "21d90fc2d544aaa70906890e847d08bb7552dc14c93a17e876de2ad56f8676c9"));
+            frameAssets.put(Integer.valueOf(41), new OracleContract.Asset("android-full-frames\\rotate270\\source_041.png", 1630L, "7aef6940be6be9b8d3079119e5a27bda8ec798483377051172fbdbeaaa651bb1"));
+            frameAssets.put(Integer.valueOf(42), new OracleContract.Asset("android-full-frames\\rotate270\\source_042.png", 1577L, "677d4a31158052a702a9bc993bd789c584dca60c88b5b8bf1867711f38512da4"));
+            frameAssets.put(Integer.valueOf(43), new OracleContract.Asset("android-full-frames\\rotate270\\source_043.png", 1573L, "00c0221cacf85a7f2d3d3cd1be0b93fb65b543f68b1f180d05c35d7203f6e058"));
+            frameAssets.put(Integer.valueOf(44), new OracleContract.Asset("android-full-frames\\rotate270\\source_044.png", 1588L, "557a52c7b5f45deecc6af7e19037f2e50a7852e9736645ff40bd0ce482d460c8"));
+            frameAssets.put(Integer.valueOf(45), new OracleContract.Asset("android-full-frames\\rotate270\\source_045.png", 1587L, "feeee5066439ec9f22dcd8f8205e2040ce1296f42cc031207a4c9f71337fba13"));
+            frameAssets.put(Integer.valueOf(46), new OracleContract.Asset("android-full-frames\\rotate270\\source_046.png", 1593L, "e5a2e1f270c0ae00480a1d2102e2772851d3a5597bb3370d404e8c7c7fcb97a8"));
+            frameAssets.put(Integer.valueOf(47), new OracleContract.Asset("android-full-frames\\rotate270\\source_047.png", 1566L, "970dacf07557c345e3c6c7cab9fb427b4263a526ca6aecb4d42d1d83b8591ef3"));
+            frameAssets.put(Integer.valueOf(48), new OracleContract.Asset("android-full-frames\\rotate270\\source_048.png", 1602L, "1123e1043fefed12fae7d88be513f5b38498a915f3d52c8e8413f7e382d3e59a"));
+            frameAssets.put(Integer.valueOf(49), new OracleContract.Asset("android-full-frames\\rotate270\\source_049.png", 1610L, "cf3fee69a83475afd8dc29a288fde734788ae81c349734d8bf5f5b77bdb79eb6"));
+            frameAssets.put(Integer.valueOf(50), new OracleContract.Asset("android-full-frames\\rotate270\\source_050.png", 1623L, "97c1a86e929f7ae4abe272b56245bd6a7c88768491d4953ec1cb854f8274cc69"));
+            frameAssets.put(Integer.valueOf(51), new OracleContract.Asset("android-full-frames\\rotate270\\source_051.png", 1616L, "8160ff99897132cee3b46c97908300667abbc5d45e789971f73962be632fba00"));
+            frameAssets.put(Integer.valueOf(52), new OracleContract.Asset("android-full-frames\\rotate270\\source_052.png", 1608L, "1fd21375cd6e007ceca90b6e3e53d0f32558561b632039297dc6d2ab3a46a103"));
+            frameAssets.put(Integer.valueOf(53), new OracleContract.Asset("android-full-frames\\rotate270\\source_053.png", 1626L, "08fc44ca8b5547f8a6b235ba688c0b0a9270b98414981698df5cf0ff7d29b16d"));
+            frameAssets.put(Integer.valueOf(54), new OracleContract.Asset("android-full-frames\\rotate270\\source_054.png", 1641L, "301a081c8d8dc05ef5d9cb1aff81cc910d738a18b4eb8efa0320a5bd0f725c5d"));
+            frameAssets.put(Integer.valueOf(55), new OracleContract.Asset("android-full-frames\\rotate270\\source_055.png", 1608L, "28d007cc07de17ed85464b82539412df021f6eda653c9ed9de453e5cec7a476b"));
+            frameAssets.put(Integer.valueOf(56), new OracleContract.Asset("android-full-frames\\rotate270\\source_056.png", 1582L, "84e31b8604bb3b625c809eb42fef03999cd3527ed323736dca7ed8092e45b591"));
+            frameAssets.put(Integer.valueOf(57), new OracleContract.Asset("android-full-frames\\rotate270\\source_057.png", 1598L, "b3438e280aff06c71fdbc1889229ace520dd13747feba593e9b680c689c159d4"));
+            frameAssets.put(Integer.valueOf(58), new OracleContract.Asset("android-full-frames\\rotate270\\source_058.png", 1583L, "755cc1585730c2105625d868a191a92f6947e91c1900e7a43765eca588d1928d"));
+            frameAssets.put(Integer.valueOf(59), new OracleContract.Asset("android-full-frames\\rotate270\\source_059.png", 1585L, "e4cd70fc0f467c9b640d7f55f28f910356e3c62dce0f785f724d71f9b0807ea7"));
+            frameAssets.put(Integer.valueOf(60), new OracleContract.Asset("android-full-frames\\rotate270\\source_060.png", 1601L, "75cf9473f432d027c9b642af02ebd76b52d575f635ede197d5fafcd829f243c3"));
+            frameAssets.put(Integer.valueOf(61), new OracleContract.Asset("android-full-frames\\rotate270\\source_061.png", 1603L, "1ce47d1a2bd2cd96b2593923624d26e8c9b0ce6273ef3e002d1fd06955b61e18"));
+            frameAssets.put(Integer.valueOf(62), new OracleContract.Asset("android-full-frames\\rotate270\\source_062.png", 1567L, "b83f9c444c1a83f95373080dfa9da0876d658b38aba81de90972caeed80607b3"));
+            frameAssets.put(Integer.valueOf(63), new OracleContract.Asset("android-full-frames\\rotate270\\source_063.png", 1543L, "dfd0c8805587ac9128612fe2fafb9dae24bff8cabc1edc745e0e1c52616f14c5"));
+            frameAssets.put(Integer.valueOf(64), new OracleContract.Asset("android-full-frames\\rotate270\\source_064.png", 1566L, "93e08b9eddff9289d8582e54ccb0160ef681a8d26fef88a28d577d02bae9780d"));
+            frameAssets.put(Integer.valueOf(65), new OracleContract.Asset("android-full-frames\\rotate270\\source_065.png", 1597L, "f8e92c1c9a2d9337d8f701a72b246dc8178ab1b5eb9f9139cadb0cde4192752e"));
+            frameAssets.put(Integer.valueOf(66), new OracleContract.Asset("android-full-frames\\rotate270\\source_066.png", 1622L, "586dd9378478608fef2015d5b071e196dbaea7d2b249cd542d551ae487954f86"));
+            frameAssets.put(Integer.valueOf(67), new OracleContract.Asset("android-full-frames\\rotate270\\source_067.png", 1627L, "b496528ee099be69003ff2f0d63349d90c286ffd24835a309113b10722e64836"));
+            frameAssets.put(Integer.valueOf(68), new OracleContract.Asset("android-full-frames\\rotate270\\source_068.png", 1616L, "399f3be3bf82638953cee7aecaefc9554f192cccc4f4fb9c16d96e73f2cc23fe"));
+            frameAssets.put(Integer.valueOf(69), new OracleContract.Asset("android-full-frames\\rotate270\\source_069.png", 1597L, "5bc8858fbe5b96c770f0e984e9ecd9d4c956d72d60a21b80d851123bb751f61f"));
+            frameAssets.put(Integer.valueOf(70), new OracleContract.Asset("android-full-frames\\rotate270\\source_070.png", 1609L, "b72bdb776bf1bbaa2789b82be3470e5132e5defed9cc2787187acc3963428664"));
+            frameAssets.put(Integer.valueOf(71), new OracleContract.Asset("android-full-frames\\rotate270\\source_071.png", 1589L, "06be485c0922ac95def9adcd1a14017c26f2e51654551d987e55b0588378c79f"));
+            frameAssets.put(Integer.valueOf(72), new OracleContract.Asset("android-full-frames\\rotate270\\source_072.png", 1609L, "898a5b83d2d1288238a1491f3433112d7836679cafaf74958b1d71d9d8ce3985"));
+            frameAssets.put(Integer.valueOf(73), new OracleContract.Asset("android-full-frames\\rotate270\\source_073.png", 1639L, "45d5573bee69e9f19c7e1b0d94144db8dfbcb0dcd65627c228f8488473ad0102"));
+            frameAssets.put(Integer.valueOf(74), new OracleContract.Asset("android-full-frames\\rotate270\\source_074.png", 1611L, "876ed6e085f7f6aa01d4284be818c43b0495b7e84ef18587aa9b179f1dcb07b4"));
+            frameAssets.put(Integer.valueOf(75), new OracleContract.Asset("android-full-frames\\rotate270\\source_075.png", 1617L, "3c296a8869abab01463c023aa141b6c1028e3610f23396be916353c2353fd16e"));
+            frameAssets.put(Integer.valueOf(76), new OracleContract.Asset("android-full-frames\\rotate270\\source_076.png", 1657L, "c924a581bc509e6d0d86a8d274da6d48952cd789054c34d5eceffd1feb24b384"));
+            frameAssets.put(Integer.valueOf(77), new OracleContract.Asset("android-full-frames\\rotate270\\source_077.png", 1660L, "30a2dbcb8f90ec8b10eaf44911f04c870b262ef7982100ebd428be6eccc8b245"));
+            frameAssets.put(Integer.valueOf(78), new OracleContract.Asset("android-full-frames\\rotate270\\source_078.png", 1624L, "a21eeae74e7bd2f45521b762a1584ff91bd94c282f734df76e031a84341d6453"));
+            frameAssets.put(Integer.valueOf(79), new OracleContract.Asset("android-full-frames\\rotate270\\source_079.png", 1593L, "c8f4a9aea0067e30c5682eea60928999e254f46883f09d00989772dee9cfde56"));
+            frameAssets.put(Integer.valueOf(80), new OracleContract.Asset("android-full-frames\\rotate270\\source_080.png", 1553L, "d1b4c5a0e0e584b8f8a20b8756c2ceeda98924c97e441fdb1f797027bba99382"));
+            frameAssets.put(Integer.valueOf(81), new OracleContract.Asset("android-full-frames\\rotate270\\source_081.png", 1586L, "cde4debba2a0b14574f87e4626e3216e6b64071a72ae87513fec18471a1bf095"));
+            frameAssets.put(Integer.valueOf(82), new OracleContract.Asset("android-full-frames\\rotate270\\source_082.png", 1617L, "5883cb66d2c3df5913cc5101db7f3a67316f5b8039a37d24e06f0b9326c6aec9"));
+            frameAssets.put(Integer.valueOf(83), new OracleContract.Asset("android-full-frames\\rotate270\\source_083.png", 1617L, "8e06dd5f661b640197493c68c03defb2f623c237da42ccdab92fa4f05b2c149e"));
+            frameAssets.put(Integer.valueOf(84), new OracleContract.Asset("android-full-frames\\rotate270\\source_084.png", 1602L, "a8d07c667fb2f687a9787e40adf7f210bb28bf311ddd878d23d11cdd6346a962"));
+            frameAssets.put(Integer.valueOf(85), new OracleContract.Asset("android-full-frames\\rotate270\\source_085.png", 1577L, "2c87901d8de768d9f37731d240dd70e6770969664aa18663c3faaabd94148cf0"));
+            frameAssets.put(Integer.valueOf(86), new OracleContract.Asset("android-full-frames\\rotate270\\source_086.png", 1601L, "2c68a60fd8ed52bb51709e59adb19b23ca477ff54f0a11c204acd5905557231c"));
+            frameAssets.put(Integer.valueOf(87), new OracleContract.Asset("android-full-frames\\rotate270\\source_087.png", 1578L, "e48c59691220f184688f497e2c02649e8a3554755ba276c37b1a01c5dc405bb9"));
+            frameAssets.put(Integer.valueOf(88), new OracleContract.Asset("android-full-frames\\rotate270\\source_088.png", 1584L, "1ab09dafd0fe231566f35c3753991f10562568a958c39fe6018aa6e5b1501e00"));
+            frameAssets.put(Integer.valueOf(89), new OracleContract.Asset("android-full-frames\\rotate270\\source_089.png", 1622L, "cf856069bcf84b698a72ec24e34d72cc4a5cded068fd768dde81fb517a818ccc"));
+            frameAssets.put(Integer.valueOf(90), new OracleContract.Asset("android-full-frames\\rotate270\\source_090.png", 1598L, "e143ff6dc77fe98ebb30937a7d705c3d24e707a79725ed5ceba94108b8f7b35b"));
+            frameAssets.put(Integer.valueOf(91), new OracleContract.Asset("android-full-frames\\rotate270\\source_091.png", 1579L, "dbacec4a47a83f0d688690b830f0f9c39a9f9832d91d48a78c8981effb4c15d0"));
+            frameAssets.put(Integer.valueOf(92), new OracleContract.Asset("android-full-frames\\rotate270\\source_092.png", 1594L, "f261efb1237a572303258770c8d81ddcc1f6a3a2e83bf7cfd2b89f6f6ba98215"));
+            frameAssets.put(Integer.valueOf(93), new OracleContract.Asset("android-full-frames\\rotate270\\source_093.png", 1592L, "3ff75097c7ae19bc4f5af2db1d2ac6a6fdbfcd209cdad2869603c235c5c59302"));
+            frameAssets.put(Integer.valueOf(94), new OracleContract.Asset("android-full-frames\\rotate270\\source_094.png", 1584L, "e256c64574569e912c9308041dca7626a73a4cd8c27bf7ebf67ff53db3b74c28"));
+            frameAssets.put(Integer.valueOf(95), new OracleContract.Asset("android-full-frames\\rotate270\\source_095.png", 1566L, "a4d36ee6465818d2134b4b03b65872b82b0a2e82b6c85b87e8d197a762717866"));
+            List<OracleContract.AudioProbe> audioProbes = new ArrayList<OracleContract.AudioProbe>();
+            audioProbes.add(new OracleContract.AudioProbe(0.25d, 0.12d, 0.25d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(0.5d, 0.12d, 0.5d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(0.75d, 0.12d, 0.75d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.25d, 0.12d, 1.25d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.5d, 0.12d, 1.5d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.75d, 0.12d, 1.75d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(2.25d, 0.12d, 2.25d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(2.5d, 0.12d, 2.5d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(2.75d, 0.12d, 2.75d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.25d, 0.12d, 3.25d, 1100, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.5d, 0.12d, 3.5d, 1100, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.75d, 0.12d, 3.75d, 1100, 0.22627416997969518d));
+            cases.add(new OracleContract.OracleCase(
+                    "rotate270",
+                    new OracleContract.Operation(0, 4, 0, 0, 320, 240, 270, 0, 1.0d, 1.0d),
+                    new LinkedHashMap<String, Object>() {{
+                        put("sourceDurationMs", Integer.valueOf(4000));
+                        put("startMs", Integer.valueOf(0));
+                        put("endMs", Integer.valueOf(4000));
+                        put("cropLeft", Double.valueOf(0.0d));
+                        put("cropTop", Double.valueOf(0.0d));
+                        put("cropRight", Double.valueOf(1.0d));
+                        put("cropBottom", Double.valueOf(1.0d));
+                        put("rotationDegrees", Integer.valueOf(270));
+                        put("outputHeight", Integer.valueOf(0));
+                        put("speed", Double.valueOf(1.0d));
+                        put("volume", Double.valueOf(1.0d));
+                        put("overlayText", "");
+                    }},
+                    240, 320, 4.0d, 24.0d,
+                    Arrays.asList(Double.valueOf(24.0d)),
+                    96, 1, 1,
+                    true, 48000,
+                    1, 192000,
+                    barcodeRegions,
+                    probes,
+                    frameAssets,
+                    audioProbes,
+                    new OracleContract.Asset("reference\\rotate270.mp4", 95344L, "2f73347ad380dedf9284d2c02f51c0231dd1ad535f3dac32bc758ae430f767a4")));
+        }
+        {
+            List<OracleContract.BarcodeRegion> barcodeRegions = OracleCoreVerifier.barcodeRegions(
+                    new OracleContract.Operation(1, 3, 0, 0, 320, 240, 0, 0, 1.0d, 1.0d));
+            List<OracleContract.Probe> probes = new ArrayList<OracleContract.Probe>();
+            probes.add(new OracleContract.Probe(24, 0.0d, new OracleContract.Asset("frames\\trim\\source_024.png", 1468L, "d248c718107745e767de42cb7b0a645ae0fcf76a0e5a34233e7d81926333ed46")));
+            probes.add(new OracleContract.Probe(30, 0.25d, new OracleContract.Asset("frames\\trim\\source_030.png", 1495L, "19a43489ab3e9d7feb799f09fb4a7d2abeaa39328451703be46af8057bee75fe")));
+            probes.add(new OracleContract.Probe(36, 0.5d, new OracleContract.Asset("frames\\trim\\source_036.png", 1461L, "d423a4c7a47ca24b847898a93bee73c37433d21f84003b7686d5d872743ef515")));
+            probes.add(new OracleContract.Probe(42, 0.75d, new OracleContract.Asset("frames\\trim\\source_042.png", 1469L, "affbb3ca9dec013175767a65c05da0160da24efec95cb542ffe491c404b5aa08")));
+            probes.add(new OracleContract.Probe(48, 1.0d, new OracleContract.Asset("frames\\trim\\source_048.png", 1440L, "bc0e55ac31a478296ffefdf780fbb5899d9108659a198addee7138122836a7e4")));
+            probes.add(new OracleContract.Probe(53, 1.2083333333333335d, new OracleContract.Asset("frames\\trim\\source_053.png", 1493L, "11022a965f4d895dd29330671e09078cbbf970164f4c3c61bd1ac8eacd7d8966")));
+            probes.add(new OracleContract.Probe(59, 1.4583333333333335d, new OracleContract.Asset("frames\\trim\\source_059.png", 1495L, "1befb44fd0d05717fde612328f48c1266ffc22df97425a3a86ea5366e3781ba7")));
+            probes.add(new OracleContract.Probe(65, 1.7083333333333335d, new OracleContract.Asset("frames\\trim\\source_065.png", 1472L, "f9da02529590d65ade57126a4ee249ae0090f7b982a21755ad1652ea931ac682")));
+            probes.add(new OracleContract.Probe(71, 1.9583333333333335d, new OracleContract.Asset("frames\\trim\\source_071.png", 1477L, "7cdc95f5d661d5dcd017725138383c4d87972f426cd1e73ef78f4fb09dc97658")));
+            LinkedHashMap<Integer, OracleContract.Asset> frameAssets = new LinkedHashMap<Integer, OracleContract.Asset>();
+            frameAssets.put(Integer.valueOf(24), new OracleContract.Asset("android-full-frames\\trim\\source_024.png", 1468L, "d248c718107745e767de42cb7b0a645ae0fcf76a0e5a34233e7d81926333ed46"));
+            frameAssets.put(Integer.valueOf(25), new OracleContract.Asset("android-full-frames\\trim\\source_025.png", 1492L, "3ee149668e49ac86a7b395bd6822b72ab903131a003630c2518225671a919cf9"));
+            frameAssets.put(Integer.valueOf(26), new OracleContract.Asset("android-full-frames\\trim\\source_026.png", 1465L, "375539b074cff3b993a634fd536ac146da68a3fac252693638eb65fa41e864cc"));
+            frameAssets.put(Integer.valueOf(27), new OracleContract.Asset("android-full-frames\\trim\\source_027.png", 1469L, "b79cb69e390f824b13dbdd63d04ad7c408b60ee31562cab39d96a9b83788433b"));
+            frameAssets.put(Integer.valueOf(28), new OracleContract.Asset("android-full-frames\\trim\\source_028.png", 1456L, "cd7471a7d7821f144199383eaefd686ec12679990d892f15fe63ee4a36c4a4b3"));
+            frameAssets.put(Integer.valueOf(29), new OracleContract.Asset("android-full-frames\\trim\\source_029.png", 1492L, "f6d9bd48425d565ffd4bc67bd95d5a2a0a5b715d2c0daa21b780e05f5481820f"));
+            frameAssets.put(Integer.valueOf(30), new OracleContract.Asset("android-full-frames\\trim\\source_030.png", 1495L, "19a43489ab3e9d7feb799f09fb4a7d2abeaa39328451703be46af8057bee75fe"));
+            frameAssets.put(Integer.valueOf(31), new OracleContract.Asset("android-full-frames\\trim\\source_031.png", 1474L, "4ee33e5a842b3a85cd82f89453dd8ce6fbdf0bfe63e987ee59dcc1ca0846c6dc"));
+            frameAssets.put(Integer.valueOf(32), new OracleContract.Asset("android-full-frames\\trim\\source_032.png", 1455L, "5e0480930347ed3d39eabf24eb66dbb07b17f5d6a83a6fd4fef7f67833ecc1a1"));
+            frameAssets.put(Integer.valueOf(33), new OracleContract.Asset("android-full-frames\\trim\\source_033.png", 1481L, "6bdb87b12beb05c973114ab940e87d3810a6fe7885d87c589c0e5840f1680901"));
+            frameAssets.put(Integer.valueOf(34), new OracleContract.Asset("android-full-frames\\trim\\source_034.png", 1484L, "19c89cb535a00dded4c837eedd7eed5f0218d319947e6d303e8084f62aae55b7"));
+            frameAssets.put(Integer.valueOf(35), new OracleContract.Asset("android-full-frames\\trim\\source_035.png", 1485L, "f44294faa57c7ffd0c9dc44ff3590c6b32cc94402be223a1e4a5f40d8fa4dee3"));
+            frameAssets.put(Integer.valueOf(36), new OracleContract.Asset("android-full-frames\\trim\\source_036.png", 1461L, "d423a4c7a47ca24b847898a93bee73c37433d21f84003b7686d5d872743ef515"));
+            frameAssets.put(Integer.valueOf(37), new OracleContract.Asset("android-full-frames\\trim\\source_037.png", 1468L, "31bef3fe22159f725d265a0552af59f876caea8089c5e9e3a180b7ce57419f4f"));
+            frameAssets.put(Integer.valueOf(38), new OracleContract.Asset("android-full-frames\\trim\\source_038.png", 1472L, "9fe0ea19b4b2103290d7c2a40c86236146e9f521eb21456c67008a1b623225f6"));
+            frameAssets.put(Integer.valueOf(39), new OracleContract.Asset("android-full-frames\\trim\\source_039.png", 1463L, "0bf08c6bf71afe3549c220a5ce842e787cc5f12cb457faf565dacb2cd3236a31"));
+            frameAssets.put(Integer.valueOf(40), new OracleContract.Asset("android-full-frames\\trim\\source_040.png", 1440L, "37de11cb03e156253f027723b2393931e0804e0f07465ee0d3d5a8cc6c435391"));
+            frameAssets.put(Integer.valueOf(41), new OracleContract.Asset("android-full-frames\\trim\\source_041.png", 1486L, "bcc73f783d8005cecc91576491cfebaf6ddc1627f6b1da9cf74676aa3a5e3f1f"));
+            frameAssets.put(Integer.valueOf(42), new OracleContract.Asset("android-full-frames\\trim\\source_042.png", 1469L, "affbb3ca9dec013175767a65c05da0160da24efec95cb542ffe491c404b5aa08"));
+            frameAssets.put(Integer.valueOf(43), new OracleContract.Asset("android-full-frames\\trim\\source_043.png", 1475L, "55a5492e7c910c154d1897c65344316c3e71ab7c5203d2ede3a79b6a3baaadad"));
+            frameAssets.put(Integer.valueOf(44), new OracleContract.Asset("android-full-frames\\trim\\source_044.png", 1481L, "b77566f31d1c0d329fdc5312c0d5eecb5f79fe09d64ac8bbd2dacb353fa3ca09"));
+            frameAssets.put(Integer.valueOf(45), new OracleContract.Asset("android-full-frames\\trim\\source_045.png", 1489L, "b0b342bf3d983da8b1016c8bd935aa9b9415121ec41f4b666edf4a5a452b562c"));
+            frameAssets.put(Integer.valueOf(46), new OracleContract.Asset("android-full-frames\\trim\\source_046.png", 1479L, "d3fef3becaf7ecccf4b9ced5c7d0a8b0550787825ef493ea388db44215710c10"));
+            frameAssets.put(Integer.valueOf(47), new OracleContract.Asset("android-full-frames\\trim\\source_047.png", 1455L, "50963fd3af0ab9e5d63216c954617dd0e0f4d20311dadd2c4e2270f1ba949071"));
+            frameAssets.put(Integer.valueOf(48), new OracleContract.Asset("android-full-frames\\trim\\source_048.png", 1440L, "bc0e55ac31a478296ffefdf780fbb5899d9108659a198addee7138122836a7e4"));
+            frameAssets.put(Integer.valueOf(49), new OracleContract.Asset("android-full-frames\\trim\\source_049.png", 1476L, "df99cee9f4e2aa04d7649a0affc71e76316bf5df2d983787421063a2143f1062"));
+            frameAssets.put(Integer.valueOf(50), new OracleContract.Asset("android-full-frames\\trim\\source_050.png", 1476L, "4f79f3763f8f3d149cb13e80fb2ee42500bca6f99fac0374d8e0b2cc6ecb835c"));
+            frameAssets.put(Integer.valueOf(51), new OracleContract.Asset("android-full-frames\\trim\\source_051.png", 1473L, "f82967b67b3d826fcfbb5cdb9516ea7e32589e9daf40f15f1caed1cfc54bd05a"));
+            frameAssets.put(Integer.valueOf(52), new OracleContract.Asset("android-full-frames\\trim\\source_052.png", 1457L, "8cc8130b7aa6196b604fee1db35877ea99b1662dab3960099d4373496af47925"));
+            frameAssets.put(Integer.valueOf(53), new OracleContract.Asset("android-full-frames\\trim\\source_053.png", 1493L, "11022a965f4d895dd29330671e09078cbbf970164f4c3c61bd1ac8eacd7d8966"));
+            frameAssets.put(Integer.valueOf(54), new OracleContract.Asset("android-full-frames\\trim\\source_054.png", 1503L, "6704f5791d03a2233e489e6903b7aacca40f45ad7e7b11c0be04eaf939d2900a"));
+            frameAssets.put(Integer.valueOf(55), new OracleContract.Asset("android-full-frames\\trim\\source_055.png", 1484L, "81e4ab40d4f1eaacfc6e2f6199bd80bed476268f5380bde962233d7e64ad61e0"));
+            frameAssets.put(Integer.valueOf(56), new OracleContract.Asset("android-full-frames\\trim\\source_056.png", 1479L, "0bad77d71f3a85fb8f4a16049c599fa20d2308e067a8cd594c0fee5f690f6e6f"));
+            frameAssets.put(Integer.valueOf(57), new OracleContract.Asset("android-full-frames\\trim\\source_057.png", 1500L, "3d9895fb95d4ba9eb7df0de2f5d6d3d97f46903755c5cd3cc75f7310726760e6"));
+            frameAssets.put(Integer.valueOf(58), new OracleContract.Asset("android-full-frames\\trim\\source_058.png", 1477L, "c70a8f42e5753d9390a076880f8422113cbd2d423662351f21bb7a8186a23281"));
+            frameAssets.put(Integer.valueOf(59), new OracleContract.Asset("android-full-frames\\trim\\source_059.png", 1495L, "1befb44fd0d05717fde612328f48c1266ffc22df97425a3a86ea5366e3781ba7"));
+            frameAssets.put(Integer.valueOf(60), new OracleContract.Asset("android-full-frames\\trim\\source_060.png", 1476L, "7398e01b54e9269ee16452d243fb29479f3bdca6390dd8fa284d05c0b4109209"));
+            frameAssets.put(Integer.valueOf(61), new OracleContract.Asset("android-full-frames\\trim\\source_061.png", 1489L, "007c8d69a073a37214e4ba16f1cf8e34244fd3b7605a3f4fb89f88315fdd2812"));
+            frameAssets.put(Integer.valueOf(62), new OracleContract.Asset("android-full-frames\\trim\\source_062.png", 1462L, "6b2897ae983cbaf3c6cdcaaee0690c0fcccf6e580d2badfb0b622518ad19433a"));
+            frameAssets.put(Integer.valueOf(63), new OracleContract.Asset("android-full-frames\\trim\\source_063.png", 1446L, "a501770f0d65b399cd8f8ff60eef5cdd6bd278e4dd76273c459ea09ce0374000"));
+            frameAssets.put(Integer.valueOf(64), new OracleContract.Asset("android-full-frames\\trim\\source_064.png", 1420L, "c2a9d27e4beb67d23cebe9ed1e8bec83036162bb6fb07c8105c6386046f946eb"));
+            frameAssets.put(Integer.valueOf(65), new OracleContract.Asset("android-full-frames\\trim\\source_065.png", 1472L, "f9da02529590d65ade57126a4ee249ae0090f7b982a21755ad1652ea931ac682"));
+            frameAssets.put(Integer.valueOf(66), new OracleContract.Asset("android-full-frames\\trim\\source_066.png", 1496L, "6558d06ecfdb9034bcf5c2a6f966ff4e62dda9172c697fd871fbb14af022f2bb"));
+            frameAssets.put(Integer.valueOf(67), new OracleContract.Asset("android-full-frames\\trim\\source_067.png", 1498L, "1aa864455084b94d67fcfdc1e4757fae7855af933451ea92721284b17e9a234e"));
+            frameAssets.put(Integer.valueOf(68), new OracleContract.Asset("android-full-frames\\trim\\source_068.png", 1482L, "dbb3ffe463572b7322da791073a9955c277c85885374f9d61a38650fc9ab5f66"));
+            frameAssets.put(Integer.valueOf(69), new OracleContract.Asset("android-full-frames\\trim\\source_069.png", 1487L, "231e816909ccd029e9f1e306281d29d4cb7c03497e757cee1d4421db880396a3"));
+            frameAssets.put(Integer.valueOf(70), new OracleContract.Asset("android-full-frames\\trim\\source_070.png", 1492L, "425205320006d357f2e4318bc880b144375550a9b7aeb3a90e403fa9866eee47"));
+            frameAssets.put(Integer.valueOf(71), new OracleContract.Asset("android-full-frames\\trim\\source_071.png", 1477L, "7cdc95f5d661d5dcd017725138383c4d87972f426cd1e73ef78f4fb09dc97658"));
+            List<OracleContract.AudioProbe> audioProbes = new ArrayList<OracleContract.AudioProbe>();
+            audioProbes.add(new OracleContract.AudioProbe(0.25d, 0.12d, 1.25d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(0.5d, 0.12d, 1.5d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(0.75d, 0.12d, 1.75d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.25d, 0.12d, 2.25d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.5d, 0.12d, 2.5d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.75d, 0.12d, 2.75d, 880, 0.22627416997969518d));
+            cases.add(new OracleContract.OracleCase(
+                    "trim",
+                    new OracleContract.Operation(1, 3, 0, 0, 320, 240, 0, 0, 1.0d, 1.0d),
+                    new LinkedHashMap<String, Object>() {{
+                        put("sourceDurationMs", Integer.valueOf(4000));
+                        put("startMs", Integer.valueOf(1000));
+                        put("endMs", Integer.valueOf(3000));
+                        put("cropLeft", Double.valueOf(0.0d));
+                        put("cropTop", Double.valueOf(0.0d));
+                        put("cropRight", Double.valueOf(1.0d));
+                        put("cropBottom", Double.valueOf(1.0d));
+                        put("rotationDegrees", Integer.valueOf(0));
+                        put("outputHeight", Integer.valueOf(0));
+                        put("speed", Double.valueOf(1.0d));
+                        put("volume", Double.valueOf(1.0d));
+                        put("overlayText", "");
+                    }},
+                    320, 240, 2.0d, 24.0d,
+                    Arrays.asList(Double.valueOf(24.0d)),
+                    48, 1, 1,
+                    true, 48000,
+                    1, 96000,
+                    barcodeRegions,
+                    probes,
+                    frameAssets,
+                    audioProbes,
+                    new OracleContract.Asset("reference\\trim.mp4", 47332L, "ce90a4b1805525ea0e65260e2e825c5bc325f6d3708c43568502cf65f2c9f4de")));
+        }
+        {
+            List<OracleContract.BarcodeRegion> barcodeRegions = OracleCoreVerifier.barcodeRegions(
+                    new OracleContract.Operation(0, 4, 0, 0, 320, 240, 0, 120, 1.0d, 1.0d));
+            List<OracleContract.Probe> probes = new ArrayList<OracleContract.Probe>();
+            probes.add(new OracleContract.Probe(0, 0.0d, new OracleContract.Asset("frames\\resize\\source_000.png", 2358L, "1b0e4e42fe85d6e140e42eb39b8c4a086cf4cebea6076b1830e0a247420c0c29")));
+            probes.add(new OracleContract.Probe(12, 0.5d, new OracleContract.Asset("frames\\resize\\source_012.png", 2582L, "495aca172297881f6418a29c8fe355642419a43f3b76da412e90d390a7d77b31")));
+            probes.add(new OracleContract.Probe(24, 1.0d, new OracleContract.Asset("frames\\resize\\source_024.png", 2640L, "27432bf58d332b30fd591039e4de963da29db7ea63ba9b55a9a51195568a8037")));
+            probes.add(new OracleContract.Probe(36, 1.5d, new OracleContract.Asset("frames\\resize\\source_036.png", 2621L, "95b075ac97abe31770b9552ed9cab460e52ff885806ebc4b7b7822385af2e4f6")));
+            probes.add(new OracleContract.Probe(48, 2.0d, new OracleContract.Asset("frames\\resize\\source_048.png", 2516L, "93e5cfdd8b3c7b8aef5d2d282b24124c6f33626377c1afb7d94f6f8c027294d3")));
+            probes.add(new OracleContract.Probe(59, 2.4583333333333335d, new OracleContract.Asset("frames\\resize\\source_059.png", 2635L, "68a7a0f71d82339c653c43bcb9eebe1ffd5158c1b00b1f5a1764ffd2416319e7")));
+            probes.add(new OracleContract.Probe(71, 2.9583333333333335d, new OracleContract.Asset("frames\\resize\\source_071.png", 2544L, "84a7710198bd877b529f56d56620c09cf2b7fda707aeb98c998249db69293750")));
+            probes.add(new OracleContract.Probe(83, 3.4583333333333335d, new OracleContract.Asset("frames\\resize\\source_083.png", 2659L, "6ccc8637a1e5a206425ecec6d206faeb2c1d4d6ae5fe250d6c7110708c575ca4")));
+            probes.add(new OracleContract.Probe(95, 3.9583333333333335d, new OracleContract.Asset("frames\\resize\\source_095.png", 2550L, "fca848922d2ec23022c7b1394125b3e8b92d871ebf1bbdac4d58eb44dbf91e4a")));
+            LinkedHashMap<Integer, OracleContract.Asset> frameAssets = new LinkedHashMap<Integer, OracleContract.Asset>();
+            frameAssets.put(Integer.valueOf(0), new OracleContract.Asset("android-full-frames\\resize\\source_000.png", 2358L, "1b0e4e42fe85d6e140e42eb39b8c4a086cf4cebea6076b1830e0a247420c0c29"));
+            frameAssets.put(Integer.valueOf(1), new OracleContract.Asset("android-full-frames\\resize\\source_001.png", 2443L, "ac335bcdee9823bf38c9164af3489886e2cebd581443538de642d3f4f2fcc5ab"));
+            frameAssets.put(Integer.valueOf(2), new OracleContract.Asset("android-full-frames\\resize\\source_002.png", 2487L, "7e06255dfb2a7ba9042db12e4a7e54cdd1c9049b5b658c395ef63ba1fca64572"));
+            frameAssets.put(Integer.valueOf(3), new OracleContract.Asset("android-full-frames\\resize\\source_003.png", 2509L, "c807bab4ebf19625fd530eba19ef615fa930f930958401096cf4465f280076f4"));
+            frameAssets.put(Integer.valueOf(4), new OracleContract.Asset("android-full-frames\\resize\\source_004.png", 2532L, "cb5c4a96e22a7e72fee9f8831de5108c9e3745084d3adc65f5b8fd6ba73b8d66"));
+            frameAssets.put(Integer.valueOf(5), new OracleContract.Asset("android-full-frames\\resize\\source_005.png", 2470L, "3462692588f49a583f051b4f08f4a17b01cc3abc62aab2904c471c3f192e5d9f"));
+            frameAssets.put(Integer.valueOf(6), new OracleContract.Asset("android-full-frames\\resize\\source_006.png", 2534L, "206d9182be57dd888b8cb6526ae625113edd960c5ef84ccbfa05ee87a53e11f9"));
+            frameAssets.put(Integer.valueOf(7), new OracleContract.Asset("android-full-frames\\resize\\source_007.png", 2472L, "f9e43ad840d83255cd7232f0e1e6a19832b6754275c4eabc35f3c57937dc2196"));
+            frameAssets.put(Integer.valueOf(8), new OracleContract.Asset("android-full-frames\\resize\\source_008.png", 2558L, "cf27107933062b7a58c8732344db82501e96043fb42df76f7c8c28f31d27d5aa"));
+            frameAssets.put(Integer.valueOf(9), new OracleContract.Asset("android-full-frames\\resize\\source_009.png", 2621L, "4a19fa55c8eab98d1e8a9da4a898c6c4091c8a668c25a182c12a72c6ebef9a9b"));
+            frameAssets.put(Integer.valueOf(10), new OracleContract.Asset("android-full-frames\\resize\\source_010.png", 2576L, "9bf42d24108e18ecb383b755c6cb1dceff75853e69b8fd41c81f836f3acdcbeb"));
+            frameAssets.put(Integer.valueOf(11), new OracleContract.Asset("android-full-frames\\resize\\source_011.png", 2620L, "edbdbf2c7b382be689beb11bb36905fe6b556473d08da67f599908690c1bf943"));
+            frameAssets.put(Integer.valueOf(12), new OracleContract.Asset("android-full-frames\\resize\\source_012.png", 2582L, "495aca172297881f6418a29c8fe355642419a43f3b76da412e90d390a7d77b31"));
+            frameAssets.put(Integer.valueOf(13), new OracleContract.Asset("android-full-frames\\resize\\source_013.png", 2539L, "fe01e6c50faf08fc68e232df7edb3ebbfca838128f86c7b15fbd03f8a17f352b"));
+            frameAssets.put(Integer.valueOf(14), new OracleContract.Asset("android-full-frames\\resize\\source_014.png", 2503L, "d7fccffd1dae3ec9f9c75676cc704c4d5e3b6a7c016664ebcba208c392ef4cca"));
+            frameAssets.put(Integer.valueOf(15), new OracleContract.Asset("android-full-frames\\resize\\source_015.png", 2393L, "7d5576c7a3bb7df1a57ff7a53f1f56e345d227d63298f046d8dff7433e80ecac"));
+            frameAssets.put(Integer.valueOf(16), new OracleContract.Asset("android-full-frames\\resize\\source_016.png", 2496L, "4a25b08e5aaed13d87a1c6d6759663568eb8ddbc64a3443bcff892dbccc32e46"));
+            frameAssets.put(Integer.valueOf(17), new OracleContract.Asset("android-full-frames\\resize\\source_017.png", 2654L, "69e6cff6700336ca60d27adbe2a6a1a7ce5738cfb09c5b0c4f17f28473947153"));
+            frameAssets.put(Integer.valueOf(18), new OracleContract.Asset("android-full-frames\\resize\\source_018.png", 2702L, "1dac0b736ece5fa82cc8206ec164693e7a2b533d7745753d079870391af043e4"));
+            frameAssets.put(Integer.valueOf(19), new OracleContract.Asset("android-full-frames\\resize\\source_019.png", 2689L, "603e98d8ff4914ff9b7b842a4986f98ff8e475990f610174d4857a4ff45d23c0"));
+            frameAssets.put(Integer.valueOf(20), new OracleContract.Asset("android-full-frames\\resize\\source_020.png", 2702L, "8cdd6f94f6a4ed0b80f5dccd6741196467ecc9c21fd2bd3e0559f87b8ac0c9b8"));
+            frameAssets.put(Integer.valueOf(21), new OracleContract.Asset("android-full-frames\\resize\\source_021.png", 2624L, "a354aa8eaa108a4258697e5f69d6639df82ed35e7f7313ee46c09b767627acf0"));
+            frameAssets.put(Integer.valueOf(22), new OracleContract.Asset("android-full-frames\\resize\\source_022.png", 2693L, "535f3902ac4a91cb741a34436177a7e1ff2399ef4104ff6600272036bb4f5ae8"));
+            frameAssets.put(Integer.valueOf(23), new OracleContract.Asset("android-full-frames\\resize\\source_023.png", 2635L, "90cf9da3e893a08b66ab691d983dca9a71baf3aaa88263b9a5df32b5ea658bb0"));
+            frameAssets.put(Integer.valueOf(24), new OracleContract.Asset("android-full-frames\\resize\\source_024.png", 2640L, "27432bf58d332b30fd591039e4de963da29db7ea63ba9b55a9a51195568a8037"));
+            frameAssets.put(Integer.valueOf(25), new OracleContract.Asset("android-full-frames\\resize\\source_025.png", 2678L, "def889767ebaa65cceb47feb8a05e5f2a7b83ad813acc580db895252b968b4f3"));
+            frameAssets.put(Integer.valueOf(26), new OracleContract.Asset("android-full-frames\\resize\\source_026.png", 2579L, "01aeeda693ba69f5844e671297df6b334a0fe153afc547d08c49eabd0b44fd00"));
+            frameAssets.put(Integer.valueOf(27), new OracleContract.Asset("android-full-frames\\resize\\source_027.png", 2620L, "8229f4af28965c55c16c6e8ad2b791755da62fb10d926babd54e71fc8f4c929f"));
+            frameAssets.put(Integer.valueOf(28), new OracleContract.Asset("android-full-frames\\resize\\source_028.png", 2641L, "2bb9bcb3d58df157d5eec9cedd3cc355b8b7f4ccc0ffcb949215e5a8a3ae7d31"));
+            frameAssets.put(Integer.valueOf(29), new OracleContract.Asset("android-full-frames\\resize\\source_029.png", 2645L, "7ab2600b7a7ade0c643abded3edc091a3d373e19bd28a624b4c6f57887b5709b"));
+            frameAssets.put(Integer.valueOf(30), new OracleContract.Asset("android-full-frames\\resize\\source_030.png", 2669L, "11a49d51f22ff3061f65a8ced857657858faf0e86bcb2c4966481a77b03bbac3"));
+            frameAssets.put(Integer.valueOf(31), new OracleContract.Asset("android-full-frames\\resize\\source_031.png", 2590L, "4eb6a86045f927db48ac8dfbb88ad1ad89031f69e1fecd5334418d3b52b7534d"));
+            frameAssets.put(Integer.valueOf(32), new OracleContract.Asset("android-full-frames\\resize\\source_032.png", 2577L, "45854d43af01cba7a9ea494e77fa2b404748ca90293bc45558a6d55aa3087ef4"));
+            frameAssets.put(Integer.valueOf(33), new OracleContract.Asset("android-full-frames\\resize\\source_033.png", 2640L, "c4604546a02c44cf524307dd7c3013a3fea41221d1274c07c6d626c8cb00ccc4"));
+            frameAssets.put(Integer.valueOf(34), new OracleContract.Asset("android-full-frames\\resize\\source_034.png", 2661L, "8084a87ae54507b2cd278badb632b523204d1251064cb682f7717c99d153153e"));
+            frameAssets.put(Integer.valueOf(35), new OracleContract.Asset("android-full-frames\\resize\\source_035.png", 2649L, "4a410cb1efa80c8d84a6659e84b0e4d70cb99467075853efcc98424910070ead"));
+            frameAssets.put(Integer.valueOf(36), new OracleContract.Asset("android-full-frames\\resize\\source_036.png", 2621L, "95b075ac97abe31770b9552ed9cab460e52ff885806ebc4b7b7822385af2e4f6"));
+            frameAssets.put(Integer.valueOf(37), new OracleContract.Asset("android-full-frames\\resize\\source_037.png", 2541L, "aeb90d75291baaa3d1d421c4f497fa2e3229781d234b48b92e9028267e4e99b1"));
+            frameAssets.put(Integer.valueOf(38), new OracleContract.Asset("android-full-frames\\resize\\source_038.png", 2625L, "c9a556723631a0804bcf3c1f8757d62e199c7e802d5291be5366246df2dbd3fa"));
+            frameAssets.put(Integer.valueOf(39), new OracleContract.Asset("android-full-frames\\resize\\source_039.png", 2566L, "d8d26783062320e6e1121b5a91cac1af3d65e404e3628f45f5a01124d71d3b75"));
+            frameAssets.put(Integer.valueOf(40), new OracleContract.Asset("android-full-frames\\resize\\source_040.png", 2563L, "fb1799531c91e7dba01673eb82aaab6a12d6ae756f289669f32ec94e027daf77"));
+            frameAssets.put(Integer.valueOf(41), new OracleContract.Asset("android-full-frames\\resize\\source_041.png", 2638L, "75f1a2b38f10e35ace9d2e478027ae32dd5f93753b3e3e563266fb2cf8c87ee1"));
+            frameAssets.put(Integer.valueOf(42), new OracleContract.Asset("android-full-frames\\resize\\source_042.png", 2557L, "98ede51f6e2d2d8b206e1f907a3be272f5bcdb7d3d5f352fd3b6ce3ab9a6052d"));
+            frameAssets.put(Integer.valueOf(43), new OracleContract.Asset("android-full-frames\\resize\\source_043.png", 2627L, "f2068ab4b2e1fe1d3ee2cf0cd023a7fbab22663874ba8aee1093ef908c312e27"));
+            frameAssets.put(Integer.valueOf(44), new OracleContract.Asset("android-full-frames\\resize\\source_044.png", 2658L, "65af4906ea22582ef06349df4824bb6c26fc75b4a44524d33cb7b8156cc3b804"));
+            frameAssets.put(Integer.valueOf(45), new OracleContract.Asset("android-full-frames\\resize\\source_045.png", 2638L, "06692e1490f66dd6ff320dc5f1fb13fb287435bd405b987d55b9439f35318f89"));
+            frameAssets.put(Integer.valueOf(46), new OracleContract.Asset("android-full-frames\\resize\\source_046.png", 2627L, "f7793d96efeb414b41c6d9634485c9d17b616a19699545f9d007155257e815ab"));
+            frameAssets.put(Integer.valueOf(47), new OracleContract.Asset("android-full-frames\\resize\\source_047.png", 2521L, "d39b788b5eeb696a229253ad524e3446754ed2fae124266d5e4061952994fb0b"));
+            frameAssets.put(Integer.valueOf(48), new OracleContract.Asset("android-full-frames\\resize\\source_048.png", 2516L, "93e5cfdd8b3c7b8aef5d2d282b24124c6f33626377c1afb7d94f6f8c027294d3"));
+            frameAssets.put(Integer.valueOf(49), new OracleContract.Asset("android-full-frames\\resize\\source_049.png", 2582L, "f698bbcb942e753fe8ea94118e888d4439dc54e84ae9e7b0e3a413b032df0fd5"));
+            frameAssets.put(Integer.valueOf(50), new OracleContract.Asset("android-full-frames\\resize\\source_050.png", 2613L, "2b47e2a690af5ada3946bbbd32da10c3122d4dfa52ab8486c7f375f4cd9af8b4"));
+            frameAssets.put(Integer.valueOf(51), new OracleContract.Asset("android-full-frames\\resize\\source_051.png", 2608L, "0c4a2343e29ca4c70dcefef342ca5f55c06fd6c293ce298f32d1aa57f1b26cfb"));
+            frameAssets.put(Integer.valueOf(52), new OracleContract.Asset("android-full-frames\\resize\\source_052.png", 2629L, "955a9760b771420270f7729ce316683da0ef7593942bb622dc0984e8b9bae835"));
+            frameAssets.put(Integer.valueOf(53), new OracleContract.Asset("android-full-frames\\resize\\source_053.png", 2620L, "e5288d8e89e75aeb5daa4dbd0eec66665d4d02f96308a19bbff781d30af12797"));
+            frameAssets.put(Integer.valueOf(54), new OracleContract.Asset("android-full-frames\\resize\\source_054.png", 2712L, "a2918fe5f7a33976b35635cf6c5b80f6732f42353b2624b2dab348250ef18c05"));
+            frameAssets.put(Integer.valueOf(55), new OracleContract.Asset("android-full-frames\\resize\\source_055.png", 2614L, "6fdead4490ac36b5f9d2a20081fe3f5e60965010430537b375a90083639562a8"));
+            frameAssets.put(Integer.valueOf(56), new OracleContract.Asset("android-full-frames\\resize\\source_056.png", 2578L, "96344018b6b97c9908c8de35b4dc6de2ac7a2e87d06dcc5f4a0644ffc9fad956"));
+            frameAssets.put(Integer.valueOf(57), new OracleContract.Asset("android-full-frames\\resize\\source_057.png", 2643L, "28884a8c8e2c5b7cf68667a5108e04556c489b352452ac9b038226c6e3f03fc5"));
+            frameAssets.put(Integer.valueOf(58), new OracleContract.Asset("android-full-frames\\resize\\source_058.png", 2563L, "499d847713c0db3e0840c1e9eb71aa2726764d25cd5592091aa888344d08328c"));
+            frameAssets.put(Integer.valueOf(59), new OracleContract.Asset("android-full-frames\\resize\\source_059.png", 2635L, "68a7a0f71d82339c653c43bcb9eebe1ffd5158c1b00b1f5a1764ffd2416319e7"));
+            frameAssets.put(Integer.valueOf(60), new OracleContract.Asset("android-full-frames\\resize\\source_060.png", 2641L, "b4166c70d72b60e45c5422d940818aacc9229a7efdb17a7b18786335c7c039c6"));
+            frameAssets.put(Integer.valueOf(61), new OracleContract.Asset("android-full-frames\\resize\\source_061.png", 2593L, "306fd327a7aa9b1257c6b73f40494ef14c19758698f67b682d6c09f74f741bf0"));
+            frameAssets.put(Integer.valueOf(62), new OracleContract.Asset("android-full-frames\\resize\\source_062.png", 2524L, "52bba4340448025391235b17c1a3e91f63c0cd995bd8bb99a91466e3e808414d"));
+            frameAssets.put(Integer.valueOf(63), new OracleContract.Asset("android-full-frames\\resize\\source_063.png", 2421L, "02b3a17ce9d9b28852ef6ed7ce518f07631aa362f7f363766cfdcd92a570caf5"));
+            frameAssets.put(Integer.valueOf(64), new OracleContract.Asset("android-full-frames\\resize\\source_064.png", 2439L, "79f31c5d0aa5d7fc17daed746293881f045cb3ed45950ce49ad94bd404b035f2"));
+            frameAssets.put(Integer.valueOf(65), new OracleContract.Asset("android-full-frames\\resize\\source_065.png", 2550L, "25353dcd1a4bf7b4fe2a064b3464a44b5ce45712bb9ffcc1df8c4bd6b8f1ffbc"));
+            frameAssets.put(Integer.valueOf(66), new OracleContract.Asset("android-full-frames\\resize\\source_066.png", 2642L, "2cf76a599cfc815fd153bdee1e9e3d1476f6a2f2a144853e82396dd037a81e66"));
+            frameAssets.put(Integer.valueOf(67), new OracleContract.Asset("android-full-frames\\resize\\source_067.png", 2675L, "0f3d0a8e06e70aadaa658e563c8e541ab5b9bffbbaad6e1570e8dd4cc0e56408"));
+            frameAssets.put(Integer.valueOf(68), new OracleContract.Asset("android-full-frames\\resize\\source_068.png", 2666L, "11f182aa08ac4d4a6b02c7fc35cb9748b4efcce4897eb6c0c3e7002ea606fb61"));
+            frameAssets.put(Integer.valueOf(69), new OracleContract.Asset("android-full-frames\\resize\\source_069.png", 2566L, "7f1dc301691614031571ba5515867dbc2a44965c6558689912cd34ebc5760be6"));
+            frameAssets.put(Integer.valueOf(70), new OracleContract.Asset("android-full-frames\\resize\\source_070.png", 2630L, "aa4e58684d2e95b6b79425af65e000159723d594053516f4d6ad04cb71546b59"));
+            frameAssets.put(Integer.valueOf(71), new OracleContract.Asset("android-full-frames\\resize\\source_071.png", 2544L, "84a7710198bd877b529f56d56620c09cf2b7fda707aeb98c998249db69293750"));
+            frameAssets.put(Integer.valueOf(72), new OracleContract.Asset("android-full-frames\\resize\\source_072.png", 2568L, "434cba3bd8872c36a5b3e07a8c56083912d455acb0026a5689d9248d738b0891"));
+            frameAssets.put(Integer.valueOf(73), new OracleContract.Asset("android-full-frames\\resize\\source_073.png", 2623L, "0c5e763398703d2dfb34546d432a1bd765de29470b43c0aa60d9bb5327e08e9b"));
+            frameAssets.put(Integer.valueOf(74), new OracleContract.Asset("android-full-frames\\resize\\source_074.png", 2561L, "c94a1e6a358bd41f8f94783b9eb5a96709c59603f1bce5da650f7c534ae3967c"));
+            frameAssets.put(Integer.valueOf(75), new OracleContract.Asset("android-full-frames\\resize\\source_075.png", 2631L, "7c61b03ff3fddf46f8caf7dc140a00398139c393113b5706302630eb8556c6e5"));
+            frameAssets.put(Integer.valueOf(76), new OracleContract.Asset("android-full-frames\\resize\\source_076.png", 2666L, "1c80fb121b3b7fecac9b64a0155a8740d69858beb94879801a417b143e0ecdb9"));
+            frameAssets.put(Integer.valueOf(77), new OracleContract.Asset("android-full-frames\\resize\\source_077.png", 2655L, "37fbb07e5c33a94b88061824af9b78f07412492ad564c49bd5d129fa7da0da39"));
+            frameAssets.put(Integer.valueOf(78), new OracleContract.Asset("android-full-frames\\resize\\source_078.png", 2607L, "a412c2053cb7205814a6ef12e96277a5041223d7d6d75aa7ed56b03cf5c3db67"));
+            frameAssets.put(Integer.valueOf(79), new OracleContract.Asset("android-full-frames\\resize\\source_079.png", 2534L, "f9226f2ace7c616f826e491b70bc94ad893033a4c3d84f36952356187900c2ea"));
+            frameAssets.put(Integer.valueOf(80), new OracleContract.Asset("android-full-frames\\resize\\source_080.png", 2513L, "957d373aeb3f9cc45163deb25420256038ef9396b1b52c4a62e513dfed851c62"));
+            frameAssets.put(Integer.valueOf(81), new OracleContract.Asset("android-full-frames\\resize\\source_081.png", 2601L, "0256f0b720e9eca10bf7e132ec8ebe48ec6ef8c785c1ba87c1b36719e5c8fac3"));
+            frameAssets.put(Integer.valueOf(82), new OracleContract.Asset("android-full-frames\\resize\\source_082.png", 2656L, "b221db9a4ab31f7b868ea22fd845f86276ee97eac85a07c822ca76d6508556ef"));
+            frameAssets.put(Integer.valueOf(83), new OracleContract.Asset("android-full-frames\\resize\\source_083.png", 2659L, "6ccc8637a1e5a206425ecec6d206faeb2c1d4d6ae5fe250d6c7110708c575ca4"));
+            frameAssets.put(Integer.valueOf(84), new OracleContract.Asset("android-full-frames\\resize\\source_084.png", 2606L, "662df073f2efa84d55e67da122f171cb04331c3a4351b7f64a159c9c78824d9e"));
+            frameAssets.put(Integer.valueOf(85), new OracleContract.Asset("android-full-frames\\resize\\source_085.png", 2509L, "72da230c99842d4f5deece9742489cd53639173d89566316b32690435e19c7a6"));
+            frameAssets.put(Integer.valueOf(86), new OracleContract.Asset("android-full-frames\\resize\\source_086.png", 2583L, "35e7b429d9140379844a41ee5a3fc11f957376bb5cd3ab285becabb028056d26"));
+            frameAssets.put(Integer.valueOf(87), new OracleContract.Asset("android-full-frames\\resize\\source_087.png", 2501L, "f1f091661609181f7b06cdfba4c3d4469c09f11ae0696be1fcaf9954d32bec54"));
+            frameAssets.put(Integer.valueOf(88), new OracleContract.Asset("android-full-frames\\resize\\source_088.png", 2560L, "0f584af749a36a0cc50aadf62efc1ae0a704808e37320fa9df32037bc0f2ab21"));
+            frameAssets.put(Integer.valueOf(89), new OracleContract.Asset("android-full-frames\\resize\\source_089.png", 2688L, "f3cd99d612f9681fc91907461770c3caa9170e74283387e2c0a63f8fa253a790"));
+            frameAssets.put(Integer.valueOf(90), new OracleContract.Asset("android-full-frames\\resize\\source_090.png", 2638L, "a34d68d6b87590d9db87df3a90956a82e2d90af7a207754e6cdf2bbacc2665f7"));
+            frameAssets.put(Integer.valueOf(91), new OracleContract.Asset("android-full-frames\\resize\\source_091.png", 2667L, "4fc322d8d7025a007e6c0766cd4a76bda88b98e18afacec44ce8314cfed4b1b9"));
+            frameAssets.put(Integer.valueOf(92), new OracleContract.Asset("android-full-frames\\resize\\source_092.png", 2687L, "b4885feab11b470abc7994dd459a74b622f3787d714db370c5f1d818c1c48a39"));
+            frameAssets.put(Integer.valueOf(93), new OracleContract.Asset("android-full-frames\\resize\\source_093.png", 2665L, "8bc5fc9552f704b8074d56af2d60102ea4110336d16afad4f73d1512f7fbb0cc"));
+            frameAssets.put(Integer.valueOf(94), new OracleContract.Asset("android-full-frames\\resize\\source_094.png", 2623L, "6dc6225af3e74897534f2c1514355c125f0a274ab5ae05127fdf339dfc5a20c0"));
+            frameAssets.put(Integer.valueOf(95), new OracleContract.Asset("android-full-frames\\resize\\source_095.png", 2550L, "fca848922d2ec23022c7b1394125b3e8b92d871ebf1bbdac4d58eb44dbf91e4a"));
+            List<OracleContract.AudioProbe> audioProbes = new ArrayList<OracleContract.AudioProbe>();
+            audioProbes.add(new OracleContract.AudioProbe(0.25d, 0.12d, 0.25d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(0.5d, 0.12d, 0.5d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(0.75d, 0.12d, 0.75d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.25d, 0.12d, 1.25d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.5d, 0.12d, 1.5d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.75d, 0.12d, 1.75d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(2.25d, 0.12d, 2.25d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(2.5d, 0.12d, 2.5d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(2.75d, 0.12d, 2.75d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.25d, 0.12d, 3.25d, 1100, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.5d, 0.12d, 3.5d, 1100, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.75d, 0.12d, 3.75d, 1100, 0.22627416997969518d));
+            cases.add(new OracleContract.OracleCase(
+                    "resize",
+                    new OracleContract.Operation(0, 4, 0, 0, 320, 240, 0, 120, 1.0d, 1.0d),
+                    new LinkedHashMap<String, Object>() {{
+                        put("sourceDurationMs", Integer.valueOf(4000));
+                        put("startMs", Integer.valueOf(0));
+                        put("endMs", Integer.valueOf(4000));
+                        put("cropLeft", Double.valueOf(0.0d));
+                        put("cropTop", Double.valueOf(0.0d));
+                        put("cropRight", Double.valueOf(1.0d));
+                        put("cropBottom", Double.valueOf(1.0d));
+                        put("rotationDegrees", Integer.valueOf(0));
+                        put("outputHeight", Integer.valueOf(120));
+                        put("speed", Double.valueOf(1.0d));
+                        put("volume", Double.valueOf(1.0d));
+                        put("overlayText", "");
+                    }},
+                    160, 120, 4.0d, 24.0d,
+                    Arrays.asList(Double.valueOf(24.0d)),
+                    96, 1, 1,
+                    true, 48000,
+                    1, 192000,
+                    barcodeRegions,
+                    probes,
+                    frameAssets,
+                    audioProbes,
+                    new OracleContract.Asset("reference\\resize.mp4", 93335L, "412d4af1689f1cb4f670e11454eafaf584800338501f3d9579526ec86066379a")));
+        }
+        {
+            List<OracleContract.BarcodeRegion> barcodeRegions = OracleCoreVerifier.barcodeRegions(
+                    new OracleContract.Operation(0, 4, 0, 0, 320, 240, 0, 0, 1.0d, 0.0d));
+            List<OracleContract.Probe> probes = new ArrayList<OracleContract.Probe>();
+            probes.add(new OracleContract.Probe(0, 0.0d, new OracleContract.Asset("frames\\mute\\source_000.png", 1402L, "8a2814f5624b5fb70ecf96162138a0ced04aa3f2bbe07fb02c7b41a7683fcb92")));
+            probes.add(new OracleContract.Probe(12, 0.5d, new OracleContract.Asset("frames\\mute\\source_012.png", 1449L, "41654db8f89acd43c214376100c640cced8a39a675b945d1dcce3e5edda05821")));
+            probes.add(new OracleContract.Probe(24, 1.0d, new OracleContract.Asset("frames\\mute\\source_024.png", 1468L, "d248c718107745e767de42cb7b0a645ae0fcf76a0e5a34233e7d81926333ed46")));
+            probes.add(new OracleContract.Probe(36, 1.5d, new OracleContract.Asset("frames\\mute\\source_036.png", 1461L, "d423a4c7a47ca24b847898a93bee73c37433d21f84003b7686d5d872743ef515")));
+            probes.add(new OracleContract.Probe(48, 2.0d, new OracleContract.Asset("frames\\mute\\source_048.png", 1440L, "bc0e55ac31a478296ffefdf780fbb5899d9108659a198addee7138122836a7e4")));
+            probes.add(new OracleContract.Probe(59, 2.4583333333333335d, new OracleContract.Asset("frames\\mute\\source_059.png", 1495L, "1befb44fd0d05717fde612328f48c1266ffc22df97425a3a86ea5366e3781ba7")));
+            probes.add(new OracleContract.Probe(71, 2.9583333333333335d, new OracleContract.Asset("frames\\mute\\source_071.png", 1477L, "7cdc95f5d661d5dcd017725138383c4d87972f426cd1e73ef78f4fb09dc97658")));
+            probes.add(new OracleContract.Probe(83, 3.4583333333333335d, new OracleContract.Asset("frames\\mute\\source_083.png", 1491L, "b983748e308bb0bc546ee3da897ed88e800f773ee69a79897822e0298d179308")));
+            probes.add(new OracleContract.Probe(95, 3.9583333333333335d, new OracleContract.Asset("frames\\mute\\source_095.png", 1465L, "1d8a4b9e918353c1ab0a90e608314039a0b0bbb4fc85ae380d24c0f470481f50")));
+            LinkedHashMap<Integer, OracleContract.Asset> frameAssets = new LinkedHashMap<Integer, OracleContract.Asset>();
+            frameAssets.put(Integer.valueOf(0), new OracleContract.Asset("android-full-frames\\mute\\source_000.png", 1402L, "8a2814f5624b5fb70ecf96162138a0ced04aa3f2bbe07fb02c7b41a7683fcb92"));
+            frameAssets.put(Integer.valueOf(1), new OracleContract.Asset("android-full-frames\\mute\\source_001.png", 1434L, "942147d210012300bb1a8fec147ff1fcb52bf8d5bba4ffd19a22046aad17c4cb"));
+            frameAssets.put(Integer.valueOf(2), new OracleContract.Asset("android-full-frames\\mute\\source_002.png", 1441L, "bdcc47dfcf89f6b334417e4fbf8744dc6ed7079ec2942988c8cdea7a3edd9c50"));
+            frameAssets.put(Integer.valueOf(3), new OracleContract.Asset("android-full-frames\\mute\\source_003.png", 1446L, "5a019b61136cebb58d44b20789c510cef4241faf99f16b4d2f3dff62f3192bc4"));
+            frameAssets.put(Integer.valueOf(4), new OracleContract.Asset("android-full-frames\\mute\\source_004.png", 1426L, "f94c5ca9eacc00031ecfa46a0e82de58cebcf928b6a0c606c273e27cfe9d6722"));
+            frameAssets.put(Integer.valueOf(5), new OracleContract.Asset("android-full-frames\\mute\\source_005.png", 1453L, "dacc5f3806ae3d8891200b005f1b4f55a26cb99a194ab875dee58f894b3ef8fc"));
+            frameAssets.put(Integer.valueOf(6), new OracleContract.Asset("android-full-frames\\mute\\source_006.png", 1460L, "3c3d8daefaca43db009895cdee159c97997b43cf6755d2a1a9e10dba926f3253"));
+            frameAssets.put(Integer.valueOf(7), new OracleContract.Asset("android-full-frames\\mute\\source_007.png", 1456L, "548a1c531fa60cc7768fffdf3f2469465e4d1c50975ee91017aa69786cc9ff55"));
+            frameAssets.put(Integer.valueOf(8), new OracleContract.Asset("android-full-frames\\mute\\source_008.png", 1461L, "680a48a281ecd118fe00f5c4f6f2b07672b3faabb8880b630a1dcbe7eac9f146"));
+            frameAssets.put(Integer.valueOf(9), new OracleContract.Asset("android-full-frames\\mute\\source_009.png", 1474L, "1f3aaed164b3169c11817051c1baeaa0832d44c5243e8bd608459737bdf7f148"));
+            frameAssets.put(Integer.valueOf(10), new OracleContract.Asset("android-full-frames\\mute\\source_010.png", 1461L, "1156e679b1bf09a40c987efb479fb52ab809916ba8444f2e783354c058049181"));
+            frameAssets.put(Integer.valueOf(11), new OracleContract.Asset("android-full-frames\\mute\\source_011.png", 1472L, "50e6a06c2a87cefea352c591915c39dbdfd7157919d61a80f9fe70a979f2a237"));
+            frameAssets.put(Integer.valueOf(12), new OracleContract.Asset("android-full-frames\\mute\\source_012.png", 1449L, "41654db8f89acd43c214376100c640cced8a39a675b945d1dcce3e5edda05821"));
+            frameAssets.put(Integer.valueOf(13), new OracleContract.Asset("android-full-frames\\mute\\source_013.png", 1463L, "a2ea2a880449f14ffc7c03302cb971ff43733bdc0ece95de86695a6e95848121"));
+            frameAssets.put(Integer.valueOf(14), new OracleContract.Asset("android-full-frames\\mute\\source_014.png", 1447L, "deee007f35e503f9146a05346ea940fb3bcde9a86171fb94707c255fd782bf41"));
+            frameAssets.put(Integer.valueOf(15), new OracleContract.Asset("android-full-frames\\mute\\source_015.png", 1425L, "cee7bef6e9b4f2f2c26c5826dd10be54fd0fbb158345a58d51716d0a004625fc"));
+            frameAssets.put(Integer.valueOf(16), new OracleContract.Asset("android-full-frames\\mute\\source_016.png", 1431L, "47cd13c0bee8b6750cec76d65681dd294f252114e2c774352e2b0ab9acb1077b"));
+            frameAssets.put(Integer.valueOf(17), new OracleContract.Asset("android-full-frames\\mute\\source_017.png", 1491L, "baee5064fe72a609ad9e1aa862ee5f7fc5b555e5e542c711dca0b7f9467f5435"));
+            frameAssets.put(Integer.valueOf(18), new OracleContract.Asset("android-full-frames\\mute\\source_018.png", 1505L, "63771662f583c9d5b3b46bd8d2dac5294926e67cfae8f6e21c8ed101b5c5b07d"));
+            frameAssets.put(Integer.valueOf(19), new OracleContract.Asset("android-full-frames\\mute\\source_019.png", 1496L, "b818a6fe3e32642bbf3bc8b005c08c6481399e22611835d78137b8d87bc21bd1"));
+            frameAssets.put(Integer.valueOf(20), new OracleContract.Asset("android-full-frames\\mute\\source_020.png", 1488L, "54a0e9a092414916ac9e7b5f82718b2b23ae6f7373e4deeb3ccfefea3ba09877"));
+            frameAssets.put(Integer.valueOf(21), new OracleContract.Asset("android-full-frames\\mute\\source_021.png", 1489L, "70b73b83b5e3a92220e87850b2c18ebab2354527a5024e1ad6055ff2c87e522d"));
+            frameAssets.put(Integer.valueOf(22), new OracleContract.Asset("android-full-frames\\mute\\source_022.png", 1495L, "9b35e6e03cd96614935d1f2535ddaa3033fef1b65304b72e430f678d25f9572f"));
+            frameAssets.put(Integer.valueOf(23), new OracleContract.Asset("android-full-frames\\mute\\source_023.png", 1492L, "cc74770563353ac882b4e43c79b9b4c76121f1cb40a651dd8800c58c4e48eceb"));
+            frameAssets.put(Integer.valueOf(24), new OracleContract.Asset("android-full-frames\\mute\\source_024.png", 1468L, "d248c718107745e767de42cb7b0a645ae0fcf76a0e5a34233e7d81926333ed46"));
+            frameAssets.put(Integer.valueOf(25), new OracleContract.Asset("android-full-frames\\mute\\source_025.png", 1492L, "3ee149668e49ac86a7b395bd6822b72ab903131a003630c2518225671a919cf9"));
+            frameAssets.put(Integer.valueOf(26), new OracleContract.Asset("android-full-frames\\mute\\source_026.png", 1465L, "375539b074cff3b993a634fd536ac146da68a3fac252693638eb65fa41e864cc"));
+            frameAssets.put(Integer.valueOf(27), new OracleContract.Asset("android-full-frames\\mute\\source_027.png", 1469L, "b79cb69e390f824b13dbdd63d04ad7c408b60ee31562cab39d96a9b83788433b"));
+            frameAssets.put(Integer.valueOf(28), new OracleContract.Asset("android-full-frames\\mute\\source_028.png", 1456L, "cd7471a7d7821f144199383eaefd686ec12679990d892f15fe63ee4a36c4a4b3"));
+            frameAssets.put(Integer.valueOf(29), new OracleContract.Asset("android-full-frames\\mute\\source_029.png", 1492L, "f6d9bd48425d565ffd4bc67bd95d5a2a0a5b715d2c0daa21b780e05f5481820f"));
+            frameAssets.put(Integer.valueOf(30), new OracleContract.Asset("android-full-frames\\mute\\source_030.png", 1495L, "19a43489ab3e9d7feb799f09fb4a7d2abeaa39328451703be46af8057bee75fe"));
+            frameAssets.put(Integer.valueOf(31), new OracleContract.Asset("android-full-frames\\mute\\source_031.png", 1474L, "4ee33e5a842b3a85cd82f89453dd8ce6fbdf0bfe63e987ee59dcc1ca0846c6dc"));
+            frameAssets.put(Integer.valueOf(32), new OracleContract.Asset("android-full-frames\\mute\\source_032.png", 1455L, "5e0480930347ed3d39eabf24eb66dbb07b17f5d6a83a6fd4fef7f67833ecc1a1"));
+            frameAssets.put(Integer.valueOf(33), new OracleContract.Asset("android-full-frames\\mute\\source_033.png", 1481L, "6bdb87b12beb05c973114ab940e87d3810a6fe7885d87c589c0e5840f1680901"));
+            frameAssets.put(Integer.valueOf(34), new OracleContract.Asset("android-full-frames\\mute\\source_034.png", 1484L, "19c89cb535a00dded4c837eedd7eed5f0218d319947e6d303e8084f62aae55b7"));
+            frameAssets.put(Integer.valueOf(35), new OracleContract.Asset("android-full-frames\\mute\\source_035.png", 1485L, "f44294faa57c7ffd0c9dc44ff3590c6b32cc94402be223a1e4a5f40d8fa4dee3"));
+            frameAssets.put(Integer.valueOf(36), new OracleContract.Asset("android-full-frames\\mute\\source_036.png", 1461L, "d423a4c7a47ca24b847898a93bee73c37433d21f84003b7686d5d872743ef515"));
+            frameAssets.put(Integer.valueOf(37), new OracleContract.Asset("android-full-frames\\mute\\source_037.png", 1468L, "31bef3fe22159f725d265a0552af59f876caea8089c5e9e3a180b7ce57419f4f"));
+            frameAssets.put(Integer.valueOf(38), new OracleContract.Asset("android-full-frames\\mute\\source_038.png", 1472L, "9fe0ea19b4b2103290d7c2a40c86236146e9f521eb21456c67008a1b623225f6"));
+            frameAssets.put(Integer.valueOf(39), new OracleContract.Asset("android-full-frames\\mute\\source_039.png", 1463L, "0bf08c6bf71afe3549c220a5ce842e787cc5f12cb457faf565dacb2cd3236a31"));
+            frameAssets.put(Integer.valueOf(40), new OracleContract.Asset("android-full-frames\\mute\\source_040.png", 1440L, "37de11cb03e156253f027723b2393931e0804e0f07465ee0d3d5a8cc6c435391"));
+            frameAssets.put(Integer.valueOf(41), new OracleContract.Asset("android-full-frames\\mute\\source_041.png", 1486L, "bcc73f783d8005cecc91576491cfebaf6ddc1627f6b1da9cf74676aa3a5e3f1f"));
+            frameAssets.put(Integer.valueOf(42), new OracleContract.Asset("android-full-frames\\mute\\source_042.png", 1469L, "affbb3ca9dec013175767a65c05da0160da24efec95cb542ffe491c404b5aa08"));
+            frameAssets.put(Integer.valueOf(43), new OracleContract.Asset("android-full-frames\\mute\\source_043.png", 1475L, "55a5492e7c910c154d1897c65344316c3e71ab7c5203d2ede3a79b6a3baaadad"));
+            frameAssets.put(Integer.valueOf(44), new OracleContract.Asset("android-full-frames\\mute\\source_044.png", 1481L, "b77566f31d1c0d329fdc5312c0d5eecb5f79fe09d64ac8bbd2dacb353fa3ca09"));
+            frameAssets.put(Integer.valueOf(45), new OracleContract.Asset("android-full-frames\\mute\\source_045.png", 1489L, "b0b342bf3d983da8b1016c8bd935aa9b9415121ec41f4b666edf4a5a452b562c"));
+            frameAssets.put(Integer.valueOf(46), new OracleContract.Asset("android-full-frames\\mute\\source_046.png", 1479L, "d3fef3becaf7ecccf4b9ced5c7d0a8b0550787825ef493ea388db44215710c10"));
+            frameAssets.put(Integer.valueOf(47), new OracleContract.Asset("android-full-frames\\mute\\source_047.png", 1455L, "50963fd3af0ab9e5d63216c954617dd0e0f4d20311dadd2c4e2270f1ba949071"));
+            frameAssets.put(Integer.valueOf(48), new OracleContract.Asset("android-full-frames\\mute\\source_048.png", 1440L, "bc0e55ac31a478296ffefdf780fbb5899d9108659a198addee7138122836a7e4"));
+            frameAssets.put(Integer.valueOf(49), new OracleContract.Asset("android-full-frames\\mute\\source_049.png", 1476L, "df99cee9f4e2aa04d7649a0affc71e76316bf5df2d983787421063a2143f1062"));
+            frameAssets.put(Integer.valueOf(50), new OracleContract.Asset("android-full-frames\\mute\\source_050.png", 1476L, "4f79f3763f8f3d149cb13e80fb2ee42500bca6f99fac0374d8e0b2cc6ecb835c"));
+            frameAssets.put(Integer.valueOf(51), new OracleContract.Asset("android-full-frames\\mute\\source_051.png", 1473L, "f82967b67b3d826fcfbb5cdb9516ea7e32589e9daf40f15f1caed1cfc54bd05a"));
+            frameAssets.put(Integer.valueOf(52), new OracleContract.Asset("android-full-frames\\mute\\source_052.png", 1457L, "8cc8130b7aa6196b604fee1db35877ea99b1662dab3960099d4373496af47925"));
+            frameAssets.put(Integer.valueOf(53), new OracleContract.Asset("android-full-frames\\mute\\source_053.png", 1493L, "11022a965f4d895dd29330671e09078cbbf970164f4c3c61bd1ac8eacd7d8966"));
+            frameAssets.put(Integer.valueOf(54), new OracleContract.Asset("android-full-frames\\mute\\source_054.png", 1503L, "6704f5791d03a2233e489e6903b7aacca40f45ad7e7b11c0be04eaf939d2900a"));
+            frameAssets.put(Integer.valueOf(55), new OracleContract.Asset("android-full-frames\\mute\\source_055.png", 1484L, "81e4ab40d4f1eaacfc6e2f6199bd80bed476268f5380bde962233d7e64ad61e0"));
+            frameAssets.put(Integer.valueOf(56), new OracleContract.Asset("android-full-frames\\mute\\source_056.png", 1479L, "0bad77d71f3a85fb8f4a16049c599fa20d2308e067a8cd594c0fee5f690f6e6f"));
+            frameAssets.put(Integer.valueOf(57), new OracleContract.Asset("android-full-frames\\mute\\source_057.png", 1500L, "3d9895fb95d4ba9eb7df0de2f5d6d3d97f46903755c5cd3cc75f7310726760e6"));
+            frameAssets.put(Integer.valueOf(58), new OracleContract.Asset("android-full-frames\\mute\\source_058.png", 1477L, "c70a8f42e5753d9390a076880f8422113cbd2d423662351f21bb7a8186a23281"));
+            frameAssets.put(Integer.valueOf(59), new OracleContract.Asset("android-full-frames\\mute\\source_059.png", 1495L, "1befb44fd0d05717fde612328f48c1266ffc22df97425a3a86ea5366e3781ba7"));
+            frameAssets.put(Integer.valueOf(60), new OracleContract.Asset("android-full-frames\\mute\\source_060.png", 1476L, "7398e01b54e9269ee16452d243fb29479f3bdca6390dd8fa284d05c0b4109209"));
+            frameAssets.put(Integer.valueOf(61), new OracleContract.Asset("android-full-frames\\mute\\source_061.png", 1489L, "007c8d69a073a37214e4ba16f1cf8e34244fd3b7605a3f4fb89f88315fdd2812"));
+            frameAssets.put(Integer.valueOf(62), new OracleContract.Asset("android-full-frames\\mute\\source_062.png", 1462L, "6b2897ae983cbaf3c6cdcaaee0690c0fcccf6e580d2badfb0b622518ad19433a"));
+            frameAssets.put(Integer.valueOf(63), new OracleContract.Asset("android-full-frames\\mute\\source_063.png", 1446L, "a501770f0d65b399cd8f8ff60eef5cdd6bd278e4dd76273c459ea09ce0374000"));
+            frameAssets.put(Integer.valueOf(64), new OracleContract.Asset("android-full-frames\\mute\\source_064.png", 1420L, "c2a9d27e4beb67d23cebe9ed1e8bec83036162bb6fb07c8105c6386046f946eb"));
+            frameAssets.put(Integer.valueOf(65), new OracleContract.Asset("android-full-frames\\mute\\source_065.png", 1472L, "f9da02529590d65ade57126a4ee249ae0090f7b982a21755ad1652ea931ac682"));
+            frameAssets.put(Integer.valueOf(66), new OracleContract.Asset("android-full-frames\\mute\\source_066.png", 1496L, "6558d06ecfdb9034bcf5c2a6f966ff4e62dda9172c697fd871fbb14af022f2bb"));
+            frameAssets.put(Integer.valueOf(67), new OracleContract.Asset("android-full-frames\\mute\\source_067.png", 1498L, "1aa864455084b94d67fcfdc1e4757fae7855af933451ea92721284b17e9a234e"));
+            frameAssets.put(Integer.valueOf(68), new OracleContract.Asset("android-full-frames\\mute\\source_068.png", 1482L, "dbb3ffe463572b7322da791073a9955c277c85885374f9d61a38650fc9ab5f66"));
+            frameAssets.put(Integer.valueOf(69), new OracleContract.Asset("android-full-frames\\mute\\source_069.png", 1487L, "231e816909ccd029e9f1e306281d29d4cb7c03497e757cee1d4421db880396a3"));
+            frameAssets.put(Integer.valueOf(70), new OracleContract.Asset("android-full-frames\\mute\\source_070.png", 1492L, "425205320006d357f2e4318bc880b144375550a9b7aeb3a90e403fa9866eee47"));
+            frameAssets.put(Integer.valueOf(71), new OracleContract.Asset("android-full-frames\\mute\\source_071.png", 1477L, "7cdc95f5d661d5dcd017725138383c4d87972f426cd1e73ef78f4fb09dc97658"));
+            frameAssets.put(Integer.valueOf(72), new OracleContract.Asset("android-full-frames\\mute\\source_072.png", 1460L, "1fa60cd3e0110c2d9a67d0d187af60ef10b80678d15953cb97243d8fb7a9fb60"));
+            frameAssets.put(Integer.valueOf(73), new OracleContract.Asset("android-full-frames\\mute\\source_073.png", 1479L, "4e674bb014d87a94e74ca1e5585e89fc454fc591707ceba0988b9603e2aba2e5"));
+            frameAssets.put(Integer.valueOf(74), new OracleContract.Asset("android-full-frames\\mute\\source_074.png", 1461L, "0032db6771e5a1a6cc710cd05962fdc4c274fa13ecf3e1b162333365f16ff43d"));
+            frameAssets.put(Integer.valueOf(75), new OracleContract.Asset("android-full-frames\\mute\\source_075.png", 1474L, "7b2a45650cf8cbf439bbde657eb0f34e8b9c577c438bed51e780896763667ae8"));
+            frameAssets.put(Integer.valueOf(76), new OracleContract.Asset("android-full-frames\\mute\\source_076.png", 1459L, "5acf823b54ab6bf9a366c0946684518cca197a5f1314bdb6e34f6f46f8cf4c4c"));
+            frameAssets.put(Integer.valueOf(77), new OracleContract.Asset("android-full-frames\\mute\\source_077.png", 1495L, "966fb680691c899536fc7286f7d31d9a8821cac3d9181ca2c20894b9134d68de"));
+            frameAssets.put(Integer.valueOf(78), new OracleContract.Asset("android-full-frames\\mute\\source_078.png", 1485L, "f140cfbc319cfd25003a812893cb6f8150f72290aa341f0a83bc022a091707b9"));
+            frameAssets.put(Integer.valueOf(79), new OracleContract.Asset("android-full-frames\\mute\\source_079.png", 1466L, "ae3c9412c46be8c3255688e8fd21cd2d0d2155d0b09686c91dd71c2bcb221677"));
+            frameAssets.put(Integer.valueOf(80), new OracleContract.Asset("android-full-frames\\mute\\source_080.png", 1457L, "0538ff2aed6e218e8f7b9492fc0b688847abb01530b875b40685d3fb4fa5da54"));
+            frameAssets.put(Integer.valueOf(81), new OracleContract.Asset("android-full-frames\\mute\\source_081.png", 1485L, "b466f0a9e04249d1dd98077242260593769a51e7f9f4544fedf8759a6dcc0aa7"));
+            frameAssets.put(Integer.valueOf(82), new OracleContract.Asset("android-full-frames\\mute\\source_082.png", 1490L, "54b5c9235bdd4e98d962eb6bbd6ebf706ab5db6b63d25fc775af071f877bd91f"));
+            frameAssets.put(Integer.valueOf(83), new OracleContract.Asset("android-full-frames\\mute\\source_083.png", 1491L, "b983748e308bb0bc546ee3da897ed88e800f773ee69a79897822e0298d179308"));
+            frameAssets.put(Integer.valueOf(84), new OracleContract.Asset("android-full-frames\\mute\\source_084.png", 1460L, "423dd7825c2eda1da0c648cf9449b11b7bb57cefb57171a04abaca4efe51b583"));
+            frameAssets.put(Integer.valueOf(85), new OracleContract.Asset("android-full-frames\\mute\\source_085.png", 1463L, "e5b95857ee4d7a8ee05d55041c1e025e1d9b48beb709048fa466e9995ba25da5"));
+            frameAssets.put(Integer.valueOf(86), new OracleContract.Asset("android-full-frames\\mute\\source_086.png", 1470L, "e5b952ff629533dc2adc39548301389e5c942b28db157f5b13d3352ff7864312"));
+            frameAssets.put(Integer.valueOf(87), new OracleContract.Asset("android-full-frames\\mute\\source_087.png", 1455L, "70da31bacf2c510a51cb700bc876d9ef56dbea20c0ce362680a45636c31fd7e3"));
+            frameAssets.put(Integer.valueOf(88), new OracleContract.Asset("android-full-frames\\mute\\source_088.png", 1445L, "1b3e2e91a474408a48ee315e7569f627a158d48de3b28d9b3c17453bf8e7d238"));
+            frameAssets.put(Integer.valueOf(89), new OracleContract.Asset("android-full-frames\\mute\\source_089.png", 1497L, "faf4cc0f2851a12786f855b117f914653118ae79f24668619357f089ca6d471b"));
+            frameAssets.put(Integer.valueOf(90), new OracleContract.Asset("android-full-frames\\mute\\source_090.png", 1487L, "759c41f7d9c4154d20af921e4d253a72ab7a16519e424cf7dd25d61d82042de7"));
+            frameAssets.put(Integer.valueOf(91), new OracleContract.Asset("android-full-frames\\mute\\source_091.png", 1481L, "9d18b33e6c6bfeb7ebfdd1ba2b053c58598797beb8d45bbc50a4742fa2af2205"));
+            frameAssets.put(Integer.valueOf(92), new OracleContract.Asset("android-full-frames\\mute\\source_092.png", 1482L, "af1e4b1c28a0693c303b0c4553d4a2572a7b19af871d26dcc8d071ff4f40c8e2"));
+            frameAssets.put(Integer.valueOf(93), new OracleContract.Asset("android-full-frames\\mute\\source_093.png", 1493L, "59d254da30c0c0965461087ab6dfcfa70fb7b697fa0e05b56ecee4389b1e91a6"));
+            frameAssets.put(Integer.valueOf(94), new OracleContract.Asset("android-full-frames\\mute\\source_094.png", 1474L, "7df36ca67aeda15cff362ed397b9cb1b4e8c50f909f885ca8cb2f2de0ee980ee"));
+            frameAssets.put(Integer.valueOf(95), new OracleContract.Asset("android-full-frames\\mute\\source_095.png", 1465L, "1d8a4b9e918353c1ab0a90e608314039a0b0bbb4fc85ae380d24c0f470481f50"));
+            List<OracleContract.AudioProbe> audioProbes = new ArrayList<OracleContract.AudioProbe>();
+            cases.add(new OracleContract.OracleCase(
+                    "mute",
+                    new OracleContract.Operation(0, 4, 0, 0, 320, 240, 0, 0, 1.0d, 0.0d),
+                    new LinkedHashMap<String, Object>() {{
+                        put("sourceDurationMs", Integer.valueOf(4000));
+                        put("startMs", Integer.valueOf(0));
+                        put("endMs", Integer.valueOf(4000));
+                        put("cropLeft", Double.valueOf(0.0d));
+                        put("cropTop", Double.valueOf(0.0d));
+                        put("cropRight", Double.valueOf(1.0d));
+                        put("cropBottom", Double.valueOf(1.0d));
+                        put("rotationDegrees", Integer.valueOf(0));
+                        put("outputHeight", Integer.valueOf(0));
+                        put("speed", Double.valueOf(1.0d));
+                        put("volume", Double.valueOf(0.0d));
+                        put("overlayText", "");
+                    }},
+                    320, 240, 4.0d, 24.0d,
+                    Arrays.asList(Double.valueOf(24.0d)),
+                    96, 1, 0,
+                    false, 48000,
+                    1, 192000,
+                    barcodeRegions,
+                    probes,
+                    frameAssets,
+                    audioProbes,
+                    new OracleContract.Asset("reference\\mute.mp4", 28823L, "abb4983dfbe094a43d04a80300c34072952af15c7d4a72eefbfa998f5641ca28")));
+        }
+        {
+            List<OracleContract.BarcodeRegion> barcodeRegions = OracleCoreVerifier.barcodeRegions(
+                    new OracleContract.Operation(0, 4, 0, 0, 320, 240, 0, 0, 1.0d, 0.25d));
+            List<OracleContract.Probe> probes = new ArrayList<OracleContract.Probe>();
+            probes.add(new OracleContract.Probe(0, 0.0d, new OracleContract.Asset("frames\\volume25\\source_000.png", 1402L, "8a2814f5624b5fb70ecf96162138a0ced04aa3f2bbe07fb02c7b41a7683fcb92")));
+            probes.add(new OracleContract.Probe(12, 0.5d, new OracleContract.Asset("frames\\volume25\\source_012.png", 1449L, "41654db8f89acd43c214376100c640cced8a39a675b945d1dcce3e5edda05821")));
+            probes.add(new OracleContract.Probe(24, 1.0d, new OracleContract.Asset("frames\\volume25\\source_024.png", 1468L, "d248c718107745e767de42cb7b0a645ae0fcf76a0e5a34233e7d81926333ed46")));
+            probes.add(new OracleContract.Probe(36, 1.5d, new OracleContract.Asset("frames\\volume25\\source_036.png", 1461L, "d423a4c7a47ca24b847898a93bee73c37433d21f84003b7686d5d872743ef515")));
+            probes.add(new OracleContract.Probe(48, 2.0d, new OracleContract.Asset("frames\\volume25\\source_048.png", 1440L, "bc0e55ac31a478296ffefdf780fbb5899d9108659a198addee7138122836a7e4")));
+            probes.add(new OracleContract.Probe(59, 2.4583333333333335d, new OracleContract.Asset("frames\\volume25\\source_059.png", 1495L, "1befb44fd0d05717fde612328f48c1266ffc22df97425a3a86ea5366e3781ba7")));
+            probes.add(new OracleContract.Probe(71, 2.9583333333333335d, new OracleContract.Asset("frames\\volume25\\source_071.png", 1477L, "7cdc95f5d661d5dcd017725138383c4d87972f426cd1e73ef78f4fb09dc97658")));
+            probes.add(new OracleContract.Probe(83, 3.4583333333333335d, new OracleContract.Asset("frames\\volume25\\source_083.png", 1491L, "b983748e308bb0bc546ee3da897ed88e800f773ee69a79897822e0298d179308")));
+            probes.add(new OracleContract.Probe(95, 3.9583333333333335d, new OracleContract.Asset("frames\\volume25\\source_095.png", 1465L, "1d8a4b9e918353c1ab0a90e608314039a0b0bbb4fc85ae380d24c0f470481f50")));
+            LinkedHashMap<Integer, OracleContract.Asset> frameAssets = new LinkedHashMap<Integer, OracleContract.Asset>();
+            frameAssets.put(Integer.valueOf(0), new OracleContract.Asset("android-full-frames\\volume25\\source_000.png", 1402L, "8a2814f5624b5fb70ecf96162138a0ced04aa3f2bbe07fb02c7b41a7683fcb92"));
+            frameAssets.put(Integer.valueOf(1), new OracleContract.Asset("android-full-frames\\volume25\\source_001.png", 1434L, "942147d210012300bb1a8fec147ff1fcb52bf8d5bba4ffd19a22046aad17c4cb"));
+            frameAssets.put(Integer.valueOf(2), new OracleContract.Asset("android-full-frames\\volume25\\source_002.png", 1441L, "bdcc47dfcf89f6b334417e4fbf8744dc6ed7079ec2942988c8cdea7a3edd9c50"));
+            frameAssets.put(Integer.valueOf(3), new OracleContract.Asset("android-full-frames\\volume25\\source_003.png", 1446L, "5a019b61136cebb58d44b20789c510cef4241faf99f16b4d2f3dff62f3192bc4"));
+            frameAssets.put(Integer.valueOf(4), new OracleContract.Asset("android-full-frames\\volume25\\source_004.png", 1426L, "f94c5ca9eacc00031ecfa46a0e82de58cebcf928b6a0c606c273e27cfe9d6722"));
+            frameAssets.put(Integer.valueOf(5), new OracleContract.Asset("android-full-frames\\volume25\\source_005.png", 1453L, "dacc5f3806ae3d8891200b005f1b4f55a26cb99a194ab875dee58f894b3ef8fc"));
+            frameAssets.put(Integer.valueOf(6), new OracleContract.Asset("android-full-frames\\volume25\\source_006.png", 1460L, "3c3d8daefaca43db009895cdee159c97997b43cf6755d2a1a9e10dba926f3253"));
+            frameAssets.put(Integer.valueOf(7), new OracleContract.Asset("android-full-frames\\volume25\\source_007.png", 1456L, "548a1c531fa60cc7768fffdf3f2469465e4d1c50975ee91017aa69786cc9ff55"));
+            frameAssets.put(Integer.valueOf(8), new OracleContract.Asset("android-full-frames\\volume25\\source_008.png", 1461L, "680a48a281ecd118fe00f5c4f6f2b07672b3faabb8880b630a1dcbe7eac9f146"));
+            frameAssets.put(Integer.valueOf(9), new OracleContract.Asset("android-full-frames\\volume25\\source_009.png", 1474L, "1f3aaed164b3169c11817051c1baeaa0832d44c5243e8bd608459737bdf7f148"));
+            frameAssets.put(Integer.valueOf(10), new OracleContract.Asset("android-full-frames\\volume25\\source_010.png", 1461L, "1156e679b1bf09a40c987efb479fb52ab809916ba8444f2e783354c058049181"));
+            frameAssets.put(Integer.valueOf(11), new OracleContract.Asset("android-full-frames\\volume25\\source_011.png", 1472L, "50e6a06c2a87cefea352c591915c39dbdfd7157919d61a80f9fe70a979f2a237"));
+            frameAssets.put(Integer.valueOf(12), new OracleContract.Asset("android-full-frames\\volume25\\source_012.png", 1449L, "41654db8f89acd43c214376100c640cced8a39a675b945d1dcce3e5edda05821"));
+            frameAssets.put(Integer.valueOf(13), new OracleContract.Asset("android-full-frames\\volume25\\source_013.png", 1463L, "a2ea2a880449f14ffc7c03302cb971ff43733bdc0ece95de86695a6e95848121"));
+            frameAssets.put(Integer.valueOf(14), new OracleContract.Asset("android-full-frames\\volume25\\source_014.png", 1447L, "deee007f35e503f9146a05346ea940fb3bcde9a86171fb94707c255fd782bf41"));
+            frameAssets.put(Integer.valueOf(15), new OracleContract.Asset("android-full-frames\\volume25\\source_015.png", 1425L, "cee7bef6e9b4f2f2c26c5826dd10be54fd0fbb158345a58d51716d0a004625fc"));
+            frameAssets.put(Integer.valueOf(16), new OracleContract.Asset("android-full-frames\\volume25\\source_016.png", 1431L, "47cd13c0bee8b6750cec76d65681dd294f252114e2c774352e2b0ab9acb1077b"));
+            frameAssets.put(Integer.valueOf(17), new OracleContract.Asset("android-full-frames\\volume25\\source_017.png", 1491L, "baee5064fe72a609ad9e1aa862ee5f7fc5b555e5e542c711dca0b7f9467f5435"));
+            frameAssets.put(Integer.valueOf(18), new OracleContract.Asset("android-full-frames\\volume25\\source_018.png", 1505L, "63771662f583c9d5b3b46bd8d2dac5294926e67cfae8f6e21c8ed101b5c5b07d"));
+            frameAssets.put(Integer.valueOf(19), new OracleContract.Asset("android-full-frames\\volume25\\source_019.png", 1496L, "b818a6fe3e32642bbf3bc8b005c08c6481399e22611835d78137b8d87bc21bd1"));
+            frameAssets.put(Integer.valueOf(20), new OracleContract.Asset("android-full-frames\\volume25\\source_020.png", 1488L, "54a0e9a092414916ac9e7b5f82718b2b23ae6f7373e4deeb3ccfefea3ba09877"));
+            frameAssets.put(Integer.valueOf(21), new OracleContract.Asset("android-full-frames\\volume25\\source_021.png", 1489L, "70b73b83b5e3a92220e87850b2c18ebab2354527a5024e1ad6055ff2c87e522d"));
+            frameAssets.put(Integer.valueOf(22), new OracleContract.Asset("android-full-frames\\volume25\\source_022.png", 1495L, "9b35e6e03cd96614935d1f2535ddaa3033fef1b65304b72e430f678d25f9572f"));
+            frameAssets.put(Integer.valueOf(23), new OracleContract.Asset("android-full-frames\\volume25\\source_023.png", 1492L, "cc74770563353ac882b4e43c79b9b4c76121f1cb40a651dd8800c58c4e48eceb"));
+            frameAssets.put(Integer.valueOf(24), new OracleContract.Asset("android-full-frames\\volume25\\source_024.png", 1468L, "d248c718107745e767de42cb7b0a645ae0fcf76a0e5a34233e7d81926333ed46"));
+            frameAssets.put(Integer.valueOf(25), new OracleContract.Asset("android-full-frames\\volume25\\source_025.png", 1492L, "3ee149668e49ac86a7b395bd6822b72ab903131a003630c2518225671a919cf9"));
+            frameAssets.put(Integer.valueOf(26), new OracleContract.Asset("android-full-frames\\volume25\\source_026.png", 1465L, "375539b074cff3b993a634fd536ac146da68a3fac252693638eb65fa41e864cc"));
+            frameAssets.put(Integer.valueOf(27), new OracleContract.Asset("android-full-frames\\volume25\\source_027.png", 1469L, "b79cb69e390f824b13dbdd63d04ad7c408b60ee31562cab39d96a9b83788433b"));
+            frameAssets.put(Integer.valueOf(28), new OracleContract.Asset("android-full-frames\\volume25\\source_028.png", 1456L, "cd7471a7d7821f144199383eaefd686ec12679990d892f15fe63ee4a36c4a4b3"));
+            frameAssets.put(Integer.valueOf(29), new OracleContract.Asset("android-full-frames\\volume25\\source_029.png", 1492L, "f6d9bd48425d565ffd4bc67bd95d5a2a0a5b715d2c0daa21b780e05f5481820f"));
+            frameAssets.put(Integer.valueOf(30), new OracleContract.Asset("android-full-frames\\volume25\\source_030.png", 1495L, "19a43489ab3e9d7feb799f09fb4a7d2abeaa39328451703be46af8057bee75fe"));
+            frameAssets.put(Integer.valueOf(31), new OracleContract.Asset("android-full-frames\\volume25\\source_031.png", 1474L, "4ee33e5a842b3a85cd82f89453dd8ce6fbdf0bfe63e987ee59dcc1ca0846c6dc"));
+            frameAssets.put(Integer.valueOf(32), new OracleContract.Asset("android-full-frames\\volume25\\source_032.png", 1455L, "5e0480930347ed3d39eabf24eb66dbb07b17f5d6a83a6fd4fef7f67833ecc1a1"));
+            frameAssets.put(Integer.valueOf(33), new OracleContract.Asset("android-full-frames\\volume25\\source_033.png", 1481L, "6bdb87b12beb05c973114ab940e87d3810a6fe7885d87c589c0e5840f1680901"));
+            frameAssets.put(Integer.valueOf(34), new OracleContract.Asset("android-full-frames\\volume25\\source_034.png", 1484L, "19c89cb535a00dded4c837eedd7eed5f0218d319947e6d303e8084f62aae55b7"));
+            frameAssets.put(Integer.valueOf(35), new OracleContract.Asset("android-full-frames\\volume25\\source_035.png", 1485L, "f44294faa57c7ffd0c9dc44ff3590c6b32cc94402be223a1e4a5f40d8fa4dee3"));
+            frameAssets.put(Integer.valueOf(36), new OracleContract.Asset("android-full-frames\\volume25\\source_036.png", 1461L, "d423a4c7a47ca24b847898a93bee73c37433d21f84003b7686d5d872743ef515"));
+            frameAssets.put(Integer.valueOf(37), new OracleContract.Asset("android-full-frames\\volume25\\source_037.png", 1468L, "31bef3fe22159f725d265a0552af59f876caea8089c5e9e3a180b7ce57419f4f"));
+            frameAssets.put(Integer.valueOf(38), new OracleContract.Asset("android-full-frames\\volume25\\source_038.png", 1472L, "9fe0ea19b4b2103290d7c2a40c86236146e9f521eb21456c67008a1b623225f6"));
+            frameAssets.put(Integer.valueOf(39), new OracleContract.Asset("android-full-frames\\volume25\\source_039.png", 1463L, "0bf08c6bf71afe3549c220a5ce842e787cc5f12cb457faf565dacb2cd3236a31"));
+            frameAssets.put(Integer.valueOf(40), new OracleContract.Asset("android-full-frames\\volume25\\source_040.png", 1440L, "37de11cb03e156253f027723b2393931e0804e0f07465ee0d3d5a8cc6c435391"));
+            frameAssets.put(Integer.valueOf(41), new OracleContract.Asset("android-full-frames\\volume25\\source_041.png", 1486L, "bcc73f783d8005cecc91576491cfebaf6ddc1627f6b1da9cf74676aa3a5e3f1f"));
+            frameAssets.put(Integer.valueOf(42), new OracleContract.Asset("android-full-frames\\volume25\\source_042.png", 1469L, "affbb3ca9dec013175767a65c05da0160da24efec95cb542ffe491c404b5aa08"));
+            frameAssets.put(Integer.valueOf(43), new OracleContract.Asset("android-full-frames\\volume25\\source_043.png", 1475L, "55a5492e7c910c154d1897c65344316c3e71ab7c5203d2ede3a79b6a3baaadad"));
+            frameAssets.put(Integer.valueOf(44), new OracleContract.Asset("android-full-frames\\volume25\\source_044.png", 1481L, "b77566f31d1c0d329fdc5312c0d5eecb5f79fe09d64ac8bbd2dacb353fa3ca09"));
+            frameAssets.put(Integer.valueOf(45), new OracleContract.Asset("android-full-frames\\volume25\\source_045.png", 1489L, "b0b342bf3d983da8b1016c8bd935aa9b9415121ec41f4b666edf4a5a452b562c"));
+            frameAssets.put(Integer.valueOf(46), new OracleContract.Asset("android-full-frames\\volume25\\source_046.png", 1479L, "d3fef3becaf7ecccf4b9ced5c7d0a8b0550787825ef493ea388db44215710c10"));
+            frameAssets.put(Integer.valueOf(47), new OracleContract.Asset("android-full-frames\\volume25\\source_047.png", 1455L, "50963fd3af0ab9e5d63216c954617dd0e0f4d20311dadd2c4e2270f1ba949071"));
+            frameAssets.put(Integer.valueOf(48), new OracleContract.Asset("android-full-frames\\volume25\\source_048.png", 1440L, "bc0e55ac31a478296ffefdf780fbb5899d9108659a198addee7138122836a7e4"));
+            frameAssets.put(Integer.valueOf(49), new OracleContract.Asset("android-full-frames\\volume25\\source_049.png", 1476L, "df99cee9f4e2aa04d7649a0affc71e76316bf5df2d983787421063a2143f1062"));
+            frameAssets.put(Integer.valueOf(50), new OracleContract.Asset("android-full-frames\\volume25\\source_050.png", 1476L, "4f79f3763f8f3d149cb13e80fb2ee42500bca6f99fac0374d8e0b2cc6ecb835c"));
+            frameAssets.put(Integer.valueOf(51), new OracleContract.Asset("android-full-frames\\volume25\\source_051.png", 1473L, "f82967b67b3d826fcfbb5cdb9516ea7e32589e9daf40f15f1caed1cfc54bd05a"));
+            frameAssets.put(Integer.valueOf(52), new OracleContract.Asset("android-full-frames\\volume25\\source_052.png", 1457L, "8cc8130b7aa6196b604fee1db35877ea99b1662dab3960099d4373496af47925"));
+            frameAssets.put(Integer.valueOf(53), new OracleContract.Asset("android-full-frames\\volume25\\source_053.png", 1493L, "11022a965f4d895dd29330671e09078cbbf970164f4c3c61bd1ac8eacd7d8966"));
+            frameAssets.put(Integer.valueOf(54), new OracleContract.Asset("android-full-frames\\volume25\\source_054.png", 1503L, "6704f5791d03a2233e489e6903b7aacca40f45ad7e7b11c0be04eaf939d2900a"));
+            frameAssets.put(Integer.valueOf(55), new OracleContract.Asset("android-full-frames\\volume25\\source_055.png", 1484L, "81e4ab40d4f1eaacfc6e2f6199bd80bed476268f5380bde962233d7e64ad61e0"));
+            frameAssets.put(Integer.valueOf(56), new OracleContract.Asset("android-full-frames\\volume25\\source_056.png", 1479L, "0bad77d71f3a85fb8f4a16049c599fa20d2308e067a8cd594c0fee5f690f6e6f"));
+            frameAssets.put(Integer.valueOf(57), new OracleContract.Asset("android-full-frames\\volume25\\source_057.png", 1500L, "3d9895fb95d4ba9eb7df0de2f5d6d3d97f46903755c5cd3cc75f7310726760e6"));
+            frameAssets.put(Integer.valueOf(58), new OracleContract.Asset("android-full-frames\\volume25\\source_058.png", 1477L, "c70a8f42e5753d9390a076880f8422113cbd2d423662351f21bb7a8186a23281"));
+            frameAssets.put(Integer.valueOf(59), new OracleContract.Asset("android-full-frames\\volume25\\source_059.png", 1495L, "1befb44fd0d05717fde612328f48c1266ffc22df97425a3a86ea5366e3781ba7"));
+            frameAssets.put(Integer.valueOf(60), new OracleContract.Asset("android-full-frames\\volume25\\source_060.png", 1476L, "7398e01b54e9269ee16452d243fb29479f3bdca6390dd8fa284d05c0b4109209"));
+            frameAssets.put(Integer.valueOf(61), new OracleContract.Asset("android-full-frames\\volume25\\source_061.png", 1489L, "007c8d69a073a37214e4ba16f1cf8e34244fd3b7605a3f4fb89f88315fdd2812"));
+            frameAssets.put(Integer.valueOf(62), new OracleContract.Asset("android-full-frames\\volume25\\source_062.png", 1462L, "6b2897ae983cbaf3c6cdcaaee0690c0fcccf6e580d2badfb0b622518ad19433a"));
+            frameAssets.put(Integer.valueOf(63), new OracleContract.Asset("android-full-frames\\volume25\\source_063.png", 1446L, "a501770f0d65b399cd8f8ff60eef5cdd6bd278e4dd76273c459ea09ce0374000"));
+            frameAssets.put(Integer.valueOf(64), new OracleContract.Asset("android-full-frames\\volume25\\source_064.png", 1420L, "c2a9d27e4beb67d23cebe9ed1e8bec83036162bb6fb07c8105c6386046f946eb"));
+            frameAssets.put(Integer.valueOf(65), new OracleContract.Asset("android-full-frames\\volume25\\source_065.png", 1472L, "f9da02529590d65ade57126a4ee249ae0090f7b982a21755ad1652ea931ac682"));
+            frameAssets.put(Integer.valueOf(66), new OracleContract.Asset("android-full-frames\\volume25\\source_066.png", 1496L, "6558d06ecfdb9034bcf5c2a6f966ff4e62dda9172c697fd871fbb14af022f2bb"));
+            frameAssets.put(Integer.valueOf(67), new OracleContract.Asset("android-full-frames\\volume25\\source_067.png", 1498L, "1aa864455084b94d67fcfdc1e4757fae7855af933451ea92721284b17e9a234e"));
+            frameAssets.put(Integer.valueOf(68), new OracleContract.Asset("android-full-frames\\volume25\\source_068.png", 1482L, "dbb3ffe463572b7322da791073a9955c277c85885374f9d61a38650fc9ab5f66"));
+            frameAssets.put(Integer.valueOf(69), new OracleContract.Asset("android-full-frames\\volume25\\source_069.png", 1487L, "231e816909ccd029e9f1e306281d29d4cb7c03497e757cee1d4421db880396a3"));
+            frameAssets.put(Integer.valueOf(70), new OracleContract.Asset("android-full-frames\\volume25\\source_070.png", 1492L, "425205320006d357f2e4318bc880b144375550a9b7aeb3a90e403fa9866eee47"));
+            frameAssets.put(Integer.valueOf(71), new OracleContract.Asset("android-full-frames\\volume25\\source_071.png", 1477L, "7cdc95f5d661d5dcd017725138383c4d87972f426cd1e73ef78f4fb09dc97658"));
+            frameAssets.put(Integer.valueOf(72), new OracleContract.Asset("android-full-frames\\volume25\\source_072.png", 1460L, "1fa60cd3e0110c2d9a67d0d187af60ef10b80678d15953cb97243d8fb7a9fb60"));
+            frameAssets.put(Integer.valueOf(73), new OracleContract.Asset("android-full-frames\\volume25\\source_073.png", 1479L, "4e674bb014d87a94e74ca1e5585e89fc454fc591707ceba0988b9603e2aba2e5"));
+            frameAssets.put(Integer.valueOf(74), new OracleContract.Asset("android-full-frames\\volume25\\source_074.png", 1461L, "0032db6771e5a1a6cc710cd05962fdc4c274fa13ecf3e1b162333365f16ff43d"));
+            frameAssets.put(Integer.valueOf(75), new OracleContract.Asset("android-full-frames\\volume25\\source_075.png", 1474L, "7b2a45650cf8cbf439bbde657eb0f34e8b9c577c438bed51e780896763667ae8"));
+            frameAssets.put(Integer.valueOf(76), new OracleContract.Asset("android-full-frames\\volume25\\source_076.png", 1459L, "5acf823b54ab6bf9a366c0946684518cca197a5f1314bdb6e34f6f46f8cf4c4c"));
+            frameAssets.put(Integer.valueOf(77), new OracleContract.Asset("android-full-frames\\volume25\\source_077.png", 1495L, "966fb680691c899536fc7286f7d31d9a8821cac3d9181ca2c20894b9134d68de"));
+            frameAssets.put(Integer.valueOf(78), new OracleContract.Asset("android-full-frames\\volume25\\source_078.png", 1485L, "f140cfbc319cfd25003a812893cb6f8150f72290aa341f0a83bc022a091707b9"));
+            frameAssets.put(Integer.valueOf(79), new OracleContract.Asset("android-full-frames\\volume25\\source_079.png", 1466L, "ae3c9412c46be8c3255688e8fd21cd2d0d2155d0b09686c91dd71c2bcb221677"));
+            frameAssets.put(Integer.valueOf(80), new OracleContract.Asset("android-full-frames\\volume25\\source_080.png", 1457L, "0538ff2aed6e218e8f7b9492fc0b688847abb01530b875b40685d3fb4fa5da54"));
+            frameAssets.put(Integer.valueOf(81), new OracleContract.Asset("android-full-frames\\volume25\\source_081.png", 1485L, "b466f0a9e04249d1dd98077242260593769a51e7f9f4544fedf8759a6dcc0aa7"));
+            frameAssets.put(Integer.valueOf(82), new OracleContract.Asset("android-full-frames\\volume25\\source_082.png", 1490L, "54b5c9235bdd4e98d962eb6bbd6ebf706ab5db6b63d25fc775af071f877bd91f"));
+            frameAssets.put(Integer.valueOf(83), new OracleContract.Asset("android-full-frames\\volume25\\source_083.png", 1491L, "b983748e308bb0bc546ee3da897ed88e800f773ee69a79897822e0298d179308"));
+            frameAssets.put(Integer.valueOf(84), new OracleContract.Asset("android-full-frames\\volume25\\source_084.png", 1460L, "423dd7825c2eda1da0c648cf9449b11b7bb57cefb57171a04abaca4efe51b583"));
+            frameAssets.put(Integer.valueOf(85), new OracleContract.Asset("android-full-frames\\volume25\\source_085.png", 1463L, "e5b95857ee4d7a8ee05d55041c1e025e1d9b48beb709048fa466e9995ba25da5"));
+            frameAssets.put(Integer.valueOf(86), new OracleContract.Asset("android-full-frames\\volume25\\source_086.png", 1470L, "e5b952ff629533dc2adc39548301389e5c942b28db157f5b13d3352ff7864312"));
+            frameAssets.put(Integer.valueOf(87), new OracleContract.Asset("android-full-frames\\volume25\\source_087.png", 1455L, "70da31bacf2c510a51cb700bc876d9ef56dbea20c0ce362680a45636c31fd7e3"));
+            frameAssets.put(Integer.valueOf(88), new OracleContract.Asset("android-full-frames\\volume25\\source_088.png", 1445L, "1b3e2e91a474408a48ee315e7569f627a158d48de3b28d9b3c17453bf8e7d238"));
+            frameAssets.put(Integer.valueOf(89), new OracleContract.Asset("android-full-frames\\volume25\\source_089.png", 1497L, "faf4cc0f2851a12786f855b117f914653118ae79f24668619357f089ca6d471b"));
+            frameAssets.put(Integer.valueOf(90), new OracleContract.Asset("android-full-frames\\volume25\\source_090.png", 1487L, "759c41f7d9c4154d20af921e4d253a72ab7a16519e424cf7dd25d61d82042de7"));
+            frameAssets.put(Integer.valueOf(91), new OracleContract.Asset("android-full-frames\\volume25\\source_091.png", 1481L, "9d18b33e6c6bfeb7ebfdd1ba2b053c58598797beb8d45bbc50a4742fa2af2205"));
+            frameAssets.put(Integer.valueOf(92), new OracleContract.Asset("android-full-frames\\volume25\\source_092.png", 1482L, "af1e4b1c28a0693c303b0c4553d4a2572a7b19af871d26dcc8d071ff4f40c8e2"));
+            frameAssets.put(Integer.valueOf(93), new OracleContract.Asset("android-full-frames\\volume25\\source_093.png", 1493L, "59d254da30c0c0965461087ab6dfcfa70fb7b697fa0e05b56ecee4389b1e91a6"));
+            frameAssets.put(Integer.valueOf(94), new OracleContract.Asset("android-full-frames\\volume25\\source_094.png", 1474L, "7df36ca67aeda15cff362ed397b9cb1b4e8c50f909f885ca8cb2f2de0ee980ee"));
+            frameAssets.put(Integer.valueOf(95), new OracleContract.Asset("android-full-frames\\volume25\\source_095.png", 1465L, "1d8a4b9e918353c1ab0a90e608314039a0b0bbb4fc85ae380d24c0f470481f50"));
+            List<OracleContract.AudioProbe> audioProbes = new ArrayList<OracleContract.AudioProbe>();
+            audioProbes.add(new OracleContract.AudioProbe(0.25d, 0.12d, 0.25d, 440, 0.056568542494923796d));
+            audioProbes.add(new OracleContract.AudioProbe(0.5d, 0.12d, 0.5d, 440, 0.056568542494923796d));
+            audioProbes.add(new OracleContract.AudioProbe(0.75d, 0.12d, 0.75d, 440, 0.056568542494923796d));
+            audioProbes.add(new OracleContract.AudioProbe(1.25d, 0.12d, 1.25d, 660, 0.056568542494923796d));
+            audioProbes.add(new OracleContract.AudioProbe(1.5d, 0.12d, 1.5d, 660, 0.056568542494923796d));
+            audioProbes.add(new OracleContract.AudioProbe(1.75d, 0.12d, 1.75d, 660, 0.056568542494923796d));
+            audioProbes.add(new OracleContract.AudioProbe(2.25d, 0.12d, 2.25d, 880, 0.056568542494923796d));
+            audioProbes.add(new OracleContract.AudioProbe(2.5d, 0.12d, 2.5d, 880, 0.056568542494923796d));
+            audioProbes.add(new OracleContract.AudioProbe(2.75d, 0.12d, 2.75d, 880, 0.056568542494923796d));
+            audioProbes.add(new OracleContract.AudioProbe(3.25d, 0.12d, 3.25d, 1100, 0.056568542494923796d));
+            audioProbes.add(new OracleContract.AudioProbe(3.5d, 0.12d, 3.5d, 1100, 0.056568542494923796d));
+            audioProbes.add(new OracleContract.AudioProbe(3.75d, 0.12d, 3.75d, 1100, 0.056568542494923796d));
+            cases.add(new OracleContract.OracleCase(
+                    "volume25",
+                    new OracleContract.Operation(0, 4, 0, 0, 320, 240, 0, 0, 1.0d, 0.25d),
+                    new LinkedHashMap<String, Object>() {{
+                        put("sourceDurationMs", Integer.valueOf(4000));
+                        put("startMs", Integer.valueOf(0));
+                        put("endMs", Integer.valueOf(4000));
+                        put("cropLeft", Double.valueOf(0.0d));
+                        put("cropTop", Double.valueOf(0.0d));
+                        put("cropRight", Double.valueOf(1.0d));
+                        put("cropBottom", Double.valueOf(1.0d));
+                        put("rotationDegrees", Integer.valueOf(0));
+                        put("outputHeight", Integer.valueOf(0));
+                        put("speed", Double.valueOf(1.0d));
+                        put("volume", Double.valueOf(0.25d));
+                        put("overlayText", "");
+                    }},
+                    320, 240, 4.0d, 24.0d,
+                    Arrays.asList(Double.valueOf(24.0d)),
+                    96, 1, 1,
+                    true, 48000,
+                    1, 192000,
+                    barcodeRegions,
+                    probes,
+                    frameAssets,
+                    audioProbes,
+                    new OracleContract.Asset("reference\\volume25.mp4", 93177L, "7cc8771ae7dc755d549e76841e06f1b2af6de726672d1cad87b9aebe29ece926")));
+        }
+        {
+            List<OracleContract.BarcodeRegion> barcodeRegions = OracleCoreVerifier.barcodeRegions(
+                    new OracleContract.Operation(0, 4, 0, 0, 320, 240, 0, 0, 2.0d, 1.0d));
+            List<OracleContract.Probe> probes = new ArrayList<OracleContract.Probe>();
+            probes.add(new OracleContract.Probe(0, 0.0d, new OracleContract.Asset("frames\\speed2\\source_000.png", 1402L, "8a2814f5624b5fb70ecf96162138a0ced04aa3f2bbe07fb02c7b41a7683fcb92")));
+            probes.add(new OracleContract.Probe(12, 0.25d, new OracleContract.Asset("frames\\speed2\\source_012.png", 1449L, "41654db8f89acd43c214376100c640cced8a39a675b945d1dcce3e5edda05821")));
+            probes.add(new OracleContract.Probe(24, 0.5d, new OracleContract.Asset("frames\\speed2\\source_024.png", 1468L, "d248c718107745e767de42cb7b0a645ae0fcf76a0e5a34233e7d81926333ed46")));
+            probes.add(new OracleContract.Probe(36, 0.75d, new OracleContract.Asset("frames\\speed2\\source_036.png", 1461L, "d423a4c7a47ca24b847898a93bee73c37433d21f84003b7686d5d872743ef515")));
+            probes.add(new OracleContract.Probe(48, 1.0d, new OracleContract.Asset("frames\\speed2\\source_048.png", 1440L, "bc0e55ac31a478296ffefdf780fbb5899d9108659a198addee7138122836a7e4")));
+            probes.add(new OracleContract.Probe(59, 1.2291666666666667d, new OracleContract.Asset("frames\\speed2\\source_059.png", 1495L, "1befb44fd0d05717fde612328f48c1266ffc22df97425a3a86ea5366e3781ba7")));
+            probes.add(new OracleContract.Probe(71, 1.4791666666666667d, new OracleContract.Asset("frames\\speed2\\source_071.png", 1477L, "7cdc95f5d661d5dcd017725138383c4d87972f426cd1e73ef78f4fb09dc97658")));
+            probes.add(new OracleContract.Probe(83, 1.7291666666666667d, new OracleContract.Asset("frames\\speed2\\source_083.png", 1491L, "b983748e308bb0bc546ee3da897ed88e800f773ee69a79897822e0298d179308")));
+            probes.add(new OracleContract.Probe(95, 1.9791666666666667d, new OracleContract.Asset("frames\\speed2\\source_095.png", 1465L, "1d8a4b9e918353c1ab0a90e608314039a0b0bbb4fc85ae380d24c0f470481f50")));
+            LinkedHashMap<Integer, OracleContract.Asset> frameAssets = new LinkedHashMap<Integer, OracleContract.Asset>();
+            frameAssets.put(Integer.valueOf(0), new OracleContract.Asset("android-full-frames\\speed2\\source_000.png", 1402L, "8a2814f5624b5fb70ecf96162138a0ced04aa3f2bbe07fb02c7b41a7683fcb92"));
+            frameAssets.put(Integer.valueOf(1), new OracleContract.Asset("android-full-frames\\speed2\\source_001.png", 1434L, "942147d210012300bb1a8fec147ff1fcb52bf8d5bba4ffd19a22046aad17c4cb"));
+            frameAssets.put(Integer.valueOf(2), new OracleContract.Asset("android-full-frames\\speed2\\source_002.png", 1441L, "bdcc47dfcf89f6b334417e4fbf8744dc6ed7079ec2942988c8cdea7a3edd9c50"));
+            frameAssets.put(Integer.valueOf(3), new OracleContract.Asset("android-full-frames\\speed2\\source_003.png", 1446L, "5a019b61136cebb58d44b20789c510cef4241faf99f16b4d2f3dff62f3192bc4"));
+            frameAssets.put(Integer.valueOf(4), new OracleContract.Asset("android-full-frames\\speed2\\source_004.png", 1426L, "f94c5ca9eacc00031ecfa46a0e82de58cebcf928b6a0c606c273e27cfe9d6722"));
+            frameAssets.put(Integer.valueOf(5), new OracleContract.Asset("android-full-frames\\speed2\\source_005.png", 1453L, "dacc5f3806ae3d8891200b005f1b4f55a26cb99a194ab875dee58f894b3ef8fc"));
+            frameAssets.put(Integer.valueOf(6), new OracleContract.Asset("android-full-frames\\speed2\\source_006.png", 1460L, "3c3d8daefaca43db009895cdee159c97997b43cf6755d2a1a9e10dba926f3253"));
+            frameAssets.put(Integer.valueOf(7), new OracleContract.Asset("android-full-frames\\speed2\\source_007.png", 1456L, "548a1c531fa60cc7768fffdf3f2469465e4d1c50975ee91017aa69786cc9ff55"));
+            frameAssets.put(Integer.valueOf(8), new OracleContract.Asset("android-full-frames\\speed2\\source_008.png", 1461L, "680a48a281ecd118fe00f5c4f6f2b07672b3faabb8880b630a1dcbe7eac9f146"));
+            frameAssets.put(Integer.valueOf(9), new OracleContract.Asset("android-full-frames\\speed2\\source_009.png", 1474L, "1f3aaed164b3169c11817051c1baeaa0832d44c5243e8bd608459737bdf7f148"));
+            frameAssets.put(Integer.valueOf(10), new OracleContract.Asset("android-full-frames\\speed2\\source_010.png", 1461L, "1156e679b1bf09a40c987efb479fb52ab809916ba8444f2e783354c058049181"));
+            frameAssets.put(Integer.valueOf(11), new OracleContract.Asset("android-full-frames\\speed2\\source_011.png", 1472L, "50e6a06c2a87cefea352c591915c39dbdfd7157919d61a80f9fe70a979f2a237"));
+            frameAssets.put(Integer.valueOf(12), new OracleContract.Asset("android-full-frames\\speed2\\source_012.png", 1449L, "41654db8f89acd43c214376100c640cced8a39a675b945d1dcce3e5edda05821"));
+            frameAssets.put(Integer.valueOf(13), new OracleContract.Asset("android-full-frames\\speed2\\source_013.png", 1463L, "a2ea2a880449f14ffc7c03302cb971ff43733bdc0ece95de86695a6e95848121"));
+            frameAssets.put(Integer.valueOf(14), new OracleContract.Asset("android-full-frames\\speed2\\source_014.png", 1447L, "deee007f35e503f9146a05346ea940fb3bcde9a86171fb94707c255fd782bf41"));
+            frameAssets.put(Integer.valueOf(15), new OracleContract.Asset("android-full-frames\\speed2\\source_015.png", 1425L, "cee7bef6e9b4f2f2c26c5826dd10be54fd0fbb158345a58d51716d0a004625fc"));
+            frameAssets.put(Integer.valueOf(16), new OracleContract.Asset("android-full-frames\\speed2\\source_016.png", 1431L, "47cd13c0bee8b6750cec76d65681dd294f252114e2c774352e2b0ab9acb1077b"));
+            frameAssets.put(Integer.valueOf(17), new OracleContract.Asset("android-full-frames\\speed2\\source_017.png", 1491L, "baee5064fe72a609ad9e1aa862ee5f7fc5b555e5e542c711dca0b7f9467f5435"));
+            frameAssets.put(Integer.valueOf(18), new OracleContract.Asset("android-full-frames\\speed2\\source_018.png", 1505L, "63771662f583c9d5b3b46bd8d2dac5294926e67cfae8f6e21c8ed101b5c5b07d"));
+            frameAssets.put(Integer.valueOf(19), new OracleContract.Asset("android-full-frames\\speed2\\source_019.png", 1496L, "b818a6fe3e32642bbf3bc8b005c08c6481399e22611835d78137b8d87bc21bd1"));
+            frameAssets.put(Integer.valueOf(20), new OracleContract.Asset("android-full-frames\\speed2\\source_020.png", 1488L, "54a0e9a092414916ac9e7b5f82718b2b23ae6f7373e4deeb3ccfefea3ba09877"));
+            frameAssets.put(Integer.valueOf(21), new OracleContract.Asset("android-full-frames\\speed2\\source_021.png", 1489L, "70b73b83b5e3a92220e87850b2c18ebab2354527a5024e1ad6055ff2c87e522d"));
+            frameAssets.put(Integer.valueOf(22), new OracleContract.Asset("android-full-frames\\speed2\\source_022.png", 1495L, "9b35e6e03cd96614935d1f2535ddaa3033fef1b65304b72e430f678d25f9572f"));
+            frameAssets.put(Integer.valueOf(23), new OracleContract.Asset("android-full-frames\\speed2\\source_023.png", 1492L, "cc74770563353ac882b4e43c79b9b4c76121f1cb40a651dd8800c58c4e48eceb"));
+            frameAssets.put(Integer.valueOf(24), new OracleContract.Asset("android-full-frames\\speed2\\source_024.png", 1468L, "d248c718107745e767de42cb7b0a645ae0fcf76a0e5a34233e7d81926333ed46"));
+            frameAssets.put(Integer.valueOf(25), new OracleContract.Asset("android-full-frames\\speed2\\source_025.png", 1492L, "3ee149668e49ac86a7b395bd6822b72ab903131a003630c2518225671a919cf9"));
+            frameAssets.put(Integer.valueOf(26), new OracleContract.Asset("android-full-frames\\speed2\\source_026.png", 1465L, "375539b074cff3b993a634fd536ac146da68a3fac252693638eb65fa41e864cc"));
+            frameAssets.put(Integer.valueOf(27), new OracleContract.Asset("android-full-frames\\speed2\\source_027.png", 1469L, "b79cb69e390f824b13dbdd63d04ad7c408b60ee31562cab39d96a9b83788433b"));
+            frameAssets.put(Integer.valueOf(28), new OracleContract.Asset("android-full-frames\\speed2\\source_028.png", 1456L, "cd7471a7d7821f144199383eaefd686ec12679990d892f15fe63ee4a36c4a4b3"));
+            frameAssets.put(Integer.valueOf(29), new OracleContract.Asset("android-full-frames\\speed2\\source_029.png", 1492L, "f6d9bd48425d565ffd4bc67bd95d5a2a0a5b715d2c0daa21b780e05f5481820f"));
+            frameAssets.put(Integer.valueOf(30), new OracleContract.Asset("android-full-frames\\speed2\\source_030.png", 1495L, "19a43489ab3e9d7feb799f09fb4a7d2abeaa39328451703be46af8057bee75fe"));
+            frameAssets.put(Integer.valueOf(31), new OracleContract.Asset("android-full-frames\\speed2\\source_031.png", 1474L, "4ee33e5a842b3a85cd82f89453dd8ce6fbdf0bfe63e987ee59dcc1ca0846c6dc"));
+            frameAssets.put(Integer.valueOf(32), new OracleContract.Asset("android-full-frames\\speed2\\source_032.png", 1455L, "5e0480930347ed3d39eabf24eb66dbb07b17f5d6a83a6fd4fef7f67833ecc1a1"));
+            frameAssets.put(Integer.valueOf(33), new OracleContract.Asset("android-full-frames\\speed2\\source_033.png", 1481L, "6bdb87b12beb05c973114ab940e87d3810a6fe7885d87c589c0e5840f1680901"));
+            frameAssets.put(Integer.valueOf(34), new OracleContract.Asset("android-full-frames\\speed2\\source_034.png", 1484L, "19c89cb535a00dded4c837eedd7eed5f0218d319947e6d303e8084f62aae55b7"));
+            frameAssets.put(Integer.valueOf(35), new OracleContract.Asset("android-full-frames\\speed2\\source_035.png", 1485L, "f44294faa57c7ffd0c9dc44ff3590c6b32cc94402be223a1e4a5f40d8fa4dee3"));
+            frameAssets.put(Integer.valueOf(36), new OracleContract.Asset("android-full-frames\\speed2\\source_036.png", 1461L, "d423a4c7a47ca24b847898a93bee73c37433d21f84003b7686d5d872743ef515"));
+            frameAssets.put(Integer.valueOf(37), new OracleContract.Asset("android-full-frames\\speed2\\source_037.png", 1468L, "31bef3fe22159f725d265a0552af59f876caea8089c5e9e3a180b7ce57419f4f"));
+            frameAssets.put(Integer.valueOf(38), new OracleContract.Asset("android-full-frames\\speed2\\source_038.png", 1472L, "9fe0ea19b4b2103290d7c2a40c86236146e9f521eb21456c67008a1b623225f6"));
+            frameAssets.put(Integer.valueOf(39), new OracleContract.Asset("android-full-frames\\speed2\\source_039.png", 1463L, "0bf08c6bf71afe3549c220a5ce842e787cc5f12cb457faf565dacb2cd3236a31"));
+            frameAssets.put(Integer.valueOf(40), new OracleContract.Asset("android-full-frames\\speed2\\source_040.png", 1440L, "37de11cb03e156253f027723b2393931e0804e0f07465ee0d3d5a8cc6c435391"));
+            frameAssets.put(Integer.valueOf(41), new OracleContract.Asset("android-full-frames\\speed2\\source_041.png", 1486L, "bcc73f783d8005cecc91576491cfebaf6ddc1627f6b1da9cf74676aa3a5e3f1f"));
+            frameAssets.put(Integer.valueOf(42), new OracleContract.Asset("android-full-frames\\speed2\\source_042.png", 1469L, "affbb3ca9dec013175767a65c05da0160da24efec95cb542ffe491c404b5aa08"));
+            frameAssets.put(Integer.valueOf(43), new OracleContract.Asset("android-full-frames\\speed2\\source_043.png", 1475L, "55a5492e7c910c154d1897c65344316c3e71ab7c5203d2ede3a79b6a3baaadad"));
+            frameAssets.put(Integer.valueOf(44), new OracleContract.Asset("android-full-frames\\speed2\\source_044.png", 1481L, "b77566f31d1c0d329fdc5312c0d5eecb5f79fe09d64ac8bbd2dacb353fa3ca09"));
+            frameAssets.put(Integer.valueOf(45), new OracleContract.Asset("android-full-frames\\speed2\\source_045.png", 1489L, "b0b342bf3d983da8b1016c8bd935aa9b9415121ec41f4b666edf4a5a452b562c"));
+            frameAssets.put(Integer.valueOf(46), new OracleContract.Asset("android-full-frames\\speed2\\source_046.png", 1479L, "d3fef3becaf7ecccf4b9ced5c7d0a8b0550787825ef493ea388db44215710c10"));
+            frameAssets.put(Integer.valueOf(47), new OracleContract.Asset("android-full-frames\\speed2\\source_047.png", 1455L, "50963fd3af0ab9e5d63216c954617dd0e0f4d20311dadd2c4e2270f1ba949071"));
+            frameAssets.put(Integer.valueOf(48), new OracleContract.Asset("android-full-frames\\speed2\\source_048.png", 1440L, "bc0e55ac31a478296ffefdf780fbb5899d9108659a198addee7138122836a7e4"));
+            frameAssets.put(Integer.valueOf(49), new OracleContract.Asset("android-full-frames\\speed2\\source_049.png", 1476L, "df99cee9f4e2aa04d7649a0affc71e76316bf5df2d983787421063a2143f1062"));
+            frameAssets.put(Integer.valueOf(50), new OracleContract.Asset("android-full-frames\\speed2\\source_050.png", 1476L, "4f79f3763f8f3d149cb13e80fb2ee42500bca6f99fac0374d8e0b2cc6ecb835c"));
+            frameAssets.put(Integer.valueOf(51), new OracleContract.Asset("android-full-frames\\speed2\\source_051.png", 1473L, "f82967b67b3d826fcfbb5cdb9516ea7e32589e9daf40f15f1caed1cfc54bd05a"));
+            frameAssets.put(Integer.valueOf(52), new OracleContract.Asset("android-full-frames\\speed2\\source_052.png", 1457L, "8cc8130b7aa6196b604fee1db35877ea99b1662dab3960099d4373496af47925"));
+            frameAssets.put(Integer.valueOf(53), new OracleContract.Asset("android-full-frames\\speed2\\source_053.png", 1493L, "11022a965f4d895dd29330671e09078cbbf970164f4c3c61bd1ac8eacd7d8966"));
+            frameAssets.put(Integer.valueOf(54), new OracleContract.Asset("android-full-frames\\speed2\\source_054.png", 1503L, "6704f5791d03a2233e489e6903b7aacca40f45ad7e7b11c0be04eaf939d2900a"));
+            frameAssets.put(Integer.valueOf(55), new OracleContract.Asset("android-full-frames\\speed2\\source_055.png", 1484L, "81e4ab40d4f1eaacfc6e2f6199bd80bed476268f5380bde962233d7e64ad61e0"));
+            frameAssets.put(Integer.valueOf(56), new OracleContract.Asset("android-full-frames\\speed2\\source_056.png", 1479L, "0bad77d71f3a85fb8f4a16049c599fa20d2308e067a8cd594c0fee5f690f6e6f"));
+            frameAssets.put(Integer.valueOf(57), new OracleContract.Asset("android-full-frames\\speed2\\source_057.png", 1500L, "3d9895fb95d4ba9eb7df0de2f5d6d3d97f46903755c5cd3cc75f7310726760e6"));
+            frameAssets.put(Integer.valueOf(58), new OracleContract.Asset("android-full-frames\\speed2\\source_058.png", 1477L, "c70a8f42e5753d9390a076880f8422113cbd2d423662351f21bb7a8186a23281"));
+            frameAssets.put(Integer.valueOf(59), new OracleContract.Asset("android-full-frames\\speed2\\source_059.png", 1495L, "1befb44fd0d05717fde612328f48c1266ffc22df97425a3a86ea5366e3781ba7"));
+            frameAssets.put(Integer.valueOf(60), new OracleContract.Asset("android-full-frames\\speed2\\source_060.png", 1476L, "7398e01b54e9269ee16452d243fb29479f3bdca6390dd8fa284d05c0b4109209"));
+            frameAssets.put(Integer.valueOf(61), new OracleContract.Asset("android-full-frames\\speed2\\source_061.png", 1489L, "007c8d69a073a37214e4ba16f1cf8e34244fd3b7605a3f4fb89f88315fdd2812"));
+            frameAssets.put(Integer.valueOf(62), new OracleContract.Asset("android-full-frames\\speed2\\source_062.png", 1462L, "6b2897ae983cbaf3c6cdcaaee0690c0fcccf6e580d2badfb0b622518ad19433a"));
+            frameAssets.put(Integer.valueOf(63), new OracleContract.Asset("android-full-frames\\speed2\\source_063.png", 1446L, "a501770f0d65b399cd8f8ff60eef5cdd6bd278e4dd76273c459ea09ce0374000"));
+            frameAssets.put(Integer.valueOf(64), new OracleContract.Asset("android-full-frames\\speed2\\source_064.png", 1420L, "c2a9d27e4beb67d23cebe9ed1e8bec83036162bb6fb07c8105c6386046f946eb"));
+            frameAssets.put(Integer.valueOf(65), new OracleContract.Asset("android-full-frames\\speed2\\source_065.png", 1472L, "f9da02529590d65ade57126a4ee249ae0090f7b982a21755ad1652ea931ac682"));
+            frameAssets.put(Integer.valueOf(66), new OracleContract.Asset("android-full-frames\\speed2\\source_066.png", 1496L, "6558d06ecfdb9034bcf5c2a6f966ff4e62dda9172c697fd871fbb14af022f2bb"));
+            frameAssets.put(Integer.valueOf(67), new OracleContract.Asset("android-full-frames\\speed2\\source_067.png", 1498L, "1aa864455084b94d67fcfdc1e4757fae7855af933451ea92721284b17e9a234e"));
+            frameAssets.put(Integer.valueOf(68), new OracleContract.Asset("android-full-frames\\speed2\\source_068.png", 1482L, "dbb3ffe463572b7322da791073a9955c277c85885374f9d61a38650fc9ab5f66"));
+            frameAssets.put(Integer.valueOf(69), new OracleContract.Asset("android-full-frames\\speed2\\source_069.png", 1487L, "231e816909ccd029e9f1e306281d29d4cb7c03497e757cee1d4421db880396a3"));
+            frameAssets.put(Integer.valueOf(70), new OracleContract.Asset("android-full-frames\\speed2\\source_070.png", 1492L, "425205320006d357f2e4318bc880b144375550a9b7aeb3a90e403fa9866eee47"));
+            frameAssets.put(Integer.valueOf(71), new OracleContract.Asset("android-full-frames\\speed2\\source_071.png", 1477L, "7cdc95f5d661d5dcd017725138383c4d87972f426cd1e73ef78f4fb09dc97658"));
+            frameAssets.put(Integer.valueOf(72), new OracleContract.Asset("android-full-frames\\speed2\\source_072.png", 1460L, "1fa60cd3e0110c2d9a67d0d187af60ef10b80678d15953cb97243d8fb7a9fb60"));
+            frameAssets.put(Integer.valueOf(73), new OracleContract.Asset("android-full-frames\\speed2\\source_073.png", 1479L, "4e674bb014d87a94e74ca1e5585e89fc454fc591707ceba0988b9603e2aba2e5"));
+            frameAssets.put(Integer.valueOf(74), new OracleContract.Asset("android-full-frames\\speed2\\source_074.png", 1461L, "0032db6771e5a1a6cc710cd05962fdc4c274fa13ecf3e1b162333365f16ff43d"));
+            frameAssets.put(Integer.valueOf(75), new OracleContract.Asset("android-full-frames\\speed2\\source_075.png", 1474L, "7b2a45650cf8cbf439bbde657eb0f34e8b9c577c438bed51e780896763667ae8"));
+            frameAssets.put(Integer.valueOf(76), new OracleContract.Asset("android-full-frames\\speed2\\source_076.png", 1459L, "5acf823b54ab6bf9a366c0946684518cca197a5f1314bdb6e34f6f46f8cf4c4c"));
+            frameAssets.put(Integer.valueOf(77), new OracleContract.Asset("android-full-frames\\speed2\\source_077.png", 1495L, "966fb680691c899536fc7286f7d31d9a8821cac3d9181ca2c20894b9134d68de"));
+            frameAssets.put(Integer.valueOf(78), new OracleContract.Asset("android-full-frames\\speed2\\source_078.png", 1485L, "f140cfbc319cfd25003a812893cb6f8150f72290aa341f0a83bc022a091707b9"));
+            frameAssets.put(Integer.valueOf(79), new OracleContract.Asset("android-full-frames\\speed2\\source_079.png", 1466L, "ae3c9412c46be8c3255688e8fd21cd2d0d2155d0b09686c91dd71c2bcb221677"));
+            frameAssets.put(Integer.valueOf(80), new OracleContract.Asset("android-full-frames\\speed2\\source_080.png", 1457L, "0538ff2aed6e218e8f7b9492fc0b688847abb01530b875b40685d3fb4fa5da54"));
+            frameAssets.put(Integer.valueOf(81), new OracleContract.Asset("android-full-frames\\speed2\\source_081.png", 1485L, "b466f0a9e04249d1dd98077242260593769a51e7f9f4544fedf8759a6dcc0aa7"));
+            frameAssets.put(Integer.valueOf(82), new OracleContract.Asset("android-full-frames\\speed2\\source_082.png", 1490L, "54b5c9235bdd4e98d962eb6bbd6ebf706ab5db6b63d25fc775af071f877bd91f"));
+            frameAssets.put(Integer.valueOf(83), new OracleContract.Asset("android-full-frames\\speed2\\source_083.png", 1491L, "b983748e308bb0bc546ee3da897ed88e800f773ee69a79897822e0298d179308"));
+            frameAssets.put(Integer.valueOf(84), new OracleContract.Asset("android-full-frames\\speed2\\source_084.png", 1460L, "423dd7825c2eda1da0c648cf9449b11b7bb57cefb57171a04abaca4efe51b583"));
+            frameAssets.put(Integer.valueOf(85), new OracleContract.Asset("android-full-frames\\speed2\\source_085.png", 1463L, "e5b95857ee4d7a8ee05d55041c1e025e1d9b48beb709048fa466e9995ba25da5"));
+            frameAssets.put(Integer.valueOf(86), new OracleContract.Asset("android-full-frames\\speed2\\source_086.png", 1470L, "e5b952ff629533dc2adc39548301389e5c942b28db157f5b13d3352ff7864312"));
+            frameAssets.put(Integer.valueOf(87), new OracleContract.Asset("android-full-frames\\speed2\\source_087.png", 1455L, "70da31bacf2c510a51cb700bc876d9ef56dbea20c0ce362680a45636c31fd7e3"));
+            frameAssets.put(Integer.valueOf(88), new OracleContract.Asset("android-full-frames\\speed2\\source_088.png", 1445L, "1b3e2e91a474408a48ee315e7569f627a158d48de3b28d9b3c17453bf8e7d238"));
+            frameAssets.put(Integer.valueOf(89), new OracleContract.Asset("android-full-frames\\speed2\\source_089.png", 1497L, "faf4cc0f2851a12786f855b117f914653118ae79f24668619357f089ca6d471b"));
+            frameAssets.put(Integer.valueOf(90), new OracleContract.Asset("android-full-frames\\speed2\\source_090.png", 1487L, "759c41f7d9c4154d20af921e4d253a72ab7a16519e424cf7dd25d61d82042de7"));
+            frameAssets.put(Integer.valueOf(91), new OracleContract.Asset("android-full-frames\\speed2\\source_091.png", 1481L, "9d18b33e6c6bfeb7ebfdd1ba2b053c58598797beb8d45bbc50a4742fa2af2205"));
+            frameAssets.put(Integer.valueOf(92), new OracleContract.Asset("android-full-frames\\speed2\\source_092.png", 1482L, "af1e4b1c28a0693c303b0c4553d4a2572a7b19af871d26dcc8d071ff4f40c8e2"));
+            frameAssets.put(Integer.valueOf(93), new OracleContract.Asset("android-full-frames\\speed2\\source_093.png", 1493L, "59d254da30c0c0965461087ab6dfcfa70fb7b697fa0e05b56ecee4389b1e91a6"));
+            frameAssets.put(Integer.valueOf(94), new OracleContract.Asset("android-full-frames\\speed2\\source_094.png", 1474L, "7df36ca67aeda15cff362ed397b9cb1b4e8c50f909f885ca8cb2f2de0ee980ee"));
+            frameAssets.put(Integer.valueOf(95), new OracleContract.Asset("android-full-frames\\speed2\\source_095.png", 1465L, "1d8a4b9e918353c1ab0a90e608314039a0b0bbb4fc85ae380d24c0f470481f50"));
+            List<OracleContract.AudioProbe> audioProbes = new ArrayList<OracleContract.AudioProbe>();
+            audioProbes.add(new OracleContract.AudioProbe(0.125d, 0.06d, 0.25d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(0.25d, 0.06d, 0.5d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(0.375d, 0.06d, 0.75d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(0.625d, 0.06d, 1.25d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(0.75d, 0.06d, 1.5d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(0.875d, 0.06d, 1.75d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.125d, 0.06d, 2.25d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.25d, 0.06d, 2.5d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.375d, 0.06d, 2.75d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.625d, 0.06d, 3.25d, 1100, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.75d, 0.06d, 3.5d, 1100, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.875d, 0.06d, 3.75d, 1100, 0.22627416997969518d));
+            cases.add(new OracleContract.OracleCase(
+                    "speed2",
+                    new OracleContract.Operation(0, 4, 0, 0, 320, 240, 0, 0, 2.0d, 1.0d),
+                    new LinkedHashMap<String, Object>() {{
+                        put("sourceDurationMs", Integer.valueOf(4000));
+                        put("startMs", Integer.valueOf(0));
+                        put("endMs", Integer.valueOf(4000));
+                        put("cropLeft", Double.valueOf(0.0d));
+                        put("cropTop", Double.valueOf(0.0d));
+                        put("cropRight", Double.valueOf(1.0d));
+                        put("cropBottom", Double.valueOf(1.0d));
+                        put("rotationDegrees", Integer.valueOf(0));
+                        put("outputHeight", Integer.valueOf(0));
+                        put("speed", Double.valueOf(2.0d));
+                        put("volume", Double.valueOf(1.0d));
+                        put("overlayText", "");
+                    }},
+                    320, 240, 2.0d, 48.0d,
+                    Arrays.asList(Double.valueOf(24.0d), Double.valueOf(48.0d)),
+                    96, 1, 1,
+                    true, 48000,
+                    1, 96000,
+                    barcodeRegions,
+                    probes,
+                    frameAssets,
+                    audioProbes,
+                    new OracleContract.Asset("reference\\speed2.mp4", 62413L, "663a247383a8356af65a59438fb43bfdcef0fb18da8a5282ad0549b2d47b9fd9")));
+        }
+        {
+            List<OracleContract.BarcodeRegion> barcodeRegions = OracleCoreVerifier.barcodeRegions(
+                    new OracleContract.Operation(0, 4, 0, 0, 320, 240, 0, 0, 0.5d, 1.0d));
+            List<OracleContract.Probe> probes = new ArrayList<OracleContract.Probe>();
+            probes.add(new OracleContract.Probe(0, 0.0d, new OracleContract.Asset("frames\\speed_half\\source_000.png", 1402L, "8a2814f5624b5fb70ecf96162138a0ced04aa3f2bbe07fb02c7b41a7683fcb92")));
+            probes.add(new OracleContract.Probe(12, 1.0d, new OracleContract.Asset("frames\\speed_half\\source_012.png", 1449L, "41654db8f89acd43c214376100c640cced8a39a675b945d1dcce3e5edda05821")));
+            probes.add(new OracleContract.Probe(24, 2.0d, new OracleContract.Asset("frames\\speed_half\\source_024.png", 1468L, "d248c718107745e767de42cb7b0a645ae0fcf76a0e5a34233e7d81926333ed46")));
+            probes.add(new OracleContract.Probe(36, 3.0d, new OracleContract.Asset("frames\\speed_half\\source_036.png", 1461L, "d423a4c7a47ca24b847898a93bee73c37433d21f84003b7686d5d872743ef515")));
+            probes.add(new OracleContract.Probe(48, 4.0d, new OracleContract.Asset("frames\\speed_half\\source_048.png", 1440L, "bc0e55ac31a478296ffefdf780fbb5899d9108659a198addee7138122836a7e4")));
+            probes.add(new OracleContract.Probe(59, 4.916666666666667d, new OracleContract.Asset("frames\\speed_half\\source_059.png", 1495L, "1befb44fd0d05717fde612328f48c1266ffc22df97425a3a86ea5366e3781ba7")));
+            probes.add(new OracleContract.Probe(71, 5.916666666666667d, new OracleContract.Asset("frames\\speed_half\\source_071.png", 1477L, "7cdc95f5d661d5dcd017725138383c4d87972f426cd1e73ef78f4fb09dc97658")));
+            probes.add(new OracleContract.Probe(83, 6.916666666666667d, new OracleContract.Asset("frames\\speed_half\\source_083.png", 1491L, "b983748e308bb0bc546ee3da897ed88e800f773ee69a79897822e0298d179308")));
+            probes.add(new OracleContract.Probe(95, 7.916666666666667d, new OracleContract.Asset("frames\\speed_half\\source_095.png", 1465L, "1d8a4b9e918353c1ab0a90e608314039a0b0bbb4fc85ae380d24c0f470481f50")));
+            LinkedHashMap<Integer, OracleContract.Asset> frameAssets = new LinkedHashMap<Integer, OracleContract.Asset>();
+            frameAssets.put(Integer.valueOf(0), new OracleContract.Asset("android-full-frames\\speed_half\\source_000.png", 1402L, "8a2814f5624b5fb70ecf96162138a0ced04aa3f2bbe07fb02c7b41a7683fcb92"));
+            frameAssets.put(Integer.valueOf(1), new OracleContract.Asset("android-full-frames\\speed_half\\source_001.png", 1434L, "942147d210012300bb1a8fec147ff1fcb52bf8d5bba4ffd19a22046aad17c4cb"));
+            frameAssets.put(Integer.valueOf(2), new OracleContract.Asset("android-full-frames\\speed_half\\source_002.png", 1441L, "bdcc47dfcf89f6b334417e4fbf8744dc6ed7079ec2942988c8cdea7a3edd9c50"));
+            frameAssets.put(Integer.valueOf(3), new OracleContract.Asset("android-full-frames\\speed_half\\source_003.png", 1446L, "5a019b61136cebb58d44b20789c510cef4241faf99f16b4d2f3dff62f3192bc4"));
+            frameAssets.put(Integer.valueOf(4), new OracleContract.Asset("android-full-frames\\speed_half\\source_004.png", 1426L, "f94c5ca9eacc00031ecfa46a0e82de58cebcf928b6a0c606c273e27cfe9d6722"));
+            frameAssets.put(Integer.valueOf(5), new OracleContract.Asset("android-full-frames\\speed_half\\source_005.png", 1453L, "dacc5f3806ae3d8891200b005f1b4f55a26cb99a194ab875dee58f894b3ef8fc"));
+            frameAssets.put(Integer.valueOf(6), new OracleContract.Asset("android-full-frames\\speed_half\\source_006.png", 1460L, "3c3d8daefaca43db009895cdee159c97997b43cf6755d2a1a9e10dba926f3253"));
+            frameAssets.put(Integer.valueOf(7), new OracleContract.Asset("android-full-frames\\speed_half\\source_007.png", 1456L, "548a1c531fa60cc7768fffdf3f2469465e4d1c50975ee91017aa69786cc9ff55"));
+            frameAssets.put(Integer.valueOf(8), new OracleContract.Asset("android-full-frames\\speed_half\\source_008.png", 1461L, "680a48a281ecd118fe00f5c4f6f2b07672b3faabb8880b630a1dcbe7eac9f146"));
+            frameAssets.put(Integer.valueOf(9), new OracleContract.Asset("android-full-frames\\speed_half\\source_009.png", 1474L, "1f3aaed164b3169c11817051c1baeaa0832d44c5243e8bd608459737bdf7f148"));
+            frameAssets.put(Integer.valueOf(10), new OracleContract.Asset("android-full-frames\\speed_half\\source_010.png", 1461L, "1156e679b1bf09a40c987efb479fb52ab809916ba8444f2e783354c058049181"));
+            frameAssets.put(Integer.valueOf(11), new OracleContract.Asset("android-full-frames\\speed_half\\source_011.png", 1472L, "50e6a06c2a87cefea352c591915c39dbdfd7157919d61a80f9fe70a979f2a237"));
+            frameAssets.put(Integer.valueOf(12), new OracleContract.Asset("android-full-frames\\speed_half\\source_012.png", 1449L, "41654db8f89acd43c214376100c640cced8a39a675b945d1dcce3e5edda05821"));
+            frameAssets.put(Integer.valueOf(13), new OracleContract.Asset("android-full-frames\\speed_half\\source_013.png", 1463L, "a2ea2a880449f14ffc7c03302cb971ff43733bdc0ece95de86695a6e95848121"));
+            frameAssets.put(Integer.valueOf(14), new OracleContract.Asset("android-full-frames\\speed_half\\source_014.png", 1447L, "deee007f35e503f9146a05346ea940fb3bcde9a86171fb94707c255fd782bf41"));
+            frameAssets.put(Integer.valueOf(15), new OracleContract.Asset("android-full-frames\\speed_half\\source_015.png", 1425L, "cee7bef6e9b4f2f2c26c5826dd10be54fd0fbb158345a58d51716d0a004625fc"));
+            frameAssets.put(Integer.valueOf(16), new OracleContract.Asset("android-full-frames\\speed_half\\source_016.png", 1431L, "47cd13c0bee8b6750cec76d65681dd294f252114e2c774352e2b0ab9acb1077b"));
+            frameAssets.put(Integer.valueOf(17), new OracleContract.Asset("android-full-frames\\speed_half\\source_017.png", 1491L, "baee5064fe72a609ad9e1aa862ee5f7fc5b555e5e542c711dca0b7f9467f5435"));
+            frameAssets.put(Integer.valueOf(18), new OracleContract.Asset("android-full-frames\\speed_half\\source_018.png", 1505L, "63771662f583c9d5b3b46bd8d2dac5294926e67cfae8f6e21c8ed101b5c5b07d"));
+            frameAssets.put(Integer.valueOf(19), new OracleContract.Asset("android-full-frames\\speed_half\\source_019.png", 1496L, "b818a6fe3e32642bbf3bc8b005c08c6481399e22611835d78137b8d87bc21bd1"));
+            frameAssets.put(Integer.valueOf(20), new OracleContract.Asset("android-full-frames\\speed_half\\source_020.png", 1488L, "54a0e9a092414916ac9e7b5f82718b2b23ae6f7373e4deeb3ccfefea3ba09877"));
+            frameAssets.put(Integer.valueOf(21), new OracleContract.Asset("android-full-frames\\speed_half\\source_021.png", 1489L, "70b73b83b5e3a92220e87850b2c18ebab2354527a5024e1ad6055ff2c87e522d"));
+            frameAssets.put(Integer.valueOf(22), new OracleContract.Asset("android-full-frames\\speed_half\\source_022.png", 1495L, "9b35e6e03cd96614935d1f2535ddaa3033fef1b65304b72e430f678d25f9572f"));
+            frameAssets.put(Integer.valueOf(23), new OracleContract.Asset("android-full-frames\\speed_half\\source_023.png", 1492L, "cc74770563353ac882b4e43c79b9b4c76121f1cb40a651dd8800c58c4e48eceb"));
+            frameAssets.put(Integer.valueOf(24), new OracleContract.Asset("android-full-frames\\speed_half\\source_024.png", 1468L, "d248c718107745e767de42cb7b0a645ae0fcf76a0e5a34233e7d81926333ed46"));
+            frameAssets.put(Integer.valueOf(25), new OracleContract.Asset("android-full-frames\\speed_half\\source_025.png", 1492L, "3ee149668e49ac86a7b395bd6822b72ab903131a003630c2518225671a919cf9"));
+            frameAssets.put(Integer.valueOf(26), new OracleContract.Asset("android-full-frames\\speed_half\\source_026.png", 1465L, "375539b074cff3b993a634fd536ac146da68a3fac252693638eb65fa41e864cc"));
+            frameAssets.put(Integer.valueOf(27), new OracleContract.Asset("android-full-frames\\speed_half\\source_027.png", 1469L, "b79cb69e390f824b13dbdd63d04ad7c408b60ee31562cab39d96a9b83788433b"));
+            frameAssets.put(Integer.valueOf(28), new OracleContract.Asset("android-full-frames\\speed_half\\source_028.png", 1456L, "cd7471a7d7821f144199383eaefd686ec12679990d892f15fe63ee4a36c4a4b3"));
+            frameAssets.put(Integer.valueOf(29), new OracleContract.Asset("android-full-frames\\speed_half\\source_029.png", 1492L, "f6d9bd48425d565ffd4bc67bd95d5a2a0a5b715d2c0daa21b780e05f5481820f"));
+            frameAssets.put(Integer.valueOf(30), new OracleContract.Asset("android-full-frames\\speed_half\\source_030.png", 1495L, "19a43489ab3e9d7feb799f09fb4a7d2abeaa39328451703be46af8057bee75fe"));
+            frameAssets.put(Integer.valueOf(31), new OracleContract.Asset("android-full-frames\\speed_half\\source_031.png", 1474L, "4ee33e5a842b3a85cd82f89453dd8ce6fbdf0bfe63e987ee59dcc1ca0846c6dc"));
+            frameAssets.put(Integer.valueOf(32), new OracleContract.Asset("android-full-frames\\speed_half\\source_032.png", 1455L, "5e0480930347ed3d39eabf24eb66dbb07b17f5d6a83a6fd4fef7f67833ecc1a1"));
+            frameAssets.put(Integer.valueOf(33), new OracleContract.Asset("android-full-frames\\speed_half\\source_033.png", 1481L, "6bdb87b12beb05c973114ab940e87d3810a6fe7885d87c589c0e5840f1680901"));
+            frameAssets.put(Integer.valueOf(34), new OracleContract.Asset("android-full-frames\\speed_half\\source_034.png", 1484L, "19c89cb535a00dded4c837eedd7eed5f0218d319947e6d303e8084f62aae55b7"));
+            frameAssets.put(Integer.valueOf(35), new OracleContract.Asset("android-full-frames\\speed_half\\source_035.png", 1485L, "f44294faa57c7ffd0c9dc44ff3590c6b32cc94402be223a1e4a5f40d8fa4dee3"));
+            frameAssets.put(Integer.valueOf(36), new OracleContract.Asset("android-full-frames\\speed_half\\source_036.png", 1461L, "d423a4c7a47ca24b847898a93bee73c37433d21f84003b7686d5d872743ef515"));
+            frameAssets.put(Integer.valueOf(37), new OracleContract.Asset("android-full-frames\\speed_half\\source_037.png", 1468L, "31bef3fe22159f725d265a0552af59f876caea8089c5e9e3a180b7ce57419f4f"));
+            frameAssets.put(Integer.valueOf(38), new OracleContract.Asset("android-full-frames\\speed_half\\source_038.png", 1472L, "9fe0ea19b4b2103290d7c2a40c86236146e9f521eb21456c67008a1b623225f6"));
+            frameAssets.put(Integer.valueOf(39), new OracleContract.Asset("android-full-frames\\speed_half\\source_039.png", 1463L, "0bf08c6bf71afe3549c220a5ce842e787cc5f12cb457faf565dacb2cd3236a31"));
+            frameAssets.put(Integer.valueOf(40), new OracleContract.Asset("android-full-frames\\speed_half\\source_040.png", 1440L, "37de11cb03e156253f027723b2393931e0804e0f07465ee0d3d5a8cc6c435391"));
+            frameAssets.put(Integer.valueOf(41), new OracleContract.Asset("android-full-frames\\speed_half\\source_041.png", 1486L, "bcc73f783d8005cecc91576491cfebaf6ddc1627f6b1da9cf74676aa3a5e3f1f"));
+            frameAssets.put(Integer.valueOf(42), new OracleContract.Asset("android-full-frames\\speed_half\\source_042.png", 1469L, "affbb3ca9dec013175767a65c05da0160da24efec95cb542ffe491c404b5aa08"));
+            frameAssets.put(Integer.valueOf(43), new OracleContract.Asset("android-full-frames\\speed_half\\source_043.png", 1475L, "55a5492e7c910c154d1897c65344316c3e71ab7c5203d2ede3a79b6a3baaadad"));
+            frameAssets.put(Integer.valueOf(44), new OracleContract.Asset("android-full-frames\\speed_half\\source_044.png", 1481L, "b77566f31d1c0d329fdc5312c0d5eecb5f79fe09d64ac8bbd2dacb353fa3ca09"));
+            frameAssets.put(Integer.valueOf(45), new OracleContract.Asset("android-full-frames\\speed_half\\source_045.png", 1489L, "b0b342bf3d983da8b1016c8bd935aa9b9415121ec41f4b666edf4a5a452b562c"));
+            frameAssets.put(Integer.valueOf(46), new OracleContract.Asset("android-full-frames\\speed_half\\source_046.png", 1479L, "d3fef3becaf7ecccf4b9ced5c7d0a8b0550787825ef493ea388db44215710c10"));
+            frameAssets.put(Integer.valueOf(47), new OracleContract.Asset("android-full-frames\\speed_half\\source_047.png", 1455L, "50963fd3af0ab9e5d63216c954617dd0e0f4d20311dadd2c4e2270f1ba949071"));
+            frameAssets.put(Integer.valueOf(48), new OracleContract.Asset("android-full-frames\\speed_half\\source_048.png", 1440L, "bc0e55ac31a478296ffefdf780fbb5899d9108659a198addee7138122836a7e4"));
+            frameAssets.put(Integer.valueOf(49), new OracleContract.Asset("android-full-frames\\speed_half\\source_049.png", 1476L, "df99cee9f4e2aa04d7649a0affc71e76316bf5df2d983787421063a2143f1062"));
+            frameAssets.put(Integer.valueOf(50), new OracleContract.Asset("android-full-frames\\speed_half\\source_050.png", 1476L, "4f79f3763f8f3d149cb13e80fb2ee42500bca6f99fac0374d8e0b2cc6ecb835c"));
+            frameAssets.put(Integer.valueOf(51), new OracleContract.Asset("android-full-frames\\speed_half\\source_051.png", 1473L, "f82967b67b3d826fcfbb5cdb9516ea7e32589e9daf40f15f1caed1cfc54bd05a"));
+            frameAssets.put(Integer.valueOf(52), new OracleContract.Asset("android-full-frames\\speed_half\\source_052.png", 1457L, "8cc8130b7aa6196b604fee1db35877ea99b1662dab3960099d4373496af47925"));
+            frameAssets.put(Integer.valueOf(53), new OracleContract.Asset("android-full-frames\\speed_half\\source_053.png", 1493L, "11022a965f4d895dd29330671e09078cbbf970164f4c3c61bd1ac8eacd7d8966"));
+            frameAssets.put(Integer.valueOf(54), new OracleContract.Asset("android-full-frames\\speed_half\\source_054.png", 1503L, "6704f5791d03a2233e489e6903b7aacca40f45ad7e7b11c0be04eaf939d2900a"));
+            frameAssets.put(Integer.valueOf(55), new OracleContract.Asset("android-full-frames\\speed_half\\source_055.png", 1484L, "81e4ab40d4f1eaacfc6e2f6199bd80bed476268f5380bde962233d7e64ad61e0"));
+            frameAssets.put(Integer.valueOf(56), new OracleContract.Asset("android-full-frames\\speed_half\\source_056.png", 1479L, "0bad77d71f3a85fb8f4a16049c599fa20d2308e067a8cd594c0fee5f690f6e6f"));
+            frameAssets.put(Integer.valueOf(57), new OracleContract.Asset("android-full-frames\\speed_half\\source_057.png", 1500L, "3d9895fb95d4ba9eb7df0de2f5d6d3d97f46903755c5cd3cc75f7310726760e6"));
+            frameAssets.put(Integer.valueOf(58), new OracleContract.Asset("android-full-frames\\speed_half\\source_058.png", 1477L, "c70a8f42e5753d9390a076880f8422113cbd2d423662351f21bb7a8186a23281"));
+            frameAssets.put(Integer.valueOf(59), new OracleContract.Asset("android-full-frames\\speed_half\\source_059.png", 1495L, "1befb44fd0d05717fde612328f48c1266ffc22df97425a3a86ea5366e3781ba7"));
+            frameAssets.put(Integer.valueOf(60), new OracleContract.Asset("android-full-frames\\speed_half\\source_060.png", 1476L, "7398e01b54e9269ee16452d243fb29479f3bdca6390dd8fa284d05c0b4109209"));
+            frameAssets.put(Integer.valueOf(61), new OracleContract.Asset("android-full-frames\\speed_half\\source_061.png", 1489L, "007c8d69a073a37214e4ba16f1cf8e34244fd3b7605a3f4fb89f88315fdd2812"));
+            frameAssets.put(Integer.valueOf(62), new OracleContract.Asset("android-full-frames\\speed_half\\source_062.png", 1462L, "6b2897ae983cbaf3c6cdcaaee0690c0fcccf6e580d2badfb0b622518ad19433a"));
+            frameAssets.put(Integer.valueOf(63), new OracleContract.Asset("android-full-frames\\speed_half\\source_063.png", 1446L, "a501770f0d65b399cd8f8ff60eef5cdd6bd278e4dd76273c459ea09ce0374000"));
+            frameAssets.put(Integer.valueOf(64), new OracleContract.Asset("android-full-frames\\speed_half\\source_064.png", 1420L, "c2a9d27e4beb67d23cebe9ed1e8bec83036162bb6fb07c8105c6386046f946eb"));
+            frameAssets.put(Integer.valueOf(65), new OracleContract.Asset("android-full-frames\\speed_half\\source_065.png", 1472L, "f9da02529590d65ade57126a4ee249ae0090f7b982a21755ad1652ea931ac682"));
+            frameAssets.put(Integer.valueOf(66), new OracleContract.Asset("android-full-frames\\speed_half\\source_066.png", 1496L, "6558d06ecfdb9034bcf5c2a6f966ff4e62dda9172c697fd871fbb14af022f2bb"));
+            frameAssets.put(Integer.valueOf(67), new OracleContract.Asset("android-full-frames\\speed_half\\source_067.png", 1498L, "1aa864455084b94d67fcfdc1e4757fae7855af933451ea92721284b17e9a234e"));
+            frameAssets.put(Integer.valueOf(68), new OracleContract.Asset("android-full-frames\\speed_half\\source_068.png", 1482L, "dbb3ffe463572b7322da791073a9955c277c85885374f9d61a38650fc9ab5f66"));
+            frameAssets.put(Integer.valueOf(69), new OracleContract.Asset("android-full-frames\\speed_half\\source_069.png", 1487L, "231e816909ccd029e9f1e306281d29d4cb7c03497e757cee1d4421db880396a3"));
+            frameAssets.put(Integer.valueOf(70), new OracleContract.Asset("android-full-frames\\speed_half\\source_070.png", 1492L, "425205320006d357f2e4318bc880b144375550a9b7aeb3a90e403fa9866eee47"));
+            frameAssets.put(Integer.valueOf(71), new OracleContract.Asset("android-full-frames\\speed_half\\source_071.png", 1477L, "7cdc95f5d661d5dcd017725138383c4d87972f426cd1e73ef78f4fb09dc97658"));
+            frameAssets.put(Integer.valueOf(72), new OracleContract.Asset("android-full-frames\\speed_half\\source_072.png", 1460L, "1fa60cd3e0110c2d9a67d0d187af60ef10b80678d15953cb97243d8fb7a9fb60"));
+            frameAssets.put(Integer.valueOf(73), new OracleContract.Asset("android-full-frames\\speed_half\\source_073.png", 1479L, "4e674bb014d87a94e74ca1e5585e89fc454fc591707ceba0988b9603e2aba2e5"));
+            frameAssets.put(Integer.valueOf(74), new OracleContract.Asset("android-full-frames\\speed_half\\source_074.png", 1461L, "0032db6771e5a1a6cc710cd05962fdc4c274fa13ecf3e1b162333365f16ff43d"));
+            frameAssets.put(Integer.valueOf(75), new OracleContract.Asset("android-full-frames\\speed_half\\source_075.png", 1474L, "7b2a45650cf8cbf439bbde657eb0f34e8b9c577c438bed51e780896763667ae8"));
+            frameAssets.put(Integer.valueOf(76), new OracleContract.Asset("android-full-frames\\speed_half\\source_076.png", 1459L, "5acf823b54ab6bf9a366c0946684518cca197a5f1314bdb6e34f6f46f8cf4c4c"));
+            frameAssets.put(Integer.valueOf(77), new OracleContract.Asset("android-full-frames\\speed_half\\source_077.png", 1495L, "966fb680691c899536fc7286f7d31d9a8821cac3d9181ca2c20894b9134d68de"));
+            frameAssets.put(Integer.valueOf(78), new OracleContract.Asset("android-full-frames\\speed_half\\source_078.png", 1485L, "f140cfbc319cfd25003a812893cb6f8150f72290aa341f0a83bc022a091707b9"));
+            frameAssets.put(Integer.valueOf(79), new OracleContract.Asset("android-full-frames\\speed_half\\source_079.png", 1466L, "ae3c9412c46be8c3255688e8fd21cd2d0d2155d0b09686c91dd71c2bcb221677"));
+            frameAssets.put(Integer.valueOf(80), new OracleContract.Asset("android-full-frames\\speed_half\\source_080.png", 1457L, "0538ff2aed6e218e8f7b9492fc0b688847abb01530b875b40685d3fb4fa5da54"));
+            frameAssets.put(Integer.valueOf(81), new OracleContract.Asset("android-full-frames\\speed_half\\source_081.png", 1485L, "b466f0a9e04249d1dd98077242260593769a51e7f9f4544fedf8759a6dcc0aa7"));
+            frameAssets.put(Integer.valueOf(82), new OracleContract.Asset("android-full-frames\\speed_half\\source_082.png", 1490L, "54b5c9235bdd4e98d962eb6bbd6ebf706ab5db6b63d25fc775af071f877bd91f"));
+            frameAssets.put(Integer.valueOf(83), new OracleContract.Asset("android-full-frames\\speed_half\\source_083.png", 1491L, "b983748e308bb0bc546ee3da897ed88e800f773ee69a79897822e0298d179308"));
+            frameAssets.put(Integer.valueOf(84), new OracleContract.Asset("android-full-frames\\speed_half\\source_084.png", 1460L, "423dd7825c2eda1da0c648cf9449b11b7bb57cefb57171a04abaca4efe51b583"));
+            frameAssets.put(Integer.valueOf(85), new OracleContract.Asset("android-full-frames\\speed_half\\source_085.png", 1463L, "e5b95857ee4d7a8ee05d55041c1e025e1d9b48beb709048fa466e9995ba25da5"));
+            frameAssets.put(Integer.valueOf(86), new OracleContract.Asset("android-full-frames\\speed_half\\source_086.png", 1470L, "e5b952ff629533dc2adc39548301389e5c942b28db157f5b13d3352ff7864312"));
+            frameAssets.put(Integer.valueOf(87), new OracleContract.Asset("android-full-frames\\speed_half\\source_087.png", 1455L, "70da31bacf2c510a51cb700bc876d9ef56dbea20c0ce362680a45636c31fd7e3"));
+            frameAssets.put(Integer.valueOf(88), new OracleContract.Asset("android-full-frames\\speed_half\\source_088.png", 1445L, "1b3e2e91a474408a48ee315e7569f627a158d48de3b28d9b3c17453bf8e7d238"));
+            frameAssets.put(Integer.valueOf(89), new OracleContract.Asset("android-full-frames\\speed_half\\source_089.png", 1497L, "faf4cc0f2851a12786f855b117f914653118ae79f24668619357f089ca6d471b"));
+            frameAssets.put(Integer.valueOf(90), new OracleContract.Asset("android-full-frames\\speed_half\\source_090.png", 1487L, "759c41f7d9c4154d20af921e4d253a72ab7a16519e424cf7dd25d61d82042de7"));
+            frameAssets.put(Integer.valueOf(91), new OracleContract.Asset("android-full-frames\\speed_half\\source_091.png", 1481L, "9d18b33e6c6bfeb7ebfdd1ba2b053c58598797beb8d45bbc50a4742fa2af2205"));
+            frameAssets.put(Integer.valueOf(92), new OracleContract.Asset("android-full-frames\\speed_half\\source_092.png", 1482L, "af1e4b1c28a0693c303b0c4553d4a2572a7b19af871d26dcc8d071ff4f40c8e2"));
+            frameAssets.put(Integer.valueOf(93), new OracleContract.Asset("android-full-frames\\speed_half\\source_093.png", 1493L, "59d254da30c0c0965461087ab6dfcfa70fb7b697fa0e05b56ecee4389b1e91a6"));
+            frameAssets.put(Integer.valueOf(94), new OracleContract.Asset("android-full-frames\\speed_half\\source_094.png", 1474L, "7df36ca67aeda15cff362ed397b9cb1b4e8c50f909f885ca8cb2f2de0ee980ee"));
+            frameAssets.put(Integer.valueOf(95), new OracleContract.Asset("android-full-frames\\speed_half\\source_095.png", 1465L, "1d8a4b9e918353c1ab0a90e608314039a0b0bbb4fc85ae380d24c0f470481f50"));
+            List<OracleContract.AudioProbe> audioProbes = new ArrayList<OracleContract.AudioProbe>();
+            audioProbes.add(new OracleContract.AudioProbe(0.5d, 0.24d, 0.25d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.0d, 0.24d, 0.5d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(1.5d, 0.24d, 0.75d, 440, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(2.5d, 0.24d, 1.25d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.0d, 0.24d, 1.5d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(3.5d, 0.24d, 1.75d, 660, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(4.5d, 0.24d, 2.25d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(5.0d, 0.24d, 2.5d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(5.5d, 0.24d, 2.75d, 880, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(6.5d, 0.24d, 3.25d, 1100, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(7.0d, 0.24d, 3.5d, 1100, 0.22627416997969518d));
+            audioProbes.add(new OracleContract.AudioProbe(7.5d, 0.24d, 3.75d, 1100, 0.22627416997969518d));
+            cases.add(new OracleContract.OracleCase(
+                    "speed_half",
+                    new OracleContract.Operation(0, 4, 0, 0, 320, 240, 0, 0, 0.5d, 1.0d),
+                    new LinkedHashMap<String, Object>() {{
+                        put("sourceDurationMs", Integer.valueOf(4000));
+                        put("startMs", Integer.valueOf(0));
+                        put("endMs", Integer.valueOf(4000));
+                        put("cropLeft", Double.valueOf(0.0d));
+                        put("cropTop", Double.valueOf(0.0d));
+                        put("cropRight", Double.valueOf(1.0d));
+                        put("cropBottom", Double.valueOf(1.0d));
+                        put("rotationDegrees", Integer.valueOf(0));
+                        put("outputHeight", Integer.valueOf(0));
+                        put("speed", Double.valueOf(0.5d));
+                        put("volume", Double.valueOf(1.0d));
+                        put("overlayText", "");
+                    }},
+                    320, 240, 8.0d, 12.0d,
+                    Arrays.asList(Double.valueOf(12.0d), Double.valueOf(24.0d)),
+                    96, 1, 1,
+                    true, 48000,
+                    1, 384000,
+                    barcodeRegions,
+                    probes,
+                    frameAssets,
+                    audioProbes,
+                    new OracleContract.Asset("reference\\speed_half.mp4", 160709L, "69bbfd982fce1498e407d77d0643fd6995e7ae07377b11de3313b474091c90ee")));
+        }
+        {
+            List<OracleContract.BarcodeRegion> barcodeRegions = OracleCoreVerifier.barcodeRegions(
+                    new OracleContract.Operation(1, 3, 40, 40, 280, 200, 90, 120, 2.0d, 0.25d));
+            List<OracleContract.Probe> probes = new ArrayList<OracleContract.Probe>();
+            probes.add(new OracleContract.Probe(24, 0.0d, new OracleContract.Asset("frames\\combo\\source_024.png", 2164L, "116492a2cb0d5e8102cb0090b9693bb1bb69f4ac8b98ed2db58599c5c730e825")));
+            probes.add(new OracleContract.Probe(30, 0.125d, new OracleContract.Asset("frames\\combo\\source_030.png", 2163L, "9f77277e3e958fac262aac8d4fbc8695dc757ce00478b96903cd1608c6e8df0a")));
+            probes.add(new OracleContract.Probe(36, 0.25d, new OracleContract.Asset("frames\\combo\\source_036.png", 2118L, "dd029799a3829cf38b457f5ef9c5514c4d03bbc1957c56df1d8e2b172acd6d83")));
+            probes.add(new OracleContract.Probe(42, 0.375d, new OracleContract.Asset("frames\\combo\\source_042.png", 2054L, "782969813e53ed06eef2d7a6c74d3af92cf6be05a3a4f6d3ada98d5720dd790c")));
+            probes.add(new OracleContract.Probe(48, 0.5d, new OracleContract.Asset("frames\\combo\\source_048.png", 2003L, "2df01075a2df7d1c5b8e561c86169b22edba981d67549b45a48ce636d8f55354")));
+            probes.add(new OracleContract.Probe(53, 0.6041666666666667d, new OracleContract.Asset("frames\\combo\\source_053.png", 2122L, "cfbe36e26ce86633e7dd414cb73a2425ae0e0cf6426e0561970108c01098ed6c")));
+            probes.add(new OracleContract.Probe(59, 0.7291666666666667d, new OracleContract.Asset("frames\\combo\\source_059.png", 2129L, "443e65029a0b7d944a553ed86c9113f43a3dc86e6f3b1ee80becf24af5d98e4b")));
+            probes.add(new OracleContract.Probe(65, 0.8541666666666667d, new OracleContract.Asset("frames\\combo\\source_065.png", 2029L, "7d909f3beeeb350d89047ee616cd7801c99ba5db71112973491feb46faf2a00d")));
+            probes.add(new OracleContract.Probe(71, 0.9791666666666667d, new OracleContract.Asset("frames\\combo\\source_071.png", 2028L, "82449e1525a71840de62b75ea6491da4eb4456be55192ce76ef2c18a0956dc8d")));
+            LinkedHashMap<Integer, OracleContract.Asset> frameAssets = new LinkedHashMap<Integer, OracleContract.Asset>();
+            frameAssets.put(Integer.valueOf(24), new OracleContract.Asset("android-full-frames\\combo\\source_024.png", 2164L, "116492a2cb0d5e8102cb0090b9693bb1bb69f4ac8b98ed2db58599c5c730e825"));
+            frameAssets.put(Integer.valueOf(25), new OracleContract.Asset("android-full-frames\\combo\\source_025.png", 2181L, "9f9574c36fac006cdf52f3181a95c24ff8f9a5aad57dba4f841d0dd203ec4179"));
+            frameAssets.put(Integer.valueOf(26), new OracleContract.Asset("android-full-frames\\combo\\source_026.png", 2109L, "a63d218c75ed36cf4e2ba8530f8dd7f4357f787b5313b957c4f0939395287d05"));
+            frameAssets.put(Integer.valueOf(27), new OracleContract.Asset("android-full-frames\\combo\\source_027.png", 2148L, "bdf96398880ada95d64b2aec35d0e985e60b37bb916ae33a7a4353874232d545"));
+            frameAssets.put(Integer.valueOf(28), new OracleContract.Asset("android-full-frames\\combo\\source_028.png", 2177L, "45490c37c233e83fb54ec6f5cb8e95a1a7a00e3aec4592c196606b251f2cd032"));
+            frameAssets.put(Integer.valueOf(29), new OracleContract.Asset("android-full-frames\\combo\\source_029.png", 2160L, "2f069919ca8a89c6847d45ebff98a2f7997ddef7ca408e7decb2533167eb17ac"));
+            frameAssets.put(Integer.valueOf(30), new OracleContract.Asset("android-full-frames\\combo\\source_030.png", 2163L, "9f77277e3e958fac262aac8d4fbc8695dc757ce00478b96903cd1608c6e8df0a"));
+            frameAssets.put(Integer.valueOf(31), new OracleContract.Asset("android-full-frames\\combo\\source_031.png", 2074L, "be920ce7a6fe778952811ba0dbc5f70077436f83cb192a0a3e17b34a669d9402"));
+            frameAssets.put(Integer.valueOf(32), new OracleContract.Asset("android-full-frames\\combo\\source_032.png", 2026L, "df17110f279db133bb15e3fff81f20fa4e38ad5b09d5a4d5942691f69466c0f3"));
+            frameAssets.put(Integer.valueOf(33), new OracleContract.Asset("android-full-frames\\combo\\source_033.png", 2091L, "dd82db046735d0da80ffd056fef960befa8c41ae459c542b5995614a30bb5a02"));
+            frameAssets.put(Integer.valueOf(34), new OracleContract.Asset("android-full-frames\\combo\\source_034.png", 2141L, "8a789c7d4d4ae124e3ed5c4f9f9cd0b479f87f99f4947c8054710f17da264e3e"));
+            frameAssets.put(Integer.valueOf(35), new OracleContract.Asset("android-full-frames\\combo\\source_035.png", 2139L, "90ef9c6d414738a8c382dfe37db63670e185456fcac4624ef827d2174358a750"));
+            frameAssets.put(Integer.valueOf(36), new OracleContract.Asset("android-full-frames\\combo\\source_036.png", 2118L, "dd029799a3829cf38b457f5ef9c5514c4d03bbc1957c56df1d8e2b172acd6d83"));
+            frameAssets.put(Integer.valueOf(37), new OracleContract.Asset("android-full-frames\\combo\\source_037.png", 2031L, "745dd1f1c564d5817374a76cf19c20d59391431fe44a1c5fc4642c2a7cfbb1d6"));
+            frameAssets.put(Integer.valueOf(38), new OracleContract.Asset("android-full-frames\\combo\\source_038.png", 2122L, "579030604108a7481915164e405b1283e512042b8b055bc4db013a5d0f9429a7"));
+            frameAssets.put(Integer.valueOf(39), new OracleContract.Asset("android-full-frames\\combo\\source_039.png", 2103L, "975e12bf5052dc3c3347a4c444dcd2c1c3cac862989c7330d31f148eb7d42af1"));
+            frameAssets.put(Integer.valueOf(40), new OracleContract.Asset("android-full-frames\\combo\\source_040.png", 2101L, "9274ccc95aef7c5664f80a9a2bcabd5becd5dbecf14400d10ab250659dcc5ad7"));
+            frameAssets.put(Integer.valueOf(41), new OracleContract.Asset("android-full-frames\\combo\\source_041.png", 2133L, "6fcc68ec526fe043f3d94637bc75251cae214c70495d4572c595997e90db4c2b"));
+            frameAssets.put(Integer.valueOf(42), new OracleContract.Asset("android-full-frames\\combo\\source_042.png", 2054L, "782969813e53ed06eef2d7a6c74d3af92cf6be05a3a4f6d3ada98d5720dd790c"));
+            frameAssets.put(Integer.valueOf(43), new OracleContract.Asset("android-full-frames\\combo\\source_043.png", 2086L, "9192b8fad8f3d253e7dce66e7b7ba105bdfdb63a2735776d95691071235ec260"));
+            frameAssets.put(Integer.valueOf(44), new OracleContract.Asset("android-full-frames\\combo\\source_044.png", 2135L, "21d6a1e1cc170f387c69fa881e5ade1558af1ac50c04ad4ccba467dd844f41d6"));
+            frameAssets.put(Integer.valueOf(45), new OracleContract.Asset("android-full-frames\\combo\\source_045.png", 2119L, "3e73cea52550ad514c41081665918c18f78848afef5de174c394a5302519b478"));
+            frameAssets.put(Integer.valueOf(46), new OracleContract.Asset("android-full-frames\\combo\\source_046.png", 2114L, "c4991a252a536641eb2153c38a1a6daa0a1a2961fb02b1ed3322bc6249fe5edd"));
+            frameAssets.put(Integer.valueOf(47), new OracleContract.Asset("android-full-frames\\combo\\source_047.png", 2003L, "1a90161292457bd8ac66730f9232e5e65b92e0de1c8e0a061b96e2d6098b21da"));
+            frameAssets.put(Integer.valueOf(48), new OracleContract.Asset("android-full-frames\\combo\\source_048.png", 2003L, "2df01075a2df7d1c5b8e561c86169b22edba981d67549b45a48ce636d8f55354"));
+            frameAssets.put(Integer.valueOf(49), new OracleContract.Asset("android-full-frames\\combo\\source_049.png", 2078L, "73e3cfc64a2d9f2da1158a0be4d2fba0a61eb9f08ad498d519d1402e7f78977c"));
+            frameAssets.put(Integer.valueOf(50), new OracleContract.Asset("android-full-frames\\combo\\source_050.png", 2124L, "6ff12f58b50f8c4db1d1ec5438123f991ab6b03161a362cc9554c47762ecf706"));
+            frameAssets.put(Integer.valueOf(51), new OracleContract.Asset("android-full-frames\\combo\\source_051.png", 2143L, "f100cf2bb5e8ad6e35b04ffa8d18fc9a635eb8e983e9d4cc7ea4943d8f3060c8"));
+            frameAssets.put(Integer.valueOf(52), new OracleContract.Asset("android-full-frames\\combo\\source_052.png", 2118L, "bf532b96ec402a0421fb00a9274fc718abde926ca4c8118c0a5b1eb51fea9d23"));
+            frameAssets.put(Integer.valueOf(53), new OracleContract.Asset("android-full-frames\\combo\\source_053.png", 2122L, "cfbe36e26ce86633e7dd414cb73a2425ae0e0cf6426e0561970108c01098ed6c"));
+            frameAssets.put(Integer.valueOf(54), new OracleContract.Asset("android-full-frames\\combo\\source_054.png", 2219L, "e860b15d03dac3dac11dfa88dd625027d5dcb103ef17cba11539a490cfde9fc9"));
+            frameAssets.put(Integer.valueOf(55), new OracleContract.Asset("android-full-frames\\combo\\source_055.png", 2111L, "ce011c5b61626ecd4ed1325cee0954c47e4de32d4467405ddff34a29aa02e243"));
+            frameAssets.put(Integer.valueOf(56), new OracleContract.Asset("android-full-frames\\combo\\source_056.png", 2058L, "c82b0bd4b5533c3b551f7a5240037796981f29e41709ff95b665e494fd77ccd4"));
+            frameAssets.put(Integer.valueOf(57), new OracleContract.Asset("android-full-frames\\combo\\source_057.png", 2090L, "0340229b65a685cda75839546ab71d6227e8c940b130d5fa98702d60387c8073"));
+            frameAssets.put(Integer.valueOf(58), new OracleContract.Asset("android-full-frames\\combo\\source_058.png", 2064L, "8d3aae3061ade44c6a1bc6ddb8a632b1e73b0eacd8eafe5a25bb3abcc991fd6d"));
+            frameAssets.put(Integer.valueOf(59), new OracleContract.Asset("android-full-frames\\combo\\source_059.png", 2129L, "443e65029a0b7d944a553ed86c9113f43a3dc86e6f3b1ee80becf24af5d98e4b"));
+            frameAssets.put(Integer.valueOf(60), new OracleContract.Asset("android-full-frames\\combo\\source_060.png", 2186L, "e5e329069cc540f12948845279e7ca3cbd1948a107cba78b29ca215e8a1ca5fe"));
+            frameAssets.put(Integer.valueOf(61), new OracleContract.Asset("android-full-frames\\combo\\source_061.png", 2149L, "7bfb679672e38c2e98b30739ec14246bd8fc7dce5272d2b57ca46c91c8de5d87"));
+            frameAssets.put(Integer.valueOf(62), new OracleContract.Asset("android-full-frames\\combo\\source_062.png", 2054L, "b5ea09154c49803ae9e10846c36808667ce0484e2125315c7d5a397f8427015a"));
+            frameAssets.put(Integer.valueOf(63), new OracleContract.Asset("android-full-frames\\combo\\source_063.png", 1941L, "385b8187befdbd991341b9026073da44446e2ca2f93254e86ed91470724e765a"));
+            frameAssets.put(Integer.valueOf(64), new OracleContract.Asset("android-full-frames\\combo\\source_064.png", 1945L, "cb22b64429ca9843cd74f90b725b974ca9195ee3eeabc2a8b3ed32ddffafcd9a"));
+            frameAssets.put(Integer.valueOf(65), new OracleContract.Asset("android-full-frames\\combo\\source_065.png", 2029L, "7d909f3beeeb350d89047ee616cd7801c99ba5db71112973491feb46faf2a00d"));
+            frameAssets.put(Integer.valueOf(66), new OracleContract.Asset("android-full-frames\\combo\\source_066.png", 2127L, "835260b9438f6fd7d889e06cf963bbe41e8178a39e812e0015bc75bb68e505cb"));
+            frameAssets.put(Integer.valueOf(67), new OracleContract.Asset("android-full-frames\\combo\\source_067.png", 2153L, "b1d246dfbb29e7821331922a70a6e07e1b496a51ed2726e6c564a9c00651cc07"));
+            frameAssets.put(Integer.valueOf(68), new OracleContract.Asset("android-full-frames\\combo\\source_068.png", 2133L, "4b8d8c48d6cb7dd5013415d102581b3eb1579cb6bc51b81910fd35c1bb9dfc8a"));
+            frameAssets.put(Integer.valueOf(69), new OracleContract.Asset("android-full-frames\\combo\\source_069.png", 2043L, "ceff5bd8e6b79d0f05a47364a948196ddf749bd68e013f6a42786e6fcc01f0f6"));
+            frameAssets.put(Integer.valueOf(70), new OracleContract.Asset("android-full-frames\\combo\\source_070.png", 2107L, "a2e300161ca0e034583fdb2a8b5ae06304cfdac5fbacf6ebea83b8a96d2afd23"));
+            frameAssets.put(Integer.valueOf(71), new OracleContract.Asset("android-full-frames\\combo\\source_071.png", 2028L, "82449e1525a71840de62b75ea6491da4eb4456be55192ce76ef2c18a0956dc8d"));
+            List<OracleContract.AudioProbe> audioProbes = new ArrayList<OracleContract.AudioProbe>();
+            audioProbes.add(new OracleContract.AudioProbe(0.125d, 0.06d, 1.25d, 660, 0.056568542494923796d));
+            audioProbes.add(new OracleContract.AudioProbe(0.25d, 0.06d, 1.5d, 660, 0.056568542494923796d));
+            audioProbes.add(new OracleContract.AudioProbe(0.375d, 0.06d, 1.75d, 660, 0.056568542494923796d));
+            audioProbes.add(new OracleContract.AudioProbe(0.625d, 0.06d, 2.25d, 880, 0.056568542494923796d));
+            audioProbes.add(new OracleContract.AudioProbe(0.75d, 0.06d, 2.5d, 880, 0.056568542494923796d));
+            audioProbes.add(new OracleContract.AudioProbe(0.875d, 0.06d, 2.75d, 880, 0.056568542494923796d));
+            cases.add(new OracleContract.OracleCase(
+                    "combo",
+                    new OracleContract.Operation(1, 3, 40, 40, 280, 200, 90, 120, 2.0d, 0.25d),
+                    new LinkedHashMap<String, Object>() {{
+                        put("sourceDurationMs", Integer.valueOf(4000));
+                        put("startMs", Integer.valueOf(1000));
+                        put("endMs", Integer.valueOf(3000));
+                        put("cropLeft", Double.valueOf(0.125d));
+                        put("cropTop", Double.valueOf(0.16666666666666666d));
+                        put("cropRight", Double.valueOf(0.875d));
+                        put("cropBottom", Double.valueOf(0.8333333333333334d));
+                        put("rotationDegrees", Integer.valueOf(90));
+                        put("outputHeight", Integer.valueOf(120));
+                        put("speed", Double.valueOf(2.0d));
+                        put("volume", Double.valueOf(0.25d));
+                        put("overlayText", "");
+                    }},
+                    80, 120, 1.0d, 48.0d,
+                    Arrays.asList(Double.valueOf(24.0d), Double.valueOf(48.0d)),
+                    48, 1, 1,
+                    true, 48000,
+                    1, 48000,
+                    barcodeRegions,
+                    probes,
+                    frameAssets,
+                    audioProbes,
+                    new OracleContract.Asset("reference\\combo.mp4", 30261L, "34acb778a1fce9a15a993a055fe775736edb88e8e4852e18f6f1439a8ff69515")));
+        }
+        return new OracleContract(
+                "independent-video-oracle-android-contract",
+                "1.0.0",
+                new OracleContract.Pins(
+                        "video-oracle",
+                        "1.0.0",
+                        "manifest.json",
+                        "independent-video-oracle",
+                        "1.0.0",
+                        "c0095261eed250fc8db6d49ce0d0cb9498e1552adac2367f0d4baff86b29362f",
+                        "android_cases.json",
+                        "e0bde89572334532b7a32947702d03e6f10904fb14eb40a903bd93a138b293a2",
+                        "CONTRACT.txt",
+                        "9f5523d13533b20a0f2846d9bef0318c1d861acda42c942c543d94afcd11d5cb",
+                        "oracle.py",
+                        "cf69ba00a8e82b8fec70cff5c96b8237e1673401ca4afff73cddd14f4aee18a1",
+                        "video-oracle\\android-contract.json",
+                        "74878a1d254ad63f88dca45837bb618fa0d053c5eb5fe1164e4bcb63b37231dc"),
+                new OracleContract.Source(
+                        320, 240, 24, 96,
+                        48000, 1, 192000,
+                        0.32d, 0.22627416997969518d,
+                        7, 20, 235),
+                new OracleContract.Tolerances(
+                        18.0d,
+                        12.0d,
+                        45.0d,
+                        36.0d,
+                        36.0d,
+                        1,
+                        0.005d,
+                        0.012d,
+                        0.002d,
+                        0.025d,
+                        5e-05d,
+                        0.065d,
+                        0.12d,
+                        0.002d,
+                        12.0d),
+                new OracleContract.Asset("standard.mp4", 95475L, "f46a9e6c62af19e04c914692b5e60b3ded37f4cf5bf0ef2c01480519d16482b2"),
+                cases);
+    }
+}

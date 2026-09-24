@@ -1,0 +1,20 @@
+{
+  "url": "https://opengameart.org/sites/default/files/Ambient-Loop-isaiah658_0.ogg",
+  "final_url": "https://opengameart.org/sites/default/files/Ambient-Loop-isaiah658_0.ogg",
+  "downloaded_utc": "2026-09-18T07:39:59.170473+00:00",
+  "status": 200,
+  "headers": {
+    "Server": "nginx/1.26.1",
+    "Date": "Fri, 18 Sep 2026 07:39:58 GMT",
+    "Content-Type": "audio/ogg",
+    "Content-Length": "1284993",
+    "Last-Modified": "Wed, 30 May 2018 23:37:11 GMT",
+    "Connection": "close",
+    "ETag": "\"5b0f35a7-139b81\"",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+    "Accept-Ranges": "bytes"
+  },
+  "bytes": 1284993,
+  "sha256": "3c328794b77d3f3742a5a8fa36606c3b780d15b0b8f6148b29a78ec6caffcd9e",
+  "no_redirects": true
+}

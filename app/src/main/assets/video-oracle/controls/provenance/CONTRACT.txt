@@ -1,0 +1,145 @@
+INDEPENDENT LOCAL VIDEO ORACLE v1.0.0
+
+Ownership
+All files live beside this contract, outside the Android repository. No Android
+integration is implemented here. No network input, third-party media, or Media3
+implementation is used to synthesize reference media or expected pixels/audio.
+The app's EditConfig and effect ordering were read, not modified. Parent must
+reconfirm those semantics after migration finishes; do not change app concurrently.
+
+Run (PowerShell; working directory must be this oracle directory)
+[Console]::OutputEncoding = [System.Text.UTF8Encoding]::new(); $OutputEncoding = [Console]::OutputEncoding
+python .\oracle.py generate
+python .\oracle.py selftest
+python -B .\contract_tests.py
+python .\oracle.py verify --case combo --input .\device\combo.mp4 --report .\reports\combo.result.json
+python .\oracle.py inventory
+
+Dependencies: already installed Python, NumPy, Pillow, ffmpeg, ffprobe on PATH.
+No installation is performed. All manual code is oracle.py. Generation writes
+only inside this directory and removes the intermediate RGB file. No temporary
+directory is used. Input to verify may be elsewhere; report must be a distinct
+.json path beneath reports\, never a standard artifact or the input.
+generate deliberately rebuilds the standard; DO NOT regenerate during a device
+run. Ship standard.mp4 and freeze manifest.json/inventory.json before integration.
+Different encoder/tool versions may produce different bytes; use the recorded
+SHA-256 to prove every device received the same fixture.
+
+Files and authority
+standard.mp4: single fixed four-second 320x240 H.264/AAC input, 24fps, 96 frames,
+48kHz mono; synthetic colors, corners, 40px internal grid, asymmetric shapes,
+two moving markers, absolute seven-bit frame number and complement.
+source_audio.wav: exact 192000-sample PCM synthesis, 0.32 peak, one-second
+440/660/880/1100Hz segments. PCM quantized by round(amplitude*32767).
+reference\CASE.mp4: independent FFmpeg outputs for comparison/manual playback.
+frames\CASE\source_NNN.png: lossless analytic RGB expectations, NOT frames copied
+from either app output or FFmpeg reference. NumPy crop/rotation and Pillow resize.
+manifest.json: version, standard hashes, tool versions, operations, Android
+EditConfig values, expected output dimensions/timings, color ROIs, reference
+frames, barcode ROIs, analytic audio windows, fixed tolerances.
+android_cases.json: small JSON export-vector list for the parent Android test
+driver, with fixture/manifest hashes, complete EditConfig values and basic expected
+dimensions/timings. Full verification still uses manifest and oracle.py.
+results.json: executed positive and negative checks with measured values.
+commands.json: exact subprocess argv and Windows command strings, working
+directory, return codes, tool versions. Top-level invocation is in results.json.
+selftest_results.json/selftest_commands.json: subsequent selftest evidence, kept
+separate so it never erases exact generation commands in commands.json.
+cli_contract_results.json: real CLI success, mismatch, missing file, unknown case,
+and protected-report-path tests, with exit codes and immutable-artifact hashes.
+negative\ and stress\: actual encoded controls, not fabricated failure records.
+inventory.json: size/SHA-256 of all artifacts except itself, for transfer audit.
+handoff.json: compact integration summary, principal artifact sizes/hashes, test
+counts, supported/rejected cases, exit-code contract and remaining parent tasks.
+Two extra stress files exercise accepted CFR24 resampling at both speed settings.
+
+Semantics
+manifest cases specify complete operations, not UI gestures. Crop uses source
+pixel edges [left,top,right,bottom), top-left origin, before clockwise rotation.
+Base crop [40,40,280,200] is 240x160. Its normalized app coordinates are
+[0.125,1/6,0.875,5/6]. Rotate90 becomes 160x240. Combo resizes to 80x120.
+Identity resizes to 160x120 in the resize-only case. No stretch/letterbox.
+Trim [1,3) seconds includes source frames 24..71; timestamps restart at zero.
+Native speed2 retains source frames, retimes to 48fps; speed_half to 12fps.
+24fps CFR resampling is also accepted only if PTS, frame count, duration and
+absolute per-frame source timecodes all agree. VFR is not supported in v1.
+Speed preserves pitch (independent FFmpeg atempo vs production Sonic).
+Volume is linear amplitude; quarter volume is -12.0412dB. Mute requires NO audio
+track, consistent with inspected production semantics, not an all-zero track.
+All coordinates/sizes are exact even pixels; no odd-size rounding is defined.
+
+Checker contract for parent integration AFTER migration
+1. Pin manifest SHA-256 and input SHA-256. Copy this exact standard.mp4 to device
+   assets/cache or a content Uri. Assert input hash before exports.
+2. Enumerate manifest.cases. Build fresh EditConfig using android_edit_config;
+   input Uri is supplied by integration. Avoid cumulative edits between cases.
+   Export each to a new path; await actual completion/error with bounded timeout.
+3. Pull each real exported file into this directory's device\ subdirectory.
+   Call verify for each case. Exit 0 = all assertions passed; 1 = actual mismatch;
+   2 = setup/config/integrity/tool error. Missing media never passes.
+   Persist device model, OS/API, app revision, encoder/decoder names, export logs,
+   fixture hash, manifest hash, candidate hash, checker JSON. This oracle does
+   not create or imply any device run.
+4. Parent may implement an Android checker using the JSON numeric contracts:
+   decode display-oriented RGB and timestamped mono PCM; compare every frame's
+   barcode, nine spatial probes, and all audio windows. Android need not run
+   Python/FFmpeg. RGB images and explicit ROIs are readily asset-consumable.
+   Python is the authoritative offline checker until parity is tested.
+   For spatial probes, select decoded PTS nearest probe.output_seconds.
+   At each output PTS, allowed source frames are floor((start+PTS*speed)*24+0.001)
+   plus/minus ONE, clipped to trim interval. Decode barcode and complement;
+   choose allowed frame minimizing maximum region luma error. Use its analytic
+   pattern for spatial comparison. Do not independently realign arbitrary times.
+   Barcode mean is arithmetic RGB mean (neutral cells), not limited-range Y.
+   Three-channel absolute pixel differences define full-frame MAE and p95.
+   ROI error is maximum absolute channel error of mean RGB in half-open rectangles.
+   Both moving-marker rectangles are checked explicitly at every spatial probe,
+   using their formulas in manifest.conventions.moving_markers. Advancing just the
+   barcode over a frozen background is a mandatory rejected negative control.
+   Require decoded audio PTS continuity: next PTS = PTS + nb_samples/sample_rate,
+   within 50 microseconds. Align audio windows to the first decoded PTS, not just
+   array index zero. Discarding timestamps and concatenating PCM alone is invalid.
+5. Require every case to pass; don't just check export success, duration, file
+   existence, button state, or visual playback. Do not substitute reference files
+   for device outputs. Keep reference hashes distinct from candidate evidence.
+6. Keep unchanged-source and wrong-operation negative tests in integration.
+   Parent can verify the shipped negative media with verify and require exit 1.
+   These local controls prove checker sensitivity, not production correctness.
+
+Tolerance rationale (fixed in manifest; no automatic relaxation)
+RGB ROI <=18/255 per channel; frame MAE <=12 and p95 <=45. Interior 5x5 constant
+patches avoid edge interpolation; narrow grid edges still contribute to global
+metrics. Limits admit 4:2:0 chroma, moderate H.264 quantization and bilinear-vs-GPU
+sampling, but quadrant swaps and displaced crops fail. CRF28 extra-generation
+controls demonstrate tolerance to additional loss, NOT all hardware encoders.
+Moving-marker inset ROIs use <=36/255 per channel: these small moving shapes are
+more affected by chroma reconstruction than large constant patches. Local CRF28
+worst observed error is approximately 32, versus over 160 for frozen markers.
+This separate bound does not relax static color, geometry or timecode assertions.
+Barcode <=36/255 versus 215-level bit separation; must match all seven bits and
+complements for EVERY decoded frame. Alignment is at most one SOURCE frame, not
+a global offset search. Trim errors of one second and frozen output are rejected.
+Video start <=5ms; cadence jitter <=2ms; native or 24fps frame count +/-1;
+duration <=one slowest accepted output frame +12ms; PTS end independently checked.
+Audio mono/48kHz/AAC required; initial PTS <=25ms. Track duration and decoded sample
+count each within 65ms (3120 samples), for AAC 1024-sample block padding and small
+atempo/Sonic draining differences. Interior tone windows avoid transitions.
+RMS absolute error <=12% of expected +0.002 normalized PCM. Frequency <=12Hz using
+Hann-window FFT and log-parabolic peak interpolation. Twelve windows for full
+length (three per source second) establish ordered tone identity and gain.
+Quarter gain cannot pass as half/unity; wrong trim can't pass with equal duration;
+pitch-changing speed cannot pass as pitch-preserving speed.
+These thresholds have LOCAL encoded evidence only; do not silently widen on
+device failures. Investigate color handling, orientation, PTS or effects first.
+
+Not covered
+Overlay text, concatenation, arbitrary angles, odd dimensions, HDR/wide gamut,
+variable-frame-rate input, input rotation metadata, audio resampling/channel
+conversion, clipping volume >1, arbitrary trim positions, or subjective quality.
+Spatial checks aren't exhaustive at every pixel/time; two moving markers plus
+all-frame barcodes cover gross freezing/timeline issues. Tone-only windows do not
+compare waveform phase or diagnose clicks near segment transitions.
+Reference and fixture encode use FFmpeg, but pixels/timecodes/audio equations and
+transform geometry are independently checked analytically. No Android/Media3
+code path generated expectations. Actual device export verification remains
+mandatory and is the parent's next integration task, not a completed claim here.

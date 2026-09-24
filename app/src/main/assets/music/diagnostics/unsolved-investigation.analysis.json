@@ -1,0 +1,241 @@
+{
+  "id": "unsolved-investigation",
+  "assetPath": "mood\\suspense\\Unsolved-Investigation-isaiah658_0.ogg",
+  "assetSha256": "2877e423ff90cb99b3082840e66cf79d69a809708466c6f27c750c0e1ce2a912",
+  "checkedAtUTC": "2026-09-17T02:39:43.833604+00:00",
+  "commands": [
+    [
+      "ffprobe",
+      "-v",
+      "error",
+      "-show_format",
+      "-show_streams",
+      "-show_chapters",
+      "-of",
+      "json",
+      "mood\\suspense\\Unsolved-Investigation-isaiah658_0.ogg"
+    ],
+    [
+      "ffmpeg",
+      "-hide_banner",
+      "-nostdin",
+      "-v",
+      "error",
+      "-xerror",
+      "-err_detect",
+      "explode",
+      "-i",
+      "mood\\suspense\\Unsolved-Investigation-isaiah658_0.ogg",
+      "-map",
+      "0:a:0",
+      "-vn",
+      "-c:a",
+      "pcm_f32le",
+      "-f",
+      "f32le",
+      "pipe:1"
+    ],
+    [
+      "ffmpeg",
+      "-hide_banner",
+      "-nostdin",
+      "-nostats",
+      "-v",
+      "info",
+      "-xerror",
+      "-err_detect",
+      "explode",
+      "-i",
+      "mood\\suspense\\Unsolved-Investigation-isaiah658_0.ogg",
+      "-map",
+      "0:a:0",
+      "-af",
+      "astats=metadata=0:reset=0,silencedetect=noise=-60dB:d=0.1",
+      "-f",
+      "null",
+      "-"
+    ]
+  ],
+  "ffprobe": {
+    "exitCode": 0,
+    "stderrBytes": 0,
+    "reportPath": "diagnostics\\unsolved-investigation.ffprobe.json"
+  },
+  "decode": {
+    "exitCode": 0,
+    "errorLogBytes": 0,
+    "entireInputDecoded": true,
+    "nonempty": true,
+    "pcmFormat": "f32le interleaved; native sample rate and channel count; analysis only, not saved or used as replacement asset",
+    "framesPerChannel": 2116800,
+    "scalarSamples": 4233600,
+    "decodedBytes": 16934400,
+    "durationMs": 48000.0,
+    "sampleRate": 44100,
+    "channels": 2
+  },
+  "containerDurationMs": 48000.0,
+  "streamDurationMs": 48000.0,
+  "durationDifferenceFramesContainerMinusDecoded": 0.0,
+  "channelStatistics": [
+    {
+      "channelIndex": 0,
+      "frames": 2116800,
+      "finite": true,
+      "min": -0.3295174837112427,
+      "max": 0.32321926951408386,
+      "peakAbs": 0.3295174837112427,
+      "peakDbFS": -9.642430748690867,
+      "rms": 0.07193975122548751,
+      "rmsDbFS": -22.86062136693198,
+      "dcMean": 1.7586728426388432e-06,
+      "fullScaleOrBeyondSampleCount": 0,
+      "beyondFullScaleSampleCount": 0,
+      "exactZeroSampleCount": 0,
+      "samplesAtOrBelowMinus60dBFS": 23442
+    },
+    {
+      "channelIndex": 1,
+      "frames": 2116800,
+      "finite": true,
+      "min": -0.34600719809532166,
+      "max": 0.347707599401474,
+      "peakAbs": 0.347707599401474,
+      "peakDbFS": -9.175716347849955,
+      "rms": 0.07056614506788646,
+      "rmsDbFS": -23.028072136643427,
+      "dcMean": 3.8906323081418775e-06,
+      "fullScaleOrBeyondSampleCount": 0,
+      "beyondFullScaleSampleCount": 0,
+      "exactZeroSampleCount": 0,
+      "samplesAtOrBelowMinus60dBFS": 24347
+    }
+  ],
+  "silence": {
+    "thresholdDbFS": -60,
+    "thresholdAmplitude": 0.001,
+    "allChannelsQuietFrames": 314,
+    "longestAllChannelsQuietRunFrames": 4,
+    "longestAllChannelsQuietRunMs": 0.09070294784580499,
+    "ffmpegDetectionMinimumDurationSeconds": 0.1,
+    "ffmpegSilenceEventLines": [],
+    "astatsAndSilencedetectExitCode": 0,
+    "fullLogPath": "diagnostics\\unsolved-investigation.astats-silence.full.txt"
+  },
+  "loop": {
+    "sourceAdvertisesSeamless": true,
+    "listened": false,
+    "perceptualSeamlessnessVerified": false,
+    "method": "Compare final-to-first native decoded samples and 10/50 ms head/tail windows per channel. Boundary jump is a discontinuity indicator, not a musical/perceptual loop test. No FFT tone-test claim.",
+    "windows": [
+      {
+        "channelIndex": 0,
+        "windowMs": 10,
+        "windowFrames": 441,
+        "head": {
+          "mean": -0.002202960024371346,
+          "rms": 0.07529882193894512,
+          "peakAbs": 0.15862800180912018
+        },
+        "tail": {
+          "mean": 0.01986088769356224,
+          "rms": 0.0664188971687391,
+          "peakAbs": 0.13474828004837036
+        },
+        "firstSample": 0.0946861207485199,
+        "lastSample": 0.09800858050584793,
+        "boundaryJumpSigned": -0.0033224597573280334,
+        "boundaryJumpAbs": 0.0033224597573280334,
+        "localAdjacentDeltaRms": 0.0024426952095338524,
+        "localAdjacentDeltaMaxAbs": 0.0052711330354213715,
+        "boundaryJumpToLocalDeltaRmsRatio": 1.3601614087424643,
+        "boundaryExceedsLocalMaxDelta": false,
+        "headMinusTailRmsDb": 1.0899304286885196
+      },
+      {
+        "channelIndex": 0,
+        "windowMs": 50,
+        "windowFrames": 2205,
+        "head": {
+          "mean": -0.0002232097915021065,
+          "rms": 0.0681354360249792,
+          "peakAbs": 0.22716468572616577
+        },
+        "tail": {
+          "mean": 0.0024190744134634803,
+          "rms": 0.07968835050471955,
+          "peakAbs": 0.2000017613172531
+        },
+        "firstSample": 0.0946861207485199,
+        "lastSample": 0.09800858050584793,
+        "boundaryJumpSigned": -0.0033224597573280334,
+        "boundaryJumpAbs": 0.0033224597573280334,
+        "localAdjacentDeltaRms": 0.0026536857948459146,
+        "localAdjacentDeltaMaxAbs": 0.007765665650367737,
+        "boundaryJumpToLocalDeltaRmsRatio": 1.2520170111250684,
+        "boundaryExceedsLocalMaxDelta": false,
+        "headMinusTailRmsDb": -1.3604359566483717
+      },
+      {
+        "channelIndex": 1,
+        "windowMs": 10,
+        "windowFrames": 441,
+        "head": {
+          "mean": -0.00977361203665484,
+          "rms": 0.07690224586270705,
+          "peakAbs": 0.18446636199951172
+        },
+        "tail": {
+          "mean": 0.022842275001987173,
+          "rms": 0.07619207356892953,
+          "peakAbs": 0.15849542617797852
+        },
+        "firstSample": 0.06228082254528999,
+        "lastSample": 0.06435197591781616,
+        "boundaryJumpSigned": -0.002071153372526169,
+        "boundaryJumpAbs": 0.002071153372526169,
+        "localAdjacentDeltaRms": 0.002752179815636167,
+        "localAdjacentDeltaMaxAbs": 0.007011033594608307,
+        "boundaryJumpToLocalDeltaRmsRatio": 0.752550164331258,
+        "boundaryExceedsLocalMaxDelta": false,
+        "headMinusTailRmsDb": 0.08058460217761185
+      },
+      {
+        "channelIndex": 1,
+        "windowMs": 50,
+        "windowFrames": 2205,
+        "head": {
+          "mean": -0.0019357714185368718,
+          "rms": 0.06496398531013471,
+          "peakAbs": 0.18446636199951172
+        },
+        "tail": {
+          "mean": 0.0027342398096585558,
+          "rms": 0.09090629924888999,
+          "peakAbs": 0.19586281478405
+        },
+        "firstSample": 0.06228082254528999,
+        "lastSample": 0.06435197591781616,
+        "boundaryJumpSigned": -0.002071153372526169,
+        "boundaryJumpAbs": 0.002071153372526169,
+        "localAdjacentDeltaRms": 0.002822390604968649,
+        "localAdjacentDeltaMaxAbs": 0.008340482600033283,
+        "boundaryJumpToLocalDeltaRmsRatio": 0.733829459636107,
+        "boundaryExceedsLocalMaxDelta": false,
+        "headMinusTailRmsDb": -2.9184263746273724
+      }
+    ],
+    "trimPlan": {
+      "apply": false,
+      "startFrameInclusive": 0,
+      "endFrameExclusive": 2116800,
+      "coordinateSystem": "Frames per channel in native-rate ffmpeg PCM decode, not interleaved scalar sample indexes or guaranteed decoder-independent container timestamps.",
+      "rationale": "Retain the entire composition. Numerical checks alone do not establish a better musical trim or justify an automatic crossfade. Validate target-player wrap behavior separately."
+    }
+  },
+  "limitations": [
+    "Float decode excursions at or above full scale are counted, not proof of irreversible source clipping.",
+    "No listening, content transcription, target-player, AAC/MP3 transcode, concatenation, or perceptual-loop validation performed.",
+    "Full raw ffprobe and full astats/silencedetect logs are retained."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "requestedURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "finalURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "status": 200,
+  "headers": {
+    "Date": "Thu, 17 Sep 2026 02:38:14 GMT",
+    "Content-Type": "text/html",
+    "Transfer-Encoding": "chunked",
+    "Connection": "close",
+    "Server": "cloudflare",
+    "Last-Modified": "Tue, 09 Jun 2026 14:26:12 GMT",
+    "Age": "3266",
+    "Vary": "Accept-Encoding",
+    "cf-cache-status": "HIT",
+    "Access-Control-Allow-Origin": "*",
+    "CF-RAY": "a3c4bbcade18def0-SEA"
+  },
+  "fetchedAtUTC": "2026-09-17T02:38:14.232708+00:00",
+  "bytes": 30476,
+  "sha256": "4ceb8ae6835f2f5263caa0e39c9e1adca9469686c267475049b33521dabbe339",
+  "completeResponseBody": true
+}

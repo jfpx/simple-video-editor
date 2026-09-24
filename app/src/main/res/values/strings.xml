@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="editor_source_cancelled">已取消导入，可以重试。后台返回后会清理未完成的私有副本；原文件不受影响。</string>
+    <string name="editor_source_reselect">无法读取原视频（文件已变更、权限失效或格式不支持），请重新选择。未自动复制。</string>
+    <string name="editor_source_copy_title">确认占用额外存储空间</string>
+    <string name="editor_source_not_seekable">提供方不支持随机定位，无法直接解码此视频。</string>
+    <string name="editor_source_virtual">此虚拟文档需要先导出为可读取的视频。</string>
+    <string name="editor_source_copy_message">%1$s\n原文件大小：%2$s\n应用可用空间：%3$s\n是否复制到应用私有缓存后重试？复制期间可取消，无应用内时间限制；不会修改原文件。未知大小可能耗尽空间。复制后仍可能因编码格式等原因失败。</string>
+    <string name="editor_source_copy_confirm">同意复制并重试</string>
+    <string name="editor_source_copy_declined">未复制，原选择保持不变。请改选支持随机读取的视频。</string>
+    <string name="editor_source_size_unknown">未知</string>
+    <string name="editor_source_copy_progress">正在复制：%1$d 字节，已用 %2$d 秒；可手动取消，无应用内时限</string>
+    <string name="editor_source_probing">正在直接读取媒体信息（不复制整个视频）</string>
+    <string name="editor_source_copied">使用已同意的私有副本。原文件不受影响。</string>
+    <string name="editor_source_direct">直接读取原视频，不复制到应用缓存。请保留原文件及读取权限；云端提供方可能自行下载。</string>
+    <string name="editor_source_temporary">直接读取，未复制。此提供方未授予持久权限：重新启动后可能需要重新选择。</string>
+    <string name="editor_source_preset_copy">完整预设需要独立持久片头副本（大小 %1$s，可用空间 %2$s；上限 128 MiB）。保存后不再依赖原片头；应用预设时还会创建可清理的工作副本。主视频不会被复制。是否继续？</string>
+    <string name="editor_source_preset_progress">正在保存预设片头副本：%1$d 字节，可取消</string>
+    <string name="editor_color_enable">启用主视频调色</string>
+    <string name="editor_color_hint">仅主视频：几何处理后、叠加前。线性 SDR 亮度/对比度/饱和度；不改变片头、追加视频、文字、标志或边框。关闭或 0/100/100 为原色。</string>
+    <string name="editor_color_brightness_name">亮度</string>
+    <string name="editor_color_contrast_name">对比度</string>
+    <string name="editor_color_saturation_name">饱和度</string>
+    <string name="editor_color_brightness">亮度 %1$d（−100～100）</string>
+    <string name="editor_color_contrast">对比度 %1$d%%（0～200）</string>
+    <string name="editor_color_saturation">饱和度 %1$d%%（0～200）</string>
+    <string name="editor_color_reset">重置调色：0 / 100 / 100</string>
+    <string name="app_name">简易视频编辑器</string>
+    <string name="select_video">选择视频</string>
+    <string name="rotate_left">向左旋转 90°</string>
+    <string name="rotate_right">向右旋转 90°</string>
+    <string name="custom_angle">自定义角度</string>
+    <string name="crop_edges">裁剪边缘</string>
+    <string name="process_video">处理视频</string>
+    <string name="processing">正在处理视频...</string>
+    <string name="success">视频保存成功！</string>
+    <string name="error">处理视频时出错</string>
+    <string name="no_video_selected">请先选择视频</string>
+    <string name="permission_required">需要存储权限</string>
+    <string name="angle_hint">输入旋转角度（度）</string>
+    <string name="crop_hint">从边缘裁剪的像素数</string>
+    <string name="top">上</string>
+    <string name="bottom">下</string>
+    <string name="left">左</string>
+    <string name="right">右</string>
+    
+    <!-- New strings for optimization features -->
+    <string name="processing_mode">处理模式</string>
+    <string name="fast_mode">⚡ 快速模式（仅旋转）</string>
+    <string name="fast_mode_hint">⚠️ 快速模式：仅应用旋转（忽略截取/音量/色彩调整）\n✓ 完整模式：应用所有效果（旋转/截取/音量/色彩调整）</string>
+    <string name="full_mode_hint">⚙ 完整模式：优化处理，支持旋转 + 缩放 + 文字叠加</string>
+    <string name="output_resolution">输出分辨率</string>
+    <string name="overlay_text">叠加文字（可选）</string>
+    <string name="overlay_text_hint">输入要叠加到视频上的文字</string>
+    <string name="resolution_original">原始尺寸</string>
+    <string name="resolution_1080p">1080p (1920x1080)</string>
+    <string name="resolution_720p">720p (1280x720)</string>
+    <string name="resolution_480p">480p (854x480)</string>
+    <string name="fast_mode_disabled_options">快速模式下无法调整分辨率或叠加文字</string>
+    <string name="estimated_time">预计用时：%s</string>
+    <string name="current_operation">%s - %d%%</string>
+    
+    <!-- Intro Video (Old Feature) -->
+    <string name="select_intro">选择片头视频（可选）</string>
+    <string name="no_intro_selected">未选择片头</string>
+    <string name="intro_video">片头视频</string>
+    
+    <!-- Intro Template (New Feature) -->
+    <string name="intro_template">片头模板（可选）</string>
+    <string name="enable_intro_template">📝 启用片头模板</string>
+    <string name="select_template">模板：</string>
+    <string name="intro_text">片头文字：</string>
+    <string name="intro_text_hint">输入片头文字</string>
+    <string name="save_as_template">💾 保存为模板</string>
+    <string name="manage_templates">⚙️ 管理</string>
+    <string name="template_preview">模板预览</string>
+    <string name="enter_template_name">输入模板名称</string>
+    <string name="template_saved">模板已保存</string>
+    <string name="template_deleted">模板已删除</string>
+    <string name="confirm_delete_template">删除模板“%s”？</string>
+    
+    <!-- Playback Speed -->
+    <string name="playback_speed">播放速度</string>
+    <string name="speed_0_5x">0.5x（慢速）</string>
+    <string name="speed_0_75x">0.75x</string>
+    <string name="speed_1_0x">1.0x（正常）</string>
+    <string name="speed_1_25x">1.25x</string>
+    <string name="speed_1_5x">1.5x</string>
+    <string name="speed_2_0x">2.0x（快速）</string>
+    
+    <!-- Background Music -->
+    <string name="background_music">背景音乐</string>
+    <string name="select_music">选择背景音乐（可选）</string>
+    <string name="no_music_selected">无音乐（保留原音）</string>
+    <string name="music_selected">音乐：%s</string>
+    
+    <!-- Video Trimming -->
+    <string name="video_trimming">视频截取</string>
+    <string name="enable_trimming">✂️ 启用截取</string>
+    <string name="start_time">开始：</string>
+    <string name="end_time">结束：</string>
+    <string name="start_time_hint">0</string>
+    <string name="end_time_hint">10</string>
+    
+    <!-- Volume Adjustment -->
+    <string name="volume_adjustment">音量调整</string>
+    <string name="enable_volume_adjustment">🔊 调整音量</string>
+    <string name="volume_level">音量：</string>
+    <string name="volume_0x">0%（静音）</string>
+    <string name="volume_0_5x">50%（一半音量）</string>
+    <string name="volume_0_75x">75%</string>
+    <string name="volume_1_0x">100%（原始音量）</string>
+    <string name="volume_1_25x">125%</string>
+    <string name="volume_1_5x">150%</string>
+    <string name="volume_2_0x">200%（两倍音量）</string>
+    <string name="volume_3_0x">300%（三倍音量）</string>
+    <string name="title_frame_enable">用原视频帧作为标题背景</string>
+    <string name="title_frame_seconds">原视频绝对秒数（最多3位小数）</string>
+    <string name="title_frame_extract">提取 / 刷新背景帧</string>
+    <string name="title_frame_preview">已裁剪和旋转的独立背景帧预览（不含标题文字）</string>
+    <string name="title_frame_save">单独保存背景 PNG</string>
+    <string name="title_frame_hint">默认关闭。按原视频时间取最近解码帧，不随主视频剪辑起点改变。保存到图片；标题使用独立内部副本。</string>
+    <string name="title_frame_select_source">请先选择原视频</string>
+    <string name="title_frame_extracting">后台提取 / 投影背景帧…</string>
+    <string name="title_frame_ready">原视频请求 %1$.3f 秒（最近解码帧，非精确帧保证）· %2$d×%3$d PNG；不含标题文字</string>
+    <string name="title_frame_not_ready">背景未就绪：检查原视频秒数并提取帧</string>
+    <string name="title_frame_failed">背景提取 / 保存失败</string>
+    <string name="title_frame_saved">PNG 已保存（下列为实际 URI，可选中复制）</string>
+</resources>

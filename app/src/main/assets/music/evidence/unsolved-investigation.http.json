@@ -1,0 +1,30 @@
+{
+  "requestedURL": "https://opengameart.org/content/unsolved-investigation",
+  "finalURL": "https://opengameart.org/content/unsolved-investigation",
+  "status": 200,
+  "headers": {
+    "Server": "nginx/1.26.1",
+    "Date": "Thu, 17 Sep 2026 02:37:59 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "close",
+    "X-Powered-By": "PHP/7.0.33",
+    "X-Drupal-Cache": "MISS",
+    "Etag": "\"1789612679-0\"",
+    "X-DNS-Prefetch-Control": "on",
+    "Link": "<https://opengameart.org/sites/all/themes/oga/fonts/DroidSans-Bold.ttf>; rel=\"prefetch\",<https://opengameart.org/sites/default/files/archive/sara-logo.png>; rel=\"prefetch\",<https://asset-store-test.nbg1.your-objectstorage.com/assets/285/godot-asset-store-thumbnail.png>; rel=\"prefetch\",<https://asset-store-test.nbg1.your-objectstorage.com/publishers/204/Tsothan_Grove_375px.png>; rel=\"prefetch\",<https://opengameart.org/sites/default/files/archive/sara-logo.png>; rel=\"prefetch\",<https://opengameart.org/content/unsolved-investigation>; rel=\"canonical\",<https://opengameart.org/node/86774>; rel=\"shortlink\"",
+    "Content-Language": "en",
+    "X-Frame-Options": "SAMEORIGIN",
+    "X-Content-Type-Options": "nosniff",
+    "X-Generator": "Drupal 7 (http://drupal.org)",
+    "Cache-Control": "public, max-age=600",
+    "Last-Modified": "Thu, 17 Sep 2026 02:37:59 GMT",
+    "Expires": "Sun, 19 Nov 1978 05:00:00 GMT",
+    "Vary": "Cookie",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+  },
+  "fetchedAtUTC": "2026-09-17T02:38:00.053202+00:00",
+  "bytes": 28309,
+  "sha256": "5a846e4f2609df3dcfd2b82f5004c69b423d39ad78d1137548642b13fafa4dec",
+  "completeResponseBody": true
+}

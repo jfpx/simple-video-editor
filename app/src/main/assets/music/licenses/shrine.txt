@@ -1,0 +1,20 @@
+Shrine
+Author: yd
+License: CC0 1.0 Universal (CC0-1.0)
+Official creator source: https://opengameart.org/content/shrine
+Official original download: https://opengameart.org/sites/default/files/shrine_0.ogg
+Source retrieved UTC: 2026-09-22T05:48:12.499608+00:00
+Audio retrieved UTC: 2026-09-22T05:53:13.499125+00:00
+Original filename: shrine_0.ogg
+SHA-256: 35a3051a7b6d4fddda564624cff960b77722fd8bcf4a3e07ceceb060b6c0f080
+Bytes: 773355
+License evidence: License(s): CC0
+Creator quote: A short track with a mysterious vibe. LMMS source file is attached and requires no external  plugins.
+Assessment: Creator-authored page + editable LMMS project: note-bearing instruments use ZynAddSubFX. No audiofileprocessor, sf2player, sampletco or external-file references found. Unused tripleoscillator defaults and empty sample track are present.
+Playback: Source tags include loop. Creator-loop metadata records intent, not verified seamlessness.
+
+CC0 permits copying, modifying and redistributing this covered work, including original standalone audio in commercial offline apps and first-10-second previews. No attribution requirement, share-alike, noncommercial or raw-redistribution prohibition is added. Author/source are retained voluntarily as provenance. This concerns only the affirmer's covered rights; no warranty of third-party clearance or non-infringement. No endorsement is implied.
+
+Full legal text: preview-expansion-CC0-1.0.txt
+Official deed: https://creativecommons.org/publicdomain/zero/1.0/
+Official legal code: https://creativecommons.org/publicdomain/zero/1.0/legalcode.en

@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="editor_border_enable">Colored video border</string>
+    <string name="editor_border_color">Border color</string>
+    <string name="editor_border_width">Border thickness (% of final short side)</string>
+    <string name="editor_border_scope">Border scope</string>
+    <string name="editor_border_hint" formatted="false">Off by default. Opaque inset frame, 1–8% of final short side; no padding or aspect change. Drawn above text/PNG only in the edge strip. Title only requires Title enabled; follows its actual duration (e.g. 3/5 s), not imported intros. Whole video covers every clip. Main preview shows whole-video borders only.</string>
+    <string name="editor_validation_border">Border: enable a generated title for Title only, or select Whole video. Thickness must be 1–8%.</string>
+    <string name="editor_preview_border"> · colored border</string>
+    <string-array name="editor_border_colors"><item>Red</item><item>Yellow</item><item>Blue</item><item>Green</item><item>White</item><item>Black</item></string-array>
+    <string-array name="editor_border_widths"><item>1%</item><item>2%</item><item>3%</item><item>4%</item><item>5%</item><item>6%</item><item>7%</item><item>8%</item></string-array>
+    <string-array name="editor_border_scopes"><item>Title only (generated title required)</item><item>Whole video (all clips)</item></string-array>
+    <string name="editor_process_short">Process</string>
+    <string name="editor_previous_error">Previous operation did not complete; see details</string>
+    <string name="editor_tab_picture">Picture</string>
+    <string name="editor_tab_sound">Sound</string>
+    <string name="editor_tab_title">Title</string>
+    <string name="editor_tab_assets">Assets</string>
+    <string name="editor_tab_more">More</string>
+    <string name="editor_no_video">No video selected</string>
+    <string name="editor_thumbnail">Video thumbnail</string>
+    <string name="editor_preview_truth">Static frame: trim start, crop, rotation, resize, PNG and whole-video border; not live compositing. Text, speed, audio and the intro/merge timeline are not previewed.</string>
+    <string name="editor_crop">Crop</string>
+    <string name="editor_crop_hint" formatted="false">Crop each edge independently by 0–50%, all 0 by default. Left + right and top + bottom must each total less than 100%. Cropping 10% from each edge keeps the central 80% × 80%. Crop happens before rotation and shrinks the canvas; the gray preview frame is not exported. Arbitrary rotation or fitting intro clips may still leave borders.</string>
+    <string name="editor_crop_left">Crop left (%)</string>
+    <string name="editor_crop_top">Crop top (%)</string>
+    <string name="editor_crop_right">Crop right (%)</string>
+    <string name="editor_crop_bottom">Crop bottom (%)</string>
+    <string name="editor_rotation">Rotation</string>
+    <string name="editor_angle_hint">Clockwise angle (any signed integer)</string>
+    <string name="editor_seconds">s</string>
+    <string name="editor_resolution_hint">Original: no resize after crop/rotation. 1080 / 720 / 480 specify FINAL output height in pixels, preserving the resulting aspect ratio. Encoder limitations may reject unsupported geometry.</string>
+    <string name="editor_music_hint">Replacement music is supported: it replaces original audio across all clips, loops from the start and stops with the video. Without music, original audio is retained. Volume/mute affects original audio only, not replacement music. Long-press Select to clear music.</string>
+    <string name="editor_title_hint">Generate a separate silent title before the imported intro and main video. Animation / entrance and exit, duration and appearance are independent. Dissolve fades in and out. Choose 3 or 5 seconds or enter milliseconds. Original-frame backgrounds use absolute source time, independent of main trim. Replacement music spans all clips.</string>
+    <string name="editor_title_style">Animation / entrance and exit (keeps appearance)</string>
+    <string name="editor_title_duration">Title duration</string>
+    <string name="editor_title_font">Built-in title font</string>
+    <string name="editor_title_weight">Title bold and italic</string>
+    <string name="editor_title_align">Title alignment</string>
+    <string name="editor_title_palette">Background shortcuts (keep text color)</string>
+    <string name="editor_title_size">Size 1–160 (unit shown above)</string>
+    <string name="editor_title_preview">Production title preview at scrubbed time</string>
+    <string name="editor_title_preview_time">Title preview time in milliseconds</string>
+    <string name="editor_intro_hint">Imported intros are supported: the full intro plays at native speed after the generated title and before the edited main video, aspect-fit to the main canvas. Main-video trim, crop, rotation, text and speed do not affect it. Long-press Select to clear the intro.</string>
+    <string name="editor_enable_merge">Enable appended clip merge after the edited main video</string>
+    <string name="editor_merge_semantics">Merge OFF by default. Export order is template title → imported intro → edited main → appended clips. Trim/crop/rotation/speed/text/PNG affect the main clip only; intro/appended clips are aspect-fit to the edited main canvas at native speed with original display rotation.</string>
+    <string name="editor_select_extras">Select appended clips</string>
+    <string name="editor_clear_extras">Clear appended clips</string>
+    <string name="editor_merge_summary">Main clip is always first among merge clips. Up to five appended clips (six including main), 128 MiB per video, 256 MiB aggregate source size (must be known), 120 s total timeline, 4096 px per side. Sources are read directly by default, not copied.</string>
+    <string name="editor_enable_watermark">Enable PNG watermark (main video only)</string>
+    <string name="editor_select_watermark">Select PNG watermark</string>
+    <string name="editor_clear_watermark">Clear PNG watermark</string>
+    <string name="editor_watermark_hint" formatted="false">No PNG selected. Static PNG only, up to 8 MiB and 2048×2048. Alpha and aspect preserved. Select, then enable. Width 5–50% of final canvas. X/Y 0–100% of free space: 0 = left/top, 100 = right/bottom. PNG is above text; thumbnail previews PNG, not text/audio.</string>
+    <string name="editor_watermark_width_hint">PNG width % (5–50)</string>
+    <string name="editor_watermark_width">PNG width percent</string>
+    <string name="editor_watermark_x_hint">PNG X % of free space (0–100)</string>
+    <string name="editor_watermark_x">PNG X percent</string>
+    <string name="editor_watermark_y_hint">PNG Y % of free space (0–100)</string>
+    <string name="editor_watermark_y">PNG Y percent</string>
+    <string name="editor_language">Language / 语言</string>
+    <string name="editor_whole_presets">Whole-edit presets</string>
+    <string name="editor_preset_name">Whole-edit preset name (same name updates)</string>
+    <string name="editor_save_preset">Save / update</string>
+    <string name="editor_apply_preset">Apply preset</string>
+    <string name="editor_delete_preset">Delete preset</string>
+    <string name="editor_presets_hint">Whole presets: start offset + cut from end; too-short inputs rejected. Assets copied durably. Input, merge list, software AVC and output folder remain current/global.</string>
+    <string name="editor_compatibility">Compatibility encoding (software AVC)</string>
+    <string name="editor_compatibility_hint">Off by default. Try enabling this if exported colors look wrong; software encoding is slower. Ordinary exports have no in-app processing time limit; cancel manually. System interruptions, insufficient storage or codec errors can still cause failure; self-tests retain diagnostic deadlines. Keeps the selected size and frame rate, and fails explicitly if unsupported: no hardware fallback or automatic downsizing. Compatibility mode does not support HDR. The setting is saved for subsequent exports, merges and full self-tests; correct colors are not guaranteed on every device.</string>
+    <string name="editor_output_directory_hint">Output videos: public Movies root on Android 10+. Android 6–9: choose a writable video directory. Diagnostic TXT destination is separate.</string>
+    <string name="editor_choose_directory">Choose output video directory (Android 6–9)</string>
+    <string name="editor_raw_diagnostics">Raw diagnostics (technical details)</string>
+    <string name="editor_self_test">Run offline self-test</string>
+    <string name="editor_raw_error">Raw error technical trace</string>
+    <string name="editor_cancel_export">Cancel export</string>
+    <string name="editor_error_details">Details</string>
+    <string name="editor_processing_complete">✓ Video processing complete</string>
+    <string name="editor_output_file">Output file</string>
+    <string name="editor_open_output">Open</string>
+    <string name="editor_open_output_description">Open exported MP4</string>
+    <string name="editor_share_output">Share</string>
+    <string name="editor_share_output_description">Share exported MP4</string>
+    <string name="editor_copy_output">Copy location</string>
+    <string name="editor_copy_output_description">Copy video location / URI</string>
+    <string name="editor_output_location">Location</string>
+    <string name="editor_output_location_description">View output file location</string>
+    <string name="editor_default_zero">0</string>
+    <string name="editor_default_trim_end">10</string>
+    <string name="editor_default_title_size">48</string>
+    <string name="editor_default_watermark_width">20</string>
+    <string name="editor_default_watermark_position">75</string>
+    <string name="editor_selected_media">Selected media</string>
+    <string name="editor_restoring">Restoring selected media and previews…</string>
+    <string name="editor_restore_failed">Some media previews could not be restored. Select the media again; see More for technical details.</string>
+    <string name="editor_png_cleared">PNG cleared. Select, then enable.</string>
+    <string name="editor_prepend_title">Prepend generated template title</string>
+    <string name="editor_location_copied">Video location and URI copied</string>
+    <string name="editor_output_recovery_failed">Could not recover the previous output. See details.</string>
+    <string name="editor_picker_failed">Cannot open the media picker. Check that a file picker is available on this device.</string>
+    <string name="editor_append_picker_failed">Cannot open the appended clip picker. Check that a file picker is available on this device.</string>
+    <string name="editor_directory_saved">Output video directory saved; press Process.</string>
+    <string name="editor_directory_save_failed">Cannot save the output directory. Choose a folder that allows reading and writing.</string>
+    <string name="editor_selection_busy">Wait for the current task to finish before selecting media.</string>
+    <string name="editor_selection_empty">No media was returned. Please select again.</string>
+    <string name="editor_loading_media">Reading and checking media (no in-app processing time limit; cancel manually)…</string>
+    <string name="editor_png_ready">PNG ready: %1$d×%2$d. Enable to apply. Alpha/aspect preserved; above text, main only.\nWidth 5–50%%; X/Y 0–100%% of free space (left/top → right/bottom).</string>
+    <string name="editor_media_load_failed">Cannot load media. Select a readable file within the supported format and size limits.</string>
+    <string name="editor_append_selection_required">Select one to five readable videos as appended clips.</string>
+    <string name="editor_loading_clips">Reading appended clips directly (no in-app processing time limit; cancel manually)…</string>
+    <string name="editor_append_load_failed">Cannot load appended clips. Check video format, size and read access.</string>
+    <string name="editor_video_rejected">Cannot use the selected main video. Check merge media limits.</string>
+    <string name="editor_selected_video">%1$s — %2$d×%3$d thumbnail; duration %4$s s; %5$s</string>
+    <string name="editor_audio_present">Audio present</string>
+    <string name="editor_silent">Silent video</string>
+    <string name="editor_intro_rejected">Cannot use the imported intro. Check duration, dimensions and size limits.</string>
+    <string name="editor_media_ready">%1$s ready. Long-press its select button to clear.</string>
+    <string name="editor_intro_none">No imported intro.</string>
+    <string name="editor_intro_ready">Imported intro ready.</string>
+    <string name="editor_intro_status">%1$s\nOrder: enabled template title → imported intro → edited main video → appended clips. The full intro plays at native speed, aspect-fit to the edited main canvas. Trim/crop/rotation/text/speed affect the main video only. Template duration, style and position are exported; title canvas limit is 4096 px per side. Long-press Select to clear.</string>
+    <string name="editor_music_original">Original audio retained.</string>
+    <string name="editor_music_ready">Replacement music ready.</string>
+    <string name="editor_music_status">%1$s\nMusic replaces all audio, loops from the start and stops with the video. Volume/mute controls apply to original audio only, not replacement music. Long-press Select to clear.</string>
+    <string name="editor_append_rejected">Cannot use appended clips. Check merge media limits.</string>
+    <string name="editor_clips_ready">Appended clips ready: %1$d.</string>
+    <string name="editor_enabled">ON</string>
+    <string name="editor_disabled">OFF</string>
+    <string name="editor_merge_status">Merge %1$s. Order: template title → imported intro → edited main → appended clips.\nMain-only edits: trim/crop/rotation/output height/speed/text/PNG.\nIntro/appended clips: full clip, native speed, aspect-fit letterbox, display rotation preserved.\nAudio: original clip audio kept in order unless replacement music is selected.</string>
+    <string name="editor_merge_totals">Main first (anchored), appended clips %1$d/%2$d; source video %3$s/256 MiB; estimated export duration %4$s s / 120.000 s.</string>
+    <string name="editor_merge_too_long">\nReduce enabled title/intro/trimmed-main/appended duration before exporting.</string>
+    <string name="editor_merge_needs_clips">\nMerge is enabled but no appended clips are selected; add one to five clips or turn merge off.</string>
+    <string name="editor_merge_disabled_summary">\nMerge is disabled, so only the edited main clip exports after any title/intro.</string>
+    <string name="editor_main_anchored">1. Main (anchored)</string>
+    <string name="editor_merge_empty">Enable merge and select appended clips to export more than the edited main clip.</string>
+    <string name="editor_appended_label">%1$d. Appended clip</string>
+    <string name="editor_clip_thumbnail">%1$s thumbnail</string>
+    <string name="editor_up">Up</string>
+    <string name="editor_down">Down</string>
+    <string name="editor_remove">Remove</string>
+    <string name="editor_move_up">Move appended clip %1$d up</string>
+    <string name="editor_move_down">Move appended clip %1$d down</string>
+    <string name="editor_remove_clip">Remove appended clip %1$d</string>
+    <string name="editor_not_selected">Not selected</string>
+    <string name="editor_clip_description">%1$s — %2$d×%3$d, %4$s s, %5$s, %6$s</string>
+    <string name="editor_rotation_invalid">Invalid rotation</string>
+    <string name="editor_preview_select_video">Select a video for a static trim-start frame preview.</string>
+    <string name="editor_preview_frame">Static selected frame at %1$.3f s (nearest decoded frame); crop → %2$d° clockwise → resized %3$d×%4$d%5$s.\nNot live playback; text, speed, audio and intro/merge clips are not previewed.</string>
+    <string name="editor_preview_png">" + PNG watermark"</string>
+    <string name="editor_preview_updating">Updating preview; previous frame retained…</string>
+    <string name="editor_preview_unavailable">Preview unavailable; previous frame retained. See More for technical details.</string>
+    <string name="editor_invalid_edit">Invalid edit; previous preview retained. Cannot export yet.\n%1$s</string>
+    <string name="editor_export_failed">Cannot start export. Check edit settings and available storage.</string>
+    <string name="editor_export_starting">Starting export — no in-app processing time limit; cancel manually</string>
+    <string name="editor_export_progress">Export %1$d%% — no in-app processing time limit; cancel manually</string>
+    <string name="editor_publishing">Encoding complete; saving to the public output location…</string>
+    <string name="editor_publication_failed">Video was not published. The app-private MP4 is retained for opening/sharing; see More for details.</string>
+    <string name="editor_export_incomplete">Export did not complete (cancelled or failed). See More for details.</string>
+    <string name="editor_directory_picker_failed">Cannot select the output video directory. Check that a file picker is available on this device.</string>
+    <string name="editor_output_private">Public copy not confirmed available. See Location for app-private MP4 information.</string>
+    <string name="editor_output_published">Video processing complete; saved to the public output location.</string>
+    <string name="editor_share_failed">Cannot share the video. Check that an app can receive videos.</string>
+    <string name="editor_open_failed">Cannot open the video. Check that an MP4 player is available.</string>
+    <string name="editor_output_read_failed">Cannot read the output video. Check its location and access permissions.</string>
+    <string name="editor_delete_preset_confirm">Delete whole-edit preset?</string>
+    <string name="editor_delete">Delete</string>
+    <string name="editor_cancel">Cancel</string>
+    <string name="editor_save">Save</string>
+    <string name="editor_close">Close</string>
+    <string name="editor_preset_delete_failed">Could not delete the preset. See details.</string>
+    <string name="editor_presets_read_failed">Cannot read whole-edit presets. See details.</string>
+    <string name="editor_preset_saved">Whole-edit preset saved: %1$s</string>
+    <string name="editor_preset_save_failed">Preset not saved. Check its name, edit settings and media; see More for details.</string>
+    <string name="editor_preset_applied">Applied whole-edit preset: %1$s</string>
+    <string name="editor_preset_apply_failed">Preset not applied; current edit unchanged. Check media and input duration; see More for details.</string>
+    <string name="editor_template_none">No template selected</string>
+    <string name="editor_template_frame">%1$s · %2$.3f / %3$.1f s · %4$d×%5$d. Scrub to preview production frames. Animated styles enter over 0.8 s, then hold; text auto-fits the safe area.</string>
+    <string name="editor_invalid_title">Invalid title: %1$s</string>
+    <string name="editor_template_name_required">Template name required</string>
+    <string name="editor_template_save_failed">Template not saved. Check its name and available storage.</string>
+    <string name="editor_delete_template">Delete Template</string>
+    <string name="editor_template_delete_failed">Could not delete the template. See details.</string>
+    <string name="editor_validation_settings">Check the current fields and selected media against their limits. See More for raw technical details.</string>
+    <string name="editor_validation_crop" formatted="false">Enter numeric removal percentages of 0–50% for each edge; left + right and top + bottom must each total less than 100%.</string>
+    <string name="editor_validation_rotation">Enter a clockwise angle as an integer from −2147483648 to 2147483647; 0 means no rotation.</string>
+    <string name="editor_validation_trim">Enter finite decimal seconds: 0 ≤ start &lt; end ≤ video duration, retaining at least one millisecond.</string>
+    <string name="editor_validation_png" formatted="false">Select a valid static PNG first (up to 8 MiB, 2048×2048), then enable it. Width must be 5–50%, X/Y 0–100%, all finite numbers.</string>
+    <string name="editor_validation_total_bytes">Merge source sizes must be known and total no more than 256 MiB. Remove or replace media.</string>
+    <string name="editor_validation_clip_bytes">For merge, each video snapshot must be at most 128 MiB; all videos must total at most 256 MiB.</string>
+    <string name="editor_validation_dimensions">Check canvas and video dimensions; titles and merge allow up to 4096 px per side. Try a smaller output height.</string>
+    <string name="editor_validation_duration">Shorten the title, intro, main video or appended clips; the merged timeline must not exceed 120 seconds.</string>
+    <string name="editor_validation_title">Choose a supported template style/font. Animations require 3 or 5 seconds; size 1–160, at most 512 characters and 8 lines, fitting the safe area.</string>
+    <string name="editor_validation_merge">With merge enabled, select one to five valid appended clips and check media size, dimensions and duration limits.</string>
+    <string name="editor_validation_video">Select a readable video and wait for loading to finish.</string>
+    <string-array name="editor_speeds">
+        <item>0.5x</item><item>0.75x</item><item>1.0x</item><item>1.25x</item><item>1.5x</item><item>2.0x</item>
+    </string-array>
+    <string-array name="editor_resolutions">
+        <item>Original (no resize)</item><item>1080 px height</item><item>720 px height</item><item>480 px height</item>
+    </string-array>
+    <string-array name="editor_volumes">
+        <item>0% (mute)</item><item>50%</item><item>75%</item><item>100% (retain)</item>
+        <item>125%</item><item>150%</item><item>200%</item><item>300%</item>
+    </string-array>
+    <string-array name="editor_title_styles">
+        <item>Static / cut out</item><item>Fade in / cut out</item><item>Slide in / cut out</item><item>Typewriter / cut out</item><item>Scale in / cut out</item><item>Lower third / cut out</item><item>Dissolve (fade in and out)</item>
+    </string-array>
+    <string-array name="editor_title_durations">
+        <item>Custom duration (milliseconds below)</item><item>3 seconds</item><item>5 seconds</item>
+    </string-array>
+    <string-array name="editor_title_fonts">
+        <item>Sans serif</item><item>Serif</item><item>Monospace</item>
+    </string-array>
+    <string-array name="editor_title_weights">
+        <item>Normal</item><item>Bold</item><item>Italic</item><item>Bold italic</item>
+    </string-array>
+    <string-array name="editor_title_aligns">
+        <item>Left</item><item>Center</item><item>Right</item>
+    </string-array>
+    <string-array name="editor_title_palettes">
+        <item>Custom background colors</item><item>Background: midnight → ocean</item><item>Background: burgundy → amber</item>
+        <item>Background: cream (solid)</item><item>Background: black (solid)</item>
+    </string-array>
+</resources>

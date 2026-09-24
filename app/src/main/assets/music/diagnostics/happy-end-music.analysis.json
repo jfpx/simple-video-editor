@@ -1,0 +1,130 @@
+{
+  "codec": "vorbis",
+  "sampleRate": 44100,
+  "channels": 2,
+  "containerDurationSeconds": 36.002539682539684,
+  "containerGranuleFramesPerChannel": 1587712,
+  "decodedFramesPerChannel": 1587712,
+  "playbackFramesPerChannel": 1587712,
+  "trailingDecodedFramesToDiscard": 0,
+  "finiteSamples": true,
+  "fullDecodeExitCode": 0,
+  "decodeStderr": "",
+  "peakLinearPerChannel": [
+    0.3564826548099518,
+    0.39699459075927734
+  ],
+  "samplePeakDBFSPerChannel": [
+    -8.959232330322266,
+    -8.024308204650879
+  ],
+  "sampleCountAbsAboveOnePerChannel": [
+    0,
+    0
+  ],
+  "RMSPerChannel": [
+    0.07368982784042626,
+    0.06974604346742194
+  ],
+  "firstFrame": [
+    0.0,
+    0.0
+  ],
+  "lastFrame": [
+    -0.0011391794541850686,
+    -1.876921123766806e-05
+  ],
+  "wrapAbsoluteJumpPerChannel": [
+    0.0011391794541850686,
+    1.876921123766806e-05
+  ],
+  "withinTrackAbsoluteStepP99_9PerChannel": [
+    0.030851478949189277,
+    0.03024964481126528
+  ],
+  "withinTrackAbsoluteStepMaxPerChannel": [
+    0.053850804921239614,
+    0.055641673505306244
+  ],
+  "wrapStepPercentilePerChannel": [
+    18.591418715370743,
+    0.972469171026717
+  ],
+  "boundaryWindowsMs": {
+    "10": {
+      "frames": 441,
+      "headRMS": [
+        0.018412085080304792,
+        0.03275801279308717
+      ],
+      "tailRMS": [
+        0.0008222782092269444,
+        0.00025101927296417324
+      ],
+      "headMean": [
+        -0.0031972862316177733,
+        0.011518050061271103
+      ],
+      "tailMean": [
+        2.3937357158514357e-05,
+        -5.1102182632670285e-06
+      ],
+      "alignedHeadTailDifferenceRMS": [
+        0.01846823507728323,
+        0.03276544042859148
+      ]
+    },
+    "50": {
+      "frames": 2205,
+      "headRMS": [
+        0.057856897640513084,
+        0.06913418909593955
+      ],
+      "tailRMS": [
+        0.0005182911573575138,
+        0.0004112312491300649
+      ],
+      "headMean": [
+        -0.0010102645210798742,
+        -0.0011430863670084082
+      ],
+      "tailMean": [
+        2.8847495692005607e-06,
+        -4.765720817444834e-07
+      ],
+      "alignedHeadTailDifferenceRMS": [
+        0.05785890094928625,
+        0.0691357019813181
+      ]
+    },
+    "100": {
+      "frames": 4410,
+      "headRMS": [
+        0.06124667516657447,
+        0.06925181727191633
+      ],
+      "tailRMS": [
+        0.000493750049916677,
+        0.00034915995248701876
+      ],
+      "headMean": [
+        -0.0006556631824657558,
+        0.0006387739229298164
+      ],
+      "tailMean": [
+        4.00624904060493e-07,
+        1.3063384898581997e-07
+      ],
+      "alignedHeadTailDifferenceRMS": [
+        0.06124922815060286,
+        0.0692532053236971
+      ]
+    }
+  },
+  "silenceThresholdLinear": 1e-05,
+  "leadingSilentFrames": 133,
+  "trailingSilentFrames": 0,
+  "decodedFloat32SHA256": "0ad80a9621801b9d6086255445c9f6258b38c590ec99b74c4ce1cd1d831d4ceb",
+  "listeningPerformed": false,
+  "seamAssessment": "Numerical diagnostics only; neither endpoint jump nor window statistics prove perceptual seamlessness. No listening performed."
+}

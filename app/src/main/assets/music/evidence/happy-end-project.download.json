@@ -1,0 +1,18 @@
+{
+  "url": "https://opengameart.org/sites/default/files/happy_end_lmms.zip",
+  "final_url": "https://opengameart.org/sites/default/files/happy_end_lmms.zip",
+  "fetched_utc": "2026-09-18T07:46:26.506960+00:00",
+  "headers": {
+    "Server": "nginx/1.26.1",
+    "Date": "Fri, 18 Sep 2026 07:46:26 GMT",
+    "Content-Type": "application/zip",
+    "Content-Length": "18753",
+    "Last-Modified": "Tue, 08 Aug 2017 17:04:43 GMT",
+    "Connection": "close",
+    "ETag": "\"5989ef2b-4941\"",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+    "Accept-Ranges": "bytes"
+  },
+  "bytes": 18753,
+  "sha256": "fdeac44c855a21e5db1a38371a22c9b732e85e1a611680fc76b09a13a7d908a3"
+}

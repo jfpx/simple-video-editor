@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="draftTitle" type="id" />
+    <item name="draftDescription" type="id" />
+    <item name="draftTags" type="id" />
+    <item name="draftLanguage" type="id" />
+    <item name="draftSave" type="id" />
+    <item name="draftMessage" type="id" />
+    <item name="draftPlatform" type="id" />
+    <item name="draftPrivacy" type="id" />
+    <item name="draftAudience" type="id" />
+    <item name="draftLicense" type="id" />
+    <string name="draft_title">发布草稿</string>
+    <string name="draft_list">更多发布草稿</string>
+    <string name="draft_notice">仅本地元数据，不上传。平台、隐私和受众只是填写意向，不改变云端设置。目标应用可能忽略分享预填字段；请手动粘贴并核对。封面不会随 JSON 传输，导入后须重新选择。</string>
+    <string name="draft_new">新建草稿</string>
+    <string name="draft_untitled">未命名视频</string>
+    <string name="draft_import">导入 JSON 草稿</string>
+    <string name="draft_empty">暂无草稿。导出后点击“发布草稿”才创建关联草稿。</string>
+    <string name="draft_field_title">标题（最多 100 字符）</string>
+    <string name="draft_description">说明（最多 5000 字符）</string>
+    <string name="draft_tags">标签（每行一个；最多 30 个，共 500 字符）</string>
+    <string name="draft_language">语言（最多 35 字符，例如 zh-CN）</string>
+    <string name="draft_platform">目标平台（意向）</string>
+    <string name="draft_privacy">隐私（意向）</string>
+    <string name="draft_audience">受众（未指定，不作推断）</string>
+    <string name="draft_license">整片发布许可（仅意向）</string>
+    <string name="draft_license_notice">仅在拥有所需权利时选择。YouTube 标准许可仅针对 YouTube；其他平台请核对条款。此选择不授予权利、不上传，也不保证平台采用。音乐的 CC0 授权不代表整片是 CC0；音乐来源记录单独保留。</string>
+    <string-array name="draft_licenses"><item>未指定</item><item>YouTube 标准许可（意向）</item><item>知识共享署名 CC BY（意向）</item></string-array>
+    <string-array name="draft_platforms"><item>YouTube</item><item>其他</item></string-array>
+    <string-array name="draft_privacies"><item>私享</item><item>不公开列出</item><item>公开</item></string-array>
+    <string-array name="draft_audiences"><item>未指定</item><item>面向儿童</item><item>非面向儿童</item></string-array>
+    <string name="draft_credits">导出时音乐署名 / 授权信息</string>
+    <string name="draft_local">本地草稿；尚未上传</string>
+    <string name="draft_shared">已交给分享界面；不代表上传成功，取消分享也无法获知。</string>
+    <string name="draft_save">保存草稿</string>
+    <string name="draft_saved">草稿已保存</string>
+    <string name="draft_video">选择 / 重新关联视频</string>
+    <string name="draft_cover">选择封面（≤8 MiB，≤4096 像素）</string>
+    <string name="draft_hash">读取视频 SHA-256 / 大小 / 时长</string>
+    <string name="draft_export">导出 JSON 清单</string>
+    <string name="draft_exported">JSON 已写入并回读验证</string>
+    <string name="draft_copy_title">复制标题</string>
+    <string name="draft_copy_description">复制说明</string>
+    <string name="draft_copy_tags">复制标签</string>
+    <string name="draft_copy_all">复制全部（含许可意向及音乐署名）</string>
+    <string name="draft_copied">已复制；请在目标应用手动粘贴</string>
+    <string name="draft_share_video">分享视频与预填文字</string>
+    <string name="draft_share_cover">分享封面</string>
+    <string name="draft_share_notice">目标应用可能忽略预填；不代表上传</string>
+    <string name="draft_delete">删除草稿</string>
+    <string name="draft_delete_notice">仅删除此草稿元数据，不删除视频或封面。确认？</string>
+    <string name="draft_keep">保留 / 返回</string>
+    <string name="draft_discard">放弃 / 关闭</string>
+    <string name="draft_cancel">返回 / 取消当前读取</string>
+    <string name="draft_cancel_notice">关闭并取消当前工作？已保存草稿保留；已完成写入不会撤销。</string>
+    <string name="draft_dirty">存在未保存的修改。保存、放弃，还是继续编辑？</string>
+    <string name="draft_working">正在本地读取 / 保存… 大视频采用流式处理，可返回取消。</string>
+    <string name="draft_hash_progress">正在计算完整 SHA-256：已读取 %1$d 字节。可返回取消；只匹配完全相同的字节。</string>
+    <string name="draft_open_video">打开视频并查找草稿</string>
+    <string name="draft_reused">检测到相同视频，已载入草稿</string>
+    <string name="draft_matches">找到 %1$d 个匹配草稿 / 来源证据待确认：请选择，其他版本不变</string>
+    <string name="draft_keep_export_evidence">保留此次导出来源，另建草稿（保留其他版本）</string>
+    <string name="draft_provider_notice">按完整字节 SHA-256 和大小匹配，不是画面相似度。编码或编辑通常改变哈希。文件提供方仍可修改内容；分享前检查可读性和大小，不会每次重新计算全片哈希。若文件可能改变，请先重新校验。</string>
+    <string name="draft_unavailable">视频未关联、已删除或读取权限失效。草稿保留；分享不可用。请明确选择视频，不会自动换成最新导出。</string>
+    <string name="draft_error">操作失败；请核对字段或文件权限。草稿原记录保留（已完成写入除外）。</string>
+    <string name="draft_title_shortened">文件名超过 100 字符，初始标题已缩短。完整文件名保留，请核对标题。</string>
+    <string name="draft_rebind_notice">所选视频字节不同或旧关联未校验。原草稿的文案、封面和来源不变。是否为所选视频查找其他草稿，或新建独立草稿？不会将原音乐署名赋给不同内容。</string>
+    <string name="draft_rebind">打开独立草稿</string>
+    <string name="draft_unknown_credits">重新关联的媒体：音乐授权未知，请核实；不推定 CC0。</string>
+</resources>

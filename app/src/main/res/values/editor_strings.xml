@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="editor_border_enable">视频彩色外边框</string>
+    <string name="editor_border_color">边框颜色</string>
+    <string name="editor_border_width">边框粗细（最终短边百分比）</string>
+    <string name="editor_border_scope">边框范围</string>
+    <string name="editor_border_hint" formatted="false">默认关闭。不透明内嵌边框，粗细为最终画面短边的 1–8%，不增加留白或改变比例。仅边缘条带覆盖文字 / PNG。仅标题需启用生成标题，跟随实际时长（如 3/5 秒），不含导入片头。整个视频包含所有片段。主预览仅显示整个视频范围的边框。</string>
+    <string name="editor_validation_border">边框：仅标题范围需启用生成标题，或选择整个视频。粗细须为 1–8%。</string>
+    <string name="editor_preview_border"> · 彩色边框</string>
+    <string-array name="editor_border_colors"><item>红色</item><item>黄色</item><item>蓝色</item><item>绿色</item><item>白色</item><item>黑色</item></string-array>
+    <string-array name="editor_border_widths"><item>1%</item><item>2%</item><item>3%</item><item>4%</item><item>5%</item><item>6%</item><item>7%</item><item>8%</item></string-array>
+    <string-array name="editor_border_scopes"><item>仅标题（需启用生成标题）</item><item>整个视频（所有片段）</item></string-array>
+    <string name="editor_process_short">处理</string>
+    <string name="editor_previous_error">上次操作未完成，请查看详情</string>
+    <string name="editor_tab_picture">画面</string>
+    <string name="editor_tab_sound">声音</string>
+    <string name="editor_tab_title">标题</string>
+    <string name="editor_tab_assets">素材</string>
+    <string name="editor_tab_more">更多</string>
+    <string name="editor_no_video">尚未选择视频</string>
+    <string name="editor_thumbnail">视频缩略图</string>
+    <string name="editor_preview_truth">静态选帧：截取起点、裁剪、旋转、缩放、PNG 水印及整个视频范围的边框；非实时合成，不预览文字、速度、声音或片头及合并时间线。</string>
+    <string name="editor_crop">裁剪</string>
+    <string name="editor_crop_hint" formatted="false">四边独立切除 0–50%，默认全为 0；左右 / 上下之和必须小于 100%。四边各 10% 保留中央 80% × 80%。在旋转之前裁剪，画布随之缩小；灰色预览外框不写入视频。任意角度旋转或片头适配仍可能留边。</string>
+    <string name="editor_crop_left">左侧切除 (%)</string>
+    <string name="editor_crop_top">顶部切除 (%)</string>
+    <string name="editor_crop_right">右侧切除 (%)</string>
+    <string name="editor_crop_bottom">底部切除 (%)</string>
+    <string name="editor_rotation">旋转</string>
+    <string name="editor_angle_hint">顺时针角度（任意有符号整数）</string>
+    <string name="editor_seconds">秒</string>
+    <string name="editor_resolution_hint">原始：裁剪和旋转后不再缩放。1080 / 720 / 480 指最终输出高度（像素），保持处理后的宽高比。编码器限制可能导致不支持的尺寸被拒绝。</string>
+    <string name="editor_music_hint">支持替换音乐：替换全部片段的原音，从头循环播放，到视频结束时停止。未选择音乐时保留原音；音量及静音设置仅影响原音，不影响替换音乐。长按选择按钮可清除音乐。</string>
+    <string name="editor_title_hint">在导入片头和主视频之前生成独立的无声标题片段。动画／显示消失方式、时长及外观分别设置；淡入淡出（dissolve）在首尾渐变。可选 3 秒、5 秒或输入毫秒时长。原视频帧背景使用原视频绝对时间，与主视频裁剪时间独立。替换音乐覆盖全部片段。</string>
+    <string name="editor_title_style">动画／显示消失方式（不改变外观）</string>
+    <string name="editor_title_duration">片头时长</string>
+    <string name="editor_title_font">片头内置字体</string>
+    <string name="editor_title_weight">片头粗体与斜体</string>
+    <string name="editor_title_align">片头对齐方式</string>
+    <string name="editor_title_palette">背景快捷配色（不改变文字颜色）</string>
+    <string name="editor_title_size">字号 1–160（单位见上方）</string>
+    <string name="editor_title_preview">所选时间点的实际片头渲染预览</string>
+    <string name="editor_title_preview_time">片头预览时间（毫秒）</string>
+    <string name="editor_intro_hint">支持导入片头：完整片头以原速放在生成标题之后、编辑后的主视频之前，保持宽高比适配主视频画布。主视频的截取、裁剪、旋转、文字和速度设置不影响导入片头。长按选择按钮可清除片头。</string>
+    <string name="editor_enable_merge">在编辑后的主视频后合并追加片段</string>
+    <string name="editor_merge_semantics">合并默认关闭。导出顺序为：模板片头 → 导入片头 → 编辑后的主视频 → 追加片段。截取、裁剪、旋转、速度、文字和 PNG 仅影响主视频；导入片头和追加片段保持原速及原始显示旋转方向，按比例完整适配编辑后的主视频画布。</string>
+    <string name="editor_select_extras">选择追加片段</string>
+    <string name="editor_clear_extras">清空追加片段</string>
+    <string name="editor_merge_summary">主视频始终是合并片段中的第一段。最多追加 5 段（含主视频共 6 段）；每段视频最多 128 MiB，源视频合计最多 256 MiB（须已知大小）；时间线总长不超过 120 秒，每边不超过 4096 像素。默认直接读取，并非已复制。</string>
+    <string name="editor_enable_watermark">启用 PNG 水印（仅主视频）</string>
+    <string name="editor_select_watermark">选择 PNG 水印</string>
+    <string name="editor_clear_watermark">清除 PNG 水印</string>
+    <string name="editor_watermark_hint" formatted="false">尚未选择 PNG。仅支持静态 PNG，最大 8 MiB、2048×2048，保留透明度和宽高比。先选择，再启用。宽度为最终画布的 5–50%。X/Y 为剩余可用空间的 0–100%：0 为左 / 顶，100 为右 / 底。PNG 位于文字上层；缩略图预览 PNG，不预览文字或声音。</string>
+    <string name="editor_watermark_width_hint">PNG 宽度百分比 (5–50)</string>
+    <string name="editor_watermark_width">PNG 宽度百分比</string>
+    <string name="editor_watermark_x_hint">PNG X 占剩余空间百分比 (0–100)</string>
+    <string name="editor_watermark_x">PNG X 百分比</string>
+    <string name="editor_watermark_y_hint">PNG Y 占剩余空间百分比 (0–100)</string>
+    <string name="editor_watermark_y">PNG Y 百分比</string>
+    <string name="editor_language">语言 / Language</string>
+    <string name="editor_whole_presets">整套编辑预设</string>
+    <string name="editor_preset_name">整套编辑预设名称（同名则更新）</string>
+    <string name="editor_save_preset">保存 / 更新</string>
+    <string name="editor_apply_preset">应用预设</string>
+    <string name="editor_delete_preset">删除预设</string>
+    <string name="editor_presets_hint">整套预设保存起始偏移量和末尾裁去时长；输入视频过短时拒绝应用。素材会被持久复制。输入视频、合并列表、软件 AVC 和输出文件夹保持当前或全局设置。</string>
+    <string name="editor_compatibility">兼容编码（软件 AVC）</string>
+    <string name="editor_compatibility_hint">默认关闭。遇到导出偏色可尝试开启；软件编码较慢。普通导出无应用内处理时限，可手动取消；系统中断、存储不足或编码器错误仍可能导致失败，自测仍有诊断时限。保持所选尺寸和帧率，不支持时明确失败，不回退硬件或自动缩小；兼容模式不支持 HDR。设置已保存，适用于后续导出、合并和完整自测；不保证所有设备颜色通过。</string>
+    <string name="editor_output_directory_hint">输出视频：Android 10 及以上保存到公共 Movies 根目录。Android 6–9 需选择可写的视频目录。诊断 TXT 的保存位置单独设置。</string>
+    <string name="editor_choose_directory">选择视频输出目录（Android 6–9）</string>
+    <string name="editor_raw_diagnostics">原始诊断信息（技术详情）</string>
+    <string name="editor_self_test">运行离线自测</string>
+    <string name="editor_raw_error">原始错误技术堆栈</string>
+    <string name="editor_cancel_export">取消导出</string>
+    <string name="editor_error_details">查看详情</string>
+    <string name="editor_processing_complete">✓ 视频处理完成</string>
+    <string name="editor_output_file">输出文件</string>
+    <string name="editor_open_output">打开</string>
+    <string name="editor_open_output_description">打开导出的 MP4</string>
+    <string name="editor_share_output">分享</string>
+    <string name="editor_share_output_description">分享导出的 MP4</string>
+    <string name="editor_copy_output">复制位置</string>
+    <string name="editor_copy_output_description">复制视频位置 / URI</string>
+    <string name="editor_output_location">保存位置</string>
+    <string name="editor_output_location_description">查看输出文件保存位置</string>
+    <string name="editor_default_zero">0</string>
+    <string name="editor_default_trim_end">10</string>
+    <string name="editor_default_title_size">48</string>
+    <string name="editor_default_watermark_width">20</string>
+    <string name="editor_default_watermark_position">75</string>
+    <string name="editor_selected_media">所选素材</string>
+    <string name="editor_restoring">正在恢复所选素材及预览…</string>
+    <string name="editor_restore_failed">无法恢复部分素材预览，请重新选择；技术信息见「更多」。</string>
+    <string name="editor_png_cleared">已清除 PNG。请先选择，再启用。</string>
+    <string name="editor_prepend_title">在视频前添加生成的模板标题</string>
+    <string name="editor_location_copied">已复制视频位置及 URI</string>
+    <string name="editor_output_recovery_failed">无法恢复上次输出，请查看详情。</string>
+    <string name="editor_picker_failed">无法打开素材选择器，请确认设备可用的文件应用。</string>
+    <string name="editor_append_picker_failed">无法打开追加片段选择器，请确认设备可用的文件应用。</string>
+    <string name="editor_directory_saved">已保存视频输出目录，请点击处理。</string>
+    <string name="editor_directory_save_failed">无法保存输出目录，请选择允许读写的文件夹。</string>
+    <string name="editor_selection_busy">请等待当前任务完成后再选择素材。</string>
+    <string name="editor_selection_empty">未返回素材，请重新选择。</string>
+    <string name="editor_loading_media">正在读取并检查素材（无应用内处理时限，可手动取消）…</string>
+    <string name="editor_png_ready">PNG 已就绪：%1$d×%2$d。启用后应用；保留透明度及宽高比，仅主视频，位于文字上层。\n宽度 5–50%%；X/Y 为剩余空间的 0–100%%（左/顶 → 右/底）。</string>
+    <string name="editor_media_load_failed">无法加载素材，请选择可读取且符合格式及大小限制的文件。</string>
+    <string name="editor_append_selection_required">请选择 1–5 个可读取的视频作为追加片段。</string>
+    <string name="editor_loading_clips">正在直接读取并检查追加片段（无应用内处理时限，可手动取消）…</string>
+    <string name="editor_append_load_failed">无法加载追加片段，请检查视频格式、大小及可读权限。</string>
+    <string name="editor_video_rejected">无法使用所选主视频，请检查合并素材限制。</string>
+    <string name="editor_selected_video">%1$s — %2$d×%3$d 缩略图；时长 %4$s 秒；%5$s</string>
+    <string name="editor_audio_present">有原音</string>
+    <string name="editor_silent">无声视频</string>
+    <string name="editor_intro_rejected">无法使用导入片头，请检查时长、尺寸及大小限制。</string>
+    <string name="editor_media_ready">%1$s 已就绪。长按其选择按钮可清除。</string>
+    <string name="editor_intro_none">尚未导入片头。</string>
+    <string name="editor_intro_ready">导入片头已就绪。</string>
+    <string name="editor_intro_status">%1$s\n顺序：已启用的模板标题 → 导入片头 → 编辑后的主视频 → 追加片段。完整片头以原速播放，保持宽高比适配主视频画布。截取、裁剪、旋转、文字及速度仅影响主视频。模板的时长、样式及位置会用于导出；标题画布每边最多 4096 像素。长按选择按钮可清除。</string>
+    <string name="editor_music_original">保留原音。</string>
+    <string name="editor_music_ready">替换音乐已就绪。</string>
+    <string name="editor_music_status">%1$s\n替换音乐会替换全部原音，从头循环并随视频结束而停止。音量及静音设置仅影响原音，不影响替换音乐。长按选择按钮可清除。</string>
+    <string name="editor_append_rejected">无法使用追加片段，请检查合并素材限制。</string>
+    <string name="editor_clips_ready">已准备好 %1$d 个追加片段。</string>
+    <string name="editor_enabled">已开启</string>
+    <string name="editor_disabled">已关闭</string>
+    <string name="editor_merge_status">合并%1$s。顺序：模板标题 → 导入片头 → 编辑后的主视频 → 追加片段。\n仅主视频：截取、裁剪、旋转、输出高度、速度、文字及 PNG。\n导入片头及追加片段：完整播放、原速、保持宽高比适配（可能留边），保留显示旋转方向。\n声音：未选择替换音乐时，按顺序保留各片段原音。</string>
+    <string name="editor_merge_totals">主视频固定在合并片段首位，追加片段 %1$d/%2$d；源视频 %3$s/256 MiB；预计导出时长 %4$s 秒 / 120.000 秒。</string>
+    <string name="editor_merge_too_long">\n导出前请缩短已启用的标题、片头、截取后的主视频或追加片段。</string>
+    <string name="editor_merge_needs_clips">\n已启用合并但尚未选择追加片段；请添加 1–5 段或关闭合并。</string>
+    <string name="editor_merge_disabled_summary">\n合并已关闭；任何标题及片头之后仅导出编辑后的主视频。</string>
+    <string name="editor_main_anchored">1. 主视频（固定）</string>
+    <string name="editor_merge_empty">启用合并并选择追加片段，可在编辑后的主视频之后导出更多片段。</string>
+    <string name="editor_appended_label">%1$d. 追加片段</string>
+    <string name="editor_clip_thumbnail">%1$s 缩略图</string>
+    <string name="editor_up">上移</string>
+    <string name="editor_down">下移</string>
+    <string name="editor_remove">移除</string>
+    <string name="editor_move_up">上移第 %1$d 个追加片段</string>
+    <string name="editor_move_down">下移第 %1$d 个追加片段</string>
+    <string name="editor_remove_clip">移除第 %1$d 个追加片段</string>
+    <string name="editor_not_selected">尚未选择</string>
+    <string name="editor_clip_description">%1$s — %2$d×%3$d，%4$s 秒，%5$s，%6$s</string>
+    <string name="editor_rotation_invalid">旋转角度无效</string>
+    <string name="editor_preview_select_video">选择视频以查看截取起点的静态帧预览。</string>
+    <string name="editor_preview_frame">静态选帧：%1$.3f 秒（最近的解码帧）；裁剪 → 顺时针 %2$d° → 缩放后 %3$d×%4$d%5$s。\n不是实时播放；不预览文字、速度、声音或片头及合并片段。</string>
+    <string name="editor_preview_png">" + PNG 水印"</string>
+    <string name="editor_preview_updating">正在更新预览，暂时保留上一帧…</string>
+    <string name="editor_preview_unavailable">暂时无法预览，保留上一帧；技术信息见「更多」。</string>
+    <string name="editor_invalid_edit">编辑设置无效，保留上次预览，暂时无法导出。\n%1$s</string>
+    <string name="editor_export_failed">无法开始导出，请检查编辑设置及可用存储空间。</string>
+    <string name="editor_export_starting">正在开始导出 — 无应用内处理时限，可手动取消</string>
+    <string name="editor_export_progress">导出 %1$d%% — 无应用内处理时限，可手动取消</string>
+    <string name="editor_publishing">编码完成，正在保存到公共输出位置…</string>
+    <string name="editor_publication_failed">视频未保存到公共位置；已保留应用内的 MP4，可打开或分享，详情见「更多」。</string>
+    <string name="editor_export_incomplete">导出未完成（可能已取消或失败），详情见「更多」。</string>
+    <string name="editor_directory_picker_failed">无法选择视频输出目录，请确认设备可用的文件应用。</string>
+    <string name="editor_output_private">未确认公共副本可用；应用内 MP4 的保存信息见「保存位置」。</string>
+    <string name="editor_output_published">视频处理完成，已保存到公共输出位置。</string>
+    <string name="editor_share_failed">无法分享视频，请确认设备有可接收视频的应用。</string>
+    <string name="editor_open_failed">无法打开视频，请确认设备有可播放 MP4 的应用。</string>
+    <string name="editor_output_read_failed">无法读取输出视频，请查看保存位置及访问权限。</string>
+    <string name="editor_delete_preset_confirm">删除整套编辑预设？</string>
+    <string name="editor_delete">删除</string>
+    <string name="editor_cancel">取消</string>
+    <string name="editor_save">保存</string>
+    <string name="editor_close">关闭</string>
+    <string name="editor_preset_delete_failed">无法删除预设，请查看详情。</string>
+    <string name="editor_presets_read_failed">无法读取整套编辑预设，请查看详情。</string>
+    <string name="editor_preset_saved">整套编辑预设已保存：%1$s</string>
+    <string name="editor_preset_save_failed">预设未保存，请检查名称、编辑设置及素材；详情见「更多」。</string>
+    <string name="editor_preset_applied">已应用整套编辑预设：%1$s</string>
+    <string name="editor_preset_apply_failed">未应用预设，当前编辑保持不变。请检查素材及输入视频时长；详情见「更多」。</string>
+    <string name="editor_template_none">尚未选择模板</string>
+    <string name="editor_template_frame">%1$s · %2$.3f / %3$.1f 秒 · %4$d×%5$d。拖动时间滑块可预览实际渲染帧。动画样式在 0.8 秒内入场，随后保持；文字自动适配安全区域。</string>
+    <string name="editor_invalid_title">标题设置无效：%1$s</string>
+    <string name="editor_template_name_required">请输入模板名称</string>
+    <string name="editor_template_save_failed">模板未保存，请检查名称及可用存储空间。</string>
+    <string name="editor_delete_template">删除模板</string>
+    <string name="editor_template_delete_failed">无法删除模板，请查看详情。</string>
+    <string name="editor_validation_settings">请检查当前字段及所选素材是否符合限制；原始技术信息见「更多」。</string>
+    <string name="editor_validation_crop" formatted="false">四边裁去比例须为 0–50% 的数字；左右之和、上下之和均须小于 100%。</string>
+    <string name="editor_validation_rotation">请输入顺时针角度：−2147483648 至 2147483647 的整数；0 表示不旋转。</string>
+    <string name="editor_validation_trim">请输入有限小数秒数：0 ≤ 起点 &lt; 终点 ≤ 视频时长，且至少保留 1 毫秒。</string>
+    <string name="editor_validation_png" formatted="false">请先选择有效的静态 PNG（最大 8 MiB、2048×2048），再启用；宽度 5–50%，X/Y 0–100%，均须为有限数字。</string>
+    <string name="editor_validation_total_bytes">合并的源视频总大小须已知且不超过 256 MiB，请移除或更换素材。</string>
+    <string name="editor_validation_clip_bytes">合并时每个视频快照须不超过 128 MiB，全部视频合计不超过 256 MiB。</string>
+    <string name="editor_validation_dimensions">请检查画布及视频尺寸；标题和合并每边最多 4096 像素。可尝试较小的输出高度。</string>
+    <string name="editor_validation_duration">请缩短标题、片头、主视频或追加片段；合并总时长不得超过 120 秒。</string>
+    <string name="editor_validation_title">请选择支持的模板样式及字体；动画时长为 3 或 5 秒，字号 1–160，最多 512 字符、8 行，文字须能放入安全区域。</string>
+    <string name="editor_validation_merge">启用合并时请选择 1–5 个有效追加片段，并检查素材大小、尺寸和时长限制。</string>
+    <string name="editor_validation_video">请选择可读取的视频并等待加载完成。</string>
+    <string-array name="editor_speeds">
+        <item>0.5 倍速</item><item>0.75 倍速</item><item>1.0 倍速</item><item>1.25 倍速</item><item>1.5 倍速</item><item>2.0 倍速</item>
+    </string-array>
+    <string-array name="editor_resolutions">
+        <item>原始（不缩放）</item><item>高度 1080 像素</item><item>高度 720 像素</item><item>高度 480 像素</item>
+    </string-array>
+    <string-array name="editor_volumes">
+        <item>0%（静音）</item><item>50%</item><item>75%</item><item>100%（保留原音量）</item>
+        <item>125%</item><item>150%</item><item>200%</item><item>300%</item>
+    </string-array>
+    <string-array name="editor_title_styles">
+        <item>静态显示／直接消失</item><item>淡入／直接消失</item><item>滑入／直接消失</item><item>打字机／直接消失</item><item>缩放／直接消失</item><item>下三分之一滑入／直接消失</item><item>淡入淡出（dissolve）</item>
+    </string-array>
+    <string-array name="editor_title_durations">
+        <item>自定义时长（下方毫秒）</item><item>3 秒</item><item>5 秒</item>
+    </string-array>
+    <string-array name="editor_title_fonts">
+        <item>无衬线</item><item>衬线</item><item>等宽</item>
+    </string-array>
+    <string-array name="editor_title_weights">
+        <item>常规</item><item>粗体</item><item>斜体</item><item>粗斜体</item>
+    </string-array>
+    <string-array name="editor_title_aligns">
+        <item>左对齐</item><item>居中</item><item>右对齐</item>
+    </string-array>
+    <string-array name="editor_title_palettes">
+        <item>自定义背景颜色</item><item>背景：午夜蓝 → 海洋蓝</item><item>背景：酒红 → 琥珀</item>
+        <item>背景：奶油色（纯色）</item><item>背景：黑色（纯色）</item>
+    </string-array>
+</resources>

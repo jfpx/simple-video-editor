@@ -1,0 +1,930 @@
+{
+  "version": 1,
+  "files": [
+    {
+      "path": "abstraction-evidence/evidence/abstraction-current.html",
+      "bytes": 225555,
+      "sha256": "8f52759e1fa32d2512840fa309d3cc6bd1289e09d1580abb4571200f4e255505"
+    },
+    {
+      "path": "abstraction-evidence/evidence/cc0-legalcode.en.html",
+      "bytes": 32451,
+      "sha256": "001e3d1c905c18b1d034b34200cc952026abb38457c2294c23eaef7f6bda64df"
+    },
+    {
+      "path": "abstraction-evidence/evidence/cc0-legalcode.en.txt",
+      "bytes": 14127,
+      "sha256": "54a856969e8b268c8982493b45b440d6c00f26414bf76d98d159818b2239ece5"
+    },
+    {
+      "path": "abstraction-evidence/licenses/music-loop-bundle-2024-q1/_LICENSE.txt",
+      "bytes": 1138,
+      "sha256": "d02e059adb401d50167b2e04d12ef9236fbcef0b4e3b7157bd5ebfab8a82b8f4"
+    },
+    {
+      "path": "abstraction-evidence/licenses/music-loop-bundle-2024-q2/_LICENSE.txt",
+      "bytes": 1138,
+      "sha256": "d02e059adb401d50167b2e04d12ef9236fbcef0b4e3b7157bd5ebfab8a82b8f4"
+    },
+    {
+      "path": "abstraction-evidence/licenses/music-loop-bundle-2024-q3/_LICENSE.txt",
+      "bytes": 1138,
+      "sha256": "d02e059adb401d50167b2e04d12ef9236fbcef0b4e3b7157bd5ebfab8a82b8f4"
+    },
+    {
+      "path": "abstraction-evidence/licenses/music-loop-bundle-2024-q4/_LICENSE.txt",
+      "bytes": 1138,
+      "sha256": "d02e059adb401d50167b2e04d12ef9236fbcef0b4e3b7157bd5ebfab8a82b8f4"
+    },
+    {
+      "path": "abstraction-evidence/licenses/music-loop-bundle-pre2023/_LICENSE.txt",
+      "bytes": 1138,
+      "sha256": "d02e059adb401d50167b2e04d12ef9236fbcef0b4e3b7157bd5ebfab8a82b8f4"
+    },
+    {
+      "path": "abstraction-evidence/rights-review.json",
+      "bytes": 2611,
+      "sha256": "ee90767a66cb6e6d40820c3486e05f8bea5f292334854c961241d90ac4e91689"
+    },
+    {
+      "path": "abstraction-provenance.json",
+      "bytes": 186113,
+      "sha256": "8d99d52d41511713bd7f21522cba630074a57c5acd939729fbf181d572e5991f"
+    },
+    {
+      "path": "adventure/synth/blue-meadow-in-green-sky.ogg",
+      "bytes": 494401,
+      "sha256": "efc340c14f5f5e74933efd90bbe1a6089a09551f7e8014bbe28d995e7d112355"
+    },
+    {
+      "path": "calm/ambient/ambient-relaxing-loop.ogg",
+      "bytes": 1284993,
+      "sha256": "3c328794b77d3f3742a5a8fa36606c3b780d15b0b8f6148b29a78ec6caffcd9e"
+    },
+    {
+      "path": "catalog.json",
+      "bytes": 189055,
+      "sha256": "ea1643de91596fa84a57df0d50fd98728d0ae872386f6247844466e3a4207ff5"
+    },
+    {
+      "path": "cinematic/rpg/the-journey-begins.ogg",
+      "bytes": 602110,
+      "sha256": "2be3c830b1e3bfa885ebe32496a7d7ed6e13d8f9fe1991f99d8af2c64ee23e71"
+    },
+    {
+      "path": "diagnostics/ambient-relaxing-loop.analysis.json",
+      "bytes": 3199,
+      "sha256": "3b582e57f256089c424d35823bcc4b0e8c2d058a9f5eaa773efeba98767f08b6"
+    },
+    {
+      "path": "diagnostics/happy-end-music.analysis.json",
+      "bytes": 3183,
+      "sha256": "8362556a89f12205b82778cc110f2f5985cfd54b8c7bd3f9075789cfff5f5eed"
+    },
+    {
+      "path": "diagnostics/happy-end-project-audit.json",
+      "bytes": 322,
+      "sha256": "2b205395c9338548a2f1811a0d72d89b5d99d3612ecc7a353bf3a7d14e4ca041"
+    },
+    {
+      "path": "diagnostics/heavenly-loop.analysis.json",
+      "bytes": 8132,
+      "sha256": "a5a3cbebd12d90858eff90fe34ab1ac7837e10e6de6bd54fa310899ff7ddce1e"
+    },
+    {
+      "path": "diagnostics/heavenly-loop.astats-silence.full.txt",
+      "bytes": 5238,
+      "sha256": "382253fdc5cedc7a894967e9205fb4da5f201ec60dce7e8dd7224bb1bed13dc5"
+    },
+    {
+      "path": "diagnostics/heavenly-loop.decode.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "diagnostics/heavenly-loop.ffprobe.json",
+      "bytes": 1965,
+      "sha256": "f27adaab65c6a2c2b07f43dd5129f23e7c134fcd7eb6787594ae54b2c7dd058b"
+    },
+    {
+      "path": "diagnostics/heavenly-loop.ffprobe.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "diagnostics/journey-project-audit.json",
+      "bytes": 543,
+      "sha256": "6ca9d03000ab8f658a9d75ad524737682876c11c8594333b565d45979e2a4c2d"
+    },
+    {
+      "path": "diagnostics/the-journey-begins.analysis.json",
+      "bytes": 3115,
+      "sha256": "5e13a64c4c3eff7a09616588dc26ac6784d92615748778734d53b9d4b29d0e21"
+    },
+    {
+      "path": "diagnostics/tool-versions.json",
+      "bytes": 4607,
+      "sha256": "c964dd89539ac6eea2111e716e104a05f2dc52b8bccd697567b238272bee0992"
+    },
+    {
+      "path": "diagnostics/underwater-ambient-pad.analysis.json",
+      "bytes": 3172,
+      "sha256": "e11df6c7a7697fef626d4bbba84a047ac4431eee586a4f84823e91f7205cef97"
+    },
+    {
+      "path": "diagnostics/unsolved-investigation.analysis.json",
+      "bytes": 8170,
+      "sha256": "77e8544c9660e31819d6cffd0703ea9637efdb7aebac63882684897ab14394cd"
+    },
+    {
+      "path": "diagnostics/unsolved-investigation.astats-silence.full.txt",
+      "bytes": 5254,
+      "sha256": "169ad2064345a69c68a577ae49c0bc8b39d103ed06ec6a8b52d55c643551d697"
+    },
+    {
+      "path": "diagnostics/unsolved-investigation.decode.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "diagnostics/unsolved-investigation.ffprobe.json",
+      "bytes": 1986,
+      "sha256": "2299d7c024843fa8a46e28a4424dbf903473f7566b72714c8bf3c5e1f46285b1"
+    },
+    {
+      "path": "diagnostics/unsolved-investigation.ffprobe.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "dreamy/ambient/heavenly-loop.ogg",
+      "bytes": 1224922,
+      "sha256": "a842e9e054019132cacc8fd352e7b31c000ebb51e0b227a2511e1bccb4eb166e"
+    },
+    {
+      "path": "energetic/chiptune/challenge-accepted.ogg",
+      "bytes": 1577938,
+      "sha256": "41d9dd60fbcddd1c943998e74fb0a9ccb3adbccbf604b040e9334a352f27b468"
+    },
+    {
+      "path": "evidence/ambient-relaxing-loop.download.json",
+      "bytes": 781,
+      "sha256": "4f727a2eca1eed6c00bd4c5fe871ceea7c3a8c61d3299a7a1e8c4f6d765441eb"
+    },
+    {
+      "path": "evidence/ambient-relaxing-loop.html",
+      "bytes": 29053,
+      "sha256": "c7a77127c43cef26e41f42df8bd213f0758c277f6fe7c006ee887f2d1c4819ce"
+    },
+    {
+      "path": "evidence/ambient-relaxing-loop.http.json",
+      "bytes": 1717,
+      "sha256": "0ee5b3d505b13d12e2629749310a971acf2397c206deb54c0539ccaa993e1c9d"
+    },
+    {
+      "path": "evidence/cc0-deed.html",
+      "bytes": 30476,
+      "sha256": "4ceb8ae6835f2f5263caa0e39c9e1adca9469686c267475049b33521dabbe339"
+    },
+    {
+      "path": "evidence/cc0-deed.http.json",
+      "bytes": 764,
+      "sha256": "d305121b42e7188216515853fc272e8bd564a00c845404c31b88e082eaac1560"
+    },
+    {
+      "path": "evidence/cc0-legalcode.html",
+      "bytes": 32451,
+      "sha256": "001e3d1c905c18b1d034b34200cc952026abb38457c2294c23eaef7f6bda64df"
+    },
+    {
+      "path": "evidence/cc0-legalcode.http.json",
+      "bytes": 818,
+      "sha256": "1132f9e6bfa97c329d5c4aa809fa00ddb2a2cc9c8efc5fb5d2506066b87fa00d"
+    },
+    {
+      "path": "evidence/happy-end-music.download.json",
+      "bytes": 727,
+      "sha256": "c450ebe7341021367ef35f12c1417221f7f2db111c8db390cf670960c757efb6"
+    },
+    {
+      "path": "evidence/happy-end-music.html",
+      "bytes": 22964,
+      "sha256": "0587e0db826ca93c880f82910bcfff595870e5c831741619f6551bae978743fb"
+    },
+    {
+      "path": "evidence/happy-end-music.http.json",
+      "bytes": 1699,
+      "sha256": "a7c16b9357e428725a1100ec73cae806a5184ccdbcc7c4c0b137a311c12665bc"
+    },
+    {
+      "path": "evidence/happy-end-project.download.json",
+      "bytes": 715,
+      "sha256": "47c7aaebc726b5d27fbe1674f92eda582408f560642b03268d73b41711385c96"
+    },
+    {
+      "path": "evidence/happy_end_lmms.zip",
+      "bytes": 18753,
+      "sha256": "fdeac44c855a21e5db1a38371a22c9b732e85e1a611680fc76b09a13a7d908a3"
+    },
+    {
+      "path": "evidence/heavenly-loop.download.json",
+      "bytes": 1170,
+      "sha256": "c3ec358726318bc1c0cd0fe9eaab21979df37d8950223cafdbcf582e12bb7ee2"
+    },
+    {
+      "path": "evidence/heavenly-loop.html",
+      "bytes": 27955,
+      "sha256": "f4dd2dc2bdfd4b41aac11dd56abc80756c241d60ec103691d9430cfa8d103ee7"
+    },
+    {
+      "path": "evidence/heavenly-loop.http.json",
+      "bytes": 1735,
+      "sha256": "c405ff090eb627b8ae0856856cc392fde241adeafa2777ea28d22a555b456e2a"
+    },
+    {
+      "path": "evidence/journey-project.download.json",
+      "bytes": 733,
+      "sha256": "551e1c0b149b0ca49bdb3aa0a09a9667fc9b776baa2f54ebfa880206a7626d4c"
+    },
+    {
+      "path": "evidence/the-journey-begins.download.json",
+      "bytes": 770,
+      "sha256": "b97159e7dc4f15d4c98b756aa73c94831a7b7825dc94409ad2b4f4efad17bac3"
+    },
+    {
+      "path": "evidence/the-journey-begins.html",
+      "bytes": 25574,
+      "sha256": "0cb29db6ddf65be8f8fff0f74183ac539ca9606bcdfc011acd3fc17e6ba5395b"
+    },
+    {
+      "path": "evidence/the-journey-begins.http.json",
+      "bytes": 1708,
+      "sha256": "9c2b05433b9528e87a9c373102f589b213e3d03f6fed6ef82a24d1c0f21c81bb"
+    },
+    {
+      "path": "evidence/the_journey_begins_lmms.zip",
+      "bytes": 18267,
+      "sha256": "44226f2d9b6654a983d7578657790dbf74e61a08a2a388e55d9477ec8a1f7197"
+    },
+    {
+      "path": "evidence/underwater-ambient-pad.download.json",
+      "bytes": 798,
+      "sha256": "30bc5c5486517f0ad2465c8b42d26fcddea4d3af983012c128657fa7d057e1bf"
+    },
+    {
+      "path": "evidence/underwater-ambient-pad.html",
+      "bytes": 37650,
+      "sha256": "151fc2ce62e4e5fd93a25f3b1c2154e727e5e009be4ad7a70c0b1b104d4faa35"
+    },
+    {
+      "path": "evidence/underwater-ambient-pad.http.json",
+      "bytes": 1720,
+      "sha256": "2e79facca247210078658855ea399b2de46392031f3a7337f511020e34074da5"
+    },
+    {
+      "path": "evidence/unsolved-investigation.download.json",
+      "bytes": 1253,
+      "sha256": "fe459b6276e79952cf5f6ad1ad6d1c210d88640ea01e1ca3ff96f6dce306a4a9"
+    },
+    {
+      "path": "evidence/unsolved-investigation.html",
+      "bytes": 28309,
+      "sha256": "5a846e4f2609df3dcfd2b82f5004c69b423d39ad78d1137548642b13fafa4dec"
+    },
+    {
+      "path": "evidence/unsolved-investigation.http.json",
+      "bytes": 1762,
+      "sha256": "83ca5261fd84203278dc7616e222cd1c6f6239a11692f4dc8146487becb23b96"
+    },
+    {
+      "path": "expansion-provenance.json",
+      "bytes": 18557,
+      "sha256": "e178c44e5a02235e4c8d02b0e94f9dfdc1c94869e1107224ee03ca890f20b564"
+    },
+    {
+      "path": "licenses/ambient-relaxing-loop.txt",
+      "bytes": 1210,
+      "sha256": "0100b3a453059551f6145fbebd27bb36dcba1da5c027648753c6a032eea05b7f"
+    },
+    {
+      "path": "licenses/blue-meadow-in-green-sky.txt",
+      "bytes": 2165,
+      "sha256": "3e3d876024381685557543914bba4ebbe85f88efea926459efc010fad77560a9"
+    },
+    {
+      "path": "licenses/CC0-1.0.txt",
+      "bytes": 2486,
+      "sha256": "9da07819830d6ead666e44ea53f57eede0932b18ad7fc9e18bf61ff89e27dd27"
+    },
+    {
+      "path": "licenses/challenge-accepted.txt",
+      "bytes": 1702,
+      "sha256": "1e9fc5d3f9fbac0868761b627945d996f5af5a7e4ad6a86b2c106538bea6449f"
+    },
+    {
+      "path": "licenses/happy-end-music.txt",
+      "bytes": 1228,
+      "sha256": "a78aaad4814fbdc9cc71271e6be3e64236fd3a50bd803568c46de2c8151781f3"
+    },
+    {
+      "path": "licenses/preview-expansion-CC0-1.0.txt",
+      "bytes": 8263,
+      "sha256": "846e675df7ce14c782b8a8e4c53f69c523be5eebbae49d8e18e616c05e634672"
+    },
+    {
+      "path": "licenses/shrine.txt",
+      "bytes": 1604,
+      "sha256": "48cc285c44996576a89c440a72d84890a8952108d8333a3129c54f8f414aeee3"
+    },
+    {
+      "path": "licenses/the-journey-begins.txt",
+      "bytes": 1212,
+      "sha256": "94fdd3cf9d02c8711afa0650bf99c3dec0095f645aeccd95953490bf724c5485"
+    },
+    {
+      "path": "licenses/underwater-ambient-pad.txt",
+      "bytes": 1202,
+      "sha256": "e60444a9976205af58e568a0516e4698877f6e7b7714316de7ef60a7bfb13913"
+    },
+    {
+      "path": "LICENSES.txt",
+      "bytes": 4878,
+      "sha256": "4bda66df720d3c36f5b607a6c129f5553d8f64ffbe510ffc688238d8cbc820da"
+    },
+    {
+      "path": "mysterious/synth/shrine.ogg",
+      "bytes": 773355,
+      "sha256": "35a3051a7b6d4fddda564624cff960b77722fd8bcf4a3e07ceceb060b6c0f080"
+    },
+    {
+      "path": "preview-expansion-provenance.json",
+      "bytes": 16748,
+      "sha256": "a754ae0c35f97f3122952a856c1ce0f86bcc0c9ad47ba889b643d69d8a85a3a3"
+    },
+    {
+      "path": "provenance.json",
+      "bytes": 5031,
+      "sha256": "ddd3ad148f59e7ee515fc0c3b4cd7fe1b396d018306cd3ae9215b87aa3f1809f"
+    },
+    {
+      "path": "suspense/ambient/unsolved-investigation.ogg",
+      "bytes": 2200350,
+      "sha256": "2877e423ff90cb99b3082840e66cf79d69a809708466c6f27c750c0e1ce2a912"
+    },
+    {
+      "path": "underwater/ambient/underwater-ambient-pad.ogg",
+      "bytes": 705155,
+      "sha256": "5f40c6b20ac4e7b6944f176ecbfd24c5839257e5c818fecca33d7ddb147a20e7"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-010fad54d780f3cb3ad6e8cc.ogg",
+      "bytes": 2873302,
+      "sha256": "2338833b1333a8376071deadfec2db122148ecdfbe87806d15c6dbdd260886ea"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-01554511f570d5ec1ba6338d.ogg",
+      "bytes": 3675414,
+      "sha256": "f7322e9a51c0f099846341bd5f3029bf63cdc45bef957998513c2b23f01654fc"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-110c843f2885eabd0a9d814c.ogg",
+      "bytes": 2579142,
+      "sha256": "7af09e4430c0ad75ab0c2daf082f528dfe3e56bc1340b379a3f9bc299de8f8ab"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-18d847ce7af1d0230a733358.ogg",
+      "bytes": 1936860,
+      "sha256": "5b9925683ec16d1065d2f13e9b2ea2b1134cf4bddea4cd982ab85bcc5ab5d0be"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-1b02d180e9e102a6a28aa30f.ogg",
+      "bytes": 2819485,
+      "sha256": "3fe9326b7567f0cdd0d0f8f4c06b82d62c7ae1201c918ded08a64054b5009122"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-1d66697cf4be45cc42790e5c.ogg",
+      "bytes": 1919626,
+      "sha256": "817bb9d0bbfacb23ff0b6680985199f87b42835e023ac01aad2f10f1393b0fc0"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-26cf0c4f51458714e6d8cde7.ogg",
+      "bytes": 2305951,
+      "sha256": "90d590a39cf7485dfed4db93faf80755db5d0cfa8d1c0b73dcf29cfcabce88d7"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-3916654edca95b5dd7e4afc3.ogg",
+      "bytes": 2857240,
+      "sha256": "8ed82dc394ff8603ebdeb0475c5896a5d84e667b6aa65ed728ca2bb8d25a5dfd"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-4818ca6a5b5c7b602fbf9eb7.ogg",
+      "bytes": 2096958,
+      "sha256": "79d9a74c328ca9dedb9ef06134ce32267386674ddc989ad98618691dc65e2717"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-48c0afc43396d4848ac55f72.ogg",
+      "bytes": 1959988,
+      "sha256": "7574258e18921643c0fec61afc1a37e3a1bf7208a096dda1f8f6c25e5df21325"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-587c74506a27fe4d51be8e7b.ogg",
+      "bytes": 1137659,
+      "sha256": "48c196a265aa4399fcf23854220485b7efd99c35965d29c79008e8471e7c751a"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-65011fe3656ae45a20fc4eca.ogg",
+      "bytes": 1762432,
+      "sha256": "aba9874d5b5946480403910ba97d0f2a1d4978f645207d451021f2c81adc5ee8"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-6b13391bc1b3862dbf2cd5c9.ogg",
+      "bytes": 1712812,
+      "sha256": "0dd8f1eeb24adb6baf477231f083bdf06d5f85c78ff4686cdee6280f0e850f6c"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-6f19c2a7de1c3382aa4e1764.ogg",
+      "bytes": 4138163,
+      "sha256": "7287ccd2a9edfff082b34be99f3c79cc1b97d5913ceba492e677625a86bbeca2"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-8871daf0339f800fbe198a5b.ogg",
+      "bytes": 2443427,
+      "sha256": "893cca63437065538b4150b1059688ea417aaf7c4c6067502fcb72d8675f8b76"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-8fae5917ba33861a49611966.ogg",
+      "bytes": 4334242,
+      "sha256": "3706b083a2b3737211a32b6ea0a3baf3b1af420386645788786cf122cf1c37ca"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-9858b87007c41a4dfe66b437.ogg",
+      "bytes": 1475625,
+      "sha256": "b5a04b2b20a9a38d6156f059569820513278e7327605efbed1f6c49e8b0459dc"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-9e5c350d3e66baa56b4b806d.ogg",
+      "bytes": 1671116,
+      "sha256": "192c9939cc4e1bd135b67bc953118675f53bb7d055a70389a16f9bb1c50fa78a"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-a68c26d6897bcb3d27dcabe5.ogg",
+      "bytes": 3328370,
+      "sha256": "1d01c2398fe4ab70e34343226f02a1ef4fe5822b4ddc23fe7c386bac4181b8eb"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-acf636f80c650a22f3f885d3.ogg",
+      "bytes": 1744056,
+      "sha256": "6677a7058c8be0084493c2be171c676b111af58fc8b9faef3cb9f5f075e02dbc"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-ba9d4f506da2eeb54b90650e.ogg",
+      "bytes": 1957740,
+      "sha256": "6bc890ee771b59be6db01eb7c2c5c77dcc031601effa1f1dcc17e097896a6ec7"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-bdd7cdf0b0d34d307547589f.ogg",
+      "bytes": 3043909,
+      "sha256": "354753b564c2124f615e4cb5a22addb9d6eb4acaa67e2a034f2d7d72fb432685"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-bf39c38204f8beba23115aa8.ogg",
+      "bytes": 2257662,
+      "sha256": "dadc51d47c4c95117d08b74c62e4ca0bc78bd59d1360b6c0cb283216caca267c"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-ca1b59609b9f64504fb1c035.ogg",
+      "bytes": 2653068,
+      "sha256": "6609e3c34fd48d73779137040bca8040ded271e5dbef815a719f2b46c89d3488"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-d7d18f07f39094c591df7967.ogg",
+      "bytes": 1762792,
+      "sha256": "be96f927f507b90a95e1eef2e5ab4361e00cfbd7a49082495df4d24ca35ad870"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-e90988e89ad0951cea816394.ogg",
+      "bytes": 1446496,
+      "sha256": "ddeac13f432ecbe8c5567da87b758372ca413e524d0d4039a2b4e4a274753151"
+    },
+    {
+      "path": "unspecified/ambient/abstraction-ea7ef5046ecf080c734c5257.ogg",
+      "bytes": 2946097,
+      "sha256": "e1336b94a7a0343924dd1d2ec568d829e1b73ccea161607b289afcb460a72bc3"
+    },
+    {
+      "path": "unspecified/chiptune/abstraction-660328d005f5c812d0f52f63.ogg",
+      "bytes": 1085022,
+      "sha256": "7768d5a7d9c7cb1b20e6593011a9281f54fd13d7eeeae6211f91cb87000b94c7"
+    },
+    {
+      "path": "unspecified/chiptune/abstraction-6f85ef477e9372f5cb5b348c.ogg",
+      "bytes": 4514114,
+      "sha256": "cdefea3904731cffcb779a5676eba3a348fae6b168d020dac3f93e57780e7f4d"
+    },
+    {
+      "path": "unspecified/chiptune/abstraction-8050c41087b975e7bd74e5df.ogg",
+      "bytes": 1215511,
+      "sha256": "146c2f9aac79e3b7e1f213fe52dff6e2577b13ab977f45695785449f08e1c8a8"
+    },
+    {
+      "path": "unspecified/chiptune/abstraction-a0192b0f37ebd32ccf86ba4b.ogg",
+      "bytes": 2223729,
+      "sha256": "62e163b0fcba5fb5560aa5473b485eed3311b33fc447da592183107dde24ea2b"
+    },
+    {
+      "path": "unspecified/chiptune/abstraction-cfc56edbe16dc83cde0d0344.ogg",
+      "bytes": 537201,
+      "sha256": "b6b7d24ffe3cab7becc6ac3de0a44aa01668d8bc1608945857b4d63029942230"
+    },
+    {
+      "path": "unspecified/chiptune/abstraction-d59a68c17577a03de3385912.ogg",
+      "bytes": 2144007,
+      "sha256": "82a0b2785b38accf5f16db4603f705f17525d644b90c75db34a44214f882429b"
+    },
+    {
+      "path": "unspecified/chiptune/abstraction-d5f1287e8f571f4ef4848914.ogg",
+      "bytes": 1927159,
+      "sha256": "6490217c14e2122db0884353964f4807ca3eb7c7246c0c23971e99c6bd94a1ac"
+    },
+    {
+      "path": "unspecified/chiptune/abstraction-d631230a4a62ecf3ad8280d1.ogg",
+      "bytes": 3374229,
+      "sha256": "c965297f71d28595dcc1e6825f8c5eced1df6fa8e14e2cda1c714f2c139cfca3"
+    },
+    {
+      "path": "unspecified/chiptune/abstraction-dba2c0aae3bc394bac5622e5.ogg",
+      "bytes": 1389252,
+      "sha256": "a99c5b40980db63ee2b2497722af9fffb52ed97cd3190be5390b16038775ea6e"
+    },
+    {
+      "path": "unspecified/desert/abstraction-19820782cc037983afcb0bbf.ogg",
+      "bytes": 1976027,
+      "sha256": "a8ad37cb5148a3ee6ac0607ea6a0d6ebf826491d992c03bddc81981f03a8a652"
+    },
+    {
+      "path": "unspecified/dnb/abstraction-75394c5b688daa78e5f73459.ogg",
+      "bytes": 1388834,
+      "sha256": "7bf6e2d1b7ea7075739d911bae3ba32be0743d78ca76a5c159e7d8e6d0ae15a0"
+    },
+    {
+      "path": "unspecified/dnb/abstraction-77714daf9535c97397a6c564.ogg",
+      "bytes": 2373138,
+      "sha256": "af9e0fee38abe0a406ac18145a708a394c1ab1ce9449de10c4d0a14135c63339"
+    },
+    {
+      "path": "unspecified/dnb/abstraction-ab023b86b7656e6a6b5a9fd5.ogg",
+      "bytes": 2163211,
+      "sha256": "f62db1552e9c8610abfd13963806b8141b7761ecc4c09c9cd36bae2ec3fa07d7"
+    },
+    {
+      "path": "unspecified/dnb/abstraction-cbab25ec294d006d878da66d.ogg",
+      "bytes": 3207770,
+      "sha256": "50ea1270fa36cb21de66320c683a2ac296e84b8df8a14e027a6220ca296540ef"
+    },
+    {
+      "path": "unspecified/dynamic/abstraction-0edd5955f1182cf768701769.ogg",
+      "bytes": 3398432,
+      "sha256": "4ca38742e4d80220390700cb0305ce778995f638758e098697fa83c5a174f182"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-01bff13f05e762766741d30c.ogg",
+      "bytes": 1660440,
+      "sha256": "bf0a8d7f337c45b541db3e8a943d0b3dfcaf329833dacc379bcb0d4340321ed3"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-076c1debeae5f7ec29f66acb.ogg",
+      "bytes": 5380219,
+      "sha256": "dc8d1662dd95ed3ffbf0c0bb24e39870a70368434c677573f4453b5f4acae160"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-30db5715f7b08ce3924416f6.ogg",
+      "bytes": 4471293,
+      "sha256": "f31b612a8a4ec290bf350af8b36ba23cc521163ecda22f25e63be9e131107159"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-3dfe3354a4cce53ab5ddcb82.ogg",
+      "bytes": 1769537,
+      "sha256": "0458286918ccd51edc38d093aaca73c5cc404de057d401f106e93f21f511576b"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-417fa91b83fab8b8be52a4e5.ogg",
+      "bytes": 2043720,
+      "sha256": "df4edcd0997cb5952a90e026ed70bc38299d481198bbbc7d218ff793ad15edf8"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-42d521c3eff005c80eb52792.ogg",
+      "bytes": 1598364,
+      "sha256": "c6d21a98ca17ee51717576eec5bdf2f3ff914bf5f369be65af8033d62ccd4253"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-485c2342c9a329e48dfcce91.ogg",
+      "bytes": 2195484,
+      "sha256": "f353ebd48628ec349fe2b64f3f84653fbccf1bc86a8bd074e5e6c16f72fcd93b"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-49e6725f0c1cc61bcfda36c5.ogg",
+      "bytes": 2215684,
+      "sha256": "0d943ef3091520bc7e47ebaa54a4298e6e66eb5db5fa17a248b36394663f99a8"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-4a26538e864fc80eff0c5e75.ogg",
+      "bytes": 2525512,
+      "sha256": "ceea149797ffccc3394aeb712bcdbd68334d857c9ee96ae36de13e7fd3aa55b2"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-5c72fc0919a9fa4c2d291eae.ogg",
+      "bytes": 2219156,
+      "sha256": "6a0ee6430c61a60cabc4fc2faf6b48f4d14a00ee47f7b03605fb3da4238693e9"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-5fa7326d9c740c438d185e07.ogg",
+      "bytes": 1563919,
+      "sha256": "341daa2cd1831084b411f7e567e79bab3e56284deeb89114e979c43379ff5006"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-60b62ec497e3862fbb6871ba.ogg",
+      "bytes": 1681816,
+      "sha256": "ec00fbc6b62a71e7e21451c3657feea0e4b89b8fbdeede8219b1fe943d932418"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-63416340171aeb04a4ec672d.ogg",
+      "bytes": 2144386,
+      "sha256": "25379fcf124a57aa3a64ae076893eb2f61c3311125d68be3d7ab09aaa450b23c"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-65a04612ce40c711696d075b.ogg",
+      "bytes": 1457322,
+      "sha256": "a97967e57acbb1db5de76e911cf69c9fa3664fe40485b3989d2c52b231841e51"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-7a7fe2e152a0026a58a5297a.ogg",
+      "bytes": 2687659,
+      "sha256": "9375898755b92badbb3038519930b099148209c9154fd9f002089702b65ae83c"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-89630b0f4468f7f959e36ec0.ogg",
+      "bytes": 2472171,
+      "sha256": "42cf3ae7b75c585211eaf7e04648e5a6194076ebc682a1d450e310729ea32969"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-9822a148da5254c79b75edd2.ogg",
+      "bytes": 2055075,
+      "sha256": "126bbec757640e9b6a55bef42d2e714926da40ecf714f82ca19ac1627bda2bfe"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-a51cb573a413fd5a835ec6c2.ogg",
+      "bytes": 1174846,
+      "sha256": "8e4a8ca12e1f31294cf9570911bac4694c8654be5f46defb165fc83aae8b7db9"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-b1eea75318d5df6b564a8b63.ogg",
+      "bytes": 2338426,
+      "sha256": "9683fc65a6ad7b9c8c2ae246c339ad9f1582618a9ad35da7215a8f5531ce8ecf"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-b70e3121eb127f7991f11c65.ogg",
+      "bytes": 1955629,
+      "sha256": "bb1a7441809fa198c0513630247582d45acf64d48ca72a8395616f230fc47f38"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-bbe4c30e22403b677f526e45.ogg",
+      "bytes": 1327786,
+      "sha256": "d75205d1ef620ec5ed34ad376ae2853e4d19d171c589ea84d727f547f70849a3"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-bd4dd87de3b09b5a2421545f.ogg",
+      "bytes": 4327083,
+      "sha256": "61d92d41e0638cbd7b9cc418b0b80ba602f67b490c254b2c9afffc0eaa4539aa"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-c9405661a0c582a20bca1b45.ogg",
+      "bytes": 1880811,
+      "sha256": "3abadfdf8925a5f8549b621be90dfe398dacdbf85fce9a8a16ad063ab1ded9ea"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-cb39d47c24ad5639dc4c77eb.ogg",
+      "bytes": 3090833,
+      "sha256": "32e090a484854d50c7cf76621b9fc4b20b222f674f0b69d75a0bbdddd6b3951f"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-cd749f11dd097e915b4107ac.ogg",
+      "bytes": 1109538,
+      "sha256": "e113ae54070778fc41dfba47f6c252df5f714bdf05502005d4ea8528a29e4f1a"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-d32cba3e070abffb8c45fc60.ogg",
+      "bytes": 1889147,
+      "sha256": "a70365814d74f844abbf67d163947b175faae2e2d16bca18ac94b66ee7cef400"
+    },
+    {
+      "path": "unspecified/electronic/abstraction-fe0be50849c38fd4c1dc88de.ogg",
+      "bytes": 2258321,
+      "sha256": "1a96518350593ddf250e2d771a885269c695a2eb9db6222b905e4db7bb559a29"
+    },
+    {
+      "path": "unspecified/funk/abstraction-261059f19b4352047ea7bcb3.ogg",
+      "bytes": 2046257,
+      "sha256": "7e30771c2aac5f5e46bdcc59603e2f367a697b08cfc54abb21b9e8f4042e40b5"
+    },
+    {
+      "path": "unspecified/funk/abstraction-2b35cc0da1cd91fd39fb97b2.ogg",
+      "bytes": 2042141,
+      "sha256": "60851d0d600244d231a39b7d97a6aa2915c9374e952192d3fe21a1e5a9770012"
+    },
+    {
+      "path": "unspecified/funk/abstraction-36d4672d475a362f4c61d313.ogg",
+      "bytes": 1724100,
+      "sha256": "d3033f8dd37c3bfcad33b0caed1ed6d229d0a898f3235e801b4ccd22fc12858f"
+    },
+    {
+      "path": "unspecified/funk/abstraction-56b67c93c59de869834bd4a5.ogg",
+      "bytes": 1487923,
+      "sha256": "247f8ef8e671db83d2cdb276efce6427bafa25c2912c1dfaa00effb0ab2c927a"
+    },
+    {
+      "path": "unspecified/jazz/abstraction-379e9ed152721fe63d7d9380.ogg",
+      "bytes": 2154676,
+      "sha256": "45360a2507cb97c547f1512e4013686c29867d59a5adc727cfa67d33757be2eb"
+    },
+    {
+      "path": "unspecified/jazz/abstraction-53d916cd9bff3ff8173fd63e.ogg",
+      "bytes": 3597306,
+      "sha256": "31dba32afb5c6795b0d3d4fdc76c5b20022e20166a20dc6cb9505fb937e4f3d6"
+    },
+    {
+      "path": "unspecified/jazz/abstraction-555d119bfb231cfe250b76e3.ogg",
+      "bytes": 3265472,
+      "sha256": "6572d6dd2857b3f46015d538a27dc95d6eb005937f5beb866885a979194b5cb2"
+    },
+    {
+      "path": "unspecified/jazz/abstraction-74f0cf483217e76032f13ed4.ogg",
+      "bytes": 2272430,
+      "sha256": "9c3902f0c83e52027599266f3188260a617a380e7aad19b89469c38699f93d53"
+    },
+    {
+      "path": "unspecified/jazz/abstraction-9ccab202734d1e91a94d3042.ogg",
+      "bytes": 2286528,
+      "sha256": "2d72df952ea4edb5a37674fd853bbdc0a01d92df38e5c059113640974657311f"
+    },
+    {
+      "path": "unspecified/jazz/abstraction-a02d499b250e3a92fdba66ed.ogg",
+      "bytes": 731558,
+      "sha256": "6a349d7b782681221ec082f5df3442a4437cfe41a9c65f53a0c9739cd776484d"
+    },
+    {
+      "path": "unspecified/jazz/abstraction-b4976a7c25c1b112b43c16e1.ogg",
+      "bytes": 1849977,
+      "sha256": "05081bbeb0765a341134b43d168b831d56b8106c64a02eeabb1c6c76d66e39e5"
+    },
+    {
+      "path": "unspecified/jazz/abstraction-d1984968ebc23adf8e086da3.ogg",
+      "bytes": 1781451,
+      "sha256": "a0df26b6c1113242c09746f7ade014b19b957319d4a385130f02fd8af2ac000f"
+    },
+    {
+      "path": "unspecified/jazz/abstraction-d20307161d504210a0dd287e.ogg",
+      "bytes": 1912594,
+      "sha256": "497c834634352b63099dbee321754de87cdbd08b931600ac793a2c676671b047"
+    },
+    {
+      "path": "unspecified/jazz/abstraction-f23d9e696a256a1881c5d216.ogg",
+      "bytes": 2283400,
+      "sha256": "a764b9f8485763b4386fea73097e926ff1fdadbf3e15c4d17fd1fbb4c976000e"
+    },
+    {
+      "path": "unspecified/lofi/abstraction-4e6836606331898f144502c1.ogg",
+      "bytes": 2763551,
+      "sha256": "49dbcfd4586e78cebb37d03e1555b1bec281da38917288dfd812dc3b18b8f89e"
+    },
+    {
+      "path": "unspecified/silly/abstraction-38586ba5ee0890062c76b591.ogg",
+      "bytes": 1637404,
+      "sha256": "c37aac3f9c0420fede9f6d245ffbbdb6d47137fcb6883b4ef1096687bcb966f8"
+    },
+    {
+      "path": "unspecified/silly/abstraction-4ee6896a70defe43375a8518.ogg",
+      "bytes": 1221529,
+      "sha256": "093ca96891baa29d17eca2ffbd63b9f61cedacd68c93b7ee7dee279cd0deb506"
+    },
+    {
+      "path": "unspecified/silly/abstraction-9f0088d23b8792aa7e9b933e.ogg",
+      "bytes": 1973378,
+      "sha256": "721954e00d982892b0798bf49072da7e3b33ac311e3446fb8e641784819d613a"
+    },
+    {
+      "path": "unspecified/silly/abstraction-b4910ff43f4c78548ab131f1.ogg",
+      "bytes": 1960419,
+      "sha256": "e1de434e48f6e1f9a78b0b3def81be43446dca6fe7c2632810f2c3de46ff8e96"
+    },
+    {
+      "path": "unspecified/silly/abstraction-c70e608321db9b8dfe18784e.ogg",
+      "bytes": 1647640,
+      "sha256": "e2347cee1176ec6792773afeed1251e7aeaf946a3c792a700daf80ad9f846017"
+    },
+    {
+      "path": "unspecified/silly/abstraction-e0ec39d94eec6de3a0f38550.ogg",
+      "bytes": 2501708,
+      "sha256": "875b4368dc338807cbe10306196efaccb8bf4d0eeb7fcb8d33641e53fafc7d5d"
+    },
+    {
+      "path": "unspecified/silly/abstraction-ef1eec8282f434eaad86dde1.ogg",
+      "bytes": 2490463,
+      "sha256": "32710d7c7bb3efe9f65e645c3a413d6d31d628259bacf67203af9b05b8f440bb"
+    },
+    {
+      "path": "unspecified/spooky/abstraction-0d298823e72db64ae0d4eccf.ogg",
+      "bytes": 3446998,
+      "sha256": "8c2cc7fe5ce366dc887214310149ea39b607d1088fc84154187402dd91faf3b5"
+    },
+    {
+      "path": "unspecified/spooky/abstraction-11f4db37c1809ac3fcead6ce.ogg",
+      "bytes": 1128413,
+      "sha256": "d020e05279e3f9a7154aa844e54a975efa517476211bd3beef4e0e44c958c60b"
+    },
+    {
+      "path": "unspecified/spooky/abstraction-3d3afd3623e069fbd0d6bd18.ogg",
+      "bytes": 2183954,
+      "sha256": "4cee5b2ce8752d79b1577dc0a561601c9ecc076437cdffae284d442d7fd0cdc6"
+    },
+    {
+      "path": "unspecified/spooky/abstraction-455c33af6610997b97b690d0.ogg",
+      "bytes": 2443602,
+      "sha256": "5dac918bb645b120b52bad84a0e4b94070bcc17819100032cb74603165458602"
+    },
+    {
+      "path": "unspecified/spooky/abstraction-847a4ac6e2513f295fcfa44f.ogg",
+      "bytes": 2072001,
+      "sha256": "fa7b447e9051b16622515266c04b88ae7b2fcb88f71cd12933135bed63995f68"
+    },
+    {
+      "path": "unspecified/spooky/abstraction-8c2b64234b241112c8d54382.ogg",
+      "bytes": 2737199,
+      "sha256": "0478801fe02c751de5284fda3dde5e87e7a60733853237e249d23e57c67aaab3"
+    },
+    {
+      "path": "unspecified/spooky/abstraction-a5f8e96841acf650a1563bc6.ogg",
+      "bytes": 2111822,
+      "sha256": "b6a300df48497fc9ce5b38b99fb4485e41b9ace368ad620162b09fa87a26291c"
+    },
+    {
+      "path": "unspecified/unspecified/abstraction-088c78a361d92b9df297917c.ogg",
+      "bytes": 4433049,
+      "sha256": "e4356b35132d3499ce7eb0ac043bdd5f120732110516bc68cee8b7c9c165093a"
+    },
+    {
+      "path": "unspecified/unspecified/abstraction-0fa2b58312c2b15c4a6a0b08.ogg",
+      "bytes": 1273312,
+      "sha256": "0c4d98667eda4b058ad7088c7700c05f3a5384e5d400a638bbed3df9c9253959"
+    },
+    {
+      "path": "unspecified/unspecified/abstraction-2bd74cd8b63648ee01b5866d.ogg",
+      "bytes": 2851385,
+      "sha256": "bdc54fb8ddd65829043827206b4a3f5f3a8f43613aabd050900ee7806257c91b"
+    },
+    {
+      "path": "unspecified/unspecified/abstraction-3be812f737982a33fe28dc04.ogg",
+      "bytes": 1044109,
+      "sha256": "3324d2af74fed158ffcaae111511503bdc2c24a5d5c705045d1c0c052fde8b0d"
+    },
+    {
+      "path": "unspecified/unspecified/abstraction-588840b6db94e10281b78564.ogg",
+      "bytes": 5608401,
+      "sha256": "7c1d5fc11ca660f222f75858f5d1f67d2a29c3816ea38350c012a07d923adb23"
+    },
+    {
+      "path": "unspecified/unspecified/abstraction-697e27f1877faadf79297a05.ogg",
+      "bytes": 2345523,
+      "sha256": "0804131eae5feab25a449528e27eba4aa6ea3fe3502120b2ebf80f3267d90d3e"
+    },
+    {
+      "path": "unspecified/unspecified/abstraction-a536fa50aec4ddfea7dde032.ogg",
+      "bytes": 866323,
+      "sha256": "6ef8b89eafb935e1d71aa7d974bf26c48f358848259e142def9ef2d7d28fcb83"
+    },
+    {
+      "path": "unspecified/unspecified/abstraction-ac40d882e78bf9f2c7055d31.ogg",
+      "bytes": 3588703,
+      "sha256": "8d5dca8538ce5006e24327b87b7381566a03414c7db83adf41b22703446a00c9"
+    },
+    {
+      "path": "unspecified/unspecified/abstraction-b99be066361b26e25c07b3ad.ogg",
+      "bytes": 1060326,
+      "sha256": "e01e3a6d19ca941d6c8bf5913bfcc726c275b9869907f092538595398baf1b7f"
+    },
+    {
+      "path": "unspecified/unspecified/abstraction-d24b2fc54f8f5cc12465fdc4.ogg",
+      "bytes": 1826236,
+      "sha256": "2e7a58895e5ce1a78460210a73f0a428842c1b5bd5a43571c8ae231a263e3fdf"
+    },
+    {
+      "path": "unspecified/unspecified/abstraction-f1de31eeaca529c17c906dde.ogg",
+      "bytes": 1603163,
+      "sha256": "1352e52076dfe37a6296c7d7966b42d9bd61aebf43c95a82c5bb9b23dcbe5c2c"
+    },
+    {
+      "path": "upbeat/synth/happy-end-music.ogg",
+      "bytes": 585189,
+      "sha256": "2b37b5b4006a0856d5578c60ea9d932201f7b6b7d1a91505c39eeca137c53dff"
+    }
+  ]
+}

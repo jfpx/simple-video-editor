@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bgm_play">试听10秒</string>
+    <string name="bgm_play_full">整曲试听</string>
+    <string name="bgm_stop">停止试听</string>
+    <string name="bgm_audition_ready">试听不影响导出，导出仍使用整曲循环。</string>
+    <string name="bgm_audition_preparing">正在准备试听，可随时停止。</string>
+    <string name="bgm_audition_preview">正在试听，播放10秒后自动停止。</string>
+    <string name="bgm_audition_full">正在整曲试听，播放结束后停止，不循环。</string>
+    <string name="bgm_audition_stopped">试听已停止。</string>
+    <string name="bgm_audition_error">无法试听所选曲目，请检查音频设备或重新选择。</string>
+    <string name="bgm_enable">\u79bb\u7ebf\u66f2\u5e93 BGM\uff08\u72ec\u7acb\u6df7\u97f3\uff09</string>
+    <string name="bgm_mute">\u4ec5\u9759\u97f3\u539f\u89c6\u9891</string>
+    <string name="bgm_gain">BGM \u97f3\u91cf\uff1a%1$d%%</string>
+    <string name="bgm_choose">\u9009\u62e9\u79bb\u7ebf\u66f2\u76ee</string>
+    <string name="bgm_clear">\u6e05\u9664\u66f2\u5e93\u9009\u62e9</string>
+    <string name="bgm_categories">\u60c5\u7eea / \u98ce\u683c</string>
+    <string name="bgm_all_tracks">全部曲目 / 搜索</string>
+    <string name="bgm_search">搜索曲名、情绪、风格或作者</string>
+    <string name="bgm_pending">尚未选择离线曲目。</string>
+    <string name="bgm_hint">\u5f00\u542f\u66f2\u5e93\u540e\uff0c\u4e0b\u65b9\u5bfc\u5165\u7684\u66ff\u6362\u97f3\u9891\u6682\u4e0d\u4f7f\u7528\uff1b\u5173\u95ed\u540e\u6062\u590d\u3002\u5bfc\u5165\u66ff\u6362\u97f3\u9891\u4f1a\u5173\u95ed\u66f2\u5e93\u3002BGM \u539f\u901f\u5faa\u73af\u8986\u76d6\u6807\u9898\u3001\u7247\u5934\u3001\u4e3b\u89c6\u9891\u548c\u62fc\u63a5\u7247\u6bb5\u3002\u539f\u58f0\u97f3\u91cf\uff08\u542b 0\uff09\u4e0d\u5f71\u54cd BGM\u3002\u9759\u6001\u9884\u89c8\u4e0d\u8bd5\u542c\u3002</string>
+    <string name="bgm_import_inactive">\u66f2\u5e93 BGM \u5df2\u5f00\u542f\uff0c\u5bfc\u5165\u7684\u66ff\u6362\u97f3\u9891\u6682\u4e0d\u4f7f\u7528\u3002</string>
+    <string name="bgm_licenses">\u97f3\u4e50\u6765\u6e90\u4e0e\u6388\u6743</string>
+    <string name="bgm_license_notice">已内置 isaiah658、Igor Gundarev、Abstraction / Tallbeard Studios（Ben Burnes）、yd 与 DJ CrisP 的 118 首原始 CC0 录音。原始文件、完整授权文本及来源证据随应用离线保留。CC0 在授权者持有的权利范围内允许再分发及商用，不是所有第三方权利的清理或担保；预设权利及工程与录音的一致性未经独立验证。完整乐曲可重复播放但不保证无缝；作者指定的循环也未经听感验证。Abstraction 不支持 AI/机器学习、NFT 或直接转售，本曲库不暗示作者背书。署名非强制，来源列于下方。</string>
+</resources>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="editor_source_cancelled">Import cancelled; you can retry. Partial private copies are cleaned when the worker returns; originals are unchanged.</string>
+    <string name="editor_source_reselect">Cannot read the original video (changed file, expired permission or unsupported format). Please reselect. Nothing was copied automatically.</string>
+    <string name="editor_source_copy_title">Confirm extra storage use</string>
+    <string name="editor_source_not_seekable">The provider does not support seeking, so this video cannot be decoded directly.</string>
+    <string name="editor_source_virtual">This virtual document must first be exported as readable video.</string>
+    <string name="editor_source_copy_message">%1$s\nSource size: %2$s\nApp free space: %3$s\nCopy into private app cache and retry? Cancel manually at any time; no in-app time limit. The original is unchanged. Unknown size may exhaust space. Copying does not fix unsupported codecs.</string>
+    <string name="editor_source_copy_confirm">Allow copy and retry</string>
+    <string name="editor_source_copy_declined">Nothing copied; previous selection retained. Choose a seekable video instead.</string>
+    <string name="editor_source_size_unknown">Unknown</string>
+    <string name="editor_source_copy_progress">Copying: %1$d bytes; %2$d s elapsed; cancel manually, no in-app time limit</string>
+    <string name="editor_source_probing">Reading media information directly (not copying the whole video)</string>
+    <string name="editor_source_copied">Using the approved private copy. The original is unchanged.</string>
+    <string name="editor_source_direct">Reading the original directly, without an app-cache copy. Keep the file and read permission. Cloud providers may download internally.</string>
+    <string name="editor_source_temporary">Reading directly, not copying. This provider did not grant persistent access: reselecting may be required after restart.</string>
+    <string name="editor_source_preset_copy">A complete preset needs an independent durable intro copy (%1$s; %2$s free; 128 MiB limit). It will no longer depend on the original intro; applying it also creates a disposable working copy. The main video is not copied. Continue?</string>
+    <string name="editor_source_preset_progress">Saving preset intro copy: %1$d bytes; cancellable</string>
+    <string name="editor_color_enable">Adjust main-video color</string>
+    <string name="editor_color_hint">Main video only, after geometry and before overlays. Linear SDR brightness/contrast/saturation; titles, appended clips, text, logos and borders are unchanged. Off or 0/100/100 keeps original color.</string>
+    <string name="editor_color_brightness_name">Brightness</string>
+    <string name="editor_color_contrast_name">Contrast</string>
+    <string name="editor_color_saturation_name">Saturation</string>
+    <string name="editor_color_brightness">Brightness %1$d (−100 to 100)</string>
+    <string name="editor_color_contrast">Contrast %1$d%% (0–200)</string>
+    <string name="editor_color_saturation">Saturation %1$d%% (0–200)</string>
+    <string name="editor_color_reset">Reset color: 0 / 100 / 100</string>
+    <string name="app_name">Simple Video Editor</string>
+    <string name="select_video">Select Video</string>
+    <string name="rotate_left">Rotate Left 90°</string>
+    <string name="rotate_right">Rotate Right 90°</string>
+    <string name="custom_angle">Custom Angle</string>
+    <string name="crop_edges">Crop Edges</string>
+    <string name="process_video">Process Video</string>
+    <string name="processing">Processing video...</string>
+    <string name="success">Video saved successfully!</string>
+    <string name="error">Error processing video</string>
+    <string name="no_video_selected">Please select a video first</string>
+    <string name="permission_required">Storage permission required</string>
+    <string name="angle_hint">Enter rotation angle (degrees)</string>
+    <string name="crop_hint">Crop pixels from edges</string>
+    <string name="top">Top</string>
+    <string name="bottom">Bottom</string>
+    <string name="left">Left</string>
+    <string name="right">Right</string>
+    
+    <!-- New strings for optimization features -->
+    <string name="processing_mode">Processing Mode</string>
+    <string name="fast_mode">⚡ Fast Mode (Rotation Only)</string>
+    <string name="fast_mode_hint">⚠️ Fast Mode: Only rotation applied (trim/volume/color ignored)\n✓ Full Mode: All effects applied (rotation/trim/volume/color adjust)</string>
+    <string name="full_mode_hint">⚙ Full Mode: Optimized processing with rotation + scaling + text overlay</string>
+    <string name="output_resolution">Output Resolution</string>
+    <string name="overlay_text">Text Overlay (Optional)</string>
+    <string name="overlay_text_hint">Enter text to overlay on video</string>
+    <string name="resolution_original">Original Size</string>
+    <string name="resolution_1080p">1080p (1920x1080)</string>
+    <string name="resolution_720p">720p (1280x720)</string>
+    <string name="resolution_480p">480p (854x480)</string>
+    <string name="fast_mode_disabled_options">Resolution and text overlay are disabled in fast mode</string>
+    <string name="estimated_time">Estimated time: %s</string>
+    <string name="current_operation">%s - %d%%</string>
+    
+    <!-- Intro Video (Old Feature) -->
+    <string name="select_intro">Select Intro Video (Optional)</string>
+    <string name="no_intro_selected">No intro selected</string>
+    <string name="intro_video">Intro Video</string>
+    
+    <!-- Intro Template (New Feature) -->
+    <string name="intro_template">Intro Template (Optional)</string>
+    <string name="enable_intro_template">📝 Enable Intro Template</string>
+    <string name="select_template">Template:</string>
+    <string name="intro_text">Intro Text:</string>
+    <string name="intro_text_hint">Enter intro text</string>
+    <string name="save_as_template">💾 Save as Template</string>
+    <string name="manage_templates">⚙️ Manage</string>
+    <string name="template_preview">Template Preview</string>
+    <string name="enter_template_name">Enter template name</string>
+    <string name="template_saved">Template saved</string>
+    <string name="template_deleted">Template deleted</string>
+    <string name="confirm_delete_template">Delete template "%s"?</string>
+    
+    <!-- Playback Speed -->
+    <string name="playback_speed">Playback Speed</string>
+    <string name="speed_0_5x">0.5x (Slow)</string>
+    <string name="speed_0_75x">0.75x</string>
+    <string name="speed_1_0x">1.0x (Normal)</string>
+    <string name="speed_1_25x">1.25x</string>
+    <string name="speed_1_5x">1.5x</string>
+    <string name="speed_2_0x">2.0x (Fast)</string>
+    
+    <!-- Background Music -->
+    <string name="background_music">Background Music</string>
+    <string name="select_music">Select Background Music (Optional)</string>
+    <string name="no_music_selected">No music (keep original audio)</string>
+    <string name="music_selected">Music: %s</string>
+
+    <!-- Video Trimming -->
+    <string name="video_trimming">Video Trimming</string>
+    <string name="enable_trimming">✂️ Enable Trimming</string>
+    <string name="start_time">Start:</string>
+    <string name="end_time">End:</string>
+    <string name="start_time_hint">0</string>
+    <string name="end_time_hint">10</string>
+
+    <!-- Volume Adjustment -->
+    <string name="volume_adjustment">Volume Adjustment</string>
+    <string name="enable_volume_adjustment">🔊 Adjust Volume</string>
+    <string name="volume_level">Volume Level:</string>
+    <string name="volume_0x">0% (Mute)</string>
+    <string name="volume_0_5x">50% (Half volume)</string>
+    <string name="volume_0_75x">75%</string>
+    <string name="volume_1_0x">100% (Original)</string>
+    <string name="volume_1_25x">125%</string>
+    <string name="volume_1_5x">150%</string>
+    <string name="volume_2_0x">200% (Double)</string>
+    <string name="volume_3_0x">300% (Triple)</string>
+    <string name="title_frame_enable">Use original video frame as title background</string>
+    <string name="title_frame_seconds">Absolute original seconds (up to 3 decimals)</string>
+    <string name="title_frame_extract">Extract / refresh background frame</string>
+    <string name="title_frame_preview">Cropped and rotated background preview without title text</string>
+    <string name="title_frame_save">Save background PNG separately</string>
+    <string name="title_frame_hint">Off by default. Uses the closest decoded frame at original source time, independent of main trim. Saves to Pictures; title keeps its own private copy.</string>
+    <string name="title_frame_select_source">Select the original video first</string>
+    <string name="title_frame_extracting">Extracting / projecting frame in background…</string>
+    <string name="title_frame_ready">Original requested %1$.3f s (closest decoded frame, not guaranteed exact) · %2$d×%3$d PNG; no title text</string>
+    <string name="title_frame_not_ready">Background not ready: check original seconds and extract frame</string>
+    <string name="title_frame_failed">Background extraction / save failed</string>
+    <string name="title_frame_saved">PNG saved (actual URI below; select to copy)</string>
+</resources>

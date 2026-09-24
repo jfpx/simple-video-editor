@@ -1,0 +1,254 @@
+{
+  "version": "png-watermark-1",
+  "case": "png_watermark",
+  "source_sha256": "f46a9e6c62af19e04c914692b5e60b3ded37f4cf5bf0ef2c01480519d16482b2",
+  "base_manifest_sha256": "c0095261eed250fc8db6d49ce0d0cb9498e1552adac2367f0d4baff86b29362f",
+  "production_renderer_used": false,
+  "native_executed": false,
+  "fixture": "Original disjoint red/blue/green rectangles; straight RGBA alpha 0/128/255; no external art",
+  "editor_semantics": {
+    "watermark": "watermark.png",
+    "widthFraction": 0.2,
+    "x": 0.75,
+    "y": 0.75,
+    "source_size": [
+      64,
+      32
+    ],
+    "canvas": [
+      320,
+      240
+    ],
+    "rect_xyxy": [
+      192,
+      156,
+      256,
+      188
+    ],
+    "all_other_edits": "frozen identity"
+  },
+  "expected": {
+    "blend": "(foreground * alpha + analytic_background * (255-alpha))/255",
+    "geometry": "red [4,4,20,28] A255; blue [24,4,44,28] A128; green [48,4,60,16] A255; green [48,20,60,28] A128; otherwise A0",
+    "region_max_channel_mae": 18,
+    "edge_margin_px": 2,
+    "fixed_exclusion_xyxy": [
+      188,
+      152,
+      268,
+      192
+    ],
+    "spatial_probes": 9,
+    "visible_barcode_bits": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "outside_timing_audio_tolerances": "unchanged frozen v1"
+  },
+  "limits": [
+    "Only this fixed watermark on identity main segment; no UI/SAF/preview claim.",
+    "Other sizes/positions, scaling, title/intro/text combinations remain unverified.",
+    "Nine spatial probes; all frame PTS/barcodes/audio retained.",
+    "Fixed exclusion includes codec halo and displaced control; overlapping moving marker skipped only there.",
+    "Reference blends independently decoded source RGB; checker blends original pinned analytic frames, never reference/candidate pixels."
+  ],
+  "controls": [
+    {
+      "path": "reference.mp4",
+      "pass": true,
+      "required_failures": []
+    },
+    {
+      "path": "omitted.mp4",
+      "pass": false,
+      "required_failures": [
+        "watermark.probe_0.opaque_red"
+      ]
+    },
+    {
+      "path": "misplaced.mp4",
+      "pass": false,
+      "required_failures": [
+        "watermark.probe_0.opaque_red"
+      ]
+    },
+    {
+      "path": "opaque.mp4",
+      "pass": false,
+      "required_failures": [
+        "watermark.probe_0.half_blue",
+        "watermark.probe_0.transparent"
+      ]
+    }
+  ],
+  "ffmpeg": "ffmpeg version 8.1.1-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+  "commands": [
+    [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-nostdin",
+      "-i",
+      "app\\src\\main\\assets\\video-oracle\\standard.mp4",
+      "-map",
+      "0:v:0",
+      "-pix_fmt",
+      "rgb24",
+      "-f",
+      "rawvideo",
+      "-"
+    ],
+    [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-nostdin",
+      "-y",
+      "-f",
+      "rawvideo",
+      "-pixel_format",
+      "rgb24",
+      "-video_size",
+      "320x240",
+      "-framerate",
+      "24",
+      "-i",
+      "-",
+      "-i",
+      "app\\src\\main\\assets\\video-oracle\\standard.mp4",
+      "-map",
+      "0:v:0",
+      "-map",
+      "1:a:0",
+      "-c:v",
+      "libx264",
+      "-preset",
+      "medium",
+      "-crf",
+      "16",
+      "-threads",
+      "1",
+      "-pix_fmt",
+      "yuv420p",
+      "-c:a",
+      "copy",
+      "-t",
+      "4",
+      "-movflags",
+      "+faststart",
+      "app\\src\\main\\assets\\watermark-oracle\\reference.mp4"
+    ],
+    [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-nostdin",
+      "-y",
+      "-f",
+      "rawvideo",
+      "-pixel_format",
+      "rgb24",
+      "-video_size",
+      "320x240",
+      "-framerate",
+      "24",
+      "-i",
+      "-",
+      "-i",
+      "app\\src\\main\\assets\\video-oracle\\standard.mp4",
+      "-map",
+      "0:v:0",
+      "-map",
+      "1:a:0",
+      "-c:v",
+      "libx264",
+      "-preset",
+      "medium",
+      "-crf",
+      "16",
+      "-threads",
+      "1",
+      "-pix_fmt",
+      "yuv420p",
+      "-c:a",
+      "copy",
+      "-t",
+      "4",
+      "-movflags",
+      "+faststart",
+      "app\\src\\main\\assets\\watermark-oracle\\misplaced.mp4"
+    ],
+    [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-nostdin",
+      "-y",
+      "-f",
+      "rawvideo",
+      "-pixel_format",
+      "rgb24",
+      "-video_size",
+      "320x240",
+      "-framerate",
+      "24",
+      "-i",
+      "-",
+      "-i",
+      "app\\src\\main\\assets\\video-oracle\\standard.mp4",
+      "-map",
+      "0:v:0",
+      "-map",
+      "1:a:0",
+      "-c:v",
+      "libx264",
+      "-preset",
+      "medium",
+      "-crf",
+      "16",
+      "-threads",
+      "1",
+      "-pix_fmt",
+      "yuv420p",
+      "-c:a",
+      "copy",
+      "-t",
+      "4",
+      "-movflags",
+      "+faststart",
+      "app\\src\\main\\assets\\watermark-oracle\\opaque.mp4"
+    ]
+  ],
+  "assets": [
+    {
+      "path": "misplaced.mp4",
+      "bytes": 88859,
+      "sha256": "fc5e5cdde33f30e526be07b4525461d0afa54923579a027865ab84e8f555dc56"
+    },
+    {
+      "path": "omitted.mp4",
+      "bytes": 95475,
+      "sha256": "f46a9e6c62af19e04c914692b5e60b3ded37f4cf5bf0ef2c01480519d16482b2"
+    },
+    {
+      "path": "opaque.mp4",
+      "bytes": 88255,
+      "sha256": "ce07e7234d4229ec10255357a20cb82779e49c81fb9f07cb22ea9457098fe702"
+    },
+    {
+      "path": "reference.mp4",
+      "bytes": 88945,
+      "sha256": "c98dea889f6fb46e843bdadccbc23f4d2e9cfb18de3c2850eb02a9bb3a084543"
+    },
+    {
+      "path": "watermark.png",
+      "bytes": 157,
+      "sha256": "7ba8262bd5443cdf4f25305299dc8ff0ec3e7bd5d8dba95638d9608524c2e5ef"
+    }
+  ]
+}

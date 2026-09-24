@@ -1,0 +1,463 @@
+{
+  "schema": "independent-video-oracle-export-vectors",
+  "version": "1.0.0",
+  "manifest": {
+    "path": "manifest.json",
+    "sha256": "c0095261eed250fc8db6d49ce0d0cb9498e1552adac2367f0d4baff86b29362f"
+  },
+  "fixture": {
+    "path": "standard.mp4",
+    "bytes": 95475,
+    "sha256": "f46a9e6c62af19e04c914692b5e60b3ded37f4cf5bf0ef2c01480519d16482b2"
+  },
+  "use": "Export vectors only. Pull real device outputs and run oracle.py verify for full validation.",
+  "cases": [
+    {
+      "id": "identity",
+      "edit_config": {
+        "sourceDurationMs": 4000,
+        "startMs": 0,
+        "endMs": 4000,
+        "cropLeft": 0.0,
+        "cropTop": 0.0,
+        "cropRight": 1.0,
+        "cropBottom": 1.0,
+        "rotationDegrees": 0,
+        "outputHeight": 0,
+        "speed": 1.0,
+        "volume": 1.0,
+        "overlayText": ""
+      },
+      "expected": {
+        "width": 320,
+        "height": 240,
+        "duration_seconds": 4.0,
+        "native_fps": 24.0,
+        "accepted_cfr_fps": [
+          24.0
+        ],
+        "native_frame_count": 96,
+        "audio_required": true,
+        "audio_sample_rate": 48000,
+        "audio_channels": 1,
+        "expected_decoded_audio_samples": 192000
+      },
+      "reference": {
+        "path": "reference\\identity.mp4",
+        "bytes": 93752,
+        "sha256": "68a946ced2b7969af6a54652f1b308157713b5457130de28a520dafcff22d647"
+      },
+      "output_filename": "identity.mp4"
+    },
+    {
+      "id": "crop",
+      "edit_config": {
+        "sourceDurationMs": 4000,
+        "startMs": 0,
+        "endMs": 4000,
+        "cropLeft": 0.125,
+        "cropTop": 0.16666666666666666,
+        "cropRight": 0.875,
+        "cropBottom": 0.8333333333333334,
+        "rotationDegrees": 0,
+        "outputHeight": 0,
+        "speed": 1.0,
+        "volume": 1.0,
+        "overlayText": ""
+      },
+      "expected": {
+        "width": 240,
+        "height": 160,
+        "duration_seconds": 4.0,
+        "native_fps": 24.0,
+        "accepted_cfr_fps": [
+          24.0
+        ],
+        "native_frame_count": 96,
+        "audio_required": true,
+        "audio_sample_rate": 48000,
+        "audio_channels": 1,
+        "expected_decoded_audio_samples": 192000
+      },
+      "reference": {
+        "path": "reference\\crop.mp4",
+        "bytes": 87319,
+        "sha256": "ef908758a3a70030f10107f1caeb14a3b44318553a0ad493c28b3d18a915b120"
+      },
+      "output_filename": "crop.mp4"
+    },
+    {
+      "id": "rotate90",
+      "edit_config": {
+        "sourceDurationMs": 4000,
+        "startMs": 0,
+        "endMs": 4000,
+        "cropLeft": 0.0,
+        "cropTop": 0.0,
+        "cropRight": 1.0,
+        "cropBottom": 1.0,
+        "rotationDegrees": 90,
+        "outputHeight": 0,
+        "speed": 1.0,
+        "volume": 1.0,
+        "overlayText": ""
+      },
+      "expected": {
+        "width": 240,
+        "height": 320,
+        "duration_seconds": 4.0,
+        "native_fps": 24.0,
+        "accepted_cfr_fps": [
+          24.0
+        ],
+        "native_frame_count": 96,
+        "audio_required": true,
+        "audio_sample_rate": 48000,
+        "audio_channels": 1,
+        "expected_decoded_audio_samples": 192000
+      },
+      "reference": {
+        "path": "reference\\rotate90.mp4",
+        "bytes": 93771,
+        "sha256": "ea4d2b0efaf9baea98e0d30d87d41f9c94575b29bf7b36e0aac776697d510cd0"
+      },
+      "output_filename": "rotate90.mp4"
+    },
+    {
+      "id": "rotate180",
+      "edit_config": {
+        "sourceDurationMs": 4000,
+        "startMs": 0,
+        "endMs": 4000,
+        "cropLeft": 0.0,
+        "cropTop": 0.0,
+        "cropRight": 1.0,
+        "cropBottom": 1.0,
+        "rotationDegrees": 180,
+        "outputHeight": 0,
+        "speed": 1.0,
+        "volume": 1.0,
+        "overlayText": ""
+      },
+      "expected": {
+        "width": 320,
+        "height": 240,
+        "duration_seconds": 4.0,
+        "native_fps": 24.0,
+        "accepted_cfr_fps": [
+          24.0
+        ],
+        "native_frame_count": 96,
+        "audio_required": true,
+        "audio_sample_rate": 48000,
+        "audio_channels": 1,
+        "expected_decoded_audio_samples": 192000
+      },
+      "reference": {
+        "path": "reference\\rotate180.mp4",
+        "bytes": 97119,
+        "sha256": "1873300d1464268ccf079533817b561d8ded9b2bbc8bb635f1fc2fa0ecac953a"
+      },
+      "output_filename": "rotate180.mp4"
+    },
+    {
+      "id": "rotate270",
+      "edit_config": {
+        "sourceDurationMs": 4000,
+        "startMs": 0,
+        "endMs": 4000,
+        "cropLeft": 0.0,
+        "cropTop": 0.0,
+        "cropRight": 1.0,
+        "cropBottom": 1.0,
+        "rotationDegrees": 270,
+        "outputHeight": 0,
+        "speed": 1.0,
+        "volume": 1.0,
+        "overlayText": ""
+      },
+      "expected": {
+        "width": 240,
+        "height": 320,
+        "duration_seconds": 4.0,
+        "native_fps": 24.0,
+        "accepted_cfr_fps": [
+          24.0
+        ],
+        "native_frame_count": 96,
+        "audio_required": true,
+        "audio_sample_rate": 48000,
+        "audio_channels": 1,
+        "expected_decoded_audio_samples": 192000
+      },
+      "reference": {
+        "path": "reference\\rotate270.mp4",
+        "bytes": 95344,
+        "sha256": "2f73347ad380dedf9284d2c02f51c0231dd1ad535f3dac32bc758ae430f767a4"
+      },
+      "output_filename": "rotate270.mp4"
+    },
+    {
+      "id": "trim",
+      "edit_config": {
+        "sourceDurationMs": 4000,
+        "startMs": 1000,
+        "endMs": 3000,
+        "cropLeft": 0.0,
+        "cropTop": 0.0,
+        "cropRight": 1.0,
+        "cropBottom": 1.0,
+        "rotationDegrees": 0,
+        "outputHeight": 0,
+        "speed": 1.0,
+        "volume": 1.0,
+        "overlayText": ""
+      },
+      "expected": {
+        "width": 320,
+        "height": 240,
+        "duration_seconds": 2.0,
+        "native_fps": 24.0,
+        "accepted_cfr_fps": [
+          24.0
+        ],
+        "native_frame_count": 48,
+        "audio_required": true,
+        "audio_sample_rate": 48000,
+        "audio_channels": 1,
+        "expected_decoded_audio_samples": 96000
+      },
+      "reference": {
+        "path": "reference\\trim.mp4",
+        "bytes": 47332,
+        "sha256": "ce90a4b1805525ea0e65260e2e825c5bc325f6d3708c43568502cf65f2c9f4de"
+      },
+      "output_filename": "trim.mp4"
+    },
+    {
+      "id": "resize",
+      "edit_config": {
+        "sourceDurationMs": 4000,
+        "startMs": 0,
+        "endMs": 4000,
+        "cropLeft": 0.0,
+        "cropTop": 0.0,
+        "cropRight": 1.0,
+        "cropBottom": 1.0,
+        "rotationDegrees": 0,
+        "outputHeight": 120,
+        "speed": 1.0,
+        "volume": 1.0,
+        "overlayText": ""
+      },
+      "expected": {
+        "width": 160,
+        "height": 120,
+        "duration_seconds": 4.0,
+        "native_fps": 24.0,
+        "accepted_cfr_fps": [
+          24.0
+        ],
+        "native_frame_count": 96,
+        "audio_required": true,
+        "audio_sample_rate": 48000,
+        "audio_channels": 1,
+        "expected_decoded_audio_samples": 192000
+      },
+      "reference": {
+        "path": "reference\\resize.mp4",
+        "bytes": 93335,
+        "sha256": "412d4af1689f1cb4f670e11454eafaf584800338501f3d9579526ec86066379a"
+      },
+      "output_filename": "resize.mp4"
+    },
+    {
+      "id": "mute",
+      "edit_config": {
+        "sourceDurationMs": 4000,
+        "startMs": 0,
+        "endMs": 4000,
+        "cropLeft": 0.0,
+        "cropTop": 0.0,
+        "cropRight": 1.0,
+        "cropBottom": 1.0,
+        "rotationDegrees": 0,
+        "outputHeight": 0,
+        "speed": 1.0,
+        "volume": 0.0,
+        "overlayText": ""
+      },
+      "expected": {
+        "width": 320,
+        "height": 240,
+        "duration_seconds": 4.0,
+        "native_fps": 24.0,
+        "accepted_cfr_fps": [
+          24.0
+        ],
+        "native_frame_count": 96,
+        "audio_required": false,
+        "audio_sample_rate": 48000,
+        "audio_channels": 1,
+        "expected_decoded_audio_samples": 192000
+      },
+      "reference": {
+        "path": "reference\\mute.mp4",
+        "bytes": 28823,
+        "sha256": "abb4983dfbe094a43d04a80300c34072952af15c7d4a72eefbfa998f5641ca28"
+      },
+      "output_filename": "mute.mp4"
+    },
+    {
+      "id": "volume25",
+      "edit_config": {
+        "sourceDurationMs": 4000,
+        "startMs": 0,
+        "endMs": 4000,
+        "cropLeft": 0.0,
+        "cropTop": 0.0,
+        "cropRight": 1.0,
+        "cropBottom": 1.0,
+        "rotationDegrees": 0,
+        "outputHeight": 0,
+        "speed": 1.0,
+        "volume": 0.25,
+        "overlayText": ""
+      },
+      "expected": {
+        "width": 320,
+        "height": 240,
+        "duration_seconds": 4.0,
+        "native_fps": 24.0,
+        "accepted_cfr_fps": [
+          24.0
+        ],
+        "native_frame_count": 96,
+        "audio_required": true,
+        "audio_sample_rate": 48000,
+        "audio_channels": 1,
+        "expected_decoded_audio_samples": 192000
+      },
+      "reference": {
+        "path": "reference\\volume25.mp4",
+        "bytes": 93177,
+        "sha256": "7cc8771ae7dc755d549e76841e06f1b2af6de726672d1cad87b9aebe29ece926"
+      },
+      "output_filename": "volume25.mp4"
+    },
+    {
+      "id": "speed2",
+      "edit_config": {
+        "sourceDurationMs": 4000,
+        "startMs": 0,
+        "endMs": 4000,
+        "cropLeft": 0.0,
+        "cropTop": 0.0,
+        "cropRight": 1.0,
+        "cropBottom": 1.0,
+        "rotationDegrees": 0,
+        "outputHeight": 0,
+        "speed": 2.0,
+        "volume": 1.0,
+        "overlayText": ""
+      },
+      "expected": {
+        "width": 320,
+        "height": 240,
+        "duration_seconds": 2.0,
+        "native_fps": 48.0,
+        "accepted_cfr_fps": [
+          24.0,
+          48.0
+        ],
+        "native_frame_count": 96,
+        "audio_required": true,
+        "audio_sample_rate": 48000,
+        "audio_channels": 1,
+        "expected_decoded_audio_samples": 96000
+      },
+      "reference": {
+        "path": "reference\\speed2.mp4",
+        "bytes": 62413,
+        "sha256": "663a247383a8356af65a59438fb43bfdcef0fb18da8a5282ad0549b2d47b9fd9"
+      },
+      "output_filename": "speed2.mp4"
+    },
+    {
+      "id": "speed_half",
+      "edit_config": {
+        "sourceDurationMs": 4000,
+        "startMs": 0,
+        "endMs": 4000,
+        "cropLeft": 0.0,
+        "cropTop": 0.0,
+        "cropRight": 1.0,
+        "cropBottom": 1.0,
+        "rotationDegrees": 0,
+        "outputHeight": 0,
+        "speed": 0.5,
+        "volume": 1.0,
+        "overlayText": ""
+      },
+      "expected": {
+        "width": 320,
+        "height": 240,
+        "duration_seconds": 8.0,
+        "native_fps": 12.0,
+        "accepted_cfr_fps": [
+          12.0,
+          24.0
+        ],
+        "native_frame_count": 96,
+        "audio_required": true,
+        "audio_sample_rate": 48000,
+        "audio_channels": 1,
+        "expected_decoded_audio_samples": 384000
+      },
+      "reference": {
+        "path": "reference\\speed_half.mp4",
+        "bytes": 160709,
+        "sha256": "69bbfd982fce1498e407d77d0643fd6995e7ae07377b11de3313b474091c90ee"
+      },
+      "output_filename": "speed_half.mp4"
+    },
+    {
+      "id": "combo",
+      "edit_config": {
+        "sourceDurationMs": 4000,
+        "startMs": 1000,
+        "endMs": 3000,
+        "cropLeft": 0.125,
+        "cropTop": 0.16666666666666666,
+        "cropRight": 0.875,
+        "cropBottom": 0.8333333333333334,
+        "rotationDegrees": 90,
+        "outputHeight": 120,
+        "speed": 2.0,
+        "volume": 0.25,
+        "overlayText": ""
+      },
+      "expected": {
+        "width": 80,
+        "height": 120,
+        "duration_seconds": 1.0,
+        "native_fps": 48.0,
+        "accepted_cfr_fps": [
+          24.0,
+          48.0
+        ],
+        "native_frame_count": 48,
+        "audio_required": true,
+        "audio_sample_rate": 48000,
+        "audio_channels": 1,
+        "expected_decoded_audio_samples": 48000
+      },
+      "reference": {
+        "path": "reference\\combo.mp4",
+        "bytes": 30261,
+        "sha256": "34acb778a1fce9a15a993a055fe775736edb88e8e4852e18f6f1439a8ff69515"
+      },
+      "output_filename": "combo.mp4"
+    }
+  ]
+}

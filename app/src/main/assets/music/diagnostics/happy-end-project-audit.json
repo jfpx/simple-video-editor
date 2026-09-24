@@ -1,0 +1,12 @@
+{
+  "zipCRC": "all entries passed",
+  "qCompressDecodedBytes": 262976,
+  "instrumentCounts": {
+    "tripleoscillator": 1,
+    "kicker": 1,
+    "organic": 3,
+    "zynaddsubfx": 5
+  },
+  "externalAudioReferences": [],
+  "qualification": "Static source inspection, not render equivalence or preset rights proof."
+}

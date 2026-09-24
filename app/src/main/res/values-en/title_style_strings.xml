@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_load_full_preset">Load full preset (replaces text, animation and appearance; use animation below for motion only)</string>
+    <string name="title_text_color">Text color</string>
+    <string name="title_background_color">Background start / solid color</string>
+    <string name="title_gradient_color">Background gradient end color</string>
+    <string name="title_gradient_enable">Enable background gradient</string>
+    <string name="title_color_hint">Choose alpha and RGB channels. Transparent backgrounds composite over black. An original-video frame replaces the solid / gradient background, not the text color. Animation and duration never reset appearance.</string>
+    <string name="title_duration_ms">Duration (positive integer milliseconds; 1000 ms = 1 second)</string>
+    <string name="title_layout">Text layout and size unit</string>
+    <string name="title_size_canvas">Size 1–160: pixels on a 640×360 reference canvas, scaled proportionally. Multiline text wraps; oversized blocks shrink to fit the safe area.</string>
+    <string name="title_size_legacy">Compatibility size 1–160 sp: converted to output pixels using this device’s font density. Preserves legacy position and explicit lines (no wrapping). Independent of animation.</string>
+    <string name="title_preset_load_failed">Cannot load title preset; no default substituted. Check the preset data.</string>
+    <string-array name="title_layouts">
+        <item>Canvas-relative size / wrapping</item><item>Legacy sp / original position and lines</item>
+    </string-array>
+    <string-array name="title_color_channels">
+        <item>Alpha A</item><item>Red R</item><item>Green G</item><item>Blue B</item>
+    </string-array>
+</resources>

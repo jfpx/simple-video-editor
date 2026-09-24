@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "preparedAtUTC": "2026-09-17T02:45:12.635382+00:00",
+  "scope": "Only parent-approved initial two-track CC0 set. CalmLoop, SummerPark and all other candidates deferred; not downloaded.",
+  "sources": [
+    {
+      "id": "heavenly-loop",
+      "title": "Heavenly Loop",
+      "author": "isaiah658",
+      "authorProfileURL": "https://opengameart.org/users/isaiah658",
+      "sourceURL": "https://opengameart.org/content/heavenly-loop",
+      "sourceDateDisplayed": "2017-08-11",
+      "sourceDateTimezone": "not independently established",
+      "licenseField": "CC0",
+      "licenseLinkAsPublished": "http://creativecommons.org/publicdomain/zero/1.0/",
+      "normalizedLicense": "CC0-1.0",
+      "shortEvidenceQuotes": {
+        "author": "Author: isaiah658",
+        "license": "License(s): CC0",
+        "description": "A seamless heavenly / dreamy sound loop.",
+        "authorship": "It was made using only ZynAddSubFX in LMMS.",
+        "attribution": "Credit to isaiah658 is not need but is appreciated."
+      },
+      "sourceEvidencePath": "evidence\\heavenly-loop.html",
+      "sourceHTTPMetadataPath": "evidence\\heavenly-loop.http.json",
+      "downloadHTTPMetadataPath": "evidence\\heavenly-loop.download.json",
+      "sourcePageAttachmentURLMatchedExactly": true,
+      "sourcePageAttachmentBytesMatched": true,
+      "authorshipAssessment": "Official uploader identifies isaiah658 as author and describes original ZynAddSubFX/LMMS production. Creator-authored music is supported by uploader evidence; no independent project-file or rights-chain audit.",
+      "rightsAssessment": "CC0 redistribution and commercial use within rights held by the affirmer. All third-party rights are not guaranteed cleared.",
+      "originalFilePreserved": true
+    },
+    {
+      "id": "unsolved-investigation",
+      "title": "Unsolved Investigation",
+      "author": "isaiah658",
+      "authorProfileURL": "https://opengameart.org/users/isaiah658",
+      "sourceURL": "https://opengameart.org/content/unsolved-investigation",
+      "sourceDateDisplayed": "2018-07-28",
+      "sourceDateTimezone": "not independently established",
+      "licenseField": "CC0",
+      "licenseLinkAsPublished": "http://creativecommons.org/publicdomain/zero/1.0/",
+      "normalizedLicense": "CC0-1.0",
+      "shortEvidenceQuotes": {
+        "author": "Author: isaiah658",
+        "license": "License(s): CC0",
+        "description": "The music has a dark mysterious vibe in a score / cinematic style.",
+        "authorship": "It's made enitrely with ZynAddSubFX in LMMS.",
+        "loop": "The music is a seamless loop.",
+        "attribution": "Credit to isaiah658 is not required, but is appreciated."
+      },
+      "sourceEvidencePath": "evidence\\unsolved-investigation.html",
+      "sourceHTTPMetadataPath": "evidence\\unsolved-investigation.http.json",
+      "downloadHTTPMetadataPath": "evidence\\unsolved-investigation.download.json",
+      "sourcePageAttachmentURLMatchedExactly": true,
+      "sourcePageAttachmentBytesMatched": true,
+      "authorshipAssessment": "Official uploader identifies isaiah658 as author and describes original ZynAddSubFX/LMMS production. Creator-authored music is supported by uploader evidence; no independent project-file or rights-chain audit.",
+      "rightsAssessment": "CC0 redistribution and commercial use within rights held by the affirmer. All third-party rights are not guaranteed cleared.",
+      "originalFilePreserved": true
+    }
+  ],
+  "licenseEvidence": {
+    "deedURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "legalCodeURL": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.en",
+    "deedPath": "evidence\\cc0-deed.html",
+    "legalCodePath": "evidence\\cc0-legalcode.html",
+    "summaryPath": "licenses\\CC0-1.0.txt",
+    "shortDeedQuote": "You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission."
+  },
+  "evidenceCapture": {
+    "method": "Python standard-library HTTPS requests; browserctl not on PATH",
+    "completeRawHTMLResponseBodies": true,
+    "arbitrarilyTruncated": false,
+    "browserRenderedCapture": false,
+    "externalResourcesMirrored": false,
+    "sourcePagesHosts": [
+      "opengameart.org"
+    ],
+    "licenseHosts": [
+      "creativecommons.org"
+    ],
+    "assetHost": "opengameart.org",
+    "assetRedirectsAllowed": false
+  },
+  "prohibitedScopeNotPerformed": [
+    "No repository reads or edits in the engine repository",
+    "No repo commits, builds, APK, emulator or board actions",
+    "No YouTube/audio-channel rips",
+    "No third-party upload, contact or credential use",
+    "No transcoding, normalization, trimming, fading or alteration of original asset bytes",
+    "No external agent communication"
+  ],
+  "rightsLimitations": [
+    "Uploader declarations are evidence, not proof of every underlying right.",
+    "CC0 does not clear third-party privacy/publicity, patent or trademark rights.",
+    "No author endorsement or warranty."
+  ]
+}

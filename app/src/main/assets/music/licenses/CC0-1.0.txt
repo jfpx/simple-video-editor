@@ -1,0 +1,39 @@
+CC0 1.0 Universal (SPDX: CC0-1.0)
+
+Official public-domain summary: https://creativecommons.org/publicdomain/zero/1.0/
+Official legal code: https://creativecommons.org/publicdomain/zero/1.0/legalcode.en
+The OpenGameArt pages link http://creativecommons.org/publicdomain/zero/1.0/;
+the identical official destination was fetched using HTTPS.
+
+Short official deed excerpt:
+"You can copy, modify, distribute and perform the work, even for commercial purposes, all without asking permission."
+
+Assessment (summary, not the legal instrument):
+Both official upload pages identify isaiah658 as author, list CC0, and describe
+the music as made entirely/only with ZynAddSubFX in LMMS. This supports treating
+these two uploads as creator-authored CC0 music, based on uploader statements,
+not an independent audit of project files, synthesizer presets, or rights chains.
+CC0 permits redistribution, modification and commercial use within the affirmer's
+copyright and related rights, to the extent permitted by law, with the fallback
+license described in the legal code. Attribution is not required by these CC0
+uploads; credit to isaiah658 is appreciated. Suggested credit:
+"Heavenly Loop / Unsolved Investigation - isaiah658 - CC0 1.0 - OpenGameArt.org"
+
+No blanket third-party clearance is promised. CC0 does not clear patents,
+trademarks, third-party rights, privacy or publicity rights. No warranty,
+endorsement, title guarantee, or verification of every underlying right is made.
+Creative Commons does not verify each work's copyright status. The deed is a
+human-readable summary, not a legal instrument. Refer to the official legal code.
+
+中文说明：两条官方上传页面均标注作者 isaiah658 与 CC0，并称音乐仅使用
+ZynAddSubFX / LMMS 制作。这属于上传者的创作与授权声明，不是独立权属审计。
+在授权者持有的版权及相关权利范围内，CC0 允许再分发、修改及商业使用；
+不代表所有第三方权利、商标、专利、隐私或人格权益均已获清理，也不提供担保。
+署名非强制，但作者欢迎署名。不要暗示作者背书。
+
+Complete untruncated HTTP response bodies are retained as evidence:
+..\evidence\cc0-deed.html
+..\evidence\cc0-legalcode.html
+Their companion .http.json files record URL, retrieval time, headers, byte count
+and SHA-256. These are raw HTML captures, not browser-rendered/localStorage saves;
+external page resources are not mirrored. No browserctl executable was available.

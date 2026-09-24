@@ -1,0 +1,61 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Privacy source and equivalence checks
+      run: |
+        mkdir -p .privacy-work
+        python3 -B -m unittest discover -s oracle_tools -p test_privacy_gate.py
+        python3 -B -m unittest discover -s oracle_tools -p test_public_baseline.py
+        python3 -B oracle_tools/privacy_export.py --receipt .privacy-work/equivalence.json
+        python3 -B oracle_tools/package_phone_controls.py --check
+        python3 -B oracle_tools/privacy_gate.py --mode current --source-only --scratch .privacy-work --report .privacy-work/source.json
+      
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        
+    - name: Setup Android SDK
+      uses: android-actions/setup-android@v3
+      
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+      
+    - name: Build with Gradle
+      env:
+        VIDEO_EDITOR_REVISION: ${{ github.sha }}
+      run: ./gradlew assembleDebug
+
+    - name: Privacy rebuilt APK gate
+      run: python3 -B oracle_tools/privacy_gate.py --mode current --artifact app/build/outputs/apk/debug/app-debug.apk --scratch .privacy-work --report .privacy-work/current.json
+
+    - name: Outgoing reachable history gate (cleanup requires approval)
+      run: python3 -B oracle_tools/privacy_gate.py --mode history --all-refs --scratch .privacy-work --report .privacy-work/history.json
+      
+    - name: Upload APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: app-debug
+        path: app/build/outputs/apk/debug/app-debug.apk
+        
+    - name: Get APK info
+      run: |
+        ls -lh app/build/outputs/apk/debug/
+        file app/build/outputs/apk/debug/app-debug.apk

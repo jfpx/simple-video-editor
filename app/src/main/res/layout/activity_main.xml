@@ -1,0 +1,1139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/editorRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/editorPreviewHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btnSelectVideo"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="@string/select_video" />
+            <TextView
+                android:id="@+id/tvSelectedVideo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="8dp"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:text="@string/editor_no_video"
+                android:textSize="13sp" />
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/ivVideoThumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:scaleType="fitCenter"
+            android:background="#E0E0E0"
+            android:visibility="visible"
+            android:contentDescription="@string/editor_thumbnail" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/editor_preview_truth"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/tvGeometryStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textSize="12sp"
+            android:textIsSelectable="true"
+            android:accessibilityLiveRegion="polite" />
+    </LinearLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/editorTabs"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:tabMode="scrollable"
+        app:tabGravity="start"
+        app:tabMinWidth="64dp">
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/editor_tab_picture" />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/editor_tab_sound" />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/editor_tab_title" />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/editor_tab_assets" />
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/editor_tab_more" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <FrameLayout
+        android:id="@+id/editorPanels"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <ScrollView
+            android:id="@+id/panelPicture"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_crop"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_crop_hint"
+                    android:layout_marginBottom="8dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/etCropLeft"
+                    android:text="@string/editor_crop_left" />
+                <EditText
+                    android:id="@+id/etCropLeft"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/editor_crop_left"
+                    android:contentDescription="@string/editor_crop_left"
+                    android:inputType="numberDecimal"
+                    android:maxLength="12"
+                    android:text="@string/editor_default_zero" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/etCropTop"
+                    android:text="@string/editor_crop_top" />
+                <EditText
+                    android:id="@+id/etCropTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/editor_crop_top"
+                    android:contentDescription="@string/editor_crop_top"
+                    android:inputType="numberDecimal"
+                    android:maxLength="12"
+                    android:text="@string/editor_default_zero" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/etCropRight"
+                    android:text="@string/editor_crop_right" />
+                <EditText
+                    android:id="@+id/etCropRight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/editor_crop_right"
+                    android:contentDescription="@string/editor_crop_right"
+                    android:inputType="numberDecimal"
+                    android:maxLength="12"
+                    android:text="@string/editor_default_zero" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/etCropBottom"
+                    android:text="@string/editor_crop_bottom" />
+                <EditText
+                    android:id="@+id/etCropBottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/editor_crop_bottom"
+                    android:contentDescription="@string/editor_crop_bottom"
+                    android:inputType="numberDecimal"
+                    android:maxLength="12"
+                    android:text="@string/editor_default_zero" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_rotation"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/btnRotateLeft"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/rotate_left" />
+                    <Button
+                        android:id="@+id/btnRotateRight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/rotate_right" />
+                </LinearLayout>
+                <EditText
+                    android:id="@+id/etCustomAngle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/editor_angle_hint"
+                    android:text="@string/editor_default_zero"
+                    android:inputType="numberSigned"
+                    android:maxLength="11" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/video_trimming"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp" />
+                <CheckBox
+                    android:id="@+id/cbEnableTrim"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/enable_trimming" />
+                <LinearLayout
+                    android:id="@+id/layoutTrimControls"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@id/etTrimStart"
+                            android:text="@string/start_time" />
+                        <EditText
+                            android:id="@+id/etTrimStart"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="@string/start_time_hint"
+                            android:inputType="numberDecimal"
+                            android:maxLength="24"
+                            android:text="@string/editor_default_zero" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/editor_seconds" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:labelFor="@id/etTrimEnd"
+                            android:text="@string/end_time" />
+                        <EditText
+                            android:id="@+id/etTrimEnd"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="@string/end_time_hint"
+                            android:inputType="numberDecimal"
+                            android:maxLength="24"
+                            android:text="@string/editor_default_trim_end" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/editor_seconds" />
+                    </LinearLayout>
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tvResolutionLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/output_resolution"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp" />
+                <Spinner
+                    android:id="@+id/spinnerResolution"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_resolution_hint" />
+                <TextView
+                    android:id="@+id/tvSpeedLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/playback_speed"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp" />
+                <Spinner
+                    android:id="@+id/spinnerSpeed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp" />
+                <TextView
+                    android:id="@+id/tvOverlayLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/overlay_text"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp" />
+                <EditText
+                    android:id="@+id/etOverlayText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/overlay_text_hint"
+                    android:inputType="text"
+                    android:maxLines="2" />
+                <CheckBox
+                    android:id="@+id/cbEnableColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="@string/editor_color_enable" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_color_hint" />
+                <TextView
+                    android:id="@+id/colorBrightnessLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_color_brightness_name"
+                    android:labelFor="@id/colorBrightness" />
+                <SeekBar
+                    android:id="@+id/colorBrightness"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/editor_color_brightness_name"
+                    android:max="200"
+                    android:progress="100" />
+                <TextView
+                    android:id="@+id/colorContrastLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_color_contrast_name"
+                    android:labelFor="@id/colorContrast" />
+                <SeekBar
+                    android:id="@+id/colorContrast"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/editor_color_contrast_name"
+                    android:max="200"
+                    android:progress="100" />
+                <TextView
+                    android:id="@+id/colorSaturationLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_color_saturation_name"
+                    android:labelFor="@id/colorSaturation" />
+                <SeekBar
+                    android:id="@+id/colorSaturation"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/editor_color_saturation_name"
+                    android:max="200"
+                    android:progress="100" />
+                <Button
+                    android:id="@+id/btnResetColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="@string/editor_color_reset" />
+                <CheckBox
+                    android:id="@+id/cbEnableBorder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/editor_border_enable" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_border_hint" />
+                <Spinner
+                    android:id="@+id/spinnerBorderColor"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/editor_border_color" />
+                <Spinner
+                    android:id="@+id/spinnerBorderWidth"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/editor_border_width" />
+                <Spinner
+                    android:id="@+id/spinnerBorderScope"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:contentDescription="@string/editor_border_scope" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/panelSound"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <CheckBox
+                    android:id="@+id/cbLibraryMusic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bgm_enable" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bgm_hint" />
+                <Button
+                    android:id="@+id/btnLibraryTrack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bgm_choose" />
+                <TextView
+                    android:id="@+id/tvLibraryTrack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bgm_pending" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/btnAuditionMusic"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/bgm_play" />
+                    <Button
+                        android:id="@+id/btnAuditionFullMusic"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/bgm_play_full" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tvMusicAuditionStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:accessibilityLiveRegion="polite"
+                    android:text="@string/bgm_audition_ready" />
+                <Button
+                    android:id="@+id/btnClearLibraryTrack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bgm_clear" />
+                <CheckBox
+                    android:id="@+id/cbMuteOriginal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bgm_mute" />
+                <TextView
+                    android:id="@+id/tvBgmGain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/seekBgmGain" />
+                <SeekBar
+                    android:id="@+id/seekBgmGain"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:max="50"
+                    android:progress="50"
+                    android:contentDescription="@string/bgm_enable" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/background_music"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <Button
+                    android:id="@+id/btnSelectMusic"
+                    android:enabled="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select_music" />
+                <TextView
+                    android:id="@+id/tvSelectedMusic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_music_hint"
+                    android:padding="8dp"
+                    android:background="#F0F0F0" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/volume_adjustment"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp" />
+                <CheckBox
+                    android:id="@+id/cbEnableVolume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/enable_volume_adjustment" />
+                <LinearLayout
+                    android:id="@+id/layoutVolumeControls"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/volume_level" />
+                    <Spinner
+                        android:id="@+id/spinnerVolume"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/panelTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/intro_template"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <CheckBox
+                    android:id="@+id/cbEnableIntro"
+                    android:enabled="false"
+                    android:checked="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/enable_intro_template" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_title_hint"
+                    android:layout_marginBottom="8dp" />
+                <LinearLayout
+                    android:id="@+id/layoutIntroControls"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title_load_full_preset" />
+                    <Spinner
+                        android:id="@+id/spinnerIntroTemplate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:labelFor="@id/etIntroText"
+                        android:text="@string/intro_text" />
+                    <EditText
+                        android:id="@+id/etIntroText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/intro_text_hint"
+                        android:inputType="textMultiLine|textCapSentences"
+                        android:maxLength="512"
+                        android:minLines="2"
+                        android:maxLines="8" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/editor_title_style" />
+                    <Spinner android:id="@+id/spinnerTitleStyle"
+                        android:layout_width="match_parent" android:layout_height="48dp"
+                        android:contentDescription="@string/editor_title_style" />
+                    <Spinner android:id="@+id/spinnerTitleDuration"
+                        android:layout_width="match_parent" android:layout_height="48dp"
+                        android:contentDescription="@string/editor_title_duration" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:labelFor="@id/etTitleDurationMs" android:text="@string/title_duration_ms" />
+                    <EditText android:id="@+id/etTitleDurationMs"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="number" android:maxLength="10"
+                        android:contentDescription="@string/title_duration_ms" />
+                    <Spinner android:id="@+id/spinnerTitleFont"
+                        android:layout_width="match_parent" android:layout_height="48dp"
+                        android:contentDescription="@string/editor_title_font" />
+                    <Spinner android:id="@+id/spinnerTitleWeight"
+                        android:layout_width="match_parent" android:layout_height="48dp"
+                        android:contentDescription="@string/editor_title_weight" />
+                    <Spinner android:id="@+id/spinnerTitleAlign"
+                        android:layout_width="match_parent" android:layout_height="48dp"
+                        android:contentDescription="@string/editor_title_align" />
+                    <Spinner android:id="@+id/spinnerTitlePalette"
+                        android:layout_width="match_parent" android:layout_height="48dp"
+                        android:contentDescription="@string/editor_title_palette" />
+                    <Button android:id="@+id/btnTitleTextColor"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/title_text_color" />
+                    <Button android:id="@+id/btnTitleBackgroundColor"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/title_background_color" />
+                    <CheckBox android:id="@+id/cbTitleGradient"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/title_gradient_enable" />
+                    <Button android:id="@+id/btnTitleGradientColor"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/title_gradient_color" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:text="@string/title_color_hint" />
+                    <Spinner android:id="@+id/spinnerTitleLayout"
+                        android:layout_width="match_parent" android:layout_height="48dp"
+                        android:contentDescription="@string/title_layout" />
+                    <TextView android:id="@+id/tvTitleSizeUnit"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:labelFor="@id/etTitleSize" android:text="@string/title_size_canvas" />
+                    <EditText
+                        android:id="@+id/etTitleSize"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/editor_title_size"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:text="@string/editor_default_title_size" />
+                    <com.simple.videoeditor.TitlePreviewView
+                        android:id="@+id/titleCanvasPreview"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:contentDescription="@string/editor_title_preview" />
+                    <CheckBox android:id="@+id/cbTitleSourceFrame"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:enabled="false" android:text="@string/title_frame_enable" />
+                    <EditText android:id="@+id/etTitleSourceSeconds"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:inputType="numberDecimal|numberSigned" android:maxLength="20"
+                        android:enabled="false" android:text="0"
+                        android:hint="@string/title_frame_seconds" android:contentDescription="@string/title_frame_seconds" />
+                    <Button android:id="@+id/btnExtractTitleFrame"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:enabled="false" android:text="@string/title_frame_extract" />
+                    <ImageView android:id="@+id/ivTitleSourceFrame"
+                        android:layout_width="match_parent" android:layout_height="100dp"
+                        android:scaleType="fitCenter" android:contentDescription="@string/title_frame_preview" />
+                    <Button android:id="@+id/btnSaveTitleFrame"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:enabled="false" android:text="@string/title_frame_save" />
+                    <TextView android:id="@+id/tvTitleSourceStatus"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:textIsSelectable="true" android:text="@string/title_frame_hint" />
+                    <SeekBar
+                        android:id="@+id/titlePreviewTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:max="5000"
+                        android:progress="1000"
+                        android:contentDescription="@string/editor_title_preview_time" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <Button
+                            android:id="@+id/btnSaveTemplate"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/save_as_template"
+                            android:textSize="12sp" />
+                        <Button
+                            android:id="@+id/btnManageTemplates"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/manage_templates"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/tvTemplatePreview"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:text="@string/template_preview"
+                        android:textSize="12sp"
+                        android:padding="8dp"
+                        android:gravity="center"
+                        android:background="#F0F0F0" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/panelAssets"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/intro_video"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <Button
+                    android:id="@+id/btnSelectIntro"
+                    android:enabled="false"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/select_intro" />
+                <TextView
+                    android:id="@+id/tvSelectedIntro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_intro_hint"
+                    android:padding="8dp"
+                    android:background="#F0F0F0" />
+                <CheckBox
+                    android:id="@+id/cbEnableMerge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_enable_merge"
+                    android:checked="false" />
+                <TextView
+                    android:id="@+id/tvMergeSemantics"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_merge_semantics"
+                    android:padding="8dp"
+                    android:background="#F3E5F5" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/btnSelectExtras"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/editor_select_extras"
+                        android:enabled="false" />
+                    <Button
+                        android:id="@+id/btnClearExtras"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/editor_clear_extras"
+                        android:enabled="false" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tvMergeSummary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_merge_summary"
+                    android:padding="8dp"
+                    android:background="#F0F0F0" />
+                <LinearLayout
+                    android:id="@+id/layoutMergeList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="12dp" />
+                <CheckBox
+                    android:id="@+id/cbEnableWatermark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_enable_watermark"
+                    android:checked="false" />
+                <Button
+                    android:id="@+id/btnSelectWatermark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_select_watermark" />
+                <Button
+                    android:id="@+id/btnClearWatermark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_clear_watermark" />
+                <TextView
+                    android:id="@+id/tvWatermark"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_watermark_hint" />
+                <EditText
+                    android:id="@+id/etWatermarkWidth"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/editor_watermark_width_hint"
+                    android:contentDescription="@string/editor_watermark_width"
+                    android:inputType="numberDecimal"
+                    android:text="@string/editor_default_watermark_width" />
+                <EditText
+                    android:id="@+id/etWatermarkX"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/editor_watermark_x_hint"
+                    android:contentDescription="@string/editor_watermark_x"
+                    android:inputType="numberDecimal"
+                    android:text="@string/editor_default_watermark_position" />
+                <EditText
+                    android:id="@+id/etWatermarkY"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/editor_watermark_y_hint"
+                    android:contentDescription="@string/editor_watermark_y"
+                    android:inputType="numberDecimal"
+                    android:text="@string/editor_default_watermark_position" />
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:id="@+id/panelMore"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="12dp">
+                <Button
+                    android:id="@+id/btnLanguage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_language" />
+                <Button
+                    android:id="@+id/btnMusicLicenses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/bgm_licenses" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_whole_presets"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+                <EditText
+                    android:id="@+id/etWholePresetName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/editor_preset_name"
+                    android:inputType="text"
+                    android:maxLength="80" />
+                <Spinner
+                    android:id="@+id/spinnerWholePreset"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp" />
+                <LinearLayout
+                    android:id="@+id/layoutWholePresetActions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button android:id="@+id/btnSaveWholePreset"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="@string/editor_save_preset" />
+                    <Button android:id="@+id/btnApplyWholePreset"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="@string/editor_apply_preset" />
+                    <Button android:id="@+id/btnDeleteWholePreset"
+                        android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:text="@string/editor_delete_preset" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_presets_hint" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/processing_mode"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp" />
+                <CheckBox
+                    android:id="@+id/cbCompatibilityEncoding"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_compatibility"
+                    android:saveEnabled="false"
+                    android:checked="false" />
+                <TextView
+                    android:id="@+id/tvModeHint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_compatibility_hint"
+                    android:textSize="12sp"
+                    android:textColor="#666666"
+                    android:padding="4dp"
+                    android:background="#FFF3E0" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_output_directory_hint"
+                    android:layout_marginTop="12dp" />
+                <Button
+                    android:id="@+id/btnVideoDirectory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_choose_directory" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_raw_diagnostics"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="12dp" />
+                <Button
+                    android:id="@+id/btnPublicationDrafts"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/draft_list" />
+                <Button
+                    android:id="@+id/btnSelfTest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/editor_self_test" />
+                <LinearLayout
+                    android:id="@+id/svDebugContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone"
+                    android:background="#E3F2FD"
+                    android:padding="8dp">
+                    <TextView
+                        android:id="@+id/tvDebugInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="11sp"
+                        android:textColor="#01579B"
+                        android:fontFamily="monospace"
+                        android:textIsSelectable="true" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/tvRawError"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:textSize="11sp"
+                    android:textColor="#D32F2F"
+                    android:fontFamily="monospace"
+                    android:textIsSelectable="true"
+                    android:contentDescription="@string/editor_raw_error" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/editorActionDock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingBottom="4dp">
+        <Button
+            android:id="@+id/btnProcess"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="@string/process_video"
+            android:enabled="false"
+            android:textSize="16sp"
+            android:backgroundTint="#4CAF50" />
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:visibility="gone" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+            <TextView
+                android:id="@+id/tvProgress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:textSize="12sp"
+                android:accessibilityLiveRegion="polite"
+                android:visibility="gone" />
+            <Button
+                android:id="@+id/btnCancelExport"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="@string/editor_cancel_export"
+                android:textSize="12sp"
+                android:enabled="false"
+                android:visibility="gone" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/svErrorContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:background="#FFEBEE"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/tvErrorDetails"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="12sp"
+                android:textColor="#D32F2F"
+                android:paddingStart="8dp"
+                android:paddingEnd="4dp"
+                android:textIsSelectable="true"
+                android:accessibilityLiveRegion="polite" />
+            <Button
+                android:id="@+id/btnErrorDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="@string/editor_error_details"
+                android:textSize="12sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/layoutSuccessContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#E8F5E9"
+            android:paddingStart="4dp"
+            android:paddingEnd="4dp"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tvSuccessTime"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="@string/editor_processing_complete"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="12sp"
+                android:textColor="#2E7D32"
+                android:accessibilityLiveRegion="polite" />
+            <TextView
+                android:id="@+id/tvOutputPath"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:ellipsize="middle"
+                android:contentDescription="@string/editor_output_file"
+                android:textSize="11sp"
+                android:textColor="#1B5E20"
+                android:fontFamily="monospace"
+                android:textIsSelectable="true" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/btnOpenOutputFolder"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:minWidth="0dp"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="@string/editor_open_output"
+                    android:contentDescription="@string/editor_open_output_description"
+                    android:textAllCaps="false"
+                    android:textSize="12sp" />
+                <Button
+                    android:id="@+id/btnPublicationDraft"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:minWidth="0dp"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="@string/draft_title"
+                    android:textAllCaps="false"
+                    android:textSize="12sp" />
+                <Button
+                    android:id="@+id/btnShareVideo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:minWidth="0dp"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="@string/editor_share_output"
+                    android:contentDescription="@string/editor_share_output_description"
+                    android:textAllCaps="false"
+                    android:textSize="12sp" />
+                <Button
+                    android:id="@+id/btnCopyVideoInfo"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:minWidth="0dp"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="@string/editor_copy_output"
+                    android:contentDescription="@string/editor_copy_output_description"
+                    android:textAllCaps="false"
+                    android:textSize="12sp" />
+                <Button
+                    android:id="@+id/btnOutputLocation"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:minWidth="0dp"
+                    android:paddingStart="2dp"
+                    android:paddingEnd="2dp"
+                    android:text="@string/editor_output_location"
+                    android:contentDescription="@string/editor_output_location_description"
+                    android:textAllCaps="false"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bgm_play">Preview 10s</string>
+    <string name="bgm_play_full">Play full track</string>
+    <string name="bgm_stop">Stop audition</string>
+    <string name="bgm_audition_ready">Audition only; exports still repeat the full track.</string>
+    <string name="bgm_audition_preparing">Preparing audition. You can stop at any time.</string>
+    <string name="bgm_audition_preview">Preview playing; stops after 10 seconds of playback.</string>
+    <string name="bgm_audition_full">Full track playing; stops at the end, without looping.</string>
+    <string name="bgm_audition_stopped">Audition stopped.</string>
+    <string name="bgm_audition_error">Cannot audition this track. Check audio output or select it again.</string>
+    <string name="bgm_enable">Offline library BGM (independent mix)</string>
+    <string name="bgm_mute">Mute original audio only</string>
+    <string name="bgm_gain">BGM volume: %1$d%%</string>
+    <string name="bgm_choose">Select offline track</string>
+    <string name="bgm_clear">Clear library selection</string>
+    <string name="bgm_categories">Mood / style</string>
+    <string name="bgm_all_tracks">All tracks / search</string>
+    <string name="bgm_search">Search title, mood, style or artist</string>
+    <string name="bgm_pending">No offline track selected.</string>
+    <string name="bgm_hint">Library ON overrides the imported replacement below; OFF restores it if selected. Importing replacement turns library OFF. BGM repeats at native speed across title, intro, main and appended clips. Original volume (including 0) does not change BGM. Play/Stop auditions only the selected track, not the static video preview.</string>
+    <string name="bgm_import_inactive">Imported replacement is inactive while library BGM is ON.</string>
+    <string name="bgm_licenses">Music sources and licenses</string>
+    <string name="bgm_license_notice">118 original CC0 recordings by isaiah658, Igor Gundarev, Abstraction / Tallbeard Studios (Ben Burnes), yd and DJ CrisP. Original files, complete license text and source evidence are included offline. CC0 permits redistribution and commercial use within rights held, not universal third-party clearance or warranty. Preset rights and project/render equivalence are not independently verified. Whole compositions repeat without a seamlessness guarantee; creator-designated loops are also not perceptually verified. Abstraction does not endorse AI/ML, NFTs or direct resale; this library implies no endorsement. Attribution is optional and supplied below.</string>
+</resources>

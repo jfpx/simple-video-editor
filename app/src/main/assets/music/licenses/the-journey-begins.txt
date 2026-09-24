@@ -1,0 +1,14 @@
+the journey begins - Igor Gundarev
+Status: QUALIFIED_CREATOR_EVIDENCE_PENDING_LISTENING
+License: CC0-1.0
+Source: https://opengameart.org/content/the-journey-begins
+Official attachment: https://opengameart.org/sites/default/files/the_journey_begins_1.ogg
+Source capture UTC: 2026-09-18T07:39:15.946784+00:00
+Download UTC: 2026-09-18T07:40:00.228830+00:00
+File: mood\cinematic\the_journey_begins_1.ogg
+Bytes: 602110
+SHA-256: 2be3c830b1e3bfa885ebe32496a7d7ed6e13d8f9fe1991f99d8af2c64ee23e71
+Authorship quote: Short music composition made with LMMS
+Qualification: Creator LMMS composition; supplied project CRC validated, synthesizers inspected, no external audio/sample file references found. Not proof that downloaded render equals project.
+CC0-1.0 permits copying, raw redistribution, modification and commercial use within the affirmer's copyright and related rights, with legal-code fallback license. No attribution requirement. No guarantee of third-party sample, privacy/publicity, trademark or patent rights; no endorsement/warranty. Creator declarations are evidence, not a zero-risk clearance opinion.
+Suggested optional credit: the journey begins - Igor Gundarev - CC0 1.0 - OpenGameArt.org

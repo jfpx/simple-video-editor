@@ -1,0 +1,7 @@
+app/src/main/assets/video-oracle/** -text whitespace=cr-at-eol
+app/src/main/assets/intro-oracle/** -text whitespace=cr-at-eol
+app/src/main/assets/music-oracle/** -text whitespace=cr-at-eol
+app/src/main/assets/text-oracle/** -text whitespace=cr-at-eol
+app/src/main/assets/title-oracle/** -text whitespace=cr-at-eol
+app/src/main/assets/watermark-oracle/** -text whitespace=cr-at-eol
+app/src/main/assets/music/** -text whitespace=cr-at-eol

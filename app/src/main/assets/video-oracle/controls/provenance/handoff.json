@@ -1,0 +1,133 @@
+{
+  "version": "1.0.0",
+  "root": ".",
+  "device_tested": false,
+  "local_encoded_oracle_passed": true,
+  "positive_controls": 17,
+  "negative_controls": 19,
+  "cli_contract_tests_passed": true,
+  "cli_evidence_matches_current_code": true,
+  "primary_artifacts": [
+    {
+      "path": "standard.mp4",
+      "bytes": 95475,
+      "sha256": "f46a9e6c62af19e04c914692b5e60b3ded37f4cf5bf0ef2c01480519d16482b2"
+    },
+    {
+      "path": "source_audio.wav",
+      "bytes": 384044,
+      "sha256": "ace6bb92a4a485f3460b3f674452cba7230fa98e33981bc67f4c61a1c94d1039"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 1486096,
+      "sha256": "c0095261eed250fc8db6d49ce0d0cb9498e1552adac2367f0d4baff86b29362f"
+    },
+    {
+      "path": "android_cases.json",
+      "bytes": 12685,
+      "sha256": "e0bde89572334532b7a32947702d03e6f10904fb14eb40a903bd93a138b293a2"
+    },
+    {
+      "path": "oracle.py",
+      "bytes": 43538,
+      "sha256": "cf69ba00a8e82b8fec70cff5c96b8237e1673401ca4afff73cddd14f4aee18a1"
+    },
+    {
+      "path": "contract_tests.py",
+      "bytes": 3650,
+      "sha256": "991b2da5233ff803a21378bbe8cb80c6a51df59e322beb94355643c1a1212a0e"
+    },
+    {
+      "path": "CONTRACT.txt",
+      "bytes": 10324,
+      "sha256": "9f5523d13533b20a0f2846d9bef0318c1d861acda42c942c543d94afcd11d5cb"
+    },
+    {
+      "path": "results.json",
+      "bytes": 1105433,
+      "sha256": "d9d84e0247a88e4f89c72126cebb4fa2bd3152daf8f2b049b135a520a775af05"
+    },
+    {
+      "path": "commands.json",
+      "bytes": 228442,
+      "sha256": "7309f34c44e90c9a6ff24462bd0fb693e15a7a52d180783df398bc58194c147a"
+    },
+    {
+      "path": "selftest_results.json",
+      "bytes": 1109380,
+      "sha256": "b3be1ec8a37a596b888c2392748d599425256741a6d59b70258abf55c5914a9b"
+    },
+    {
+      "path": "selftest_commands.json",
+      "bytes": 196239,
+      "sha256": "45c52128a5d84435d30196f9b7ac6b1216ae2ec62a7259216986ec3f0aaa4319"
+    },
+    {
+      "path": "cli_contract_results.json",
+      "bytes": 18106,
+      "sha256": "e1b0cf71c28d115d29ccb47b2f0895626d60e69f6ce0cce85d953f8087d4393d"
+    }
+  ],
+  "all_artifact_sizes_and_sha256": "inventory.json",
+  "supported_cases": [
+    "identity",
+    "crop",
+    "rotate90",
+    "rotate180",
+    "rotate270",
+    "trim",
+    "resize",
+    "mute",
+    "volume25",
+    "speed2",
+    "speed_half",
+    "combo"
+  ],
+  "verified_rejections": [
+    "unchanged_source_as_crop",
+    "unchanged_source_as_rotate90",
+    "unchanged_source_as_rotate180",
+    "unchanged_source_as_rotate270",
+    "unchanged_source_as_trim",
+    "unchanged_source_as_resize",
+    "unchanged_source_as_mute",
+    "unchanged_source_as_volume25",
+    "unchanged_source_as_speed2",
+    "unchanged_source_as_speed_half",
+    "unchanged_source_as_combo",
+    "wrong_crop_same_dimensions",
+    "wrong_rotation_same_dimensions",
+    "wrong_trim_same_duration",
+    "wrong_volume_half_not_quarter",
+    "speed_changes_pitch",
+    "frozen_video_correct_duration",
+    "frozen_markers_advancing_barcode",
+    "audio_timestamp_gap"
+  ],
+  "checker": {
+    "command_from_oracle_directory": "python .\\oracle.py verify --case CASE --input .\\device\\CASE.mp4 --report .\\reports\\CASE.result.json",
+    "exit_codes": {
+      "0": "all assertions passed",
+      "1": "candidate mismatch",
+      "2": "setup error"
+    },
+    "contract": "CONTRACT.txt",
+    "device_vectors": "android_cases.json"
+  },
+  "parent_next_steps": [
+    "Wait for media3-device-selftest migration ownership to finish.",
+    "Pin fixture and manifest hashes; confirm migrated EditConfig matches vectors.",
+    "Add Android export driver for all 12 fresh configs; export actual standard.mp4.",
+    "Pull real outputs; run offline verifier per case and retain device/codec/app revision evidence.",
+    "Do not treat local reference verification as device export success."
+  ],
+  "limitations": [
+    "No Android device evidence yet; these are independent local encoded-media tests.",
+    "No overlays, arbitrary rotations, odd sizes, HDR, metadata-rotated input, multiple clips, or variable frame rate.",
+    "Tone windows measure envelope, pitch and segment identity, not sample-exact waveform phase.",
+    "Spatial checks cover nine frames plus barcode on every decoded frame, not every pixel of every frame.",
+    "AAC start/tail and Sonic-vs-atempo transitions allowed only within documented bounds; no device calibration yet.",
+    "Tool-version-pinned generation; other FFmpeg builds may produce different hashes. Use shipped fixture as standard."
+  ]
+}

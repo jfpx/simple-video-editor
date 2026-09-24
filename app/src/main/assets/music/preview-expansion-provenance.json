@@ -1,0 +1,277 @@
+{
+  "version": 1,
+  "preparedAtUtc": "2026-09-22T05:57:31.328043+00:00",
+  "scope": "Asset preparation only; no app changes",
+  "legalEvidence": [
+    {
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "retrievedAtUtc": "2026-09-22T05:43:21.041829+00:00",
+      "httpBodySha256BeforeRedaction": "4ceb8ae6835f2f5263caa0e39c9e1adca9469686c267475049b33521dabbe339",
+      "savedHtmlSha256": "635244caf08ef8ecf8b7dfcedb2b18c18336eb6c5f8ef41d2cf3add4b0add5e4",
+      "file": "evidence\\cc0-deed.html",
+      "redactions": [
+        "anonymous Drupal theme_token and form_build_id/form_token values only"
+      ]
+    },
+    {
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.en",
+      "retrievedAtUtc": "2026-09-22T05:43:20.873399+00:00",
+      "httpBodySha256BeforeRedaction": "001e3d1c905c18b1d034b34200cc952026abb38457c2294c23eaef7f6bda64df",
+      "savedHtmlSha256": "46c8f172c9c5da12b0559d1365e1ecdbc9864e610492844e88d947dedba91f5f",
+      "file": "evidence\\cc0-legalcode.html",
+      "redactions": [
+        "anonymous Drupal theme_token and form_build_id/form_token values only"
+      ]
+    }
+  ],
+  "permissionBasis": {
+    "quote": "reuse and redistribute as freely as possible in any form whatsoever and for any purposes, including without limitation commercial purposes.",
+    "source": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.en",
+    "section": "Statement of Purpose; sections 1, 2 and 3 apply to reproduction/distribution/adaptation.",
+    "rawRedistributionCommercialAndPreview": true,
+    "restrictionsAddedByThisPackage": false
+  },
+  "tracks": [
+    {
+      "id": "shrine",
+      "status": "qualified-for-parent-packaging-review",
+      "author": "yd",
+      "sourcePage": "https://opengameart.org/content/shrine",
+      "licenseId": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "legalCodeUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.en",
+      "creatorPageEvidence": {
+        "url": "https://opengameart.org/content/shrine",
+        "retrievedAtUtc": "2026-09-22T05:48:12.499608+00:00",
+        "httpBodySha256BeforeRedaction": "97fee2d879e664c6aef1dbbdd91f8121d7d914cd0d56dd0f5b060b4da6c31da0",
+        "savedHtmlSha256": "b5fc999a51c0f6a4c9518f8ab034d412bdbcbce9ba6cfe8c974d14d2129199a8",
+        "file": "evidence\\shrine.html",
+        "redactions": [
+          "anonymous Drupal theme_token and form_build_id/form_token values only"
+        ],
+        "title": "Shrine",
+        "author-submitter": "Author: yd",
+        "field-art-licenses": "License(s): CC0",
+        "body": "A short track with a mysterious vibe. LMMS source file is attached and requires no external  plugins.",
+        "field-art-files": "File(s): shrine.ogg 773.4 Kb [ 1835 download(s)] shrine.zip 16.5 Kb [ 935 download(s)]",
+        "downloads": [
+          {
+            "url": "https://opengameart.org/sites/default/files/shrine_0.ogg",
+            "filename": "shrine.ogg",
+            "type": "audio/ogg; length=773355"
+          },
+          {
+            "url": "https://opengameart.org/sites/default/files/shrine.zip",
+            "filename": "shrine.zip",
+            "type": "application/zip; length=16475"
+          }
+        ]
+      },
+      "originalDownload": {
+        "url": "https://opengameart.org/sites/default/files/shrine_0.ogg",
+        "retrievedAtUtc": "2026-09-22T05:53:13.499125+00:00",
+        "bytes": 773355,
+        "sha256": "35a3051a7b6d4fddda564624cff960b77722fd8bcf4a3e07ceceb060b6c0f080",
+        "sourceFilename": "shrine_0.ogg",
+        "sourcePageDisplayFilename": "shrine.ogg"
+      },
+      "preDownloadApproval": {
+        "trackId": "shrine",
+        "approvedBeforeAudioDownloadAtUtc": "2026-09-22T05:53:13.086478+00:00",
+        "sourceEvidenceFile": "evidence\\shrine.html",
+        "license": "CC0-1.0",
+        "authorshipQuote": "A short track with a mysterious vibe. LMMS source file is attached and requires no external  plugins.",
+        "downloadUrl": "https://opengameart.org/sites/default/files/shrine_0.ogg",
+        "decision": "Creator-supported CC0; technical checks pending; not universal rights warranty."
+      },
+      "briefQuotes": {
+        "license": "License(s): CC0",
+        "authorship": "A short track with a mysterious vibe. LMMS source file is attached and requires no external  plugins."
+      },
+      "authorshipAndSampleAssessment": "Creator-authored page + editable LMMS project: note-bearing instruments use ZynAddSubFX. No audiofileprocessor, sf2player, sampletco or external-file references found. Unused tripleoscillator defaults and empty sample track are present.",
+      "playbackAssessment": "Source tags include loop. Creator-loop metadata records intent, not verified seamlessness.",
+      "originalAudioPreserved": true,
+      "androidAssessment": "Vorbis in Ogg is an Android-supported format; this original also meets the inspected OfflineMusicCatalog 44100Hz stereo format/size bounds. No Android/emulator/device playback was performed.",
+      "preview": {
+        "startMs": 0,
+        "endMs": 10000,
+        "originalFirstTenSecondsAllowedByCC0": true,
+        "newRedistributionRestrictions": false,
+        "separateClipCreated": false,
+        "method": "Play original from start, non-looping, stop at 10s; no encode needed."
+      },
+      "limitations": [
+        "CC0 covers only rights the affirmer can waive/license; third-party rights are not warranted.",
+        "No universal copyright clearance, legal opinion or perceptual/seamless-loop claim.",
+        "Source projects and creator statements support provenance, not forensic identity of the export.",
+        "Mood/style and Chinese labels are editorial metadata based on descriptions/project, not listening."
+      ],
+      "technicalValidationFile": "validation\\shrine.json",
+      "sourceProject": {
+        "url": "https://opengameart.org/sites/default/files/shrine.zip",
+        "retrievedAtUtc": "2026-09-22T05:48:41.431706+00:00",
+        "sha256": "a3706ed89433dbfc40c1bc75390d6ea46c0005bb480b228ed0b57f3ce361286d",
+        "bytes": 16475,
+        "savedArchive": "evidence\\shrine-project.zip",
+        "decodedXml": "evidence\\shrine-project.xml",
+        "decodedXmlSha256": "e45a176af8a475a8bd9189e4b8a7e230ea5acd2c7bbffc248322481ed3dbde93"
+      }
+    },
+    {
+      "id": "challenge-accepted",
+      "status": "qualified-for-parent-packaging-review",
+      "author": "DJ CrisP",
+      "sourcePage": "https://opengameart.org/content/challenge-accepted",
+      "licenseId": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "legalCodeUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.en",
+      "creatorPageEvidence": {
+        "url": "https://opengameart.org/content/challenge-accepted",
+        "retrievedAtUtc": "2026-09-22T05:52:08.968624+00:00",
+        "httpBodySha256BeforeRedaction": "2e3edf960667f304d675a4fe1d02e7e99b0dbadaaab08e114352f9a91d5f20d4",
+        "savedHtmlSha256": "720c9540006a2c8643b50e64dc48fdf2480538893d8c53ae0a892c9f2c11092b",
+        "file": "evidence\\challenge-accepted.html",
+        "redactions": [
+          "anonymous Drupal theme_token and form_build_id/form_token values only"
+        ],
+        "title": "Challenge Accepted",
+        "author-submitter": "Author: DJ CrisP",
+        "field-art-licenses": "License(s): CC0",
+        "body": "A track I made for Jamuary2020. It's 200bpm and I think it's a song that could be in an action scene or a race or a challenge sequence of some sort. I used BitInvader, sfxr, and Nescaline in LMMS to make all the sounds.",
+        "field-art-files": "File(s): jamuary2020_day22.ogg 1.6 Mb [ 68 download(s)]",
+        "downloads": [
+          {
+            "url": "https://opengameart.org/sites/default/files/jamuary2020_day22_0.ogg",
+            "filename": "jamuary2020_day22.ogg",
+            "type": "audio/ogg; length=1577938"
+          }
+        ]
+      },
+      "originalDownload": {
+        "url": "https://opengameart.org/sites/default/files/jamuary2020_day22_0.ogg",
+        "retrievedAtUtc": "2026-09-22T05:53:16.540088+00:00",
+        "bytes": 1577938,
+        "sha256": "41d9dd60fbcddd1c943998e74fb0a9ccb3adbccbf604b040e9334a352f27b468",
+        "sourceFilename": "jamuary2020_day22_0.ogg",
+        "sourcePageDisplayFilename": "jamuary2020_day22.ogg"
+      },
+      "preDownloadApproval": {
+        "trackId": "challenge-accepted",
+        "approvedBeforeAudioDownloadAtUtc": "2026-09-22T05:53:15.610064+00:00",
+        "sourceEvidenceFile": "evidence\\challenge-accepted.html",
+        "license": "CC0-1.0",
+        "authorshipQuote": "A track I made for Jamuary2020. It's 200bpm and I think it's a song that could be in an action scene or a race or a challenge sequence of some sort. I used BitInvader, sfxr, and Nescaline in LMMS to make all the sounds.",
+        "downloadUrl": "https://opengameart.org/sites/default/files/jamuary2020_day22_0.ogg",
+        "decision": "Creator-supported CC0; technical checks pending; not universal rights warranty."
+      },
+      "briefQuotes": {
+        "license": "License(s): CC0",
+        "authorship": "A track I made for Jamuary2020. It's 200bpm and I think it's a song that could be in an action scene or a race or a challenge sequence of some sort. I used BitInvader, sfxr, and Nescaline in LMMS to make all the sounds."
+      },
+      "authorshipAndSampleAssessment": "Creator explicitly states all sounds made with BitInvader, sfxr and Nescaline in LMMS. No editable project is attached; reliance on the creator statement is explicit.",
+      "playbackAssessment": "A complete composition, not advertised as a loop. Repeat entire recording; not seamless.",
+      "originalAudioPreserved": true,
+      "androidAssessment": "Vorbis in Ogg is an Android-supported format; this original also meets the inspected OfflineMusicCatalog 44100Hz stereo format/size bounds. No Android/emulator/device playback was performed.",
+      "preview": {
+        "startMs": 0,
+        "endMs": 10000,
+        "originalFirstTenSecondsAllowedByCC0": true,
+        "newRedistributionRestrictions": false,
+        "separateClipCreated": false,
+        "method": "Play original from start, non-looping, stop at 10s; no encode needed."
+      },
+      "limitations": [
+        "CC0 covers only rights the affirmer can waive/license; third-party rights are not warranted.",
+        "No universal copyright clearance, legal opinion or perceptual/seamless-loop claim.",
+        "Source projects and creator statements support provenance, not forensic identity of the export.",
+        "Mood/style and Chinese labels are editorial metadata based on descriptions/project, not listening."
+      ],
+      "technicalValidationFile": "validation\\challenge-accepted.json"
+    },
+    {
+      "id": "blue-meadow-in-green-sky",
+      "status": "qualified-for-parent-packaging-review",
+      "author": "yd",
+      "sourcePage": "https://opengameart.org/content/blue-meadow-in-green-sky",
+      "licenseId": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "legalCodeUrl": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.en",
+      "creatorPageEvidence": {
+        "url": "https://opengameart.org/content/blue-meadow-in-green-sky",
+        "retrievedAtUtc": "2026-09-22T05:53:42.062547+00:00",
+        "httpBodySha256BeforeRedaction": "4987f7b860bef8a89a4ce6869d9876640de97587f633fabe40e5ef11d6b4551b",
+        "savedHtmlSha256": "721d993f86ed0953892eaeb1683b2e43bdfc3b52584eb65b33f7360bc91ac21a",
+        "file": "evidence\\blue-meadow-in-green-sky.html",
+        "redactions": [
+          "anonymous Drupal theme_token and form_build_id/form_token values only"
+        ],
+        "title": "Blue Meadow In Green Sky",
+        "author-submitter": "Author: yd",
+        "field-art-licenses": "License(s): CC0",
+        "body": "A very primitive and rather short loop. Inspired by an adventure game. Lmms file is attached and is selfs-sufficient. PS: if you decide to use Lmms files remove the trailing \"_\" from the file name.",
+        "field-art-files": "File(s): BMGS.ogg 494.4 Kb [ 533 download(s)] BMGS.mmpz_.zip 3.2 Kb [ 218 download(s)]",
+        "downloads": [
+          {
+            "url": "https://opengameart.org/sites/default/files/BMGS_0.ogg",
+            "filename": "BMGS.ogg",
+            "type": "audio/ogg; length=494401"
+          },
+          {
+            "url": "https://opengameart.org/sites/default/files/BMGS.mmpz_.zip",
+            "filename": "BMGS.mmpz_.zip",
+            "type": "application/zip; length=3167"
+          }
+        ]
+      },
+      "originalDownload": {
+        "url": "https://opengameart.org/sites/default/files/BMGS_0.ogg",
+        "retrievedAtUtc": "2026-09-22T05:54:41.218169+00:00",
+        "bytes": 494401,
+        "sha256": "efc340c14f5f5e74933efd90bbe1a6089a09551f7e8014bbe28d995e7d112355",
+        "sourceFilename": "BMGS_0.ogg",
+        "sourcePageDisplayFilename": "BMGS.ogg"
+      },
+      "preDownloadApproval": {
+        "trackId": "blue-meadow-in-green-sky",
+        "approvedBeforeAudioDownloadAtUtc": "2026-09-22T05:54:40.811353+00:00",
+        "sourceEvidenceFile": "evidence\\blue-meadow-in-green-sky.html",
+        "license": "CC0-1.0",
+        "authorshipQuote": "A very primitive and rather short loop. Inspired by an adventure game. Lmms file is attached and is selfs-sufficient. PS: if you decide to use Lmms files remove the trailing \"_\" from the file name.",
+        "downloadUrl": "https://opengameart.org/sites/default/files/BMGS_0.ogg",
+        "decision": "Creator-supported CC0; technical checks pending; not universal rights warranty."
+      },
+      "briefQuotes": {
+        "license": "License(s): CC0",
+        "authorship": "A very primitive and rather short loop. Inspired by an adventure game. Lmms file is attached and is selfs-sufficient. PS: if you decide to use Lmms files remove the trailing \"_\" from the file name."
+      },
+      "authorshipAndSampleAssessment": "Creator describes attached LMMS project as self-sufficient. XML instruments are three tripleoscillator instances and one lb302; no sample-player instruments. Nonempty userwavefile placeholders samples/empty.wav are present, but all corresponding wavetype selectors are 0 (SineWave), not 7 (UserDefinedWave). Thus those placeholders are not evidence of active sample playback. No rendered-project/audio identity test performed.",
+      "playbackAssessment": "Creator calls this a loop, but original recording is 66.501859s and endpoint jumps are nonzero. Intentionally offered ONLY as whole-composition repeat, without a seamless claim, within the app's 90s composition limit. Do not change to creator-loop without source-owner review: current creator-loop limit is 60s. No trimming performed.",
+      "originalAudioPreserved": true,
+      "androidAssessment": "Vorbis in Ogg is an Android-supported format; this original also meets the inspected OfflineMusicCatalog 44100Hz stereo format/size bounds. No Android/emulator/device playback was performed.",
+      "preview": {
+        "startMs": 0,
+        "endMs": 10000,
+        "originalFirstTenSecondsAllowedByCC0": true,
+        "newRedistributionRestrictions": false,
+        "separateClipCreated": false,
+        "method": "Play original from start, non-looping, stop at 10s; no encode needed."
+      },
+      "limitations": [
+        "CC0 covers only rights the affirmer can waive/license; third-party rights are not warranted.",
+        "No universal copyright clearance, legal opinion or perceptual/seamless-loop claim.",
+        "Source projects and creator statements support provenance, not forensic identity of the export.",
+        "Mood/style and Chinese labels are editorial metadata based on descriptions/project, not listening."
+      ],
+      "technicalValidationFile": "validation\\blue-meadow-in-green-sky.json",
+      "sourceProject": {
+        "url": "https://opengameart.org/sites/default/files/BMGS.mmpz_.zip",
+        "retrievedAtUtc": "2026-09-22T05:54:06.182189+00:00",
+        "sha256": "8c433cb2ab90c9ca65bfa63e6505667669905630973fc457ef06959b83dfa19b",
+        "bytes": 3167,
+        "savedArchive": "evidence\\blue-meadow-project.zip",
+        "decodedXml": "evidence\\blue-meadow-project.xml",
+        "decodedXmlSha256": "45f4ed123cbe4da7b3bf8b7864efc8ce84b5bdf937300a5e925e80137b9e0063"
+      }
+    }
+  ]
+}

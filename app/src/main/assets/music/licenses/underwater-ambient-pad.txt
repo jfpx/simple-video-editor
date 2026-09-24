@@ -1,0 +1,14 @@
+Underwater Ambient Pad - isaiah658
+Status: QUALIFIED_CREATOR_EVIDENCE_PENDING_LISTENING
+License: CC0-1.0
+Source: https://opengameart.org/content/underwater-ambient-pad
+Official attachment: https://opengameart.org/sites/default/files/Underwater-Ambient-Pad-isaiah658_0.ogg
+Source capture UTC: 2026-09-18T07:30:31.661004+00:00
+Download UTC: 2026-09-18T07:39:59.508438+00:00
+File: mood\ambient\Underwater-Ambient-Pad-isaiah658_0.ogg
+Bytes: 705155
+SHA-256: 5f40c6b20ac4e7b6944f176ecbfd24c5839257e5c818fecca33d7ddb147a20e7
+Authorship quote: Yes, this is original content.
+Qualification: Creator explicitly confirms original synthesis and denies use/ownership of Spectrasonics samples in 2025-10-07 comments; complete thread retained.
+CC0-1.0 permits copying, raw redistribution, modification and commercial use within the affirmer's copyright and related rights, with legal-code fallback license. No attribution requirement. No guarantee of third-party sample, privacy/publicity, trademark or patent rights; no endorsement/warranty. Creator declarations are evidence, not a zero-risk clearance opinion.
+Suggested optional credit: Underwater Ambient Pad - isaiah658 - CC0 1.0 - OpenGameArt.org

@@ -1,0 +1,14 @@
+Ambient Relaxing Loop - isaiah658
+Status: QUALIFIED_CREATOR_EVIDENCE_PENDING_LISTENING
+License: CC0-1.0
+Source: https://opengameart.org/content/ambient-relaxing-loop
+Official attachment: https://opengameart.org/sites/default/files/Ambient-Loop-isaiah658_0.ogg
+Source capture UTC: 2026-09-18T07:30:32.037125+00:00
+Download UTC: 2026-09-18T07:39:59.170473+00:00
+File: mood\calm\Ambient-Loop-isaiah658_0.ogg
+Bytes: 1284993
+SHA-256: 3c328794b77d3f3742a5a8fa36606c3b780d15b0b8f6148b29a78ec6caffcd9e
+Authorship quote: this sound is 100% made with ZynAddSubFX and Audacity.
+Qualification: Synthesis declaration: ZynAddSubFX and Audacity; randomized presets credited to Will Godfrey and Christopher Oliver. No independent audit of preset rights.
+CC0-1.0 permits copying, raw redistribution, modification and commercial use within the affirmer's copyright and related rights, with legal-code fallback license. No attribution requirement. No guarantee of third-party sample, privacy/publicity, trademark or patent rights; no endorsement/warranty. Creator declarations are evidence, not a zero-risk clearance opinion.
+Suggested optional credit: Ambient Relaxing Loop - isaiah658 - CC0 1.0 - OpenGameArt.org

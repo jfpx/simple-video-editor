@@ -1,0 +1,354 @@
+{
+  "schema": "independent-video-oracle-phone-controls",
+  "version": "1.0.0",
+  "scope": "Frozen independent LOCAL encoded controls; not device export evidence",
+  "positive_count": 17,
+  "negative_count": 19,
+  "android_contract_sha256": "74878a1d254ad63f88dca45837bb618fa0d053c5eb5fe1164e4bcb63b37231dc",
+  "provenance": [
+    {
+      "asset": "controls\\provenance\\CONTRACT.txt",
+      "sha256": "9f5523d13533b20a0f2846d9bef0318c1d861acda42c942c543d94afcd11d5cb",
+      "bytes": 10324
+    },
+    {
+      "asset": "controls\\provenance\\android_cases.json",
+      "sha256": "e0bde89572334532b7a32947702d03e6f10904fb14eb40a903bd93a138b293a2",
+      "bytes": 12685
+    },
+    {
+      "asset": "controls\\provenance\\handoff.json",
+      "sha256": "edfb961815b2f968910dfc72174be64fb705e0a5cb136f48b9275af54ff5c041",
+      "bytes": 4666
+    },
+    {
+      "asset": "controls\\provenance\\inventory.json",
+      "sha256": "edc241c5669233b306b0060dff7e0df2d6d6514e9097ea9b23f1a78cddae82a5",
+      "bytes": 25564
+    },
+    {
+      "asset": "controls\\provenance\\manifest.json",
+      "sha256": "c0095261eed250fc8db6d49ce0d0cb9498e1552adac2367f0d4baff86b29362f",
+      "bytes": 1486096
+    },
+    {
+      "asset": "controls\\provenance\\oracle.py",
+      "sha256": "cf69ba00a8e82b8fec70cff5c96b8237e1673401ca4afff73cddd14f4aee18a1",
+      "bytes": 43538
+    },
+    {
+      "asset": "controls\\provenance\\results.json",
+      "sha256": "d9d84e0247a88e4f89c72126cebb4fa2bd3152daf8f2b049b135a520a775af05",
+      "bytes": 1105433
+    }
+  ],
+  "controls": [
+    {
+      "id": "positive_reference_identity",
+      "case": "identity",
+      "expected_status": "PASS",
+      "asset": "controls\\reference\\identity.mp4",
+      "sha256": "68a946ced2b7969af6a54652f1b308157713b5457130de28a520dafcff22d647",
+      "bytes": 93752
+    },
+    {
+      "id": "positive_reference_crop",
+      "case": "crop",
+      "expected_status": "PASS",
+      "asset": "controls\\reference\\crop.mp4",
+      "sha256": "ef908758a3a70030f10107f1caeb14a3b44318553a0ad493c28b3d18a915b120",
+      "bytes": 87319
+    },
+    {
+      "id": "positive_reference_rotate90",
+      "case": "rotate90",
+      "expected_status": "PASS",
+      "asset": "controls\\reference\\rotate90.mp4",
+      "sha256": "ea4d2b0efaf9baea98e0d30d87d41f9c94575b29bf7b36e0aac776697d510cd0",
+      "bytes": 93771
+    },
+    {
+      "id": "positive_reference_rotate180",
+      "case": "rotate180",
+      "expected_status": "PASS",
+      "asset": "controls\\reference\\rotate180.mp4",
+      "sha256": "1873300d1464268ccf079533817b561d8ded9b2bbc8bb635f1fc2fa0ecac953a",
+      "bytes": 97119
+    },
+    {
+      "id": "positive_reference_rotate270",
+      "case": "rotate270",
+      "expected_status": "PASS",
+      "asset": "controls\\reference\\rotate270.mp4",
+      "sha256": "2f73347ad380dedf9284d2c02f51c0231dd1ad535f3dac32bc758ae430f767a4",
+      "bytes": 95344
+    },
+    {
+      "id": "positive_reference_trim",
+      "case": "trim",
+      "expected_status": "PASS",
+      "asset": "controls\\reference\\trim.mp4",
+      "sha256": "ce90a4b1805525ea0e65260e2e825c5bc325f6d3708c43568502cf65f2c9f4de",
+      "bytes": 47332
+    },
+    {
+      "id": "positive_reference_resize",
+      "case": "resize",
+      "expected_status": "PASS",
+      "asset": "controls\\reference\\resize.mp4",
+      "sha256": "412d4af1689f1cb4f670e11454eafaf584800338501f3d9579526ec86066379a",
+      "bytes": 93335
+    },
+    {
+      "id": "positive_reference_mute",
+      "case": "mute",
+      "expected_status": "PASS",
+      "asset": "controls\\reference\\mute.mp4",
+      "sha256": "abb4983dfbe094a43d04a80300c34072952af15c7d4a72eefbfa998f5641ca28",
+      "bytes": 28823
+    },
+    {
+      "id": "positive_reference_volume25",
+      "case": "volume25",
+      "expected_status": "PASS",
+      "asset": "controls\\reference\\volume25.mp4",
+      "sha256": "7cc8771ae7dc755d549e76841e06f1b2af6de726672d1cad87b9aebe29ece926",
+      "bytes": 93177
+    },
+    {
+      "id": "positive_reference_speed2",
+      "case": "speed2",
+      "expected_status": "PASS",
+      "asset": "controls\\reference\\speed2.mp4",
+      "sha256": "663a247383a8356af65a59438fb43bfdcef0fb18da8a5282ad0549b2d47b9fd9",
+      "bytes": 62413
+    },
+    {
+      "id": "positive_reference_speed_half",
+      "case": "speed_half",
+      "expected_status": "PASS",
+      "asset": "controls\\reference\\speed_half.mp4",
+      "sha256": "69bbfd982fce1498e407d77d0643fd6995e7ae07377b11de3313b474091c90ee",
+      "bytes": 160709
+    },
+    {
+      "id": "positive_reference_combo",
+      "case": "combo",
+      "expected_status": "PASS",
+      "asset": "controls\\reference\\combo.mp4",
+      "sha256": "34acb778a1fce9a15a993a055fe775736edb88e8e4852e18f6f1439a8ff69515",
+      "bytes": 30261
+    },
+    {
+      "id": "positive_standard",
+      "case": "identity",
+      "expected_status": "PASS",
+      "asset": "standard.mp4",
+      "sha256": "f46a9e6c62af19e04c914692b5e60b3ded37f4cf5bf0ef2c01480519d16482b2",
+      "bytes": 95475
+    },
+    {
+      "id": "positive_stress_rotate90_crf28",
+      "case": "rotate90",
+      "expected_status": "PASS",
+      "asset": "controls\\stress\\rotate90_crf28.mp4",
+      "sha256": "3c0a0ae365ca33a861f5604f81dee741b584f0177fb9fcb427d52d468b2b2d0f",
+      "bytes": 84932
+    },
+    {
+      "id": "positive_stress_combo_crf28",
+      "case": "combo",
+      "expected_status": "PASS",
+      "asset": "controls\\stress\\combo_crf28.mp4",
+      "sha256": "9f95b4c6b4565d17f1e5094c57e2e78968a525e1da3880de89c06aa9853f64cb",
+      "bytes": 24777
+    },
+    {
+      "id": "positive_stress_speed2_cfr24",
+      "case": "speed2",
+      "expected_status": "PASS",
+      "asset": "controls\\stress\\speed2_cfr24.mp4",
+      "sha256": "7406e5e92d51da5d076d9a0293728c31b4b3f0f26022a10af9a75689e541658d",
+      "bytes": 49743
+    },
+    {
+      "id": "positive_stress_speed_half_cfr24",
+      "case": "speed_half",
+      "expected_status": "PASS",
+      "asset": "controls\\stress\\speed_half_cfr24.mp4",
+      "sha256": "20fea56e2cb17ff96c56b540284e60d48ac36010be0c1534af8a4de1ccf86465",
+      "bytes": 179826
+    },
+    {
+      "id": "negative_unchanged_source_as_crop",
+      "case": "crop",
+      "expected_status": "FAIL",
+      "asset": "standard.mp4",
+      "sha256": "f46a9e6c62af19e04c914692b5e60b3ded37f4cf5bf0ef2c01480519d16482b2",
+      "bytes": 95475,
+      "expected_failure_prefix": "video.geometry"
+    },
+    {
+      "id": "negative_unchanged_source_as_rotate90",
+      "case": "rotate90",
+      "expected_status": "FAIL",
+      "asset": "standard.mp4",
+      "sha256": "f46a9e6c62af19e04c914692b5e60b3ded37f4cf5bf0ef2c01480519d16482b2",
+      "bytes": 95475,
+      "expected_failure_prefix": "video.geometry"
+    },
+    {
+      "id": "negative_unchanged_source_as_rotate180",
+      "case": "rotate180",
+      "expected_status": "FAIL",
+      "asset": "standard.mp4",
+      "sha256": "f46a9e6c62af19e04c914692b5e60b3ded37f4cf5bf0ef2c01480519d16482b2",
+      "bytes": 95475,
+      "expected_failure_prefix": "video.pixel_regions"
+    },
+    {
+      "id": "negative_unchanged_source_as_rotate270",
+      "case": "rotate270",
+      "expected_status": "FAIL",
+      "asset": "standard.mp4",
+      "sha256": "f46a9e6c62af19e04c914692b5e60b3ded37f4cf5bf0ef2c01480519d16482b2",
+      "bytes": 95475,
+      "expected_failure_prefix": "video.geometry"
+    },
+    {
+      "id": "negative_unchanged_source_as_trim",
+      "case": "trim",
+      "expected_status": "FAIL",
+      "asset": "standard.mp4",
+      "sha256": "f46a9e6c62af19e04c914692b5e60b3ded37f4cf5bf0ef2c01480519d16482b2",
+      "bytes": 95475,
+      "expected_failure_prefix": "video.duration"
+    },
+    {
+      "id": "negative_unchanged_source_as_resize",
+      "case": "resize",
+      "expected_status": "FAIL",
+      "asset": "standard.mp4",
+      "sha256": "f46a9e6c62af19e04c914692b5e60b3ded37f4cf5bf0ef2c01480519d16482b2",
+      "bytes": 95475,
+      "expected_failure_prefix": "video.geometry"
+    },
+    {
+      "id": "negative_unchanged_source_as_mute",
+      "case": "mute",
+      "expected_status": "FAIL",
+      "asset": "standard.mp4",
+      "sha256": "f46a9e6c62af19e04c914692b5e60b3ded37f4cf5bf0ef2c01480519d16482b2",
+      "bytes": 95475,
+      "expected_failure_prefix": "audio.stream_count"
+    },
+    {
+      "id": "negative_unchanged_source_as_volume25",
+      "case": "volume25",
+      "expected_status": "FAIL",
+      "asset": "standard.mp4",
+      "sha256": "f46a9e6c62af19e04c914692b5e60b3ded37f4cf5bf0ef2c01480519d16482b2",
+      "bytes": 95475,
+      "expected_failure_prefix": "audio.window_0.rms"
+    },
+    {
+      "id": "negative_unchanged_source_as_speed2",
+      "case": "speed2",
+      "expected_status": "FAIL",
+      "asset": "standard.mp4",
+      "sha256": "f46a9e6c62af19e04c914692b5e60b3ded37f4cf5bf0ef2c01480519d16482b2",
+      "bytes": 95475,
+      "expected_failure_prefix": "video.duration"
+    },
+    {
+      "id": "negative_unchanged_source_as_speed_half",
+      "case": "speed_half",
+      "expected_status": "FAIL",
+      "asset": "standard.mp4",
+      "sha256": "f46a9e6c62af19e04c914692b5e60b3ded37f4cf5bf0ef2c01480519d16482b2",
+      "bytes": 95475,
+      "expected_failure_prefix": "video.duration"
+    },
+    {
+      "id": "negative_unchanged_source_as_combo",
+      "case": "combo",
+      "expected_status": "FAIL",
+      "asset": "standard.mp4",
+      "sha256": "f46a9e6c62af19e04c914692b5e60b3ded37f4cf5bf0ef2c01480519d16482b2",
+      "bytes": 95475,
+      "expected_failure_prefix": "video.geometry"
+    },
+    {
+      "id": "negative_wrong_crop_same_dimensions",
+      "case": "crop",
+      "expected_status": "FAIL",
+      "asset": "controls\\negative\\wrong_crop_same_dimensions.mp4",
+      "sha256": "cd4e1a1fbf52dd6cd44aa534a5f0fc4e6e1fd695fadf15ae0538efd4de122675",
+      "bytes": 84117,
+      "expected_failure_prefix": "video.pixel_regions"
+    },
+    {
+      "id": "negative_wrong_rotation_same_dimensions",
+      "case": "rotate90",
+      "expected_status": "FAIL",
+      "asset": "controls\\negative\\wrong_rotation_same_dimensions.mp4",
+      "sha256": "2f73347ad380dedf9284d2c02f51c0231dd1ad535f3dac32bc758ae430f767a4",
+      "bytes": 95344,
+      "expected_failure_prefix": "video.pixel_regions"
+    },
+    {
+      "id": "negative_wrong_trim_same_duration",
+      "case": "trim",
+      "expected_status": "FAIL",
+      "asset": "controls\\negative\\wrong_trim_same_duration.mp4",
+      "sha256": "7ab99775f5041083ce534b8b4e5dc9d6535f53140f8ed8debbe5b2fbbe70ef5c",
+      "bytes": 47089,
+      "expected_failure_prefix": "video.temporal_barcode"
+    },
+    {
+      "id": "negative_wrong_volume_half_not_quarter",
+      "case": "volume25",
+      "expected_status": "FAIL",
+      "asset": "controls\\negative\\wrong_volume_half_not_quarter.mp4",
+      "sha256": "3fed0700ab5522cfc58192a4e0e4c42998da6d4b66260d20877b7c3dbc45fb45",
+      "bytes": 93551,
+      "expected_failure_prefix": "audio.window_0.rms"
+    },
+    {
+      "id": "negative_speed_changes_pitch",
+      "case": "speed2",
+      "expected_status": "FAIL",
+      "asset": "controls\\negative\\speed_changes_pitch.mp4",
+      "sha256": "539a29a3ff848016462d648b6f2a62f6a4ae0538f3d7d0a4efa8ddde42449617",
+      "bytes": 62439,
+      "expected_failure_prefix": "audio.window_0.frequency"
+    },
+    {
+      "id": "negative_frozen_video_correct_duration",
+      "case": "identity",
+      "expected_status": "FAIL",
+      "asset": "controls\\negative\\frozen_video_correct_duration.mp4",
+      "sha256": "97c4a0b2320e20c49fa7f2dafeb296bbe4052ebdc31bffdb1b84bd887f61e030",
+      "bytes": 83224,
+      "expected_failure_prefix": "video.temporal_barcode"
+    },
+    {
+      "id": "negative_frozen_markers_advancing_barcode",
+      "case": "identity",
+      "expected_status": "FAIL",
+      "asset": "controls\\negative\\frozen_markers_advancing_barcode.mp4",
+      "sha256": "a6955fa631a67c21cf884bcbc4f65e6c01b2fe78c581c59a29b8157cef4d25ae",
+      "bytes": 90785,
+      "expected_failure_prefix": "video.moving_markers"
+    },
+    {
+      "id": "negative_audio_timestamp_gap",
+      "case": "identity",
+      "expected_status": "FAIL",
+      "asset": "controls\\negative\\audio_timestamp_gap.mp4",
+      "sha256": "e0ad90550152acbd67ba02a77bcd8455f4fe5e310cf08d6439cfee1751dfcbaf",
+      "bytes": 95559,
+      "expected_failure_prefix": "audio.pts_continuity"
+    }
+  ]
+}

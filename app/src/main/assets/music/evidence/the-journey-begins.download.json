@@ -1,0 +1,20 @@
+{
+  "url": "https://opengameart.org/sites/default/files/the_journey_begins_1.ogg",
+  "final_url": "https://opengameart.org/sites/default/files/the_journey_begins_1.ogg",
+  "downloaded_utc": "2026-09-18T07:40:00.228830+00:00",
+  "status": 200,
+  "headers": {
+    "Server": "nginx/1.26.1",
+    "Date": "Fri, 18 Sep 2026 07:40:00 GMT",
+    "Content-Type": "audio/ogg",
+    "Content-Length": "602110",
+    "Last-Modified": "Tue, 08 Aug 2017 17:13:45 GMT",
+    "Connection": "close",
+    "ETag": "\"5989f149-92ffe\"",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+    "Accept-Ranges": "bytes"
+  },
+  "bytes": 602110,
+  "sha256": "2be3c830b1e3bfa885ebe32496a7d7ed6e13d8f9fe1991f99d8af2c64ee23e71",
+  "no_redirects": true
+}

@@ -1,0 +1,18 @@
+{
+  "url": "https://opengameart.org/sites/default/files/the_journey_begins_lmms.zip",
+  "final_url": "https://opengameart.org/sites/default/files/the_journey_begins_lmms.zip",
+  "fetched_utc": "2026-09-18T07:39:36.667580+00:00",
+  "headers": {
+    "Server": "nginx/1.26.1",
+    "Date": "Fri, 18 Sep 2026 07:39:36 GMT",
+    "Content-Type": "application/zip",
+    "Content-Length": "18267",
+    "Last-Modified": "Tue, 08 Aug 2017 17:13:22 GMT",
+    "Connection": "close",
+    "ETag": "\"5989f132-475b\"",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+    "Accept-Ranges": "bytes"
+  },
+  "bytes": 18267,
+  "sha256": "44226f2d9b6654a983d7578657790dbf74e61a08a2a388e55d9477ec8a1f7197"
+}

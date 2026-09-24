@@ -1,0 +1,20 @@
+{
+  "url": "https://opengameart.org/sites/default/files/Underwater-Ambient-Pad-isaiah658_0.ogg",
+  "final_url": "https://opengameart.org/sites/default/files/Underwater-Ambient-Pad-isaiah658_0.ogg",
+  "downloaded_utc": "2026-09-18T07:39:59.508438+00:00",
+  "status": 200,
+  "headers": {
+    "Server": "nginx/1.26.1",
+    "Date": "Fri, 18 Sep 2026 07:39:59 GMT",
+    "Content-Type": "audio/ogg",
+    "Content-Length": "705155",
+    "Last-Modified": "Tue, 20 Nov 2018 02:35:34 GMT",
+    "Connection": "close",
+    "ETag": "\"5bf372f6-ac283\"",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+    "Accept-Ranges": "bytes"
+  },
+  "bytes": 705155,
+  "sha256": "5f40c6b20ac4e7b6944f176ecbfd24c5839257e5c818fecca33d7ddb147a20e7",
+  "no_redirects": true
+}

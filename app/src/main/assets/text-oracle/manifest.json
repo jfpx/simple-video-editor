@@ -1,0 +1,240 @@
+{
+  "version": "text-topology-1",
+  "case": "text_overlay",
+  "text": "OI",
+  "source_sha256": "f46a9e6c62af19e04c914692b5e60b3ded37f4cf5bf0ef2c01480519d16482b2",
+  "base_manifest_sha256": "c0095261eed250fc8db6d49ce0d0cb9498e1552adac2367f0d4baff86b29362f",
+  "production_renderer_used": false,
+  "native_executed": false,
+  "font": "None. Original analytic ellipse/rectangle primitives; no font dependency or copied outlines.",
+  "editor_semantics": {
+    "overlayText": "OI",
+    "foreground": "#FFFFFFFF",
+    "backing": "#99000000",
+    "absolute_size_px": 48,
+    "anchor": "center",
+    "all_other_edits": "frozen identity"
+  },
+  "expected": {
+    "glyphs_left_to_right": [
+      "one closed O ring",
+      "solid narrow I stem"
+    ],
+    "O_width": [
+      25,
+      34
+    ],
+    "I_width": [
+      3,
+      8
+    ],
+    "cap_height": [
+      31,
+      39
+    ],
+    "gap": [
+      4,
+      13
+    ],
+    "ink_center": [
+      159.5,
+      119.5
+    ],
+    "center_tolerance": [
+      4,
+      8
+    ],
+    "ring_fill": [
+      0.22,
+      0.6
+    ],
+    "stem_fill_min": 0.8,
+    "ink_threshold_min_channel": 185,
+    "ink_threshold_chroma_max": 45,
+    "backing_multiplier": 0.4,
+    "backing_mae_max": 18,
+    "fixed_exclusion_xyxy": [
+      130,
+      84,
+      190,
+      158
+    ],
+    "visible_barcode_bits": [
+      0,
+      1,
+      5,
+      6
+    ],
+    "spatial_text_probes": 9,
+    "background_audio_tolerances": "unchanged frozen v1"
+  },
+  "limits": [
+    "Bounded OI topology, not general OCR or pixel-exact glyph identity.",
+    "Confusable glyphs with the same topology are not distinguished.",
+    "OEM fonts outside fixed bounds fail honestly; no calibration or fallback.",
+    "All frame PTS and four unoccluded code bits checked; nine text/spatial probes.",
+    "Fixed center exclusion hides covered marker regions; horizontal motion remains checked.",
+    "Generated titles, other strings/styles/positions and compositions unverified."
+  ],
+  "controls": [
+    {
+      "path": "reference.mp4",
+      "pass": true,
+      "required_failures": []
+    },
+    {
+      "path": "wrong-text.mp4",
+      "pass": false,
+      "required_failures": [
+        "text.probe_0.content"
+      ]
+    },
+    {
+      "path": "no-text.mp4",
+      "pass": false,
+      "required_failures": [
+        "text.probe_0.content"
+      ]
+    },
+    {
+      "path": "wrong-position.mp4",
+      "pass": false,
+      "required_failures": [
+        "text.probe_0.position"
+      ]
+    }
+  ],
+  "ffmpeg": "ffmpeg version 8.1.1-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+  "commands": [
+    [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-nostdin",
+      "-y",
+      "-i",
+      "app\\src\\main\\assets\\video-oracle\\standard.mp4",
+      "-loop",
+      "1",
+      "-framerate",
+      "24",
+      "-i",
+      "app\\build\\text-controls-corrected\\reference.png",
+      "-filter_complex",
+      "[0:v][1:v]overlay=shortest=1:format=auto,format=yuv420p[v]",
+      "-map",
+      "[v]",
+      "-map",
+      "0:a:0",
+      "-c:v",
+      "libx264",
+      "-preset",
+      "medium",
+      "-crf",
+      "16",
+      "-threads",
+      "1",
+      "-c:a",
+      "copy",
+      "-t",
+      "4",
+      "-movflags",
+      "+faststart",
+      "app\\build\\text-controls-corrected\\reference.mp4"
+    ],
+    [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-nostdin",
+      "-y",
+      "-i",
+      "app\\src\\main\\assets\\video-oracle\\standard.mp4",
+      "-loop",
+      "1",
+      "-framerate",
+      "24",
+      "-i",
+      "app\\build\\text-controls-corrected\\wrong-text.png",
+      "-filter_complex",
+      "[0:v][1:v]overlay=shortest=1:format=auto,format=yuv420p[v]",
+      "-map",
+      "[v]",
+      "-map",
+      "0:a:0",
+      "-c:v",
+      "libx264",
+      "-preset",
+      "medium",
+      "-crf",
+      "16",
+      "-threads",
+      "1",
+      "-c:a",
+      "copy",
+      "-t",
+      "4",
+      "-movflags",
+      "+faststart",
+      "app\\build\\text-controls-corrected\\wrong-text.mp4"
+    ],
+    [
+      "ffmpeg",
+      "-v",
+      "error",
+      "-nostdin",
+      "-y",
+      "-i",
+      "app\\src\\main\\assets\\video-oracle\\standard.mp4",
+      "-loop",
+      "1",
+      "-framerate",
+      "24",
+      "-i",
+      "app\\build\\text-controls-corrected\\wrong-position.png",
+      "-filter_complex",
+      "[0:v][1:v]overlay=shortest=1:format=auto,format=yuv420p[v]",
+      "-map",
+      "[v]",
+      "-map",
+      "0:a:0",
+      "-c:v",
+      "libx264",
+      "-preset",
+      "medium",
+      "-crf",
+      "16",
+      "-threads",
+      "1",
+      "-c:a",
+      "copy",
+      "-t",
+      "4",
+      "-movflags",
+      "+faststart",
+      "app\\build\\text-controls-corrected\\wrong-position.mp4"
+    ]
+  ],
+  "assets": [
+    {
+      "path": "no-text.mp4",
+      "bytes": 95475,
+      "sha256": "f46a9e6c62af19e04c914692b5e60b3ded37f4cf5bf0ef2c01480519d16482b2"
+    },
+    {
+      "path": "reference.mp4",
+      "bytes": 92263,
+      "sha256": "4444db739825600d839ca0c82838b47c05519dffc95de055a965b76e75c8fce2"
+    },
+    {
+      "path": "wrong-position.mp4",
+      "bytes": 92641,
+      "sha256": "95974fffc0217643695a2a1617fd760f3b9c897fa2ae1bdac8311d007b39aacb"
+    },
+    {
+      "path": "wrong-text.mp4",
+      "bytes": 92028,
+      "sha256": "782ef75493b2de49601940a54c26a61d6b5d2c7233844245fabf7a29e2652e0b"
+    }
+  ]
+}

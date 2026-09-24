@@ -1,0 +1,32 @@
+{
+  "id": "unsolved-investigation",
+  "requestedURL": "https://opengameart.org/sites/default/files/Unsolved-Investigation-isaiah658_0.ogg",
+  "finalURL": "https://opengameart.org/sites/default/files/Unsolved-Investigation-isaiah658_0.ogg",
+  "status": 200,
+  "headers": {
+    "Server": "nginx/1.26.1",
+    "Date": "Thu, 17 Sep 2026 02:38:43 GMT",
+    "Content-Type": "audio/ogg",
+    "Content-Length": "2200350",
+    "Last-Modified": "Sun, 29 Jul 2018 02:56:45 GMT",
+    "Connection": "close",
+    "ETag": "\"5b5d2ced-21931e\"",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+    "Accept-Ranges": "bytes"
+  },
+  "fetchedAtUTC": "2026-09-17T02:38:43.450884+00:00",
+  "path": "mood\\suspense\\Unsolved-Investigation-isaiah658_0.ogg",
+  "originalDisplayFilename": "Unsolved-Investigation-isaiah658.ogg",
+  "bytes": 2200350,
+  "sha256": "2877e423ff90cb99b3082840e66cf79d69a809708466c6f27c750c0e1ce2a912",
+  "completeResponseBody": true,
+  "sourcePageLicense": "CC0",
+  "sourcePageAuthor": "isaiah658",
+  "downloadSafety": {
+    "timeoutSecondsPerSocketOperation": 45,
+    "totalDeadlineSeconds": 120,
+    "maxBytes": 5000000,
+    "redirectsAllowed": false,
+    "host": "opengameart.org"
+  }
+}

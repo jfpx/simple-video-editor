@@ -1,0 +1,81 @@
+OFFLINE MUSIC LIBRARY — SIX CREATOR-SUPPORTED CC0 ORIGINAL RECORDINGS
+
+Heavenly Loop / 天境循环 — isaiah658 — CC0-1.0
+https://opengameart.org/content/heavenly-loop
+music/dreamy/ambient/heavenly-loop.ogg
+Original: Heavenly Loop_0.ogg; 1224922 bytes; 1484075 frames / 44100 Hz
+SHA256 a842e9e054019132cacc8fd352e7b31c000ebb51e0b227a2511e1bccb4eb166e
+
+Unsolved Investigation / 未解调查 — isaiah658 — CC0-1.0
+https://opengameart.org/content/unsolved-investigation
+music/suspense/ambient/unsolved-investigation.ogg
+Original: Unsolved-Investigation-isaiah658_0.ogg; 2200350 bytes; 2116800 frames / 44100 Hz
+SHA256 2877e423ff90cb99b3082840e66cf79d69a809708466c6f27c750c0e1ce2a912
+
+The two recordings above remain byte-identical (3425272 bytes).
+Four additional byte-identical original 44100 Hz stereo Ogg/Vorbis recordings:
+
+Ambient Relaxing Loop / 宁静氛围循环 — isaiah658 — CC0-1.0
+https://opengameart.org/content/ambient-relaxing-loop
+music/calm/ambient/ambient-relaxing-loop.ogg
+1284993 bytes; 1080932 frames / 44100 Hz
+SHA256 3c328794b77d3f3742a5a8fa36606c3b780d15b0b8f6148b29a78ec6caffcd9e
+
+Underwater Ambient Pad / 水下氛围铺底 — isaiah658 — CC0-1.0
+https://opengameart.org/content/underwater-ambient-pad
+music/underwater/ambient/underwater-ambient-pad.ogg
+705155 bytes; 735232 frames / 44100 Hz
+SHA256 5f40c6b20ac4e7b6944f176ecbfd24c5839257e5c818fecca33d7ddb147a20e7
+
+happy end music / 快乐结尾 — Igor Gundarev — CC0-1.0
+https://opengameart.org/content/happy-end-music
+music/upbeat/synth/happy-end-music.ogg
+585189 bytes; 1587712 frames / 44100 Hz
+SHA256 2b37b5b4006a0856d5578c60ea9d932201f7b6b7d1a91505c39eeca137c53dff
+
+the journey begins / 旅程启程 — Igor Gundarev — CC0-1.0
+https://opengameart.org/content/the-journey-begins
+music/cinematic/rpg/the-journey-begins.ogg
+602110 bytes; 3263488 frames / 44100 Hz
+SHA256 2be3c830b1e3bfa885ebe32496a7d7ed6e13d8f9fe1991f99d8af2c64ee23e71
+
+Six original recordings total 6602719 bytes.
+No transcode, trim, fade, normalization, or derived recording is packaged.
+The full recording repeats at native speed in the exported timeline.
+Ambient additions are creator-described loops, not perceptually verified.
+Igor's two tracks are COMPLETE COMPOSITIONS, not creator-asserted seamless loops.
+UI: 乐曲，可重复播放／衔接不保证无缝 (repeatable; not guaranteed seamless).
+Underwater is 16.671927s and Journey is 74.001995s: outside the preferred 20–60s,
+preserved unchanged rather than silently trimmed, faded or normalized.
+Numerical seam analysis is not listening or a gapless-playback guarantee.
+Categories/tags are source-based; Chinese titles are editorial translations.
+
+Official pages identify isaiah658, CC0, and synthesis with ZynAddSubFX / LMMS.
+CC0 permits redistribution and commercial use within rights held by the affirmer,
+not universal third-party clearance, title warranty, endorsement, or a rights audit.
+Attribution is optional but appreciated; suggested credits are listed above.
+Speech/lyrics, sample origin and sensitive content have not been independently
+audited by listening. No YouTube audio or other unapproved tracks are included.
+Igor's supplied LMMS projects have synthesis instruments and no external audio
+references found by static inspection. Render equivalence and preset rights are
+not independently verified. isaiah658's synthesis declarations and underwater
+sample-rights discussion are retained in the complete official source HTML.
+Summer Park and Kalimba are NOT bundled: instrument/sample chains unresolved.
+See licenses/CC0-1.0.txt, evidence/cc0-legalcode.html, provenance.json,
+expansion-provenance.json and the four per-track licenses/*.txt notices.
+Full official source/license HTML and retrieval metadata remain in evidence/.
+
+Catalog v1: required id,title,titleZh,mood,moodZh,style,styleZh,path,author,
+license,licenseUrl,source,sha256,sourceSha256,bytes,frames,format.
+HTTPS URLs are provenance only: no runtime network or raw-asset permission.
+Normalized paths: music/<mood>[/<style>]/<lowercase-filename>.ogg or .wav.
+Formats: original ogg-vorbis-44100-stereo (hash equals sourceSha256) or existing
+canonical 44-byte pcm16le-48000-stereo WAV. frames means exact native per-channel
+frames, not display milliseconds. Bounded size/hash/header/granule validation;
+Optional playbackKind: creator-loop (default, max60s) or composition-repeat
+(max90s, explicit bilingual non-seamless hint). Unknown values fail closed.
+Max12 MiB per track, 64 tracks / 48 MiB total, catalog <=128 KiB.
+Production export/decoder budgets, per-repeat native-granule cap and PCM/audio
+oracle tolerances are unchanged.
+manifest.json pins every file in this music tree except itself; host validator
+pins that manifest. .gitattributes prevents Git line-ending conversion.

@@ -1,0 +1,34 @@
+{
+  "author": "Abstraction / Tallbeard Studios (Benjamin / Ben Burnes)",
+  "basis": [
+    "Creator describes this as their sketchbook and songs; official pack page explicitly dedicates its music under CC0.",
+    "All five downloaded archives carry the identical complete creator _LICENSE.txt CC0 dedication.",
+    "All five README files identify the official pack and request, not require, credit/donations.",
+    "CC0 applies to music contained in these asset packs; not other artist catalogs or third-party music.",
+    "Commercial use, copying, modification and raw redistribution allowed to the extent of the affirmer's rights.",
+    "NFT, AI/ML and direct resale are expressly NOT ENDORSED, although permitted within the license terms. No endorsement is implied.",
+    "Excluded variants, short loops and metadata are recorded individually; no SFX, jingles or isolated notes used to inflate the count."
+  ],
+  "limitations": [
+    "Creator-authored CC0 assertion is credible provenance, not independent proof of all worldwide rights.",
+    "No project files or exhaustive underlying sample inventory supplied; no obvious third-party copyrighted sample/reupload identified in reviewed source material.",
+    "No listening, musicological identity certification, or perceptual loop-seam verification performed.",
+    "Waveform similarity screening does not prove unrelated composition: rearrangements, pitch/time changes and short shared passages may escape detection.",
+    "CC0 third-party rights, trademark, privacy, publicity, warranty and endorsement disclaimers remain relevant."
+  ],
+  "packLicenseSha256": {
+    "music-loop-bundle-2024-q1": "d02e059adb401d50167b2e04d12ef9236fbcef0b4e3b7157bd5ebfab8a82b8f4",
+    "music-loop-bundle-2024-q2": "d02e059adb401d50167b2e04d12ef9236fbcef0b4e3b7157bd5ebfab8a82b8f4",
+    "music-loop-bundle-2024-q3": "d02e059adb401d50167b2e04d12ef9236fbcef0b4e3b7157bd5ebfab8a82b8f4",
+    "music-loop-bundle-2024-q4": "d02e059adb401d50167b2e04d12ef9236fbcef0b4e3b7157bd5ebfab8a82b8f4",
+    "music-loop-bundle-pre2023": "d02e059adb401d50167b2e04d12ef9236fbcef0b4e3b7157bd5ebfab8a82b8f4"
+  },
+  "passed": true,
+  "previousNine": "Not counted, not copied, not modified. This delivery independently contains 109 selected works.",
+  "qualifiedCount": 109,
+  "reviewedUTC": "2026-09-22T09:01:00.462930+00:00",
+  "schemaVersion": 1,
+  "sourceEvidence": "evidence\\abstraction-current.html",
+  "sourceEvidenceSha256": "8f52759e1fa32d2512840fa309d3cc6bd1289e09d1580abb4571200f4e255505",
+  "sourceURL": "https://tallbeard.itch.io/music-loop-bundle"
+}

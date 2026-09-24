@@ -1,0 +1,20 @@
+Blue Meadow In Green Sky
+Author: yd
+License: CC0 1.0 Universal (CC0-1.0)
+Official creator source: https://opengameart.org/content/blue-meadow-in-green-sky
+Official original download: https://opengameart.org/sites/default/files/BMGS_0.ogg
+Source retrieved UTC: 2026-09-22T05:53:42.062547+00:00
+Audio retrieved UTC: 2026-09-22T05:54:41.218169+00:00
+Original filename: BMGS_0.ogg
+SHA-256: efc340c14f5f5e74933efd90bbe1a6089a09551f7e8014bbe28d995e7d112355
+Bytes: 494401
+License evidence: License(s): CC0
+Creator quote: A very primitive and rather short loop. Inspired by an adventure game. Lmms file is attached and is selfs-sufficient. PS: if you decide to use Lmms files remove the trailing "_" from the file name.
+Assessment: Creator describes attached LMMS project as self-sufficient. XML instruments are three tripleoscillator instances and one lb302; no sample-player instruments. Nonempty userwavefile placeholders samples/empty.wav are present, but all corresponding wavetype selectors are 0 (SineWave), not 7 (UserDefinedWave). Thus those placeholders are not evidence of active sample playback. No rendered-project/audio identity test performed.
+Playback: Creator calls this a loop, but original recording is 66.501859s and endpoint jumps are nonzero. Intentionally offered ONLY as whole-composition repeat, without a seamless claim, within the app's 90s composition limit. Do not change to creator-loop without source-owner review: current creator-loop limit is 60s. No trimming performed.
+
+CC0 permits copying, modifying and redistributing this covered work, including original standalone audio in commercial offline apps and first-10-second previews. No attribution requirement, share-alike, noncommercial or raw-redistribution prohibition is added. Author/source are retained voluntarily as provenance. This concerns only the affirmer's covered rights; no warranty of third-party clearance or non-infringement. No endorsement is implied.
+
+Full legal text: preview-expansion-CC0-1.0.txt
+Official deed: https://creativecommons.org/publicdomain/zero/1.0/
+Official legal code: https://creativecommons.org/publicdomain/zero/1.0/legalcode.en

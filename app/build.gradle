@@ -1,0 +1,73 @@
+plugins {
+    id 'com.android.application'
+}
+
+def sourceRevision = System.getenv('VIDEO_EDITOR_REVISION') ?: 'unverified-local-source'
+if (!(sourceRevision ==~ /[0-9a-f]{40}/) && sourceRevision != 'unverified-local-source') {
+    throw new GradleException('VIDEO_EDITOR_REVISION must be a full lowercase commit hash')
+}
+
+def workflowRevisionAssets = layout.buildDirectory.dir('generated/workflowRevisionAssets')
+def generateWorkflowRevision = tasks.register('generateWorkflowRevision') {
+    inputs.property('sourceRevision', sourceRevision)
+    outputs.dir(workflowRevisionAssets)
+    doLast {
+        def destination = workflowRevisionAssets.get().file('workflow-source-revision.txt').asFile
+        destination.parentFile.mkdirs()
+        destination.text = sourceRevision
+    }
+}
+
+android {
+    namespace 'com.simple.videoeditor'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.simple.videoeditor"
+        minSdk 23
+        targetSdk 34
+        versionCode 3
+        versionName "1.2-media3-oracle"
+        buildConfigField 'String', 'SOURCE_REVISION', "\"${sourceRevision}\""
+        testInstrumentationRunner "android.test.InstrumentationTestRunner"
+
+        ndk {
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86', 'x86_64'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+    sourceSets.androidTest.assets.srcDir(generateWorkflowRevision)
+}
+
+tasks.configureEach {
+    if (name in ['mergeDebugAndroidTestAssets', 'generateDebugAndroidTestLintModel',
+                 'lintAnalyzeDebugAndroidTest']) dependsOn(generateWorkflowRevision)
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    
+    implementation 'androidx.media3:media3-transformer:1.5.1'
+    implementation 'androidx.media3:media3-effect:1.5.1'
+    implementation 'androidx.media3:media3-common:1.5.1'
+
+    androidTestCompileOnly files(android.sdkDirectory.toPath().resolve('platforms')
+            .resolve("android-${android.compileSdk}").resolve('optional').resolve('android.test.base.jar'))
+}

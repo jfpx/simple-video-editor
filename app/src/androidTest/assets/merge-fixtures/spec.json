@@ -1,0 +1,70 @@
+{
+  "fps": 24,
+  "sampleRate": 48000,
+  "clips": [
+    {
+      "id": "intro_audio",
+      "file": "intro-audio.mp4",
+      "width": 320,
+      "height": 180,
+      "rotation": 0,
+      "durationMs": 1200,
+      "baseColor": "#CC3322",
+      "accentColor": "#F6DAD5",
+      "audio": [
+        {"startMs": 0, "endMs": 1200, "hz": 330.0}
+      ]
+    },
+    {
+      "id": "main_audio_rot90",
+      "file": "main-audio-rot90.mp4",
+      "width": 180,
+      "height": 320,
+      "rotation": 90,
+      "durationMs": 2400,
+      "baseColor": "#2A9D8F",
+      "accentColor": "#D7FFF9",
+      "audio": [
+        {"startMs": 0, "endMs": 600, "hz": 440.0},
+        {"startMs": 600, "endMs": 1200, "hz": 660.0},
+        {"startMs": 1200, "endMs": 1800, "hz": 880.0},
+        {"startMs": 1800, "endMs": 2400, "hz": 990.0}
+      ]
+    },
+    {
+      "id": "extra_silent_square",
+      "file": "extra-silent-square.mp4",
+      "width": 240,
+      "height": 240,
+      "rotation": 0,
+      "durationMs": 1000,
+      "baseColor": "#2353D8",
+      "accentColor": "#D8E5FF",
+      "audio": []
+    },
+    {
+      "id": "extra_audio_rot270",
+      "file": "extra-audio-rot270.mp4",
+      "width": 180,
+      "height": 320,
+      "rotation": 270,
+      "durationMs": 800,
+      "baseColor": "#D5B120",
+      "accentColor": "#FFF2B6",
+      "audio": [
+        {"startMs": 0, "endMs": 800, "hz": 550.0}
+      ]
+    },
+    {
+      "id": "extra_silent_wide",
+      "file": "extra-silent-wide.mp4",
+      "width": 320,
+      "height": 160,
+      "rotation": 0,
+      "durationMs": 700,
+      "baseColor": "#B030B0",
+      "accentColor": "#FFD9FF",
+      "audio": []
+    }
+  ]
+}

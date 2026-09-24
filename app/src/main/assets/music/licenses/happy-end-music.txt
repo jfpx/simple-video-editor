@@ -1,0 +1,14 @@
+happy end music - Igor Gundarev
+Status: QUALIFIED_CREATOR_EVIDENCE_PENDING_LISTENING
+License: CC0-1.0
+Source: https://opengameart.org/content/happy-end-music
+Official attachment: https://opengameart.org/sites/default/files/happy_end_0.ogg
+Source capture UTC: 2026-09-18T07:46:12.178200+00:00
+Download UTC: 2026-09-18T07:46:27.222775+00:00
+File: mood\upbeat\happy_end_0.ogg
+Bytes: 585189
+SHA-256: 2b37b5b4006a0856d5578c60ea9d932201f7b6b7d1a91505c39eeca137c53dff
+Authorship quote: Short music composition made with LMMS
+Qualification: Creator LMMS composition; official source archive CRC passed. Instruments: tripleoscillator, kicker, organic, ZynAddSubFX; no external audio references found. Static inspection, not render-equivalence or preset-rights proof.
+CC0-1.0 permits copying, raw redistribution, modification and commercial use within the affirmer's copyright and related rights, with legal-code fallback license. No attribution requirement. No guarantee of third-party sample, privacy/publicity, trademark or patent rights; no endorsement/warranty. Creator declarations are evidence, not a zero-risk clearance opinion.
+Suggested optional credit: happy end music - Igor Gundarev - CC0 1.0 - OpenGameArt.org

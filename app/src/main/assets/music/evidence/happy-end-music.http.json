@@ -1,0 +1,29 @@
+{
+  "url": "https://opengameart.org/content/happy-end-music",
+  "final_url": "https://opengameart.org/content/happy-end-music",
+  "fetched_utc": "2026-09-18T07:46:12.178200+00:00",
+  "status": 200,
+  "headers": {
+    "Server": "nginx/1.26.1",
+    "Date": "Fri, 18 Sep 2026 07:46:12 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "close",
+    "X-Powered-By": "PHP/7.0.33",
+    "X-Drupal-Cache": "MISS",
+    "Etag": "\"1789717571-0\"",
+    "X-DNS-Prefetch-Control": "on",
+    "Link": "<https://opengameart.org/sites/all/themes/oga/fonts/DroidSans-Bold.ttf>; rel=\"prefetch\",<https://opengameart.org/sites/default/files/archive/sara-logo.png>; rel=\"prefetch\",<https://asset-store-test.nbg1.your-objectstorage.com/assets/285/godot-asset-store-thumbnail.png>; rel=\"prefetch\",<https://asset-store-test.nbg1.your-objectstorage.com/publishers/204/Tsothan_Grove_375px.png>; rel=\"prefetch\",<https://opengameart.org/sites/default/files/archive/sara-logo.png>; rel=\"prefetch\",<https://opengameart.org/content/happy-end-music>; rel=\"canonical\",<https://opengameart.org/node/76138>; rel=\"shortlink\"",
+    "Content-Language": "en",
+    "X-Frame-Options": "SAMEORIGIN",
+    "X-Content-Type-Options": "nosniff",
+    "X-Generator": "Drupal 7 (http://drupal.org)",
+    "Cache-Control": "public, max-age=600",
+    "Last-Modified": "Fri, 18 Sep 2026 07:46:11 GMT",
+    "Expires": "Sun, 19 Nov 1978 05:00:00 GMT",
+    "Vary": "Cookie",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload"
+  },
+  "bytes": 22964,
+  "sha256": "0587e0db826ca93c880f82910bcfff595870e5c831741619f6551bae978743fb"
+}

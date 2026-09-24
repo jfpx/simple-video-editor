@@ -1,0 +1,19 @@
+TEST-ONLY ORIGINAL SYNTHETIC VIDEO FIXTURE — NOT MUSIC LIBRARY CONTENT
+54 seconds, solid blue 160x120 at 10fps, synthesized 1000Hz source tone.
+Generated locally with already installed FFmpeg; no third-party footage or samples.
+Used only as the original-video input, which real-library tests mute or set to 0.
+The independent comparator's musical references are the approved original Ogg
+recordings, never this fixture or production-rendered reference audio.
+
+Reproduction command:
+ffmpeg -f lavfi -i "color=c=blue:s=160x120:r=10:d=54" -f lavfi -i "sine=frequency=1000:sample_rate=44100:duration=54" -c:v libx264 -preset ultrafast -pix_fmt yuv420p -c:a aac -b:a 64k -shortest source.mp4
+
+source80.mp4 is the same test-only source with both durations set to 80.
+The 80-second export crosses the unchanged 74.001995-second original composition
+boundary. It does not extend production's 180-second export budget.
+
+Expanded-library fixtures (test-only; no production export-time limit added):
+source160.mp4: 160 seconds, 160x120 blue at 10fps, stereo 48kHz 440Hz tone.
+ffmpeg -f lavfi -i color=c=blue:s=160x120:r=10:d=160 -f lavfi -i sine=frequency=440:sample_rate=48000:duration=160 -ac 2 -c:v libx264 -preset ultrafast -pix_fmt yuv420p -c:a aac -shortest source160.mp4
+source4.mp4: ffmpeg -i source160.mp4 -t 4 -c copy source4.mp4
+These cross the untouched 154.5s stereo loop and multiple 32.002s mono loops.

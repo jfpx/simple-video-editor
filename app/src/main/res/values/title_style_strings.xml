@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_load_full_preset">加载完整预设（替换文字、动画及外观；仅改动画请用下方选项）</string>
+    <string name="title_text_color">文字颜色</string>
+    <string name="title_background_color">背景起始色／纯色</string>
+    <string name="title_gradient_color">背景渐变终止色</string>
+    <string name="title_gradient_enable">启用背景渐变</string>
+    <string name="title_color_hint">颜色选择器可调透明度及红绿蓝。透明背景叠在黑底上；使用原视频帧时替代纯色／渐变，不改变文字颜色。动画和时长不会重置外观。</string>
+    <string name="title_duration_ms">时长（毫秒，正整数；1000 毫秒 = 1 秒）</string>
+    <string name="title_layout">文字排版与字号单位</string>
+    <string name="title_size_canvas">字号 1–160：640×360 基准画布像素，随画布等比缩放；多行自动换行，超高时缩小以适应安全区。</string>
+    <string name="title_size_legacy">兼容字号 1–160 sp：按当前设备字体密度转换为输出像素，保留旧版位置和显式换行（不自动换行）。与动画独立。</string>
+    <string name="title_preset_load_failed">标题预设读取失败；未应用默认替代值，请检查预设数据。</string>
+    <string-array name="title_layouts">
+        <item>画布相对字号／自动换行</item><item>旧版 sp／保留位置与换行</item>
+    </string-array>
+    <string-array name="title_color_channels">
+        <item>透明度 A</item><item>红色 R</item><item>绿色 G</item><item>蓝色 B</item>
+    </string-array>
+</resources>

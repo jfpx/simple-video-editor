@@ -1,0 +1,20 @@
+Challenge Accepted
+Author: DJ CrisP
+License: CC0 1.0 Universal (CC0-1.0)
+Official creator source: https://opengameart.org/content/challenge-accepted
+Official original download: https://opengameart.org/sites/default/files/jamuary2020_day22_0.ogg
+Source retrieved UTC: 2026-09-22T05:52:08.968624+00:00
+Audio retrieved UTC: 2026-09-22T05:53:16.540088+00:00
+Original filename: jamuary2020_day22_0.ogg
+SHA-256: 41d9dd60fbcddd1c943998e74fb0a9ccb3adbccbf604b040e9334a352f27b468
+Bytes: 1577938
+License evidence: License(s): CC0
+Creator quote: A track I made for Jamuary2020. It's 200bpm and I think it's a song that could be in an action scene or a race or a challenge sequence of some sort. I used BitInvader, sfxr, and Nescaline in LMMS to make all the sounds.
+Assessment: Creator explicitly states all sounds made with BitInvader, sfxr and Nescaline in LMMS. No editable project is attached; reliance on the creator statement is explicit.
+Playback: A complete composition, not advertised as a loop. Repeat entire recording; not seamless.
+
+CC0 permits copying, modifying and redistributing this covered work, including original standalone audio in commercial offline apps and first-10-second previews. No attribution requirement, share-alike, noncommercial or raw-redistribution prohibition is added. Author/source are retained voluntarily as provenance. This concerns only the affirmer's covered rights; no warranty of third-party clearance or non-infringement. No endorsement is implied.
+
+Full legal text: preview-expansion-CC0-1.0.txt
+Official deed: https://creativecommons.org/publicdomain/zero/1.0/
+Official legal code: https://creativecommons.org/publicdomain/zero/1.0/legalcode.en

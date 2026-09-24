@@ -1,0 +1,19 @@
+{
+  "url": "https://opengameart.org/sites/default/files/happy_end_0.ogg",
+  "final_url": "https://opengameart.org/sites/default/files/happy_end_0.ogg",
+  "downloaded_utc": "2026-09-18T07:46:27.222775+00:00",
+  "headers": {
+    "Server": "nginx/1.26.1",
+    "Date": "Fri, 18 Sep 2026 07:46:26 GMT",
+    "Content-Type": "audio/ogg",
+    "Content-Length": "585189",
+    "Last-Modified": "Tue, 08 Aug 2017 16:56:38 GMT",
+    "Connection": "close",
+    "ETag": "\"5989ed46-8ede5\"",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+    "Accept-Ranges": "bytes"
+  },
+  "bytes": 585189,
+  "sha256": "2b37b5b4006a0856d5578c60ea9d932201f7b6b7d1a91505c39eeca137c53dff",
+  "status": 200
+}

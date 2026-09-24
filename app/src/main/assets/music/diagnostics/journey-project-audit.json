@@ -1,0 +1,23 @@
+{
+  "zipCRC": "all entries passed",
+  "qCompressDecodedBytes": 250563,
+  "instrumentCounts": {
+    "tripleoscillator": 1,
+    "kicker": 1,
+    "lb302": 1,
+    "zynaddsubfx": 5
+  },
+  "externalAudioReferences": [],
+  "sampleTracks": [
+    {
+      "attributes": {
+        "muted": "0",
+        "type": "2",
+        "name": "Sample track",
+        "solo": "0"
+      },
+      "childCount": 1
+    }
+  ],
+  "qualification": "Static project inspection only; no render-to-project equivalence or embedded preset rights audit."
+}

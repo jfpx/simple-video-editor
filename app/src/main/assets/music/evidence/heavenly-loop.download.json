@@ -1,0 +1,32 @@
+{
+  "id": "heavenly-loop",
+  "requestedURL": "https://opengameart.org/sites/default/files/Heavenly%20Loop_0.ogg",
+  "finalURL": "https://opengameart.org/sites/default/files/Heavenly%20Loop_0.ogg",
+  "status": 200,
+  "headers": {
+    "Server": "nginx/1.26.1",
+    "Date": "Thu, 17 Sep 2026 02:38:42 GMT",
+    "Content-Type": "audio/ogg",
+    "Content-Length": "1224922",
+    "Last-Modified": "Sat, 12 Aug 2017 00:57:35 GMT",
+    "Connection": "close",
+    "ETag": "\"598e527f-12b0da\"",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
+    "Accept-Ranges": "bytes"
+  },
+  "fetchedAtUTC": "2026-09-17T02:38:42.865322+00:00",
+  "path": "mood\\dreamy\\Heavenly Loop_0.ogg",
+  "originalDisplayFilename": "Heavenly Loop.ogg",
+  "bytes": 1224922,
+  "sha256": "a842e9e054019132cacc8fd352e7b31c000ebb51e0b227a2511e1bccb4eb166e",
+  "completeResponseBody": true,
+  "sourcePageLicense": "CC0",
+  "sourcePageAuthor": "isaiah658",
+  "downloadSafety": {
+    "timeoutSecondsPerSocketOperation": 45,
+    "totalDeadlineSeconds": 120,
+    "maxBytes": 5000000,
+    "redirectsAllowed": false,
+    "host": "opengameart.org"
+  }
+}

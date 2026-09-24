@@ -1,0 +1,20 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <instrumentation android:name="android.test.InstrumentationTestRunner"
+        android:targetPackage="com.simple.videoeditor" />
+    <instrumentation android:name="com.simple.videoeditor.PublicationDraftProcessDeathFixture"
+        android:targetPackage="com.simple.videoeditor" />
+    <application>
+        <provider android:name="com.simple.videoeditor.DirectDocumentTestControl"
+            android:authorities="com.simple.videoeditor.test.directcontrol" android:exported="true" />
+        <provider android:name="com.simple.videoeditor.DirectVideoDocuments"
+            android:authorities="com.simple.videoeditor.test.directdocs"
+            android:exported="true" android:grantUriPermissions="true"
+            android:permission="android.permission.MANAGE_DOCUMENTS">
+            <intent-filter>
+                <action android:name="android.content.action.DOCUMENTS_PROVIDER" />
+            </intent-filter>
+        </provider>
+        <uses-library android:name="android.test.runner" android:required="true" />
+        <uses-library android:name="android.test.base" android:required="false" />
+    </application>
+</manifest>

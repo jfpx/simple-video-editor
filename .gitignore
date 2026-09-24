@@ -1,0 +1,39 @@
+# Ignore Gradle files
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+
+# Android Studio files
+*.iml
+*.apk
+*.ap_
+*.aab
+
+# Generated files
+bin/
+gen/
+out/
+
+# Gradle
+build/
+
+# Local configuration
+# Note: gradle.properties with global settings (AndroidX, etc.) should be committed
+# Only local.properties with sensitive data should be ignored
+local.properties
+
+# Log Files
+*.log
+
+# Android Profiling
+*.hprof
+
+# Local Android SDK downloaded for native build validation
+/.local-sdk/
+# Local privacy receipts/scratch are not app assets or publication inputs.
+/.privacy-work/
